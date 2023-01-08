@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import SectionBorder from '../components/SectionBorder'
 import Aviad from './Aviad'
 import Matanel from './Matanel'
 import Elisha from './Elisha'
@@ -8,9 +7,6 @@ import AviadElya from './AviadElya'
 import David from './David'
 import Shahar from './Shahar'
 import Hadar from './Hadar'
-import Matanel from './Matanel'
-import Elisha from './Elisha'
-import NoaTest from './NoaTest'
 import Moran from './Moran'
 
 export const MainTest = () => {
