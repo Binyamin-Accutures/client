@@ -1,3 +1,6 @@
+
+import Roye from './Roye'
+
 import { Route, Routes } from 'react-router-dom'
 import Aviad from './Aviad'
 import Matanel from './Matanel'
@@ -10,11 +13,16 @@ import Hadar from './Hadar'
 import Moran from './Moran'
 import YisraelTest from './YisraelTest'
 
+
 export const MainTest = () => {
 
     return (
         <Routes>
             <Route path='/aviad' element={<Aviad />} />
+
+            <Route path='/roye' element={<Roye/>} />
+
+
             <Route path='/david' element={<David />} />
             <Route path='/shahar' element={<Shahar />} />
             <Route path='/hadar' element={<Hadar />} />
@@ -24,6 +32,7 @@ export const MainTest = () => {
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/moran' element={<Moran />} />
             <Route path='/Yisrael' element={<YisraelTest />} />
+
         </Routes>
     )
 }
