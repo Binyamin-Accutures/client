@@ -19,8 +19,7 @@ function Login() {
     <form className={styles.formLogin} onSubmit={handleSubmit}>
       <input type="text" id="username" ref={UserEmailInput} />
 
-      <input type="password" id="password" ref={UserPasswordInput} />
-
+      <input type="password" id="password" ref={UserPasswordInput}/>
       <button type="submit">Login</button>
 
       <div className={styles.formOptions}>
