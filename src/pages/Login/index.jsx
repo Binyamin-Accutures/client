@@ -24,9 +24,10 @@ function Login() {
         });
 
     console.log(UserEmailInput.current.value);
+  //  setUser(UserEmailInput.current.value) 
     // localStorage.setItem("token",JSON.stringify("Bearer "+response.data[1]))
     localStorage.setItem("token",JSON.stringify("Bearer "+"111111"))
-
+    // console.log(user);
   }
 
   return (
