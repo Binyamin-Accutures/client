@@ -8,9 +8,6 @@ import AviadElya from './AviadElya'
 import David from './David'
 import Shahar from './Shahar'
 import Hadar from './Hadar'
-import Matanel from './Matanel'
-import Elisha from './Elisha'
-import NoaTest from './NoaTest'
 import Moran from './Moran'
 
 export const MainTest = () => {
