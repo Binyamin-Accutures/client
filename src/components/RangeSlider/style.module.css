@@ -1,0 +1,55 @@
+.container {
+    width:  100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.containerSmall {
+
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 70%;
+    outline: none;
+    border-radius: 3px;
+    height: 4px;
+    margin-top: 9px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    margin-top: -6px;
+}
+  
+.slider::-webkit-slider-runnable-track {
+    background-color: var(--primary-color);
+    height: 4px;
+    border-radius: 2px;
+}
+
+.container .descrption {
+    margin-right: 1%;
+}
+
+.container .numberInput {
+    margin-top: 3px;
+    margin-left: 1.5%;
+    width: 4%;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    border-radius: 2px;
+    border: 0;
+    text-align: center;
+}
+
+.container .numberInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
