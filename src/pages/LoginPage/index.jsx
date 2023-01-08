@@ -6,7 +6,7 @@ import { useRef } from "react";
 // color: _______________
 // icon: ________________
 
-function Login() {
+function LoginPage() {
   const UserEmailInput = useRef(null);
   const UserPasswordInput = useRef(null);
 
@@ -30,4 +30,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;
