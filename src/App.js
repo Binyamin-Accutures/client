@@ -1,10 +1,13 @@
 import './global.css';
+import {MainTest} from './tests/MainTest'
 
 function App() {
   return (
 
-    
-    <div>app</div>
+    <div>
+      <MainTest/>
+    </div>
+
   );
 }
 

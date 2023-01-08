@@ -1,6 +1,11 @@
+
 import Roye from './Roye'
 
-export const Test = () => {
+import { Route, Routes } from 'react-router-dom'
+import Aviad from './Aviad'
+
+
+export const MainTest = () => {
 
     return (
         <Routes>
