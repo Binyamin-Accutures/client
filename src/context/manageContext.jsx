@@ -67,9 +67,8 @@ const beforeISPTemp ={
         trehold : 0
     }
 }
-export const ContextProvider = ({ children }) => {
+export const ContextProvider = ({ user,setUser, children }) => {
    
-    const [user, setUser] = useState();
     const [isLogged, setIsLogged] = useState(false);
 
     
@@ -86,3 +85,4 @@ export const ContextProvider = ({ children }) => {
     )
     
 }
+
