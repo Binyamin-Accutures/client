@@ -1,16 +1,8 @@
-import { Form } from "react-router-dom";
-import SideBar from "./components/SideBar";
 import "./global.css";
-import Root from "./tests/MainTest";
-
-//import "./index.jsx" from "../components/side"
 
 function App() {
-  return (
-    <div>
-      <Root />
-    </div>
-  );
+  const [user, setUser] = useState(true);
+  return <div>app</div>;
 }
 
 export default App;
