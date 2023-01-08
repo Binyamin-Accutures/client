@@ -1,4 +1,5 @@
 import InputSelect from "../InputSelect"
+import RangeSlider from "../RangeSlider"
 import styles from "./style.module.css"
 
 // creator: israel israeli
@@ -18,18 +19,13 @@ const DynamicRangeStretch = ({style = {}, className = "", ...props }) => {
 </div> 
 <InputSelect label="method" options={["Historgram","Historgram"]} width="265" setSelectInput={()=>console.log("onChange-option")} />
 {/*  קומפוננטה של תפריט נפתח- ליאת- כותרת מקבלת- מטוד בפנים מקבלת אופציות */}
-<div>
-   bright Discards Percentile
-   <br />
-   <input type="range" onChange={()=>console.log("onChange-range")} />
-   40%
-</div>
+
 {/*קומפננתה של טווח  */}
-<div>Dark Discard Percentile
-   <br />
-   <input type="range" onChange={()=>console.log("onChange-range")} />
-   40%
+<div>
+   
    </div>
+   <RangeSlider func={()=>console.log("onChange-range")} text="bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false}/>
+   <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false}/>
 {/*קומפננתה של טווח  */}
       </div>
    )
