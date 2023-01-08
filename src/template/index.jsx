@@ -1,5 +1,9 @@
 import styles from "./style.module.css"
 
+// creator: israel israeli
+// color: _______________
+// icon: ________________
+
 const Name = ({ style = {}, className = "", ...props }) => {
 
    return (
