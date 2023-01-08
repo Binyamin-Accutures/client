@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 function App() {
   const [user, setUser] = useState(true)
   return (
+
     <div>
 
       {(!user) && <><LoginPage setUser={setUser}/></>}
@@ -18,6 +19,7 @@ function App() {
       </ContextProvider>
       </>}
     </div>
+
   );
 }
 
