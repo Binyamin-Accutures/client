@@ -1,16 +1,16 @@
-import React from 'react'
-import Login from '../../pages/Login'
+// import React from 'react'
+// import Login from '../../pages/Login'
 
 
-const David = () => {
+// const David = () => {
 
-    return (
-        <>
+//     return (
+//         <>
 
-<Login/>
-        </>
-    )
+// <Login/>
+//         </>
+//     )
 
-}
+// }
 
-export default David
+// export default David

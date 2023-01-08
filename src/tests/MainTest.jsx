@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import SectionBorder from '../components/SectionBorder'
 import Aviad from './Aviad'
-import David from './David'
 import Shahar from './Shahar'
 import AviadElya from './AviadElya'
 import Hadar from './Hadar'
@@ -15,7 +14,7 @@ export const MainTest = () => {
     return (
         <Routes>
             <Route path='/aviad' element={<Aviad />} />
-            <Route path='/david' element={<David />} />
+            {/* <Route path='/david' element={<David />} /> */}
             <Route path='/shahar' element={<Shahar />} />
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/hadar' element={<Hadar />} />
