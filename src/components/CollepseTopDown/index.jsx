@@ -2,17 +2,16 @@ import styles from "./style.module.css";
 import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
 import { useState } from "react";
 // creator: roye peleg
-// color: _______________
-// icon: ________________
+
 
 const CollepseTopDown = (props) => {
- const [openCollepseTopDown,setOpenCollepseTopDown] = useState()
+ const [openCollepseTopDown,setOpenCollepseTopDown] = useState(null)
 
  const onClickLine = (titel)=>{
-   if(!openCollepseTopDown){
-      setOpenCollepseTopDown(titel)
+   if(openCollepseTopDown===titel){
+       setOpenCollepseTopDown(null)
    }
-   else{ setOpenCollepseTopDown(null)}
+   else{setOpenCollepseTopDown(titel)}
  }
 
 
@@ -30,6 +29,7 @@ const CollepseTopDown = (props) => {
            </>
         )
       })}
+      
     </div>
   );
 };
