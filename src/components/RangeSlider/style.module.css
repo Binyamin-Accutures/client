@@ -17,7 +17,7 @@
     border-radius: 3px;
     height: 4px;
     margin-top: 9px;
-    background-color: whi;
+    background-color: white;
 }
 
 .slider::-webkit-slider-thumb {
@@ -29,7 +29,6 @@
     border: 2px solid var(--primary-color);
     cursor: pointer;
     margin-top: -6px;
-    box-shadow: width  0 0 width var(--primary-color);
 }
   
 .slider::-webkit-slider-runnable-track {
@@ -37,6 +36,11 @@
     background-color: white;
     height: 4px;
     border-radius: 2px;
+    background-color: var(--primary-color);
+}
+
+.slider::-ms-fill-lower {
+    background-color: var(--primary-color);
 }
 
 .container .descrption {
