@@ -1,6 +1,8 @@
-import styles from "./style.module.css";
-import React, { useState } from "react";
+import Button from "../../components/Button";
+import Header from "../../components/Header";
+import Input from "../../components/Input";
 import { useRef } from "react";
+import styles from "./style.module.css";
 
 // creator: david hakak
 // color: _______________
@@ -16,17 +18,23 @@ function LoginPage() {
   }
 
   return (
-    <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <input type="text" id="username" ref={UserEmailInput} />
+    <>
+    <Header/>
+      <form className={styles.formLogin} onSubmit={handleSubmit}>
+      <h1>Sign in</h1>
 
-      <input type="password" id="password" ref={UserPasswordInput}/>
-      <button type="submit">Login</button>
+      <Input type={"text"} name='input'  placeholder={"email"} ref={UserEmailInput}/>
+      <Input type={"text"} name='input' placeholder={"password"} ref={UserPasswordInput}/>
+    
 
-      <div className={styles.formOptions}>
-        <p>forgot password</p>
-        <p>new account</p>
-      </div>
-    </form>
+        <Button type={"submit"} width={"328px"} children={'Sign In'}/>
+
+        <div className={styles.formOptions}>
+          <p>forgot password</p>
+          <p>new account</p>
+        </div>
+      </form>
+    </>
   );
 }
 
