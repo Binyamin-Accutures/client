@@ -9,8 +9,7 @@ export const MainTest = () => {
         <Routes>
             <Route path='/aviad' element={<Aviad />} />
             <Route path='/sapir' element={<Login />} />
-
         </Routes>
-    )
-}
+
+)}
 
