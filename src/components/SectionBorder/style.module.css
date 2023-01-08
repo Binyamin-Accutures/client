@@ -1,0 +1,4 @@
+.sectionBorder{
+    border: 2px solid var(--input-color);
+    border-radius: 4px;
+}
