@@ -1,0 +1,30 @@
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--primary-color) ;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    transition: 0.1s;
+}
+.button:hover:not(:active){
+    border: 2.5px solid var(--text-color)
+}
+.button svg{
+    display: none;
+}
+.button:active{
+    box-shadow: inset -4px -4px 4px rgba(29, 86, 60, 0.25), 
+   inset 4px 4px 4px rgba(27, 75, 54, 0.25);
+}
+.button:active svg{
+    display: block;
+    background-color: var(--primary-color);
+}
+
