@@ -3,6 +3,5 @@
     background-color: var(--input-color);
     color: var(--text-color);
     font-family:'Poppins', sans-serif; 
-    padding: 8px, 16px, 8px, 16px;
-    /* width: 50px; */
+     padding: 8px 16px;
 }
