@@ -6,7 +6,8 @@
 }
 
 .containerSmall {
-
+    width:  100%;
+    padding: 4px;
 }
 
 .slider {
@@ -16,6 +17,7 @@
     border-radius: 3px;
     height: 4px;
     margin-top: 9px;
+    background-color: whi;
 }
 
 .slider::-webkit-slider-thumb {
@@ -27,16 +29,19 @@
     border: 2px solid var(--primary-color);
     cursor: pointer;
     margin-top: -6px;
+    box-shadow: width  0 0 width var(--primary-color);
 }
   
 .slider::-webkit-slider-runnable-track {
-    background-color: var(--primary-color);
+    webkit-appearance: none;
+    background-color: white;
     height: 4px;
     border-radius: 2px;
 }
 
 .container .descrption {
     margin-right: 1%;
+    color: var(--text-secondary-color);
 }
 
 .container .numberInput {
@@ -50,6 +55,25 @@
     text-align: center;
 }
 
-.container .numberInput::-webkit-inner-spin-button {
+.numberInput::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+.containerSmall .descrption {
+    width: 100%;
+    color: var(--text-color);
+    display: block;
+}
+
+.containerSmall .numberInput {
+    margin-top: 3px;
+    margin-left: 1.5%;
+    width: 4%;
+    background-color: var(--bg-color);
+    color: var(--text-secondary-color);
+    border-radius: 2px;
+    border: 0;
+    text-align: center;
+    border: 1px solid var(--text-secondary-color);
+
 }
