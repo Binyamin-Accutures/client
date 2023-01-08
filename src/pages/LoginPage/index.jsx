@@ -8,7 +8,7 @@ import axios from 'axios'
 // color: _______________
 // icon: ________________
 
-function Login() {
+function LoginPage({user,setUser}) {
   const UserEmailInput = useRef(null);
   const UserPasswordInput = useRef(null);
 
@@ -45,4 +45,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;
