@@ -9,6 +9,7 @@ import Matanel from './Matanel'
 import Elisha from './Elisha'
 import NoaTest from './NoaTest'
 import Moran from './Moran'
+import YisraelTest from './YisraelTest'
 
 export const MainTest = () => {
 
@@ -23,6 +24,7 @@ export const MainTest = () => {
             <Route path='/elisha' element={<Elisha />} />
             <Route path='/noa' element={<NoaTest />} />
             <Route path='/moran' element={<Moran />} />
+            <Route path='/Yisrael' element={<YisraelTest />} />
         </Routes>
     )
 }
