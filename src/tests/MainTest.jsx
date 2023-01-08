@@ -1,6 +1,7 @@
+import { Route, Routes } from 'react-router-dom'
 import Aviad from './Aviad'
 
-export const Test = () => {
+export const MainTest = () => {
 
     return (
         <Routes>
