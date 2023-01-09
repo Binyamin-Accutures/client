@@ -31,7 +31,12 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
          <div className={`styles.${classNameOption}`}>
             <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false}/>
          </div>
+      
+      <div className={styles.tempWidth} >יאיר</div>
+      
+      
       </div>
+      
    )
 }
 

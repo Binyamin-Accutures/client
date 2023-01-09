@@ -6,7 +6,7 @@ export default function Adel() {
     return(
        <div>
       
-        <Logout></Logout>
+        <Header/>
 
        </div> 
     )
