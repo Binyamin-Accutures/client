@@ -4,20 +4,14 @@ import ImageContext from "../../context/ImageContext";
 import CollepseTopDown from "../CollepseTopDown";
 import InputLoadImage from "../InputLoadImage";
 import Image from "../Image";
+import Nuc from "../Nuc";
 // creator: Liat
 
 const SideBar = () => {
   const menuList = [
     {
       titel: "NUC",
-      component: (
-        <div>
-          <ul>
-            <li>2</li>
-            <li>2</li>
-          </ul>
-        </div>
-      ),
+      component: <Nuc />,
     },
     { titel: "Dynamic Range Stretch", component: <div>roey</div> },
     { titel: "Demosaic", component: <div>roey</div> },
@@ -32,6 +26,7 @@ const SideBar = () => {
       <div className={styles.collapse}>
         <InputLoadImage width="328px" />
         <Image images={value.beforeISP.images[0] || []} />
+
         <CollepseTopDown menuList={menuList} />
       </div>
     </form>
