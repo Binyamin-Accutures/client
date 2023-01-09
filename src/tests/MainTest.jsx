@@ -3,6 +3,7 @@ import LoginPage from '../pages/LoginPage'
 import Sapir from './Sapir'
 
 import SectionBorder from '../components/SectionBorder'
+import Header from '../components/Header'
 
 
 export const MainTest = () => {

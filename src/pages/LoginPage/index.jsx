@@ -2,32 +2,29 @@ import styles from "./style.module.css";
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import axios from 'axios'
+import apiCalls, { setToken } from "../../functions/apiRequest";
+
 
 
 // creator: david hakak
 // color: _______________
 // icon: ________________
 
-function LoginPage({user,setUser}) {
+function LoginPage() {
   const UserEmailInput = useRef(null);
   const UserPasswordInput = useRef(null);
 
   function handleSubmit(e) {
     e.preventDefault();
-  
-      axios.get('https://restcountries.com/v3.1/all')
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
 
-    console.log(UserEmailInput.current.value);
-  //  setUser(UserEmailInput.current.value) 
-    // localStorage.setItem("token",JSON.stringify("Bearer "+response.data[1]))
-    localStorage.setItem("token",JSON.stringify("Bearer "+"111111"))
-    // console.log(user);
+
+    apiCalls("get", "https://restcountries.com/v3.1/all")
+      .then((res) => {     
+        setToken("123")  // setToken(res.token)
+      })
+
+    // setUser(UserEmailInput.current.value) 
+    // localStorage.token = "444444" -->    // localStorage.token = res.token 
   }
 
   return (
