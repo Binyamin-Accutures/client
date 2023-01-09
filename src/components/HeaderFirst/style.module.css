@@ -1,0 +1,92 @@
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:left;
+    height: 50px;
+    box-sizing: border-box;
+    width:100vw;
+    height: 50px;
+    left: 20px;
+    top: 20px;
+    background: #1E1E1E;
+    border: 1px solid #383838;
+    
+}
+
+.logo{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+   background: #1E1E1E;
+   align-self: left;
+   font-weight:normal;
+   font-size: 30px;
+   height: 48px;
+   width: 383px;
+   padding: 2px;
+}
+.logo > img{
+    background: #1E1E1E;
+}
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1E1E1E;
+    width: 636px;
+}
+
+.navitem {
+    /* Rectangle 28 */
+    display: flex;
+    margin:0 24px 0 24px;
+    width: 180px;
+    height: 48px;
+    background-color: #1E1E1E;
+    font-family:'open sans';
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    align-items: center;
+    color: #B6B6B6;
+    border-bottom: 4px solid #B6B6B6;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.navitem:hover {
+    border-bottom: 4px solid #56C493;
+} 
+
+.userBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: stretch;
+    font-weight: lighter;
+    background:#1E1E1E ;
+    width: 949px;
+    height: 48px;
+    padding-right: 5px;
+}
+.userName{
+    color: #ffffff;
+    background-color: #1E1E1E;
+    font-size: 24px;
+    font-weight: lighter;
+    justify-content: right;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.userIcon{
+    background-color: #1E1E1E;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+
