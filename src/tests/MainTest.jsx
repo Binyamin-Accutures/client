@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
+<<<<<<<<< Temporary merge branch 1
 import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
 
-
-import Roye from "./Roye";
-import Anat from './Anat'
 import Pavel from './Pavel'
+import Roye from "./Roye";
+import Anat from './Anat';
+import Adel from './Adel';
 import Moran from './Moran'
 import Sapir from './Sapir'
 import Aviad from "./Aviad";
@@ -25,7 +26,12 @@ import Yair from './Yair';
 export const MainTest = () => {
     return (
         <Routes>
+
+
+            <Route path='/adel' element={<Adel />} />
+
             <Route path='/pavel' element={<Pavel />} />
+
             <Route path='/sapir' element={<LoginPage />} />
             <Route path="/aviad" element={<Aviad />} />
             <Route path="/noam" element={<Noam />} />
@@ -36,10 +42,9 @@ export const MainTest = () => {
             <Route path='/aviad' element={<Aviad />} />
             <Route path='/david' element={<David />} />
             <Route path='/shahar' element={<Shahar />} />
-            <Route path='/hadar' element={<Hadar />} />
-            <Route path='/matanel/*' element={<Matanel />} />
-            <Route path='/elisha' element={<Elisha />} />
-            <Route path='/noa' element={<NoaTest />} />
+
+            {/* <Route path='/moran' element={<Moran />} /> */}
+
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/moran' element={<Moran />} />
             <Route path='/Yisrael' element={<YisraelTest />} />
@@ -49,3 +54,4 @@ export const MainTest = () => {
         </Routes>
     )
 };
+
