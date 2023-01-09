@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-<<<<<<<<< Temporary merge branch 1
+// <<<<<<<<< Temporary merge branch 1
 import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
 
