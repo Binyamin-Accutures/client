@@ -21,7 +21,7 @@ import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
-
+import Dudu from './Dudu';
 import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
 
