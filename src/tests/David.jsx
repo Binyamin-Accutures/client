@@ -1,19 +1,14 @@
 
 import React from 'react'
-import Login from '../pages/LoginPage'
+import LayoutLogin from '../LayoutLogin'
 
 
 const David = () => {
-
-
     return (
         <>
-            <Login />
+            <LayoutLogin />
         </>
-
     )
-
-
 }
 
 export default David
