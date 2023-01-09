@@ -1,4 +1,8 @@
+import { Route, Routes } from 'react-router-dom'
+import LoginPage from '../pages/LoginPage'
 
+
+import Sapir from './Sapir'
 import Roye from "./Roye";
 import Anat from './Anat'
 import { Route, Routes } from "react-router-dom";
@@ -17,6 +21,8 @@ import YisraelTest from "./YisraelTest";
 export const MainTest = () => {
     return (
         <Routes>
+
+            <Route path='/sapir' element={<LoginPage />} />
             <Route path="/aviad" element={<Aviad />} />
             <Route path="/noam" element={<Noam />} />
             <Route path='/anat' element={<Anat />} />
