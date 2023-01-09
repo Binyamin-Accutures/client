@@ -6,6 +6,14 @@ import styles from "./style.module.css"
 // color: _______________
 // icon: ________________
 
+const data = { 
+   enable : true,
+   method : {
+       histogram : '',
+       BDP : 0,
+       DDP : 0
+   }
+}
 const DynamicRangeStretch = ({style = {}, className = "", ...props }) => {
 
    return (
@@ -24,7 +32,7 @@ const DynamicRangeStretch = ({style = {}, className = "", ...props }) => {
 <div>
    
    </div>
-   <RangeSlider func={()=>console.log("onChange-range")} text="bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false}/>
+   <RangeSlider func={()=>console.log("onChange-range")} text="Bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false}/>
    <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false}/>
 {/*קומפננתה של טווח  */}
       </div>

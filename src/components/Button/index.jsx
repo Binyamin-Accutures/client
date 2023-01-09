@@ -13,7 +13,7 @@ function Button({ children ,type, width, func, ...props }) {
         <>
             <button
                 type={type} style={{ width: width }}
-                onClick={{ func }} className={styles.button}>
+                onClick={ func } className={styles.button} {...props}>
                 {children} <AiOutlineCheck size={20}/>
             </button>
         </>

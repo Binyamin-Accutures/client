@@ -1,13 +1,11 @@
 import React from 'react'
-import Login from '../../pages/Login'
-
+import Login from '../pages/LoginPage'
 
 const David = () => {
 
     return (
         <>
-
-<Login/>
+            <Login />
         </>
     )
 
