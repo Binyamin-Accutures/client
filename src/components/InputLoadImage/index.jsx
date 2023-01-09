@@ -4,11 +4,13 @@ import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 
 // creator: "Noam"
+// Use the component by implementing the *children*, *width* and *props* keys
 
-function InputLoadImage() {
+function InputLoadImage({ children, width, props }) {
   const value = useContext(ImageContext);
+  
   const inputElement = useRef();
-  const focusInput = () => {
+  const onclick = () => {
     inputElement.current.click();
   };
 
@@ -27,12 +29,9 @@ function InputLoadImage() {
   }
   return (
     <>
-      <Button
-        type="file"
-        children={"Load Image"}
-        width="328px"
-        func={focusInput}
-      ></Button>
+      <Button width={width} props={props} type="file" func={onclick}>
+        {children}
+      </Button>
       <input
         ref={inputElement}
         onChange={getDir}
