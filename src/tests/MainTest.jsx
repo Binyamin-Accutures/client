@@ -1,8 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
+import SectionBorder from '../components/SectionBorder'
+import ChangeFrame from '../components/ChangeFrame';
+
+
+
+
+import LoginPage from '../pages/LoginPage'
+
+
 
 import Roye from "./Roye";
-import Anat from './Anat'
-import { Route, Routes } from "react-router-dom";
-import ChangeFrame from "../components/ChangeFrame";
+import Anat from './Anat';
+
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -12,7 +21,10 @@ import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
+
 import YisraelTest from "./YisraelTest";
+import Yair from './Yair';
+
 
 export const MainTest = () => {
   return (
@@ -22,6 +34,13 @@ export const MainTest = () => {
       <Route path="/matanel/*" element={<Matanel />} />
       <Route path="/elisha" element={<ChangeFrame />} />
       <Route path="/roye" element={<Roye />} />
+
+            <Route path='/sapir' element={<LoginPage />} />
+            <Route path="/aviad" element={<Aviad />} />
+            <Route path="/noam" element={<Noam />} />
+            <Route path='/anat' element={<Anat />} />
+            <Route path="/matanel/*" element={<Matanel />} />
+            <Route path="/roye" element={<Roye />} />
             <Route path='/aviad' element={<Aviad />} />
             <Route path='/david' element={<David />} />
             <Route path='/shahar' element={<Shahar />} />
@@ -33,9 +52,10 @@ export const MainTest = () => {
             {/* <Route path='/moran' element={<Moran />} /> */}
             <Route path='/Yisrael' element={<YisraelTest />} />
             <Route path="/Yisrael" element={<YisraelTest />} />
+            <Route path='/yair' element={<Yair />} />
         </Routes>
     )
 }
 
+           
 
-      
