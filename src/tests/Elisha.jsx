@@ -1,10 +1,11 @@
 import React from 'react'
-
+import ChangeFrame from '../components/ChangeFrame'
 
 
 function Elisha() {
   return (
-    <div>Elisha
+    <div>
+      <ChangeFrame />
     </div>
   )
 }
