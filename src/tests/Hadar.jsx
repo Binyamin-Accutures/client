@@ -1,7 +1,7 @@
-import InputSelect from "../components/InputSelect";
+import BtnRunISP from "../components/BtnRunISP";
 
 export default function Hadar() {
     return (
-        <InputSelect label={"colors"} options={["red", "yellow", "green", "blue", "brown", "gray"]} width="500" />
+        <BtnRunISP />
     )
 }
