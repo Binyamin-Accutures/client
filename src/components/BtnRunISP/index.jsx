@@ -5,7 +5,7 @@ import styles from "./style.module.css"
 
 export default function BtnRunISP() {
     return (
-        <button className={styles.run_isp} >Run ISP</button>
+        <button className={styles.run_isp}>Run ISP</button>
 
     );
 }

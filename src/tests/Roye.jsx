@@ -9,12 +9,10 @@ import Demosaic from "../components/Demosaic";
 import Sharping from "../components/Sharping";
 import DynamicRangeStretch from "../components/DynamicRangeStretch";
 import Nuc from "../components/Nuc";
+import SideBar from "../components/SideBar";
 
 export default function Roye() {
-
-   
-
-    const  value = useContext(ImageContext)
+  const value = useContext(ImageContext);
 
   const data = {
     demosaic: {
@@ -54,13 +52,12 @@ export default function Roye() {
     { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
   ];
 
-  const [checked, setchecked] = useState({hhh: false});
+  const [checked, setchecked] = useState({ hhh: false });
 
   return (
     <div className={styles.testcontiner}>
-
-      
-      <CollepseTopDown menuList={menuList} />
+      <SideBar />
+      {/* <CollepseTopDown menuList={menuList} /> */}
     </div>
   );
 }
