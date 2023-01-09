@@ -1,0 +1,44 @@
+.checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    border: 3px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+
+.checkbox {
+    appearance: none;
+}
+
+.checkbox:checked::before {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "✔";
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    visibility: visible;
+}
+
+.checkbox::before {
+    background-color: white;
+    visibility: hidden;
+
+}
+
+
+
+
+
+  
+ 

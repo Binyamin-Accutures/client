@@ -20,7 +20,7 @@ import Noam from "./Noam";
 import Dudu from './Dudu';
 import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
-// import Chananel from './Chananel';
+import Chananel from './Chananel';
 
 
 export const MainTest = () => {
@@ -44,6 +44,7 @@ export const MainTest = () => {
       <Route path='/Yisrael' element={<YisraelTest />} />
       <Route path='/dudu' element={<Dudu />} />
       <Route path='/yair' element={<Yair />} />
+      <Route path='/Chananel' element={<Chananel />} />
     </Routes>
   )
 };
