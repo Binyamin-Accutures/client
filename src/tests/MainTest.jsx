@@ -18,7 +18,7 @@ export const MainTest = () => {
     <Routes>
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
-      <Route path='/anat' element={<Anat />
+      <Route path='/anat' element={<Anat />}/>
       <Route path="/matanel/*" element={<Matanel />} />
       <Route path="/elisha" element={<Elisha />} />
       <Route path="/roye" element={<Roye />} />
