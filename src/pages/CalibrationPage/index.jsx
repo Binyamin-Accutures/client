@@ -13,7 +13,6 @@ export default function CalibrationPage() {
             <div className={styles.leftBar}>leftBar</div>
             <div className={styles.mainBar}>
               <ImageMainScreen/>
-                mainBar
             </div>
             <div className={styles.rightBar}>rightBar</div>
 
