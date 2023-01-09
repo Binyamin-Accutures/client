@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom';
 import styles from "./style.module.css";
 
 
-function logOut() {
+function logOut({setIsShow} ){
     return (
         <>
  <button className={styles.logoutComp} >
     logOut
  </button>
+ <div className={styles.closeBtn} onClick={()=>setIsShow(false)}></div>
         </>
     )
 }

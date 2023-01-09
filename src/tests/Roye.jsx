@@ -1,8 +1,12 @@
 import { useContext } from 'react'
 import CollepseTopDown from '../components/CollepseTopDown'
 import styles from "./style.module.css"
-import ImageContext from '../context/ImageContext'
 import Denoise from '../components/Denoise'
+import ImageContext from '../context/ImageContext'
+
+import Pavel from './Pavel'
+import Demosaic from '../components/Demosaic'
+import Sharping from '../components/Sharping'
 import DynamicRangeStretch from '../components/DynamicRangeStretch'
 
 export default function Roye() {
