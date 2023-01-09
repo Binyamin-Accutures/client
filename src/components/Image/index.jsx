@@ -3,7 +3,7 @@ import styles from "./style.module.css";
 
 // creator: "Noam"
 
-function Image(props) {
+function Image({...props}) {
   return (
     <>
       <div className="imgContainer">
