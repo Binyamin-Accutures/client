@@ -1,22 +1,28 @@
 
-import { Route, Routes } from 'react-router-dom'
-import SectionBorder from '../components/SectionBorder'
+
+
+
 import ChangeFrame from '../components/ChangeFrame';
 
 
 
 
-import LoginPage from '../pages/LoginPage'
+
 
 
 
 
 
 // import LoginPage from '../pages/LoginPage'
-import Sapir from './Sapir'
+// import Sapir from './Sapir'
+import { Route, Routes } from 'react-router-dom'
+import SectionBorder from '../components/SectionBorder'
+import LoginPage from '../pages/LoginPage'
+
+
 import Roye from "./Roye";
 import Anat from './Anat';
-
+import Sapir from './Sapir'
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
