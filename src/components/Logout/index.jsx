@@ -15,6 +15,7 @@ function logOut({ setIsShow }) {
             </div>
             <div className={styles.closeBtn} onClick={() => setIsShow(false)}></div>
         </>
+
     )
 }
 
