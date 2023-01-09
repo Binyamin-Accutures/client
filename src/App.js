@@ -25,9 +25,9 @@ function App() {
   return (
 
     <div>
-
       {(!user) && <><LayoutLogin setUser={setUser} /></>}
       {user && <>
+
         <ContextProvider user={user} setUser={setUser}>
           <MainTest />
           <Layout />
