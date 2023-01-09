@@ -9,7 +9,7 @@ function Shahar(props) {
             max={10}
             text={'Frame#'}
             textPosLeft={false}
-            name={"shahar"}
+            name={"shahar"} 
         />
     );
 }
