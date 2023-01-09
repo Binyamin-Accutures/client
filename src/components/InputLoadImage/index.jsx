@@ -6,9 +6,9 @@ import ImageContext from "../../context/ImageContext";
 // creator: "Noam"
 // Use the component by implementing the *children*, *width* and *props* keys
 
-function InputLoadImage({ children, width, props }) {
+function InputLoadImage({ width, props }) {
   const value = useContext(ImageContext);
-  
+
   const inputElement = useRef();
   const onclick = () => {
     inputElement.current.click();
@@ -30,7 +30,7 @@ function InputLoadImage({ children, width, props }) {
   return (
     <>
       <Button width={width} props={props} type="file" func={onclick}>
-        {children}
+        Load Image
       </Button>
       <input
         ref={inputElement}
