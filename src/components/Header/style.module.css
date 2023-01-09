@@ -7,12 +7,14 @@
     height: 50px;
     box-sizing: border-box;
     width:100%;
-    height: 48px;
+    height: 50px;
     left: 20px;
     top: 20px;
     background: #1E1E1E;
     border: 1px solid #383838;
 }
+
+
 
 .logo{
     display: flex;
@@ -63,21 +65,18 @@
     border-bottom: 4px solid #56C493;
 } 
 
-.select{
-    appearance: none;
-    background-color: red;
-
-}
 .userBar {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    align-items: stretch;
+    align-items: center;
     font-weight: lighter;
     background:#1E1E1E ;
-    width: 949px;
+    /* width: 949px; */
     height: 48px;
+    margin-left:   auto ;
     padding-right: 5px;
+    position: relative;
 }
 .userName{
     color: #ffffff;
@@ -85,14 +84,18 @@
     font-size: 24px;
     font-weight: lighter;
     justify-content: right;
-    margin-bottom: 8px;
-    text-decoration: none;
+    /* margin-bottom: 8px; */
+    padding: 5px;
 }
 
 .userIcon{
     background-color: #1E1E1E;
     font-size: 24px;
-    margin-top: 10px;
+    margin-top: 10px; 
+
 }
 
+.userIcon:hover{
+    color: #56C493;
 
+}
