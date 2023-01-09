@@ -30,7 +30,6 @@ function InputLoadImage({ width, props }) {
   return (
     <>
       <Button
-        className={styles.input}
         width={width}
         {...props}
         type="file"
