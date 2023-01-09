@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from "./style.module.css"
+import { FiSearch } from "react-icons/fi";
 
 export default function HistoryPage() {
   const images= [{name: 'ibmage1', url:'https://carwow-uk-wp-2.imgix.net/RR_VELAR_EDITION_23MY_027_GLHD_140422_01-scaled-e1659537496312.jpg?auto=format&cs=tinysrgb&fit=crop&h=800&ixlib=rb-1.1.0&q=60&w=1600', data: ()=> { return new Date('2019-06-01')}},
@@ -11,7 +12,7 @@ export default function HistoryPage() {
                 {name: 'ifmage6', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlQ4TAW6pwKRqQbaTciJql3DzCDMuFYQLUzbXnCIAEF7GLM1QbcsSgFyJKCVlQ51fUew&usqp=CAU', data: ()=> {return new Date('1983-03-07')}},
                 {name: 'iemage7', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Mp6yLzHupZxKhu35ssIhDYJs2COlxl5jeg&usqp=CAU', data: ()=> {return new Date('2016-09-09')}},
               ]
-   const [arrImages, setArrImages] = useState(images)           
+   const [arrImages, setArrImages] = useState(images.sort((image1,image2)=> image2.data() - image1.data()))           
 
 const funSearch=(e)=>{
   const arr =[]
@@ -23,14 +24,13 @@ console.log(arrImages);
 
 const sort=(e)=>{
   if(e.target.value==='byName'){
-    const arr = [];
-  images.forEach(v=> arr.push(v.name))
-  arr.sort().forEach((v,i,a) => images.forEach(image=> v===image.name? a[i]=image:image))
-  setArrImages(arr)
+  setArrImages(images.sort((image1,image2)=> image1.name.localeCompare(image2.name)))
  }
  else if(e.target.value==='byDateDesc'){
-  const arr = images.sort((image1,image2)=> image1.data() - image2.data())
-  setArrImages(arr)
+  setArrImages(images.sort((image1,image2)=> image1.data() - image2.data()))
+ }
+ else{
+  setArrImages(images.sort((image1,image2)=> image2.data() - image1.data()))
  }
 }
 console.log(arrImages);
@@ -38,7 +38,10 @@ console.log(arrImages);
   return (
     <div className={styles.historyPageContainer}>
       <div className={styles.historyPageHeader}>
+        <div className={styles.historyPageSearch}>
        <input className={styles.historySearch} type="text" placeholder='search' onInput={(e)=> funSearch(e)}/>
+       <FiSearch style={{color:'green', position:'absolute', right:'2px' ,top: '4px'}}/>
+       </div>
        </div>
        <br />
 
