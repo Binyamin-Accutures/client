@@ -11,7 +11,10 @@ import DynamicRangeStretch from "../components/DynamicRangeStretch";
 import Nuc from "../components/Nuc";
 
 export default function Roye() {
-  const value = useContext(ImageContext);
+
+   
+
+    const  value = useContext(ImageContext)
 
   const data = {
     demosaic: {
@@ -55,13 +58,8 @@ export default function Roye() {
 
   return (
     <div className={styles.testcontiner}>
-      <input
-        checked={checked.hhh}
-        name='hhh'
-        onChange={(e) => setchecked({[e.target.name]:e.target.checked})}
-        type="checkbox"
-      />
-      <select  name="" id=""></select>
+
+      
       <CollepseTopDown menuList={menuList} />
     </div>
   );
