@@ -1,10 +1,10 @@
 import styles from "./style.module.css";
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
-import axios from 'axios'
 import apiCalls, { setToken } from "../../functions/apiRequest";
-
-
+import Button from "../../components/Button";
+import Header from "../../components/Header";
+import Input from "../../components/Input";
 
 // creator: david hakak
 // color: _______________
@@ -28,17 +28,24 @@ function LoginPage() {
   }
 
   return (
-    <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <input type="text" id="username" ref={UserEmailInput} />
+    <>
+    <Header/>
+      <form className={styles.formLogin} onSubmit={handleSubmit}>
+      <h1>Sign in</h1>
 
-      <input type="password" id="password" ref={UserPasswordInput} />
-      <button type="submit">Login</button>
 
-      <div className={styles.formOptions}>
-        <p>forgot password</p>
-        <p>new account</p>
-      </div>
-    </form>
+      <Input type={"text"} name='input'  placeholder={"email"} ref={UserEmailInput}/>
+      <Input type={"text"} name='input' placeholder={"password"} ref={UserPasswordInput}/>
+    
+
+        <Button type={"submit"} width={"328px"} children={'Sign In'}/>
+
+        <div className={styles.formOptions}>
+          <p>forgot password</p>
+          <p>new account</p>
+        </div>
+      </form>
+    </>
   );
 }
 
