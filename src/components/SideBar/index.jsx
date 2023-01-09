@@ -5,6 +5,7 @@ import CollepseTopDown from "../CollepseTopDown";
 import InputLoadImage from "../InputLoadImage";
 import Image from "../Image";
 import Nuc from "../Nuc";
+import BtnRunISP from "../BtnRunISP";
 // creator: Liat
 
 const SideBar = () => {
@@ -19,17 +20,28 @@ const SideBar = () => {
     { titel: "Sharpening", component: <div>roey</div> },
   ];
   const value = useContext(ImageContext);
+  const [IsOpen, setIsOpen] = useState(true);
   const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
   console.log("value.beforeISP -", value.beforeISP.images);
+  function slideBar(e) {
+    setIsOpen(!IsOpen);
+  }
   return (
-    <form className={styles.form}>
-      <div className={styles.collapse}>
-        <InputLoadImage width="328px" />
-        <Image value={value} />
-
-        <CollepseTopDown menuList={menuList} />
-      </div>
-    </form>
+    <>
+      <button type="submit" onClick={(e) => slideBar(e)}>
+        close
+      </button>
+      {IsOpen && (
+        <form className={styles.form}>
+          <div className={styles.collapse}>
+            <InputLoadImage width="328px" />
+            <Image value={value} />
+            <CollepseTopDown menuList={menuList} />
+            <BtnRunISP />
+          </div>
+        </form>
+      )}
+    </>
   );
 };
 export default SideBar;
