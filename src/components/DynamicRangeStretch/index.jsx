@@ -40,7 +40,7 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
 
    const handle = (e)=>{
       let name = e.name
-      let valueToChange = e.value
+      let valueToChange = e.checked
       value.setBeforeISP(preve=>{
       const newobj =  {...preve}
          newobj.DRS[name]=valueToChange
@@ -52,19 +52,17 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
    return (
       <div className={`styles.${classNameTitle} ${className}`} style={style} {...props} id={""} >
          <div className={`styles.${classNameOption}`}>
-            {/* <input type="checkbox" onChange={()=>console.log("onChange-checkbox")}/> */}
-            <Checkbox label="enable"/>
+            <Checkbox label="enable" name="enable" onChange={handle}/>
          </div>
          <div className={`styles.${classNameDropTitle} ${classNameOption}`}  >
-            <InputSelect label="method" options={["Historgram"]} width="265" setSelectInput={()=>console.log("onChange-option")} handle={ handle}/>
+            <InputSelect label="method" options={["Historgram"]} width="265" setSelectInput={()=>console.log("onChange-option")} handle={handle}/>
             <RangeSlider func={()=>console.log("onChange-range")} text="Bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false}/>
          </div>
          <div className={`styles.${classNameOption}`}>
             <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false}/>
          </div>
       
-         <div>{value.beforeISP.DRS.pixelOrder}</div>
-
+         <div>{`${value.beforeISP.DRS.enable}`}</div>
 
       </div>
       
