@@ -1,0 +1,18 @@
+.imgContainer {
+
+}
+
+.img {
+    width: 328px;
+    height: 208px;
+    left: 16px;
+    top: 88px;
+    border-radius: 4px;
+}
+
+.label {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    color: #B6B6B6;
+}
