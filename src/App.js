@@ -8,7 +8,8 @@ import LayoutLogin from './LayoutLogin';
 
 
 function App() {
-  const [user, setUser] = useState(false)
+
+  const [user, setUser] = useState(true)
   useEffect(() => {
     const startApp = async () => {
       const userFromServer = await apiCalls("get", "https://localhost:5000/api/user")
