@@ -1,7 +1,7 @@
 import styles from "./style.module.css"
-
 import React, { useState } from 'react'
 import Header from "../../components/Header"
+import ImageMainScreen from "../../components/ImageMainScreen/ImageMainScreen"
 
 export default function CalibrationPage() {
   const [isAfterISP, setIsAfterISP] = useState(false)
@@ -13,6 +13,7 @@ export default function CalibrationPage() {
         <div className={styles.main}>
             <div className={styles.leftBar}>leftBar</div>
             <div className={styles.mainBar}>
+              <ImageMainScreen/>
                 mainBar
             </div>
             <div className={styles.rightBar}>rightBar</div>
