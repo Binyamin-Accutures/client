@@ -13,6 +13,7 @@ function App() {
 
     <div>
 
+
       {(!user) && <><LoginPage setUser={setUser} /></>}
       {user && <>
         <ContextProvider user={user} setUser={setUser}>
@@ -20,6 +21,7 @@ function App() {
           <Layout />
         </ContextProvider>
       </>}
+
     </div>
 
   );
