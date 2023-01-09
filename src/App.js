@@ -2,9 +2,9 @@ import './global.css';
 import Layout from './layout';
 import { ContextProvider } from './context/manageContext'
 import { useState } from "react"
+import {MainTest} from './tests/MainTest'
+import LayoutLogin from './LayoutLogin';
 
-import { MainTest } from './tests/MainTest'
-import LoginPage from './pages/LoginPage';
 
 
 function App() {
@@ -13,13 +13,14 @@ function App() {
 
     <div>
 
-      {(!user) && <><LoginPage setUser={setUser} /></>}
-      {user && <>
-        <ContextProvider user={user} setUser={setUser}>
-          <MainTest />
-          <Layout />
-        </ContextProvider>
+      {(!user) && <><LayoutLogin setUser={setUser}/></>}
+      {user &&<>
+      <ContextProvider user={user} setUser={setUser}>
+        <MainTest/>
+        <Layout/>
+      </ContextProvider>
       </>}
+
     </div>
 
   );

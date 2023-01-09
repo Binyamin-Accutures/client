@@ -2,11 +2,16 @@ import React from 'react'
 
 
 
+
 function Moran() {
+
   return (
-    <div>Moran
+    <div>
+      <Header/>
+
     </div>
   )
 }
 
 export default Moran
+
