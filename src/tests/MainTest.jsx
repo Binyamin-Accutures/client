@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Anat from './Anat'
 
-export const MainTest = () => {
+export default function Nuc() {
 
     return (
         <Routes>
