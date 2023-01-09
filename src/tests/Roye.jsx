@@ -34,12 +34,6 @@ const menuList = [{titel:"NUC",component:<div><ul><li>2</li><li>2</li></ul></div
                 {titel:'Demosaic',component:<Demosaic data={data} /> },
                 {titel:'Denoise',component:<div>roey</div> },
                 {titel:'Sharpening',component:<Sharping data={sharpingData}/> }]
-const  value = useContext(ImageContext)
-
-
-
-
-
 
     return <div className={styles.testcontiner} > <CollepseTopDown menuList={menuList}/> </div>
 }
