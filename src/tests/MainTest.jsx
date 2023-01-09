@@ -46,14 +46,14 @@ export const MainTest = () => {
       <Route path="/noam" element={<Noam />} />
       <Route path='/anat' element={<Anat />} />
       <Route path="/matanel/*" element={<Matanel />} />
-      <Route path="/elisha" element={<Elisha />} />
+      <Route path="/elisha" element={<HistoryPage />} />
       <Route path="/roye" element={<Roye />} />
       <Route path="/david" element={<David />} />
       <Route path="/shahar" element={<Shahar />} />
-      <Route path="/hadar" element={<Hadar />} />
+      {/* <Route path="/hadar" element={<Hadar />} /> */}
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
-      <Route path='/adel' element={<Adel />} />
+      {/* <Route path='/adel' element={<Adel />} /> */}
       <Route path='/pavel' element={<Pavel />} />
       <Route path='/sapir' element={<LoginPage />} />
       <Route path='/moran' element={<Moran />} />

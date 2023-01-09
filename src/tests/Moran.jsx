@@ -7,7 +7,7 @@ function Moran() {
 
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
 
     </div>
   )

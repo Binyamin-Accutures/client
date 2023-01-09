@@ -7,9 +7,7 @@ function RangeSlider({func,name='', className='', text, min, max, step=1 , textP
 
 
 
-    useEffect(() => {
-        if(func) func(value)
-    },[value])
+
 
 
 
@@ -18,7 +16,7 @@ function RangeSlider({func,name='', className='', text, min, max, step=1 , textP
         if(target.value > max ) setValue(() => max)
         else if(target.value < min ) setValue(() => min)
         else setValue(() => Number(target.value))
-
+        if(func) func(target)
 
     }
 
