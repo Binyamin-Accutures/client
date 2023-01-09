@@ -17,7 +17,7 @@ function Input({ type, placeholder, pattern,...props }) {
 
     return (
         <div>
-            <input type={type} name='input' className={styles.input} placeholder={placeholder} pattern={pattern}  />
+            <input type={type} name='input' className={styles.input} placeholder={placeholder} pattern={pattern}  {...props}/>
         </div>
     )
 }
