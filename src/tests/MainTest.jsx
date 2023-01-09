@@ -36,32 +36,30 @@ import Noam from "./Noam";
 import Dudu from './Dudu';
 import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
-// import Chananel from './Chananel';
+import Chananel from './Chananel';
 
 
 export const MainTest = () => {
-    return (
-        <Routes>
-            <Route path='/sapir' element={<LoginPage />} />
-            <Route path="/aviad" element={<Aviad />} />
-            <Route path="/noam" element={<Noam />} />
-            <Route path='/anat' element={<Anat />} />
-            <Route path="/matanel/*" element={<Matanel />} />
-            <Route path="/elisha" element={<Elisha />} />
-            <Route path="/roye" element={<Roye />} />
-            <Route path='/aviad' element={<Aviad />} />
-            <Route path='/david' element={<David />} />
-            <Route path='/shahar' element={<Shahar />} />
-            <Route path='/hadar' element={<Hadar />} />
-            <Route path='/matanel/*' element={<Matanel />} />
-            <Route path='/elisha' element={<Elisha />} />
-            <Route path='/noa' element={<NoaTest />} />
-            <Route path='/aviadElya' element={<AviadElya />} />
-            <Route path='/moran' element={<Moran />} />
-            <Route path='/Yisrael' element={<YisraelTest />} />
-            <Route path='/dudu' element={<Dudu />} />
-            <Route path='/yair' element={<Yair />} />
-
-        </Routes>
-    )
+  return (
+    <Routes>
+      <Route path="/aviad" element={<Aviad />} />
+      <Route path="/noam" element={<Noam />} />
+      <Route path='/anat' element={<Anat />} />
+      <Route path="/matanel/*" element={<Matanel />} />
+      <Route path="/elisha" element={<Elisha />} />
+      <Route path="/roye" element={<Roye />} />
+      <Route path="/david" element={<David />} />
+      <Route path="/shahar" element={<Shahar />} />
+      <Route path="/hadar" element={<Hadar />} />
+      <Route path="/noa" element={<NoaTest />} />
+      <Route path="/aviadElya" element={<AviadElya />} />
+      <Route path='/adel' element={<Adel />} />
+      <Route path='/pavel' element={<Pavel />} />
+      <Route path='/sapir' element={<LoginPage />} />
+      <Route path='/moran' element={<Moran />} />
+      <Route path='/Yisrael' element={<YisraelTest />} />
+      <Route path='/dudu' element={<Dudu />} />
+      <Route path='/yair' element={<Yair />} />
+    </Routes>
+  )
 };
