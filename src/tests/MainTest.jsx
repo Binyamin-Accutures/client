@@ -5,7 +5,7 @@ import LoginPage from '../pages/LoginPage'
 import Sapir from './Sapir'
 import Roye from "./Roye";
 import Anat from './Anat'
-import { Route, Routes } from "react-router-dom";
+import Moran from './Moran'
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -39,6 +39,7 @@ export const MainTest = () => {
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/moran' element={<Moran />} />
             <Route path='/Yisrael' element={<YisraelTest />} />
+            <Route path='/dudu' element={<Dudu />} />
         </Routes>
     )
 };
