@@ -17,16 +17,11 @@ import YisraelTest from "./YisraelTest";
 export const MainTest = () => {
   return (
     <Routes>
-      <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
-      <Route path='/anat' element={<Anat />
+      <Route path='/anat' element={<Anat />}/>
       <Route path="/matanel/*" element={<Matanel />} />
-      <Route path="/elisha" element={<Elisha />} />
+      <Route path="/elisha" element={<ChangeFrame />} />
       <Route path="/roye" element={<Roye />} />
-
-
-    return (
-        <Routes>
             <Route path='/aviad' element={<Aviad />} />
             <Route path='/david' element={<David />} />
             <Route path='/shahar' element={<Shahar />} />
@@ -35,14 +30,12 @@ export const MainTest = () => {
             <Route path='/elisha' element={<Elisha />} />
             <Route path='/noa' element={<NoaTest />} />
             <Route path='/aviadElya' element={<AviadElya />} />
-            <Route path='/moran' element={<Moran />} />
+            {/* <Route path='/moran' element={<Moran />} /> */}
             <Route path='/Yisrael' element={<YisraelTest />} />
+            <Route path="/Yisrael" element={<YisraelTest />} />
         </Routes>
     )
 }
 
 
-      <Route path="/Yisrael" element={<YisraelTest />} />
-    </Routes>
-  );
-};
+      
