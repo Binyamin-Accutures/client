@@ -12,13 +12,15 @@ import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
 import YisraelTest from "./YisraelTest";
+import Gil from "./Gil";
 
 export const MainTest = () => {
   return (
     <Routes>
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
-      <Route path='/anat' element={<Anat />
+      <Route path="/gil" element={<Gil />} />
+      <Route path='/anat' element={<Anat />} />
       <Route path="/matanel/*" element={<Matanel />} />
       <Route path="/elisha" element={<Elisha />} />
       <Route path="/roye" element={<Roye />} />
