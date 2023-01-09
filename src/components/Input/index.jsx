@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './style.module.css'
 
-function Input({ type, placeholder, pattern,...props }) {
+function Input({ type, placeholder, pattern, ...props }) {
     // const pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[@#\$%\^&\*]).{8,}$/;
 
     // const valid = (e) => {
@@ -17,7 +17,7 @@ function Input({ type, placeholder, pattern,...props }) {
 
     return (
         <div>
-            <input type={type} name='input' className={styles.input} placeholder={placeholder} pattern={pattern}  {...props}/>
+            <input type={type} name='input' className={styles.input} placeholder={placeholder} pattern={pattern} {...props}/>
         </div>
     )
 }
