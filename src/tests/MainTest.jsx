@@ -1,7 +1,6 @@
 import Roye from "./Roye";
 
 import { Route, Routes } from "react-router-dom";
-import ChangeFrame from "../components/ChangeFrame";
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -11,6 +10,7 @@ import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
+import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
 
 export const MainTest = () => {
@@ -22,6 +22,7 @@ export const MainTest = () => {
       <Route path="/matanel/*" element={<Matanel />} />
       <Route path="/elisha" element={<Elisha />} />
       <Route path="/roye" element={<Roye />} />
+      <Route path="/dudu" element={<Dudu />} />
 
       <Route path="/david" element={<David />} />
       <Route path="/shahar" element={<Shahar />} />
