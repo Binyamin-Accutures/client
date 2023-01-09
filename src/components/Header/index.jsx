@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+>>>>>>> f3040f22a62d7eacc2a122d720b649b90ef5bf4f
 import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 import styles from './style.module.css'
 import { BiUser } from 'react-icons/bi'
 import Logout from '../Logout'
+
 
 
 
