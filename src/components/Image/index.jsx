@@ -3,17 +3,21 @@ import styles from "./style.module.css";
 
 // creator: "Noam"
 
-function Image(props) {
+function Image({ images, ...props }) {
+  console.log(images);
   return (
     <>
       <div className="imgContainer">
         <img
-          key={"img"}
+          {...props}
+          key={images?.name || "no-img"}
           className={styles.img}
-          src={props.url}
+          src={images?.url || "no-src"}
           title="Uploded Image"
         />
-        <div className={styles.label}>Uploaded Image: {props.name}</div>
+        <div className={styles.label}>
+          Uploaded Image: {images?.name || "none"}
+        </div>
       </div>
     </>
   );

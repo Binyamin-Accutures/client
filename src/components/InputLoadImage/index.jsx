@@ -1,5 +1,5 @@
 import styles from "./style.module.css";
-import React, { useRef, useContext } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 
@@ -8,7 +8,6 @@ import ImageContext from "../../context/ImageContext";
 
 function InputLoadImage({ children, width, props }) {
   const value = useContext(ImageContext);
-  
   const inputElement = useRef();
   const onclick = () => {
     inputElement.current.click();
@@ -27,10 +26,20 @@ function InputLoadImage({ children, width, props }) {
       };
     }
   }
+  useEffect(() => {
+    console.log(value);
+  }, [value.setBeforeISP]);
+
   return (
     <>
-      <Button width={width} props={props} type="file" func={onclick}>
-        {children}
+      <Button
+        className={styles.input}
+        width={width}
+        props={props}
+        type="file"
+        func={onclick}
+      >
+        Load Image
       </Button>
       <input
         ref={inputElement}

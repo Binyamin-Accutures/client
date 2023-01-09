@@ -1,7 +1,7 @@
 .CollepseTopDown{
 
 
-    background: #2C2C2C;
+    background: #383838;
     width: 352px;
     height: 337px;
     display: flex;
@@ -21,14 +21,14 @@ display: flex;
  
  
  
- background: #2C2C2C;
+ background: #383838;
 
 }
 
 .oneOptions svg{
     color:#56C493; 
     font-size: 28px;
-    background: #2C2C2C;
+    background: #383838;
 
 }
 
@@ -37,6 +37,6 @@ display: flex;
 max-height: 300px;
 
 width: 100%;
-background: #1E1E1E;
+background: #383838;
 border-radius: 4px;
 }

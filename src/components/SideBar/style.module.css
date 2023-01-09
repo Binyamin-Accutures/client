@@ -1,9 +1,12 @@
 /* liat-sidebar */
 .form{
-    width: 400px;
+    width: 150px;
     height:90vh;
-    padding-left: 300px;
+    padding-left: 20px;
     border: 2px;
     border-color: brown;
     background:#2c2c2c;
+    display: flex;
+  
+   
  }
