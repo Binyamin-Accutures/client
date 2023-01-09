@@ -16,14 +16,9 @@ export default function ChangeFrame() {
     const files= new Array(35)
 
 
-    useEffect(()=>{
-        setChooseMaxRange(chooseMinRange)
-    },[chooseMinRange])
 
 
-    console.log(chooseMinRange)
-    console.log(chooseMaxRange);
-   
+
 
 
 
