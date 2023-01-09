@@ -1,34 +1,34 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import InputSelect from '../InputSelect';
 import styles from "./style.module.css";
+import onChangeSideBar from '../../functions/onChangeSideBar'
 
 function Demosaic(props) {
-    const data = props.data.demosaic;
-    const options = ["1", "2", "3"];
-
+    const methodData = props.data.demosaic.method;
+    const pixelOrderData = props.data.demosaic.pixelOrder;
     const showData = (e) => {
-        console.log(data);
-      }
+        console.log(selectPixelOrder);
+        console.log(selectMethod);
+        console.log(isEnabled);
+    }
+
+    const changeCheckbox  = (e) => {
+        setIsEnabled(!isEnabled)
+    }
+
+      const [selectMethod, setSelectMethod] = useState('');
+      const [selectPixelOrder, setSelectPixelOrder] = useState('');
+      const [isEnabled, setIsEnabled] = useState(true);
 
   return (
     <div>
-        <button onClick={(e) => showData(e)}>Click for Data</button>
-        <h1>{data.enable}</h1>
-        <h1>{data.method}</h1>
-        <h1>{data.pixelOrder}</h1>
-        <InputSelect label="Method" options={options} width="265" setSelectInput />
-        <InputSelect label="Pixel Order" options={options} width="265" setSelectInput />
-        {/* {data.map(d => { 
-            return <h1>{d}</h1>
-        })} */}
-        {/* {data.map((d) => {
-            return <h1>{d}</h1>
-        })} */}
-        {/* <InputSelect /> */}
-        {/* <div>
-            <input type="checkbox" id="checkbox" name={Object.keys(data)}/>
-            <label for="checkbox">Enabled</label>
-        </div> */}
+        <div>
+            <input type="checkbox" id="enabled" name="enabled" value="1" onChange={(e) => changeCheckbox(e)}/>
+            <label for="enabled">enabled</label>
+        </div>
+        <InputSelect label="Method" options={methodData} width="265" setSelectInput={setSelectMethod}/>
+        <InputSelect label="Pixel Order" options={pixelOrderData} width="265" setSelectInput={setSelectPixelOrder}/>
     </div>
   )
 }
