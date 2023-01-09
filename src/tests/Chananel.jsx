@@ -8,7 +8,7 @@ function Chananel() {
 
     
     <div>
-        <Checkbox label="example" set={setIsChecked} prev={isChecked} />
+        <Checkbox label="" set={setIsChecked} prev={isChecked} />
     </div>
   )
 }
