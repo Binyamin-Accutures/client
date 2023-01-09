@@ -1,5 +1,5 @@
 import styles from "./style.module.css";
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 
@@ -8,7 +8,6 @@ import ImageContext from "../../context/ImageContext";
 
 function InputLoadImage({ width, props }) {
   const value = useContext(ImageContext);
-
   const inputElement = useRef();
   const onclick = () => {
     inputElement.current.click();
@@ -27,15 +26,21 @@ function InputLoadImage({ width, props }) {
       };
     }
   }
+
   return (
     <>
-      <Button width={width} props={props} type="file" func={onclick}>
+      <Button
+        width={width}
+        {...props}
+        type="file"
+        func={onclick}
+      >
         Load Image
       </Button>
       <input
         ref={inputElement}
         onChange={getDir}
-        className={styles.pseudoInput}
+        hidden
         type="file"
         directory=""
         webkitdirectory=""
