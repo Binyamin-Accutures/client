@@ -12,6 +12,7 @@ import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
 import YisraelTest from "./YisraelTest";
+import Liat from "./Liat";
 
 export const MainTest = () => {
     return (
@@ -32,6 +33,7 @@ export const MainTest = () => {
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/moran' element={<Moran />} />
             <Route path='/Yisrael' element={<YisraelTest />} />
+            <Route path='/Liat' element={<Liat />} />
         </Routes>
     )
 };
