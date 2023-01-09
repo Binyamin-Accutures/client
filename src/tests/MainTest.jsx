@@ -2,7 +2,6 @@
 import Roye from "./Roye";
 import Anat from './Anat'
 import { Route, Routes } from "react-router-dom";
-import ChangeFrame from "../components/ChangeFrame";
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -15,18 +14,14 @@ import Noam from "./Noam";
 import YisraelTest from "./YisraelTest";
 
 export const MainTest = () => {
-  return (
-    <Routes>
-      <Route path="/aviad" element={<Aviad />} />
-      <Route path="/noam" element={<Noam />} />
-      <Route path='/anat' element={<Anat />
-      <Route path="/matanel/*" element={<Matanel />} />
-      <Route path="/elisha" element={<Elisha />} />
-      <Route path="/roye" element={<Roye />} />
-
-
     return (
         <Routes>
+            <Route path="/aviad" element={<Aviad />} />
+            <Route path="/noam" element={<Noam />} />
+            <Route path='/anat' element={<Anat />} />
+            <Route path="/matanel/*" element={<Matanel />} />
+            <Route path="/elisha" element={<Elisha />} />
+            <Route path="/roye" element={<Roye />} />
             <Route path='/aviad' element={<Aviad />} />
             <Route path='/david' element={<David />} />
             <Route path='/shahar' element={<Shahar />} />
@@ -39,10 +34,4 @@ export const MainTest = () => {
             <Route path='/Yisrael' element={<YisraelTest />} />
         </Routes>
     )
-}
-
-
-      <Route path="/Yisrael" element={<YisraelTest />} />
-    </Routes>
-  );
 };
