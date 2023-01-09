@@ -8,7 +8,7 @@ import styles from "./style.module.css"
 // 
 
 const data1 = { 
-   enable : true,
+   enable : true ,
    method : {
        histogram : '',
        BDP : 0,
