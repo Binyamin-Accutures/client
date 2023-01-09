@@ -16,8 +16,6 @@ export default function ChangeFrame() {
     const files= new Array(35)
 
 
-    
-   
 
 
 
