@@ -1,0 +1,12 @@
+/* liat-sidebar */
+.form {
+  width: 400px;
+  height: 90vh;
+  padding-left: 0px;
+  border: 2px;
+  border-color: brown;
+  background: #2c2c2c;
+  display: flexbox;
+}
+.button {
+}
