@@ -1,34 +1,72 @@
-.logoutComp{
+/* root {
+    --bg-color: #1E1E1E;
+    --bg-secondary-color: #2C2C2C;
+    --text-color: #fff;
+    --text-secondary-color: #B6B6B6;
+    --primary-color: #56C493;
+    --input-color: #383838;
+    --font-size-label: 16px;
+    --border-radius: 4px;
+}
+
+body {
+    background-color: var(--bg-color); */
+
+.logoutComp {
+    box-sizing: border-box;
     position: absolute;
-/* width: 132px; */
-/* height: 40px; */
-/* position: relative; */
-left: 0px; 
-top: 50px; 
-padding: 1rem;
-font-display: center;
-/* bottom: 0px; */
-background: #383838;
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 20px;
-/* identical to box height, or 143% */
-color: #D9D9D9;
-text-align: center;
-z-index: 100;
+    /* left: -20px; */
+    top: 50px;
+    width: 200px;
+    padding: 1rem;
+    font-display: center;
+    background: var(--input-color);
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #D9D9D9;
+    text-align: center;
+    z-index: 100;
 }
 
-.logoutComp:hover{
+/* 
+.logoutComp:hover {
     border: 2.5px solid #56C493;
-}
+} */
 
-.closeBtn{
+.closeBtn {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-background-color: rgba(107, 197, 104, 0.1);
+    /* background-color: rgba(107, 197, 104, 0.1); */
+}
+
+.logoutIcon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.logoutBtn {
+
+    left: 0px;
+    top: 50px;
+    width: 160px;
+    border-radius: 4%;
+    border: 1px;
+    padding: 1rem;
+    font-display: center;
+    background: var(--primary-color);
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #D9D9D9;
+    text-align: center;
+    z-index: 100;
 }

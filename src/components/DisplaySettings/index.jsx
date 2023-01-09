@@ -1,17 +1,22 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import Button from "../Button";
 import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
 import ImageContext from "../../context/ImageContext";
 
 function DisplaySetting( {buttonFunc, text}){
-
-    const [minValue, setMinValue] = useState();
-    const [maxValue, setMaxValue] = useState();
-    const [newValue,setNewValue] = useState(100)
-
     const { afterISP, setAfterISP } = useContext(ImageContext)
     const { s0, DoLP, AoLPDoLP, RGB } = afterISP.displaySet
+    const { 
+        minS0Ref, 
+        maxS0Ref, 
+        minS0DolpAlopRef, 
+        maxS0DolpAlopRef,
+        minDoLPRgbRef,
+        maxDoLPRgbRef,
+        minS0RgbRef,
+        maxS0RgbRef
+    } = useRef()
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
@@ -19,9 +24,14 @@ function DisplaySetting( {buttonFunc, text}){
     const [rgbVal, setRgbVal] = useState(RGB);
     
     const handleS0 = (target) => {
-        if(minValue < target){
-            setMinValue(target)
+        setS0Val((prev) => ({...prev, [target.name]: target.value}))
+        if(target.name == 'min0SValue' && s0.min0SValue > s0.maxS0Value) {
+            setS0Val(prev => ({...prev, maxS0Value: prev.min0SValue + 1 }))
         }
+        if(target.name ==  'max0SValue' && s0.maxS0Value < s0.min0SValue) {
+            setS0Val(prev => ({...prev, minS0Value: prev.max0SValue - 1 }))
+        }
+        setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, s0: s0Val})}))
     }
     const handleDolp = () => {}
     const handleAolpDolp = () => {}
@@ -30,8 +40,8 @@ function DisplaySetting( {buttonFunc, text}){
 
     const menuList = [
         {titel:"S0", component:<div>
-        <RangeSlider textPosLeft={false} className="Hug" func={setMinValue} text={'Minimun S0 value'}/> 
-        <RangeSlider textPosLeft={false} className="Hug" value={minValue} func={handleS0} text={'Maximum S0 value'} min={0}  max={100}/>
+        <RangeSlider textPosLeft={false} className="Hug"  text={'Minimun S0 value'}/> 
+        <RangeSlider textPosLeft={false} className="Hug"  func={handleS0} text={'Maximum S0 value'} min={0}  max={100}/>
         </div> },
 
         {titel:'Dolp', component:<div>
