@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './style.module.css'
+import { languages } from '../../functions/language'
 
 function Input({ type, placeholder, pattern, ...props }) {
     // const pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[@#\$%\^&\*]).{8,}$/;
@@ -17,6 +18,7 @@ function Input({ type, placeholder, pattern, ...props }) {
 
     return (
         <div>
+            {languages[0].dict.RUNNING}
             <input type={type} name='input' className={styles.input} placeholder={placeholder} pattern={pattern} {...props}/>
         </div>
     )
