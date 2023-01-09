@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Header from "../../components/Header"
 
 export default function CalibrationPage() {
-  const [isAfter, setIsAfter] = useState(false)
+  const [isAfterISP, setIsAfterISP] = useState(false)
   return (
     <div className={styles.layout}>
         <header className={styles.header}>
