@@ -27,7 +27,7 @@ function Header() {
             <NavLink  className={styles.navitem} to='/history'>History</NavLink>
         </div>
         <div className={styles.userBar}>
-            <BiUser className={styles.userIcon}/> <InputSelect className={styles.select}  options={arr}  width={'150'} />
+            <BiUser className={styles.userIcon} /> <InputSelect className={styles.select} style={{backgroundolor : red}}  options={arr}  width={'150'} />
         </div>
     </header>
     </>

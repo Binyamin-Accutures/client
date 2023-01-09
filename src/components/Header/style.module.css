@@ -66,6 +66,7 @@
 .select{
     appearance: none;
     background-color: red;
+
 }
 .userBar {
     display: flex;

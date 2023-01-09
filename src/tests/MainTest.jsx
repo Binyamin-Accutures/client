@@ -4,6 +4,7 @@ import Aviad from './Aviad'
 import Adel from './Adel'
 import NoaTest from './NoaTest'
 import Moran from './Moran'
+import David from './David'
 
 
 export const MainTest = () => {
@@ -12,9 +13,8 @@ export const MainTest = () => {
         <Routes>
             <Route path='/aviad' element={<Aviad />} />
             <Route path='/adel' element={<Adel />} />
-            {/* <Route path='/hadar' element={<Hadar />} />
-            <Route path='/matanel/*' element={<Matanel />} />
-            <Route path='/elisha' element={<Elisha />} /> */}
+            <Route path='/david' element={<David />} />
+  
             <Route path='/noa' element={<NoaTest />} />
             <Route path='/moran' element={<Moran />} />
         </Routes>
