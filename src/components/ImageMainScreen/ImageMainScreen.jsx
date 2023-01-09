@@ -10,7 +10,7 @@ function ImageMainScreen() {
         <div className={styles.imageContainer}>
             <img src="https://placekitten.com/200/300" alt="kitten" />
         </div>
-    {/* <Button width={73}/> */}
+    <Button width={73}/>
     <div className={styles.controllerContainer}>
          <div className={styles.upperConroller}>
             <RangeSlider className={styles.frameSlider} text="Frame#" textPosLeft={true}/>

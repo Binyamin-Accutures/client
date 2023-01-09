@@ -2,10 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import LoginPage from '../pages/LoginPage'
 
 
-import Sapir from './Sapir'
+import Sapir from './Sapir';
 import Roye from "./Roye";
-import Anat from './Anat'
-import { Route, Routes } from "react-router-dom";
+import Anat from './Anat';
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -17,6 +16,7 @@ import AviadElya from "./AviadElya";
 import Noam from "./Noam";
 import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
+import Moran from './Moran';
 
 export const MainTest = () => {
     return (
