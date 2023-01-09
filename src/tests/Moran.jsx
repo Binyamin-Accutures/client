@@ -1,10 +1,10 @@
 import React from 'react'
-import CalibrationPage from '../pages/CalibrationPage'
+import Header from '../components/Header'
 
 function Moran() {
   return (
     <div>
-        <CalibrationPage/>
+        <Header/>
     </div>
   )
 }

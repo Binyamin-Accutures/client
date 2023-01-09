@@ -1,8 +1,7 @@
 import styles from "./style.module.css"
 import React, { useState } from 'react'
 import Header from "../../components/Header"
-import ImageMainScreen from "../../components/ImageMainScreen/ImageMainScreen"
-
+import ImageMainScreen from "../../components/ImageMainScreen"
 export default function CalibrationPage() {
   const [isAfterISP, setIsAfterISP] = useState(false)
   return (
