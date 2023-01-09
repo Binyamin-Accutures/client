@@ -1,18 +1,18 @@
 import { Route, Routes } from 'react-router-dom'
-import SectionBorder from '../components/SectionBorder'
+// import SectionBorder from '../components/SectionBorder'
 
 
 
 
 
 // import LoginPage from '../pages/LoginPage'
-
+import LoginPage from '../pages/LoginPage'
 
 
 import Roye from "./Roye";
-import Anat from './Anat'
+// import Anat from './Anat'
 import Anat from './Anat';
-
+// import Sapir from './Sapir'
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -32,9 +32,10 @@ export const MainTest = () => {
         <Routes>
 
             {/* <Route path='/sapir' element={<LoginPage />} /> */}
+            <Route path='/sapir' element={<LoginPage />} />
             <Route path="/aviad" element={<Aviad />} />
             <Route path="/noam" element={<Noam />} />
-            <Route path='/anat' element={<Anat />} />
+            {/* <Route path='/anat' element={<Anat />} /> */}
             <Route path="/matanel/*" element={<Matanel />} />
             <Route path="/elisha" element={<Elisha />} />
             <Route path="/roye" element={<Roye />} />
@@ -48,6 +49,7 @@ export const MainTest = () => {
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/Yisrael' element={<YisraelTest />} />            
             {/* <Route path='/moran' element={<Moran />} /> */}
+
             <Route path='/Yisrael' element={<YisraelTest />} />
             <Route path='/yair' element={<Yair />} />
 
