@@ -3,21 +3,20 @@ import styles from "./style.module.css";
 
 // creator: "Noam"
 
-function Image({ images, ...props }) {
-  console.log(images);
+function Image({ value, index, ...props }) {
+  let url = value.beforeISP.images[index]?.url || "";
+  let name = value.beforeISP.images[index]?.name || "<empty>";
   return (
     <>
-      <div className="imgContainer">
+      <div className={styles.imgContainer}>
         <img
           {...props}
-          key={images?.name || "no-img"}
+          key={name}
           className={styles.img}
-          src={images?.url || "no-src"}
-          title="Uploded Image"
+          src={url}
+          alt="Uploded Image"
         />
-        <div className={styles.label}>
-          Uploaded Image: {images?.name || "none"}
-        </div>
+        <div className={styles.label}>Uploaded Image: {name}</div>
       </div>
     </>
   );

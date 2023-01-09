@@ -25,7 +25,7 @@ const SideBar = () => {
     <form className={styles.form}>
       <div className={styles.collapse}>
         <InputLoadImage width="328px" />
-        <Image images={value.beforeISP.images[0] || []} />
+        <Image value={value} />
 
         <CollepseTopDown menuList={menuList} />
       </div>
