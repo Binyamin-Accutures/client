@@ -4,6 +4,7 @@ import { ContextProvider } from './context/manageContext'
 import { useState } from "react"
 import { MainTest } from './tests/MainTest'
 import LoginPage from './pages/LoginPage'
+import LayoutLogin from './LayoutLogin'
 
 
 function App() {
