@@ -4,6 +4,7 @@ import { ContextProvider } from './context/manageContext'
 import { useEffect, useState } from "react"
 import { MainTest } from './tests/MainTest'
 import LayoutLogin from './LayoutLogin';
+import apiCalls from './functions/apiRequest';
 
 
 
@@ -18,20 +19,20 @@ function App() {
       }
     }
 
-    if (!user&&localStorage.token) startApp()
+    if (!user && localStorage.token) startApp()
   }, [])
 
 
   return (
 
     <div>
-      {(!user) && <><LayoutLogin setUser={setUser}/></>}
-      {user &&<>
+      {(!user) && <><LayoutLogin setUser={setUser} /></>}
+      {user && <>
 
-      <ContextProvider user={user} setUser={setUser}>
-        <MainTest/>
-        <Layout/>
-      </ContextProvider>
+        <ContextProvider user={user} setUser={setUser}>
+          <MainTest />
+          <Layout />
+        </ContextProvider>
       </>}
 
     </div>

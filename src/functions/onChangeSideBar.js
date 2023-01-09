@@ -3,4 +3,3 @@ export default function onChangeSideBar(son, field, value, beforeISPTemp, setBef
     setBeforeISPTemp(beforeISPTemp[son][field] = value)
 }
 
-export default onChangeSideBar;
