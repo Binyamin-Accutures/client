@@ -15,7 +15,6 @@ import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
 
 export const MainTest = () => {
-
     return (
         <Routes>
             <Route path="/aviad" element={<Aviad />} />
@@ -36,5 +35,4 @@ export const MainTest = () => {
             <Route path='/Yisrael' element={<YisraelTest />} />
         </Routes>
     )
-
 };
