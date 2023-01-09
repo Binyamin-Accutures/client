@@ -5,8 +5,11 @@ import ImageContext from '../context/ImageContext'
 import Pavel from './Pavel'
 import Demosaic from '../components/Demosaic'
 import Sharping from '../components/Sharping'
+import DynamicRangeStretch from '../components/DynamicRangeStretch'
 
 export default function Roye() {
+
+    const  value = useContext(ImageContext)
 
     const data = {
         demosaic : {
@@ -27,11 +30,11 @@ export default function Roye() {
     }
 
 const menuList = [{titel:"NUC",component:<div><ul><li>2</li><li>2</li></ul></div> },
-                {titel:'Dynamic Range Stretch',component:<div>roey</div> },
+                {titel:'Dynamic Range Stretch',component:<DynamicRangeStretch classNameTitle ="title" classNameOption="option" classNameSecdTitle="dropTitle"/> },
                 {titel:'Demosaic',component:<Demosaic data={data} /> },
                 {titel:'Denoise',component:<div>roey</div> },
                 {titel:'Sharpening',component:<Sharping data={sharpingData}/> }]
-const  value = useContext(ImageContext)
+
 
 
 
