@@ -27,6 +27,9 @@ display: flex;
 
 .oneOptions svg{
     color:#56C493; 
+    font-size: 28px;
+    background: #2C2C2C;
+
 }
 
 
@@ -37,3 +40,19 @@ width: 100%;
 background: #1E1E1E;
 border-radius: 4px;
 }
+
+
+.title {
+    padding: 12px;
+}
+
+.option {
+    padding: 12px;
+    }
+
+.dropTitle {
+    color:  var(--text-secondary-color);
+    }
+/* 
+אפשרויות הערות כותרת */
+

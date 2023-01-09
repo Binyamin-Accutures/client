@@ -6,6 +6,7 @@ import Matanel from './Matanel'
 import Elisha from './Elisha'
 import NoaTest from './NoaTest'
 import Yair from './Yair'
+import Roye from './Roye'
 
 
 export const MainTest = () => {
@@ -19,7 +20,6 @@ export const MainTest = () => {
             <Route path='/elisha' element={<Elisha />} />
             <Route path='/noa' element={<NoaTest />} />
             <Route path='/yair' element={<Yair />} />
+            <Route path='/roye' element={<Roye />} />
         </Routes>
-    )
-}
-
+    )}
