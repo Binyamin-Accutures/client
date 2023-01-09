@@ -1,0 +1,18 @@
+/* .tempWidth{
+    width: 352px;
+    border: 2px solid white;
+} */
+
+.title{
+padding: 12px;
+}
+
+.option{
+    padding: 12px;
+}
+
+.SecdTitle{
+    color:  var(--text-secondary-color);
+    }
+/* 
+אפשרויות הערות כותרת */
