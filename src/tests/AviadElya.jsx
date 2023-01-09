@@ -1,12 +1,14 @@
 import React from 'react'
-import ChangeFrame from '../components/ChangeFrame'
+import  Input from '../components/Input'
 
 
 function AviadElya() {
 
     return (
-        aaaaa
-    <ChangeFrame/>
+        <div>
+            <Input/>
+        </div>
+        
     )
 }
 

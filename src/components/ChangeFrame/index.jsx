@@ -1,18 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-import styles from './style.module.css'
-
-function ChangeFrame() {
-  return (
-    <div>
-        aaaaaaaaaaaaaaaa
-      <input type="range"/>
-    </div>
-  )
-}
-
-export default ChangeFrame
-=======
 import { useEffect } from 'react';
 import { useState } from 'react';
 import RangeSlider from '../RangeSlider';
@@ -49,4 +35,4 @@ export default function ChangeFrame() {
     </>
     );
 }
->>>>>>> 3c21ce12398c1a9ff096c650c8a76c3207fe2fd5
+
