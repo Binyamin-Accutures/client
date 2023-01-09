@@ -7,7 +7,7 @@
     cursor: pointer;
     background-color: var(--primary-color) ;
     color: var(--text-color);
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     border: none;
     font-family: 'Poppins', sans-serif;
     margin: 20px;
@@ -20,11 +20,11 @@
     display: none;
 }
 .button:active{
-    box-shadow: inset -4px -4px 4px rgba(43, 129, 91, 0.25), 
-   inset 4px 4px 4px rgba(43, 129, 91, 0.25);
+    box-shadow: inset -4px -4px 4px rgba(29, 86, 60, 0.25), 
+   inset 4px 4px 4px rgba(27, 75, 54, 0.25);
 }
 .button:active svg{
     display: block;
-    
+    background-color: var(--primary-color);
 }
 

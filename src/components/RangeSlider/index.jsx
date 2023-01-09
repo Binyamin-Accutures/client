@@ -7,6 +7,7 @@ function RangeSlider({func, text, min, max, step=1 , textPosLeft=true, ...props}
     const handleChange = ({ target }) => {
         if(target.value > max || target.value < min) return
         setValue(target.value)
+        func(value)
     }
 
     return (
