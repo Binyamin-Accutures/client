@@ -1,11 +1,3 @@
-.input {
-  background: #56c493;
-  border-radius: 4px;
-  font-family: "Open Sans";
-  color: #ffffff;
-  font-weight: bold;
-}
-
 .pseudoInput {
   display: none;
 }

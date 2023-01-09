@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 
 import SectionBorder from "../components/SectionBorder";
 import LoginPage from "../pages/LoginPage";
-
 import Pavel from "./Pavel";
 import Roye from "./Roye";
 import Anat from "./Anat";
@@ -32,7 +31,6 @@ export const MainTest = () => {
       <Route path="/matanel/*" element={<Matanel />} />
       <Route path="/elisha" element={<Elisha />} />
       <Route path="/roye" element={<Roye />} />
-
       <Route path="/david" element={<David />} />
       <Route path="/shahar" element={<Shahar />} />
       <Route path="/hadar" element={<Hadar />} />
