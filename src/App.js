@@ -24,13 +24,13 @@ function App() {
   return (
 
     <div>
+      {(!user) && <><LayoutLogin setUser={setUser}/></>}
+      {user &&<>
 
-      {(!user) && <><LayoutLogin setUser={setUser} /></>}
-      {user && <>
-        <ContextProvider user={user} setUser={setUser}>
-          <MainTest />
-          <Layout />
-        </ContextProvider>
+      <ContextProvider user={user} setUser={setUser}>
+        <MainTest/>
+        <Layout/>
+      </ContextProvider>
       </>}
 
     </div>
