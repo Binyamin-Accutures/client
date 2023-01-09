@@ -5,8 +5,6 @@ import apiCalls, { setToken } from "../../functions/apiRequest";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import logo from "../../components/Header/logo.svg";
-import { useRef } from "react";
-import styles from "./style.module.css";
 
 
 // creator: david hakak
@@ -35,21 +33,12 @@ function LoginPage() {
 
   return (
     <>
-
       <header className={styles.header}>
         <div className={styles.logo}>
           <img src={logo} alt="logo" /> Accutures
         </div>
       </header>
 
-    <Header/>
-      <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <h1>Sign in</h1>
-
-
-      <Input type={"text"} name='input'  placeholder={"email"} ref={UserEmailInput}/>
-      <Input type={"text"} name='input' placeholder={"password"} ref={UserPasswordInput}/>
-    
 
       <form className={styles.formLogin} onSubmit={handleSubmit}>
         <p className={styles.paragraphTitle}>Sign In</p>
@@ -79,7 +68,7 @@ function LoginPage() {
         </div>
       </form>
     </>
-  );
+  )
 }
 
 export default LoginPage;

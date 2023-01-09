@@ -1,17 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 import SectionBorder from '../components/SectionBorder'
-
-
-
-
-
 import LoginPage from '../pages/LoginPage'
-
 
 
 import Roye from "./Roye";
 import Anat from './Anat'
 import Moran from './Moran'
+import Sapir from './Sapir'
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -29,7 +24,6 @@ import Yair from './Yair';
 export const MainTest = () => {
     return (
         <Routes>
-
             <Route path='/sapir' element={<LoginPage />} />
             <Route path="/aviad" element={<Aviad />} />
             <Route path="/noam" element={<Noam />} />
