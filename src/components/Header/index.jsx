@@ -3,10 +3,16 @@ import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 import styles from './style.module.css'
 import {BiUser} from 'react-icons/bi'
+import InputSelect from '../InputSelect';
 
 
 
 function Header() {
+//     const loggedOut= (e)=>{
+// <InputSelect   label={'hi'}  options={'log out'}  width={'150px'}  setSelectInput />
+//     }
+        const arr =["UserName@mail.co.il","logOut"]
+    
   return (
     <>
     <header className={styles.headerContainer}>
@@ -21,8 +27,7 @@ function Header() {
             <NavLink  className={styles.navitem} to='/history'>History</NavLink>
         </div>
         <div className={styles.userBar}>
-        <NavLink  to='/login' className={styles.userName}>
-        <BiUser className={styles.userIcon}/>UserName@mail.co.il</NavLink>
+            <BiUser className={styles.userIcon} /> <InputSelect className={styles.select} style={{backgroundolor : red}}  options={arr}  width={'150'} />
         </div>
     </header>
     </>
