@@ -1,3 +1,7 @@
+import styles from "./style.module.css";
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
+import apiCalls, { setToken } from "../../functions/apiRequest";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import logo from "../../components/Header/logo.svg";
@@ -17,16 +21,35 @@ function LoginPage() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(userEmailInput.current.value, userPasswordInput.current.value);
+
+
+    apiCalls("get", "https://restcountries.com/v3.1/all")
+      .then((res) => {     
+        setToken("123")  // setToken(res.token)
+      })
+
+    // setUser(UserEmailInput.current.value) 
+    // localStorage.token = "444444" -->    // localStorage.token = res.token 
   }
 
 
   return (
     <>
+
       <header className={styles.header}>
         <div className={styles.logo}>
           <img src={logo} alt="logo" /> Accutures
         </div>
       </header>
+
+    <Header/>
+      <form className={styles.formLogin} onSubmit={handleSubmit}>
+      <h1>Sign in</h1>
+
+
+      <Input type={"text"} name='input'  placeholder={"email"} ref={UserEmailInput}/>
+      <Input type={"text"} name='input' placeholder={"password"} ref={UserPasswordInput}/>
+    
 
       <form className={styles.formLogin} onSubmit={handleSubmit}>
         <p className={styles.paragraphTitle}>Sign In</p>
