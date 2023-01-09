@@ -1,0 +1,8 @@
+.input{
+    padding-top: 20.5px;
+    padding-left:28px;
+    padding-bottom:20.5px;
+    padding-right:28px;
+    border: 1px var(--primary-color) solid;
+    width: 328px;
+}
