@@ -21,25 +21,25 @@ const SideBar = () => {
   ];
   const value = useContext(ImageContext);
   const [IsOpen, setIsOpen] = useState(true);
-  const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
-  console.log("value.beforeISP -", value.beforeISP.images);
+  //   const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
+  let index = 2;
   return (
     <>
       <button type="submit" onClick={(e) => slideBar(e)}>
         close
       </button>
       {IsOpen && (
-        <form className={styles.form}>
+        <div className={styles.form}>
           <div className={styles.collapse}>
             <InputLoadImage width="328px" />
-            <Image value={value} />
+            <Image value={value} index={index || 0} />
             <CollepseTopDown menuList={menuList} />
             <BtnRunISP />
           </div>
-        </form>
+        </div>
       )}
     </>
   );

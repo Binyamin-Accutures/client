@@ -5,7 +5,7 @@ import ImageContext from "../context/ImageContext";
 
 function Noam() {
   const value = useContext(ImageContext);
-  let index = 2;
+  let index;
   return (
     <>
       <div>
