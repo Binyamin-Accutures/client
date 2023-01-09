@@ -13,12 +13,14 @@ function App() {
 
     <div>
 
-      {(!user) && <><LayoutLogin setUser={setUser} /></>}
-      {user && <>
-        <ContextProvider user={user} setUser={setUser}>
-          <MainTest />
-          <Layout />
-        </ContextProvider>
+
+      {(!user) && <><LayoutLogin setUser={setUser}/></>}
+      {user &&<>
+
+      <ContextProvider user={user} setUser={setUser}>
+        <MainTest/>
+        <Layout/>
+      </ContextProvider>
       </>}
 
     </div>
