@@ -26,8 +26,25 @@
 
 .openPropertis {
   max-height: 300px;
+}
+.openPropertis {
+  max-height: 300px;
 
   width: 100%;
-  background: #383838;
+  background: #1e1e1e;
   border-radius: 4px;
 }
+
+.title {
+  padding: 12px;
+}
+
+.option {
+  padding: 12px;
+}
+
+.dropTitle {
+  color: var(--text-secondary-color);
+}
+/* 
+אפשרויות הערות כותרת */
