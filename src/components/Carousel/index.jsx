@@ -8,7 +8,7 @@ import RangeSlider from "../RangeSlider";
 // imgArray = the selected array of images we want to load - beforeISP or afterISP
 // imgOn - imageOn is a flag state for passing the kind of input array - enter "true" for images(jpg) or false for canvas
 
-const Carousel = ({imgArray, imgOn=true}) => {
+const Carousel = ({imgArray=[], imgOn=true}) => {
 
 
    const [images,setImages] = useState(imgArray) // 
@@ -21,7 +21,7 @@ const Carousel = ({imgArray, imgOn=true}) => {
       <>
       <div className={styles.carouselContainer}>
       <div className={styles.carouselImage} >
-       {imgOn ? (imgArray.length > 0 ? <img src={imgArray[selectedImage-1].url} alt={imgArray[selectedImage-1].name}/> : "Please load images")  : ( <div>to do = CANVAS component!!</div> ) }
+       {imgArray.length > 0 ? <img src={imgArray[selectedImage-1].url} alt={imgArray[selectedImage-1].name}/> : "Please load images"}
       </div>
       <div className={styles.carouselSliderContainer}>
       <RangeSlider min='1' max={images.length} func={setSelectedImage} text='Selected Image' textPosLeft={true}/>
