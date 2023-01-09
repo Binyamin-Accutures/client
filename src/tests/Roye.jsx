@@ -1,7 +1,9 @@
- import { useContext } from 'react'
+import { useContext } from 'react'
 import CollepseTopDown from '../components/CollepseTopDown'
- import styles from "./style.module.css"
+import styles from "./style.module.css"
+import Denoise from '../components/Denoise'
 import ImageContext from '../context/ImageContext'
+
 import Pavel from './Pavel'
 import Demosaic from '../components/Demosaic'
 import Sharping from '../components/Sharping'
@@ -9,6 +11,7 @@ import DynamicRangeStretch from '../components/DynamicRangeStretch'
 import Nuc from '../components/Nuc'
 
 export default function Roye() {
+
 
     const  value = useContext(ImageContext)
 
@@ -42,7 +45,7 @@ const menuList = [{titel:"NUC",component:<Nuc/> },
 
 
 
-    return <div className={styles.testcontiner} > <CollepseTopDown menuList={menuList}/> </div>
+    return <div className={styles.testcontiner} > <CollepseTopDown menuList={menuList} /> </div>
 }
 
 
