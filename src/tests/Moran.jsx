@@ -1,6 +1,5 @@
 import React from 'react'
-
-
+import Header from '../components/Header'
 
 
 function Moran() {
@@ -8,10 +7,8 @@ function Moran() {
   return (
     <div>
       <Header/>
-
     </div>
   )
 }
 
 export default Moran
-
