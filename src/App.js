@@ -6,7 +6,7 @@ import { MainTest } from './tests/MainTest'
 import LoginPage from './pages/LoginPage';
 
 function App() {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState(true)
   return (
     <div>
 
