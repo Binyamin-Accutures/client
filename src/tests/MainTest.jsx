@@ -21,6 +21,7 @@ import Noam from "./Noam";
 import Dudu from './Dudu';
 import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
+import Gil from './Gil';
 
 
 export const MainTest = () => {
@@ -50,6 +51,7 @@ export const MainTest = () => {
             <Route path='/Yisrael' element={<YisraelTest />} />
             <Route path='/dudu' element={<Dudu />} />
             <Route path='/yair' element={<Yair />} />
+            <Route path='/gil' element={<Gil />} />
 
         </Routes>
     )

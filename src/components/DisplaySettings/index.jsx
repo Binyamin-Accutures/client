@@ -1,21 +1,37 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Button from "../Button";
 import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
+import ImageContext from "../../context/ImageContext";
 
 function DisplaySetting( {buttonFunc, text}){
 
-    const [minValue, setMinValue] = useState("");
+    const [minValue, setMinValue] = useState();
+    const [maxValue, setMaxValue] = useState();
+    const [newValue,setNewValue] = useState(100)
 
-    function setValue(value){
-       setMinValue(() => value)
-       console.log(minValue);
+    const { afterISP, setAfterISP } = useContext(ImageContext)
+    const { s0, DoLP, AoLPDoLP, RGB } = afterISP.displaySet
+
+    const [s0Val, setS0Val] = useState(s0);
+    const [dolpVal, setDolpVal] = useState(DoLP);
+    const [aolpDolpVal, setAolpDolpVal] = useState(AoLPDoLP);
+    const [rgbVal, setRgbVal] = useState(RGB);
+    
+    const handleS0 = (target) => {
+        if(minValue < target){
+            setMinValue(target)
+        }
     }
+    const handleDolp = () => {}
+    const handleAolpDolp = () => {}
+    const handleRgb = () => {}
+    
 
     const menuList = [
         {titel:"S0", component:<div>
-        <RangeSlider textPosLeft={false} className="Hug" func={setValue} text={'Minimun S0 value'}/> 
-        <RangeSlider textPosLeft={false} className="Hug" text={'Maximum S0 value'} min={minValue}/>
+        <RangeSlider textPosLeft={false} className="Hug" func={setMinValue} text={'Minimun S0 value'}/> 
+        <RangeSlider textPosLeft={false} className="Hug" value={minValue} func={handleS0} text={'Maximum S0 value'} min={0}  max={100}/>
         </div> },
 
         {titel:'Dolp', component:<div>
