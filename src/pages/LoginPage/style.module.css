@@ -1,6 +1,15 @@
-.formLogin{
-    background: wheat;
-display: flex;
-    flex-direction: column;
-    align-items: center;
+.formLogin {
+  margin: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.formOptions {
+  width: 328px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

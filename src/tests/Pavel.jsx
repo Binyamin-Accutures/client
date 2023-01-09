@@ -4,14 +4,14 @@ import Demosaic from '../components/Demosaic'
 function Pavel() {
     const data = {
         demosaic : {
-            enable : true,
-            method : '',
-            pixelOrder : ''
+            enable : 'true',
+            method : '432',
+            pixelOrder : 'fds'
         }
     }
   return (
     <div>Pavel
-        {/* <Demosaic data={data} /> */}
+        <Demosaic data={data} />
     </div>
   )
 }
