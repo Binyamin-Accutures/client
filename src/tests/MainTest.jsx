@@ -4,7 +4,8 @@ import LoginPage from '../pages/LoginPage'
 
 
 import Roye from "./Roye";
-import Anat from './Anat';
+import Anat from './Anat'
+import Moran from './Moran'
 import Sapir from './Sapir'
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
@@ -15,7 +16,7 @@ import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
-
+import Dudu from './Dudu';
 import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
 
@@ -38,9 +39,9 @@ export const MainTest = () => {
             <Route path='/elisha' element={<Elisha />} />
             <Route path='/noa' element={<NoaTest />} />
             <Route path='/aviadElya' element={<AviadElya />} />
-            {/* <Route path='/moran' element={<Moran />} /> */}
-
+            <Route path='/moran' element={<Moran />} />
             <Route path='/Yisrael' element={<YisraelTest />} />
+            <Route path='/dudu' element={<Dudu />} />
             <Route path='/yair' element={<Yair />} />
 
         </Routes>
