@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
+import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
 
 
-import Sapir from './Sapir';
 import Roye from "./Roye";
-import Anat from './Anat';
+import Anat from './Anat'
+import Moran from './Moran'
+import Sapir from './Sapir'
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -14,14 +16,14 @@ import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
-import Dudu from "./Dudu";
+import Dudu from './Dudu';
 import YisraelTest from "./YisraelTest";
-import Moran from './Moran';
+import Yair from './Yair';
+
 
 export const MainTest = () => {
     return (
         <Routes>
-
             <Route path='/sapir' element={<LoginPage />} />
             <Route path="/aviad" element={<Aviad />} />
             <Route path="/noam" element={<Noam />} />
@@ -39,6 +41,9 @@ export const MainTest = () => {
             <Route path='/aviadElya' element={<AviadElya />} />
             <Route path='/moran' element={<Moran />} />
             <Route path='/Yisrael' element={<YisraelTest />} />
+            <Route path='/dudu' element={<Dudu />} />
+            <Route path='/yair' element={<Yair />} />
+
         </Routes>
     )
 };
