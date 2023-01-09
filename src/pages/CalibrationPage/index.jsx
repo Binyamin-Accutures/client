@@ -1,9 +1,10 @@
 import styles from "./style.module.css"
 
-import React from 'react'
+import React, { useState } from 'react'
 import Header from "../../components/Header"
 
 export default function CalibrationPage() {
+  const [isAfterISP, setIsAfterISP] = useState(false)
   return (
     <div className={styles.layout}>
         <header className={styles.header}>
