@@ -5,6 +5,8 @@ import styles from './style.module.css'
 import { BiUser } from 'react-icons/bi'
 import Logout from '../Logout'
 
+// creator:moran and adel
+// data : header after login
 
 
 
@@ -30,7 +32,7 @@ function Header() {
                 </div>
                 <div className={styles.userBar}>
                     <div className={styles.userName}>
-                        <BiUser className={styles.userIcon} onClick={() => setIsShow(!isShow)}>
+                        <BiUser className={styles.userIcon} onClick={() => setIsShow(!isShow)} >
                         </BiUser></div>UserName@mail.co.il
                     {isShow && < Logout setIsShow={setIsShow} />}
                 </div>

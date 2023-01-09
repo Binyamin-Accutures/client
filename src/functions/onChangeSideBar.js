@@ -1,4 +1,6 @@
 
- function onChangeSideBar(son, field, value, beforeISPTemp, setBeforeISPTemp) {
-    setBeforeISPTemp(beforeISPTemp[son][field] = value)
+export default function onChangeSideBar(componentName, CompKey, InputValue, beforeISPTemp, setBeforeISPTemp) {
+    setBeforeISPTemp(beforeISPTemp[componentName][CompKey] = InputValue)
+
 }
+
