@@ -3,20 +3,20 @@ import styles from "./style.module.css"
 import { useState } from "react";
 
 
-function Checkbox( { label , className = "" , onChange , ...props } ) {
+function Checkbox({ label, className = "", name, onChange, ...props }) {
 
 
-    // const [isChecked, setIsChecked] = useState (false);
+  // const [isChecked, setIsChecked] = useState (false);
 
   return (
 
 
-    <div> 
-        <label>
-        <input type="checkbox" className={styles.checkbox} checked = {props.prev}  onChange={() => props.set( !props.prev)}   {...props} />
+    <div>
+      <label>
+        <input type="checkbox" className={styles.checkbox} name={name} checked={props.prev} onChange={(e) => onChange(e.target)}   {...props} />
         <span> {label} </span>
         {/* <p>{props.prev? "Selected" : "Unchecked"}</p> */}
-        </label>
+      </label>
     </div>
   )
 }

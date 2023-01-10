@@ -1,58 +1,50 @@
-.CollepseTopDown{
-
-
-    background: #2C2C2C;
-    width: 352px;
-    height: 337px;
-    display: flex;
-flex-direction: column;
-align-items: center;
-padding: 12px 0px;
-
+.CollepseTopDown {
+  background: #383838;
+  width: 352px;
+  height: 337px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0px;
 }
 
+.oneOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 352px;
+  height: 50px;
 
-.oneOptions{
-display: flex;
- justify-content:space-between;
- align-items: center;
- width: 352px;
- height: 50px;
- 
- 
- 
- background: #2C2C2C;
-
+  background: #383838;
 }
 
-.oneOptions svg{
-    color:#56C493; 
-    font-size: 28px;
-    background: #2C2C2C;
-
+.oneOptions svg {
+  color: #56c493;
+  font-size: 28px;
+  background: #383838;
 }
 
-
-.openPropertis{
-max-height: 300px;
-
-width: 100%;
-background: #1E1E1E;
-border-radius: 4px;
+.openPropertis {
+  max-height: 300px;
 }
+.openPropertis {
+  max-height: 300px;
 
+  width: 100%;
+  background: #1e1e1e;
+  border-radius: 4px;
+}
 
 .title {
-    padding: 12px;
+  padding: 12px;
 }
 
 .option {
-    padding: 12px;
-    }
+  padding: 12px;
+}
 
 .dropTitle {
-    color:  var(--text-secondary-color);
-    }
+  color: var(--text-secondary-color);
+}
 /* 
 אפשרויות הערות כותרת */
-

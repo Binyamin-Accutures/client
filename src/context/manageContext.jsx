@@ -6,18 +6,24 @@ const afterISPTemp = {
     imagePath : '',
     displaySet :{
         s0 :{
+            grayLevel : 127,
+            linearStreching : 0,
             minS0Value : 0,
             maxS0Value : 0
         },
         DoLP :{
-            DoLPSatut : 0
+            DoLPMin : 0,
+            DoLPMax : 0
+        },
+        AoLPOvealay : {
+            HSFactor : 0,
+            minS0Value : 0,
+            maxS0Value : 0
         },
         AoLPDoLP : {
             HSFactor : 0,
             DoLPSatut : 0,
             AoLPBright : 0,
-            minS0Value : 0,
-            maxS0Value : 0
         },
         RGB : {
             AoLPCenter :  0,
@@ -43,7 +49,6 @@ const beforeISPTemp ={
     DRS : { 
         enable : true,
         method : {
-            enable : true,
             method : "dynamic_range_stretch",
             cutoffs: {
                 method: "percent",
