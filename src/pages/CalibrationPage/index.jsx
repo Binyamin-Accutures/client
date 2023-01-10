@@ -11,7 +11,9 @@ export default function CalibrationPage() {
             <Header/>
         </header>
         <div className={styles.main}>
-            <div className={styles.leftBar}><SideBar/></div>
+            <div className={styles.leftBar}>
+              <SideBar/>
+            </div>
             <div className={styles.mainBar}>
               <ImageMainScreen/>
             </div>
