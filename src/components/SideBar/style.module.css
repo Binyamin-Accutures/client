@@ -1,3 +1,13 @@
+.sideBar {
+  position: relative;
+  /* background-color: var(--bg-secondary-color); */
+  /* background-color: red; */
+}
+
+.loadBtn {
+  margin: 50px;
+}
+
 /* liat-sidebar */
 .form {
   width: 360px;
@@ -5,7 +15,33 @@
   padding-left: 0px;
   border: 2px;
   border-color: brown;
-  background: #2c2c2
+  background-color: red;
+  /* background: #2c2c2; */
 }
-.button {
+.btnToggle {
+  width: 35px;
+  height: 60px;
+  border-radius: 3px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  background-color: var(--bg-secondary-color);
+  color: var(--primary-color);
+  position: absolute;
+  top: 20px;
+  right: -35px;
+}
+
+.all {
+  background-color: var(--input-color);
+}
+
+.btn {
+  margin-left: 15px;
+  margin-bottom: 45px;
+}
+
+.blackBack {
+  /* border-radius: 25px; */
+  background-color: var(--bg-color);
+  text-align: center;
 }

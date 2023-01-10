@@ -73,6 +73,7 @@
 .containerSmall .numberInput {
     margin-top: 3px;
     margin-left: 1.5%;
+    max-width: 15%;
     display: inline;
     background-color: var(--bg-color);
     color: var(--text-secondary-color);
