@@ -13,7 +13,7 @@
 .img {
     align-self: center;
     height: 150px;
-    width: calc(100% + 20px);
+    width: 95%;
     background-color: #00000033;
     border-radius: 1.1425355672836304px;
     /* margin: 5px 0 5px 0; */
@@ -25,6 +25,7 @@
     height: 16px;
     width: 16px;
     border-radius: 0px;
+    margin: 0 2px 0 12px;
     color: gray;
 }
 
@@ -38,49 +39,32 @@
 }
 
 .downloadAndDelete {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: 40px 30px;
+    gap: 2px;
     justify-content: flex-end;
-    height: 38px;
-    width: 100%;
-    top: 1px;
-    border-radius: 0px;
-}
-
-.deleteIcon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5px;
-}
-
-.deleteIcon>span {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 42px;
 }
 
 .downloadIcon {
     margin-left: 4px;
 }
 
-.downloadIcon>span {
+.upperIcons {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* padding-top: 2px; */
-    /* padding-bottom: 2px; */
     align-items: center;
+    justify-content: space-between;
 }
 
-.downloadIcon>span {
+.upperText {
+    padding-top: 2px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     font-family: 'open sens', sans-serif;
     font-size: 8px;
-    font-weight: 100;
-    line-height: 12px;
-    letter-spacing: 0em;
-    text-align: center;
+    color: #C7C7C7;
 }
 
 .imgName {
@@ -88,13 +72,14 @@
     justify-content: flex-start;
     font-size: small;
     width: 100%;
+    padding: 5px 0;
 }
 
 .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: smaller;
+    font-size: 10px;
     width: 100%;
     padding-right: 20%;
 }
@@ -102,4 +87,5 @@
 .bottom>span {
     display: flex;
     align-items: center;
+    color: #C7C7C7;
 }
