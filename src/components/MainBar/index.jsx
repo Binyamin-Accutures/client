@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Carousel from "../Carousel";
 import RangeSlider from "../RangeSlider";
 import ChangeFrame from "../ChangeFrame";
+import Histogram from "../Histogram";
 
 
 
@@ -34,7 +35,9 @@ export default function MainBar({imgArray}) {
               <ChangeFrame />
               </div>
             </div>
+            <Histogram/>
         </div>
+
   </>
   )
 }
