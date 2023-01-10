@@ -16,7 +16,7 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
       e.type == "checkbox" ? valueToChange = e.checked : valueToChange = e.value;
       value.setBeforeISP(preve => {
          const newobj = { ...preve }
-         newobj.sharpening[name] = valueToChange;
+         newobj.DRS[name] = valueToChange;
          return newobj
       })
    }    
