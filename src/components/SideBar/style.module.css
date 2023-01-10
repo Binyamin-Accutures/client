@@ -41,7 +41,7 @@
 }
 
 .blackBack {
-  /* border-radius: 25px; */
+  border-radius: 5px;
   background-color: var(--bg-color);
   text-align: center;
 }

@@ -1,6 +1,8 @@
 import styles from "./style.module.css";
 import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
 import { useState } from "react";
+import { useRef } from 'react';
+
 // creator: roye peleg
 
 
@@ -8,24 +10,26 @@ const CollepseTopDown = (props) => {
   
  const [openCollepseTopDown,setOpenCollepseTopDown] = useState(null)
 
- let openClasses = `${styles.oneOptions}`;
+ let openClasses = `${styles.oneOptions} ${props.className}` 
 
- if(openCollepseTopDown) {
+//  if(openCollepseTopDown) {
 
- }
+//  }
 
- {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
- : openClasses = `${styles.oneOptions}`}
+//  {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
+//  : openClasses = `${styles.oneOptions}`}
 
- const onClickLine = (titel)=>{
-  alert(titel);
+ const onClickLine = (titel, ref)=>{
+  // console.log(ref);
    if(openCollepseTopDown===titel){
        setOpenCollepseTopDown(null)
-       openClasses = `${styles.oneOptions}`
+      //  ref.current.classList.add('new-class');
+      //  className={openClasses}
+      //  openClasses = `${styles.oneOptions}`
    }
    else{
     setOpenCollepseTopDown(titel)
-    openClasses = `${styles.oneOptions} ${props.className}`
+    // className = `${styles.oneOptions}`
   }
  }
 
@@ -35,7 +39,7 @@ const CollepseTopDown = (props) => {
       {props.menuList.map((v, inx) => {
         return (
          <>
-         <div className={openClasses} id={inx} onClick={()=>onClickLine(v.titel)}>
+         <div className={v.titel == openCollepseTopDown ? openClasses : styles.oneOptions} id={inx} onClick={()=>onClickLine(v.titel)}>
             <p>{v.titel}</p>
             {openCollepseTopDown===v.titel ?<FiChevronUp/>:<FiChevronDown />}
           </div>
