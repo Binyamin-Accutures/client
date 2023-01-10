@@ -8,7 +8,7 @@ function NoaTest() {
     return (
 <div>
         <div><BackendStatus/></div>
-        {/* <div><Histogram/></div> */}
+        <div><Histogram/></div>
         </div>
     )
 }
