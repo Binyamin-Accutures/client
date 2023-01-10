@@ -50,8 +50,6 @@ export default function Nuc() {
             <Checkbox label={"1pt"} className={""} name="pt1" onChange={handlePt} checked={value.beforeISP.NUC.method.pt1} />
             <Checkbox label={"2pt"} className={""} name="pt2" onChange={handlePt} checked={value.beforeISP.NUC.method.pt2} />
          </div>
-         {/* <input type="checkbox" />
-         <label for="badpixel">Bad Pixel Correction</label><br /> */}
 
          <label>Sensor Characteristics File</label>
          <br />

@@ -32,10 +32,6 @@ svg {
   font-size: 28px;
 }
 
-/* .openPropertis {
-  max-height: 300px;
-} */
-
 .openPropertis {
   display: flex;
   justify-content: center;
