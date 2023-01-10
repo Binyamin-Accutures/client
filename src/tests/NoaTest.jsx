@@ -7,8 +7,8 @@ import '../global.css';
 function NoaTest() {
     return (
 <div>
-        <div><BackendStatus/></div>
-        {/* <div><Histogram/></div> */}
+        {/* <div><BackendStatus/></div> */}
+        <div><Histogram/></div>
         </div>
     )
 }
