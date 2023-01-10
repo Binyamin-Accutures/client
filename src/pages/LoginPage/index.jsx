@@ -35,7 +35,7 @@ function LoginPage({ setUser }) {
   }
 
   return (
-    <>
+    <div className={styles.formLoginContainer}>
       <form className={styles.formLogin} onSubmit={handleSubmit}>
         <p className={styles.paragraphTitle}>Sign In</p>
 
@@ -59,11 +59,11 @@ function LoginPage({ setUser }) {
         </Button>
 
         <div className={styles.formOptions}>
-          <p>forgot password</p>
-          <p>new account</p>
+          <p className={styles.paragraph} onClick={()=>{nav("/forgot")}}>forgot password</p>
+          <p className={styles.paragraph} onClick={()=>{nav("/register")}} >new account</p>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 
