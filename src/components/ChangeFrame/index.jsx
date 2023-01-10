@@ -18,9 +18,6 @@ export default function ChangeFrame({ className }) {
 
 
 
-
-
-
     return (<>
         <div className={`${styles.allFrame} ${className}`}>
             <span className={styles.frame}><RangeSlider min={1} max={files.length} func={(target) => setChooseMinRange(target.value)} text='Start Frame' /></span>
