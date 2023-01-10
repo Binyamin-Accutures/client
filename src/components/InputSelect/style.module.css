@@ -4,4 +4,8 @@
     color: var(--text-color);
     font-family:'Poppins', sans-serif; 
      padding: 8px 16px;
+         cursor: pointer;
+}
+.select{
+    cursor: pointer;
 }
