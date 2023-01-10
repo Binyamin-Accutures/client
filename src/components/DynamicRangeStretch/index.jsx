@@ -34,6 +34,20 @@ const data2 = {
    }
 }
 
+const data3= { 
+   enable : true,
+   method : {
+       method : "dynamic_range_stretch",
+       cutoffs: {
+           method: "percent",
+           bitdepth: 16,
+           low: 0,
+           high: 100,
+           high_value: 100
+         }
+   }
+}
+
 const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = "" ,classNameOption="", classNameDropTitle="" , ...props }) => {
    
    const value = useContext(ImageContext)
@@ -69,6 +83,7 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
 
 
 
+
    return (
       <div className={`styles.${classNameTitle} ${className}`} style={style} {...props} id={""} >
          <div className={`styles.${classNameOption}`}>
@@ -82,8 +97,9 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
             <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false} numInput={false}/>
          </div>
       
-         <div>{`${value.beforeISP.DRS.enable}`}</div>
-         <div>{`${value.beforeISP.DRS.method.method}`}</div>
+         <div>{`checkbox: ${value.beforeISP.DRS.enable}`}</div>
+         <div>{`select: ${value.beforeISP.DRS.method.method}`}</div>
+         <div>{`range: ${value.beforeISP.DRS.method.cutoffs.bitdepth}`}</div>
 
       </div>
       

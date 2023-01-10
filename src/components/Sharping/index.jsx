@@ -20,12 +20,24 @@ function Sharping(props) {
         console.log('hello');
     }
 
+
+    // const handle = (e)=>{
+    //   let name = e.name
+    //   let valueToChange = e.value
+    //   value.setBeforeISP(preve=>{
+    //   const newobj =  {...preve}
+    //      newobj.demosaic[name]=valueToChange
+    //      return newobj
+    //   })
+      
+    //       }
+
   return (
     <div>
         <InputSelect label="Method" options={methodData} width="265" setSelectInput={setSelectMethod}/>
-        <RangeSlider func={stam} text='Radius' min={radiusData} max={100} textPosLeft={false} />
-        <RangeSlider  func={stam} text='EPS' min={espData} max={1} step={0.001} textPosLeft={false} />
-        <RangeSlider func={stam} text='Trehold' min={treholdData} max={10} step={0.1} textPosLeft={false}/>
+        <RangeSlider func={stam} text='Radius' min={radiusData} max={100} textPosLeft={false} numInput={false}/>
+        <RangeSlider  func={stam} text='EPS' min={espData} max={1} step={0.001} textPosLeft={false} numInput={false}/>
+        <RangeSlider func={stam} text='Trehold' min={treholdData} max={10} step={0.1} textPosLeft={false} numInput={false}/>
     </div>
   )
 }
