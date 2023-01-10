@@ -55,6 +55,7 @@ import Yair from './Yair';
 import Gil from './Gil';
 import Chananel from './Chananel';
 import Dael from './Dael';
+import Kobi from './kobi';
 
 
 
@@ -84,6 +85,7 @@ export const MainTest = () => {
       <Route path='/Yisrael' element={<YisraelTest />} />
       <Route path='/dudu' element={<Dudu />} />
       <Route path='/yair' element={<Yair />} />
+      <Route path='/kbi' element={<Kobi />} />
 
 
       <Route path='/gil' element={<Gil />} />
