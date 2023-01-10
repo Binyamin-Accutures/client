@@ -4,25 +4,26 @@ import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
 import ImageContext from "../../context/ImageContext";
 import style from './style.module.css';
+import saveResults from "../../functions/saveResults";
 
 function DisplaySetting( {buttonFunc, text}){
     const { afterISP, setAfterISP } = useContext(ImageContext)
 
-    const { s0, DoLP, AoLPOvealay, AoLPDoLP, RGB } = afterISP.displaySet
+    const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
 
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
-    const [aolpOvealay ,setAolpOvealay ] = useState(AoLPOvealay)
+    const [aolpOverlayVal ,setAolpOverlayVal ] = useState(AoLPOvealayed)
     const [aolpDolpVal, setAolpDolpVal] = useState(AoLPDoLP);
     const [rgbVal, setRgbVal] = useState(RGB);
     
     const handleS0 = (target) => {
         setS0Val((prev) => ({...prev, [target.name]: target.value}))
-        if(target.name == 'min0SValue' && s0.min0SValue > s0.maxS0Value) {
+        if(target.name == 'min0SValue' && s0Val.min0SValue > s0Val.maxS0Value) {
             setS0Val(prev => ({...prev, maxS0Value: prev.min0SValue + 1 }))
         }
-        if(target.name ==  'max0SValue' && s0.maxS0Value < s0.min0SValue) {
+        if(target.name ==  'max0SValue' && s0Val.maxS0Value < s0Val.min0SValue) {
             setS0Val(prev => ({...prev, minS0Value: prev.max0SValue - 1 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, s0: s0Val})}))
@@ -40,14 +41,14 @@ function DisplaySetting( {buttonFunc, text}){
     }
 
     const handleAoLPOvealay = (target) => {
-        setAolpOvealay((prev) => ({...prev, [target.name]: target.value}))
-        if(target.name == 'min0SValue' && aolpOvealay.min0SValue > aolpOvealay.maxS0Value) {
-            setAolpOvealay(prev => ({...prev, maxS0Value: prev.min0SValue + 1 }))
+        setAolpOverlayVal((prev) => ({...prev, [target.name]: target.value}))
+        if(target.name == 'min0SValue' && aolpOverlayVal.min0SValue > aolpOverlayVal.maxS0Value) {
+            setAolpOverlayVal(prev => ({...prev, maxS0Value: prev.min0SValue + 1 }))
         }
-        if(target.name ==  'max0SValue' && aolpOvealay.maxS0Value < aolpOvealay.min0SValue) {
-            setAolpOvealay(prev => ({...prev, minS0Value: prev.max0SValue - 1 }))
+        if(target.name ==  'max0SValue' && aolpOverlayVal.maxS0Value < aolpOverlayVal.min0SValue) {
+            setAolpOverlayVal(prev => ({...prev, minS0Value: prev.max0SValue - 1 }))
         }
-        setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, AolpOvealay:aolpOvealay})}))
+        setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, AoLPOvealayed: aolpOverlayVal})}))
     }
     
     const handleAoLPDoLP = (target) => {
@@ -75,7 +76,7 @@ function DisplaySetting( {buttonFunc, text}){
     }
 
     const handleClick = () => {
-        buttonFunc(afterISP.displaySet)
+        saveResults(afterISP.displaySet)
     }
 
 
@@ -94,9 +95,9 @@ function DisplaySetting( {buttonFunc, text}){
         </div>},
 
         {titel:'AoLP Overlayed', component:<div>
-         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Hue Scale Factor`} name="HSFactor" contextValue={AoLPOvealay.HSFactor}/>
-         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Minimum S0 value`} name="minS0Value" contextValue={AoLPOvealay.minS0Value}/>
-         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Maximum S0 value`} name="maxS0Value" contextValue={AoLPOvealay.maxS0Value} /> 
+         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Hue Scale Factor`} name="HSFactor" contextValue={AoLPOvealayed.HSFactor}/>
+         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Minimum S0 value`} name="minS0Value" contextValue={AoLPOvealayed.minS0Value}/>
+         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Maximum S0 value`} name="maxS0Value" contextValue={AoLPOvealayed.maxS0Value} /> 
         </div>},
 
         {titel:'AoLP+DoLP',component:<div>
