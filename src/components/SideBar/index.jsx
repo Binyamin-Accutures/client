@@ -14,6 +14,7 @@ import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
 // creator: Liat
 
 const SideBar = () => {
+  
   const data = {
     demosaic: {
       enable: "true",

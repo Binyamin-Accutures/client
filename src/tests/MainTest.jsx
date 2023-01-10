@@ -7,8 +7,9 @@ import Pavel from "./Pavel";
 import Anat from "./Anat";
 
 import Adel from "./Adel";
-// import Moran from "./Moran";
-// import Sapir from "./Sapir";
+
+import Moran from "./Moran";
+import Sapir from "./Sapir";
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -24,6 +25,8 @@ import YisraelTest from "./YisraelTest";
 import Yair from "./Yair";
 import Gil from "./Gil";
 import Chananel from "./Chananel";
+import { Route, Routes } from "react-router-dom";
+import HistoryPage from "../pages/HistoryPage";
 
 export const MainTest = () => {
   return (
