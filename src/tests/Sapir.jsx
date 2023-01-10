@@ -9,8 +9,7 @@ import LoginPage from "../pages/LoginPage";
 export default function Sapir() {
     return (
         <div>
-            <HistoryImage/>
-            {/* <HistoryImage src={'https://pps.whatsapp.net/v/t61.24694-24/311019981_881128723230304_1836867762896045726_n.jpg?ccb=11-4&oh=01_AdQHa0JTI5h4aQ2YwULUtNHRLhcz3t2_PaKElYywXdLxJg&oe=63C944FC'} time={"ff"} date={"44"} imgName={"pic"} /> */}
+            <HistoryImage  />
         </div>
     )
 }
