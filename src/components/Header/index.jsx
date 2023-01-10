@@ -9,26 +9,33 @@ import Logout from '../Logout'
 // data : header after login
 
 
+import { useLocation } from "react-router-dom";
+
 
 function Header() {
     const [isShow, setIsShow] = useState(false)
+    //assigning location variable
+    const location = useLocation();
 
+    //destructuring pathname from location
+    const { pathname } = location;
+
+    //Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
 
     return (
         <>
-
-
-
             <header className={styles.headerContainer}>
                 <div className={styles.logo}><img src={logo} alt='logo' />  Accutures </div>
                 <div className={styles.navContainer}>
-                    <NavLink className={styles.navitem} to='/loadimage'>
+
+                    <NavLink className={splitLocation[1] === "loadimage" ? styles.active : styles.navitem} to='/loadimage'>
                         Load Image
                     </NavLink>
-                    <NavLink className={styles.navitem} to='/calibration'>
+                    <NavLink className={splitLocation[1] === "calibration" ? styles.active : styles.navitem} to='/calibration'>
                         Calibration
                     </NavLink>
-                    <NavLink className={styles.navitem} to='/history'>History</NavLink>
+                    <NavLink className={splitLocation[1] === "history" ? styles.active : styles.navitem} to='/history'>History</NavLink>
                 </div>
                 <div className={styles.userBar}>
                     <div className={styles.userName}>

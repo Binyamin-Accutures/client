@@ -3,7 +3,7 @@
     padding-left:28px;
     padding-bottom:20.5px;
     padding-right:28px;
-    border: 1px var(--primary-color) solid;
+    border: 3px var(--primary-color) solid;
     width: 328px;
     background-color:var(--text-color);
     border-radius: var(--border-radius);
