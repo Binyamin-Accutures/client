@@ -16,7 +16,7 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
             }
             
         }
-    },[afterISP])
+    },[afterISP, value, contextValue])
 
 
     const handleChange = ({ target }) => {
