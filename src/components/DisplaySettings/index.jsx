@@ -7,8 +7,9 @@ import style from './style.module.css';
 
 function DisplaySetting( {buttonFunc, text}){
     const { afterISP, setAfterISP } = useContext(ImageContext)
+
     const { s0, DoLP, AoLPOvealay, AoLPDoLP, RGB } = afterISP.displaySet
-    
+
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
