@@ -10,7 +10,8 @@
     left: 20px;
     top: 20px;
     background: #1E1E1E;
-    border: 1px solid #383838;
+    border-top: 1px solid #383838;
+    border-bottom: 1px solid #383838;
 }
 
 

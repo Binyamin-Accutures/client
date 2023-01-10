@@ -8,8 +8,9 @@ import { MainTest } from "./tests/MainTest";
 import { useNavigate } from "react-router-dom";
 
 function App() {
-  const [user, setUser] = useState(false);
+
   const nav = useNavigate();
+  const [user, setUser] = useState(true)
 
   useEffect(() => {
     const startApp = async () => {
@@ -26,6 +27,7 @@ function App() {
 
     if (!user && localStorage.token) startApp();
   }, []);
+
 
   return (
     <div>
