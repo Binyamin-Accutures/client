@@ -24,11 +24,11 @@ function LoginPage({ setUser }) {
       email: userEmailInput.current.value,
     };
 
-    apiCalls("post", "http://localhost:9898/api/user/", data).then((res) => {
+    apiCalls("post", "http://localhost:9898/api/user/login", data).then((res) => {
       if (res.status === 200) {
-        setToken(res.data.token);
+        setToken(res.data);
         setUser(true);
-        localStorage.token = res.data.token;
+        localStorage.token = res.data;
         nav("/loadimage");
       }
     });
