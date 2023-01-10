@@ -3,9 +3,10 @@ justify-content: center;
 display: flex;
 align-items: center;
 flex-direction: column;
+height: 100%;
 }
 
-.Hug{
-    width: 138px;
-    height: 24px;
+
+.Hug  span{
+    font-size: 16px;
 }

@@ -1,3 +1,7 @@
+
+import Roye from "./Roye";
+
+
 import { Route, Routes } from "react-router-dom";
 
 
@@ -5,7 +9,6 @@ import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
 import Pavel from './Pavel'
 
-import Roye from "./Roye";
 import Anat from "./Anat";
 import Adel from "./Adel";
 import Moran from "./Moran";
@@ -15,6 +18,7 @@ import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
 import Elisha from "./Elisha";
 import David from "./David";
+import Dael from './Dael'
 import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
@@ -25,9 +29,11 @@ import Yair from './Yair';
 import Gil from './Gil';
 import Chananel from './Chananel';
 
+
 export const MainTest = () => {
   return (
     <Routes>
+      <Route path="/dael" element={<Dael />} />
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
       <Route path="/anat" element={<Anat />} />
@@ -39,6 +45,7 @@ export const MainTest = () => {
       <Route path="/hadar" element={<Hadar />} />
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
+
       <Route path='/adel' element={<Adel />} />
       <Route path='/pavel' element={<Pavel />} />
       <Route path='/sapir' element={<LoginPage />} />
@@ -48,6 +55,7 @@ export const MainTest = () => {
       <Route path='/yair' element={<Yair />} />
       <Route path='/gil' element={<Gil />} />
       <Route path='/Chananel' element={<Chananel />} />
+
     </Routes>
   );
 };
