@@ -1,3 +1,7 @@
 .pseudoInput {
   transition: all;
 }
+
+.pseudoInput {
+  display: none;
+}
