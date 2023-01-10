@@ -52,17 +52,18 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
    return (
       <div className={`styles.${classNameTitle} ${className}`} style={style} {...props} id={""} >
          <div className={`styles.${classNameOption}`}>
-            <Checkbox label="enable" name="enable" onChange={handle}/>
+            <Checkbox label="enable" name="enable" onChange={handle} checked={value.beforeISP.DRS.enable}/>
          </div>
          <div className={`styles.${classNameDropTitle} ${classNameOption}`}  >
             <InputSelect label="method" options={["Historgram"]} width="265" setSelectInput={()=>console.log("onChange-option")} handle={handle}/>
-            <RangeSlider func={()=>console.log("onChange-range")} text="Bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false}/>
+            <RangeSlider func={handle} text="Bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false} numInput={false}/>
          </div>
          <div className={`styles.${classNameOption}`}>
-            <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false}/>
+            <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false} numInput={false}/>
          </div>
       
          <div>{`${value.beforeISP.DRS.enable}`}</div>
+         {/* <div>{`${value.beforeISP.DRS.enable.method.cutoffs.bitdepth}`}</div> */}
 
       </div>
       
