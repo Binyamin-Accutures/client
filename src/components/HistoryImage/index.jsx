@@ -6,6 +6,9 @@ import { FaDownload } from 'react-icons/fa'
 import { CiClock2 } from 'react-icons/ci'
 import { VscFilePdf } from 'react-icons/vsc'
 import { AiOutlineCalendar } from 'react-icons/ai'
+import { TbFileDownload } from 'react-icons/tb'
+
+
 
 
 function HistoryImage({ src, time, date, imgName }) {
@@ -13,14 +16,13 @@ function HistoryImage({ src, time, date, imgName }) {
         <div>HistoryImage
             <div className={styles.img_container}>
                 <div className={styles.downloadAndDelete}>
-
                     <div className={styles.downloadIcon}>
                         <span><VscFilePdf className={styles.icon} /></span>
                         <span>view PDF</span>
                     </div>
 
                     <div className={styles.downloadIcon}>
-                        <span><FaDownload className={styles.icon} /></span>
+                        <span><TbFileDownload className={styles.icon} /></span>
                         <span>download</span>
                     </div>
 
@@ -28,9 +30,6 @@ function HistoryImage({ src, time, date, imgName }) {
                         <span><FaTrashAlt className={styles.icon} /></span>
                         <span>delete</span>
                     </div>
-
-
-
                 </div>
                 <img className={styles.img} src={src} alt="" />
                 <span className={styles.imgName}>{imgName}</span>
