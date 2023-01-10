@@ -4,42 +4,38 @@ import { useRef } from "react";
 import apiCalls, { setToken } from "../../functions/apiRequest";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import logo from "../../components/Header/logo.svg";
-
+import { useNavigate } from "react-router-dom";
 
 // creator: david hakak
 // color: _______________
 // icon: ________________
 
-function LoginPage() {
- 
+function LoginPage({ setUser }) {
   const userEmailInput = useRef();
   const userPasswordInput = useRef();
+  const nav = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(userEmailInput.current.value, userPasswordInput.current.value);
 
+    const data = {
+      password: userPasswordInput.current.value,
+      email: userEmailInput.current.value,
+    };
 
-    apiCalls("get", "https://restcountries.com/v3.1/all")
-      .then((res) => {     
-        setToken("123")  // setToken(res.token)
-      })
-
-    // setUser(UserEmailInput.current.value) 
-    // localStorage.token = "444444" -->    // localStorage.token = res.token 
+    apiCalls("post", "http://localhost:9898/api/user/", data).then((res) => {
+      if (res.status === 200) {
+        setToken(res.data.token);
+        setUser(true);
+        localStorage.token = res.data.token;
+        nav("/loadimage");
+      }
+    });
   }
-
 
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logo} alt="logo" /> Accutures
-        </div>
-      </header>
-
-
       <form className={styles.formLogin} onSubmit={handleSubmit}>
         <p className={styles.paragraphTitle}>Sign In</p>
 
@@ -68,7 +64,7 @@ function LoginPage() {
         </div>
       </form>
     </>
-  )
+  );
 }
 
 export default LoginPage;

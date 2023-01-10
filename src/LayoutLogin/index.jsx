@@ -8,13 +8,13 @@ import RenewPassPage from "../pages/RenewPassPage";
 export default function LayoutLogin({ setUser }) {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<LoginPage setUser={setUser}/>} />
+      <Route path="/login" element={<LoginPage  setUser={setUser}/>} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/forgot" element={<ForgotPassPage />} />
-      <Route path="/renew" element={<RenewPassPage />} />
+      <Route path="/renew" element={<RenewPassPage setUser={setUser}/>} />
       <Route path="/renew/:token" element={<RenewPassPage />} />
-      <Route path="/*" element={<LoginPage />} />
+      <Route path="/*" element={<LoginPage setUser={setUser}/>} />
     </Routes>
   );
 }

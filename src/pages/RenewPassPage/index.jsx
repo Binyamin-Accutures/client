@@ -1,28 +1,40 @@
+import axios from "axios";
 import { useRef } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
+import apiCalls, { setToken } from "../../functions/apiRequest";
 
-export default function ChangeAndCreatePassPass() {
-  const userPasswordInput = useRef();
-  const userConfirmPasswordInput = useRef();
+export default function ChangeAndCreatePassPass({ setUser }) {
+  const userFirstPassword = useRef();
+  const userSecondPassword = useRef();
   const token = useParams();
   const location = useLocation();
+  const nav = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (
-      userPasswordInput.current.value === userConfirmPasswordInput.current.value
-    ) {
-      console.log(
-        token,
-        location.state.email,
-        userPasswordInput.current.value,
-        userConfirmPasswordInput.current.value
-      );
-    }
-  }
+    if (userFirstPassword.current.value === userSecondPassword.current.value) {
+
+      const data = {
+        firstPassword: userFirstPassword.current.value,
+        secondPassword: userSecondPassword.current.value,
+        email: location.state.email,
+      };
+      
+      apiCalls("post", "http://localhost:9898/api/user/register", data).then(
+        (res) => {
+          if (res.status === 200) {
+            setToken(res.data);
+            setUser(true);
+            localStorage.token = res.data;
+            nav("/loadimage");
+          };
+        }
+      )
+    };
+  };
 
   return (
     <form className={styles.formLogin} onSubmit={handleSubmit}>
@@ -35,14 +47,14 @@ export default function ChangeAndCreatePassPass() {
         name="input"
         placeholder="new password"
         required={true}
-        inputRef={userPasswordInput}
+        inputRef={userFirstPassword}
       />
       <Input
         type="password"
         name="input"
         placeholder="confirm new password"
         required={true}
-        inputRef={userConfirmPasswordInput}
+        inputRef={userSecondPassword}
       />
 
       <Button type={"submit"} width={"328px"}>
