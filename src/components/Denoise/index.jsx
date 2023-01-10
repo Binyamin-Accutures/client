@@ -29,11 +29,18 @@ export default function Denoise() {
 
     return (
         <div className={styles.denoise}>
-            {/* <input type="checkbox" name="Enable" />
-            <label for="Enable">Enable</label> */}
-            <InputSelect label={"method"} name="method" options={["red", "yellow", "green", "blue"]} width={265} dataDefault={"green"} handle={handle} />
-            <RangeSlider func={func} name="radius" text={"Radius"} min={0} max={5} textPosLeft={false} handle={handle} />
-            <RangeSlider func={func} name="EPS" text={"EPS"} min={0} max={0.005} step={0.001} textPosLeft={false} handle={handle} />
+
+            {/* <div className={StyleSheet.enable}><Checkbox label={"enable"} className={""} name={"enable"} onChange={handle} checked={value.beforeISP.denoise.enable} /></div > */}
+
+
+            <InputSelect label={"method"} name="method" options={[1, 2, "bm3d", 3]} width={265} dataDefault={value.beforeISP.denoise.method} handle={handle} />
+
+            <RangeSlider func={handle} name="radius" text={"Radius"} min={0} max={5} step={1} textPosLeft={false} numInput={false} contextValue={value.beforeISP.denoise.radius} />
+
+            <RangeSlider func={handle} name="ESP" text={"EPS"} min={0} max={0.005} step={0.001} textPosLeft={false} numInput={false} contextValue={value.beforeISP.denoise.ESP} />
+
+
+
             <div>{value.beforeISP.denoise.method}</div>
             <div>{value.beforeISP.denoise.radius}</div>
             <div>{value.beforeISP.denoise.ESP}</div>
