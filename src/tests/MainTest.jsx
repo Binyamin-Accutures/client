@@ -39,7 +39,7 @@ export const MainTest = () => {
       <Route path="/aviadElya" element={<AviadElya />} />
       <Route path='/adel' element={<Adel />} />
       <Route path='/pavel' element={<Pavel />} />
-      <Route path='/sapir' element={<LoginPage />} />
+      <Route path='/sapir' element={<Sapir />} />
       <Route path='/moran' element={<Moran />} />
       <Route path='/Yisrael' element={<YisraelTest />} />
       <Route path='/dudu' element={<Dudu />} />

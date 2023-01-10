@@ -1,0 +1,84 @@
+.img_container {
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+    width: 200px;
+    padding: 10px;
+    background-color: #2C2C2C;
+    /* justify-content: center;
+    align-items: center; */
+
+}
+
+.img {
+    height: 150px;
+    width: 100%;
+    background-color: #00000033;
+    border-radius: 1.1425355672836304px;
+    margin: 5px 0 5px 0;
+
+}
+
+.icon  {
+    height: 12px;
+    width: 12px;
+    margin-left: 5px;
+    border-radius: 0px;
+    color:gray;
+    
+}
+
+.downloadAndDelete {
+    display: flex;
+    justify-content: end;
+    height: 38px;
+    width: 100%;
+    top: 1px;
+    border-radius: 0px;
+
+
+}
+
+.deleteIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+
+}
+
+.downloadIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+
+}
+
+p {
+    font-family: Inter;
+    font-size: 6px;
+    font-weight: 100;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+
+
+}
+
+.imgName {
+    font-size: small;
+    width: 100%;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+    width: 100%;
+}
+
+.bottom>img {
+    margin: 0 20px;
+}
