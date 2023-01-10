@@ -49,7 +49,6 @@ const beforeISPTemp ={
     DRS : { 
         enable : true,
         method : {
-            enable : true,
             method : "dynamic_range_stretch",
             cutoffs: {
                 method: "percent",
