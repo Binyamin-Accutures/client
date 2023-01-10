@@ -6,14 +6,13 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
 
     useEffect(() => {
         if(!isNaN(contextValue) && contextValue != value) {
-            setValue(() => contextValue)
+            setValue(contextValue)
         }
-        value && setValue(prev => prev)
     },[])
 
     useEffect(() => {
         if(!isNaN(contextValue) && contextValue != value) {
-            setValue(() => contextValue)
+            setValue(contextValue)
         }
     },[value])
 
