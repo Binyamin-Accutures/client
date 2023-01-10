@@ -1,10 +1,11 @@
+import Roye from "./Roye";
+
 import { Route, Routes } from "react-router-dom";
 
 import SectionBorder from "../components/SectionBorder";
 import LoginPage from "../pages/LoginPage";
 import Pavel from "./Pavel";
 
-import Roye from "./Roye";
 import Anat from "./Anat";
 import Adel from "./Adel";
 import Moran from "./Moran";
@@ -14,22 +15,21 @@ import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
 import Elisha from "./Elisha";
 import David from "./David";
+import Dael from "./Dael";
 import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
 import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
-
-import Liat from "./Liat";
 import Yair from "./Yair";
 import Gil from "./Gil";
-
 import Chananel from "./Chananel";
 
 export const MainTest = () => {
   return (
     <Routes>
+      <Route path="/dael" element={<Dael />} />
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
       <Route path="/anat" element={<Anat />} />

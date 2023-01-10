@@ -10,6 +10,7 @@ import DynamicRangeStretch from "../DynamicRangeStretch";
 import Demosaic from "../Demosaic";
 import Denoise from "../Denoise";
 import Sharping from "../Sharping";
+import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
 // creator: Liat
 
 const SideBar = () => {
@@ -58,19 +59,30 @@ const SideBar = () => {
   let index = 2;
   return (
     <>
-      <button type="submit" onClick={(e) => slideBar(e)}>
-        close
-      </button>
-      {IsOpen && (
-        <div className={styles.form}>
-          <div className={styles.collapse}>
-            <InputLoadImage width="328px" />
-            <Image value={value} index={index || 0} />
-            <CollepseTopDown menuList={menuList} />
-            <BtnRunISP />
+      <div className={styles.sideBar}>
+        {/* <FiChevronLeft className={styles.btnToggle} onClick={(e) => slideBar(e)}/> */}
+        {IsOpen ? (
+          <FiChevronLeft
+            className={styles.btnToggle}
+            onClick={(e) => slideBar(e)}
+          />
+        ) : (
+          <FiChevronRight
+            className={styles.btnToggle}
+            onClick={(e) => slideBar(e)}
+          />
+        )}
+        {IsOpen && (
+          <div className={styles.form}>
+            <div className={styles.collapse}>
+              <InputLoadImage width="328px" />
+              <Image value={value} index={0} />
+              <CollepseTopDown menuList={menuList} />
+              <BtnRunISP />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 };

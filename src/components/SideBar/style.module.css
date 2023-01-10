@@ -1,3 +1,13 @@
+.sideBar {
+  position: relative;
+  /* background-color: var(--bg-secondary-color); */
+  /* background-color: red; */
+}
+
+.loadBtn {
+  margin: 50px;
+}
+
 /* liat-sidebar */
 #form {
   width: 360px;
@@ -6,6 +16,4 @@
   border: 2px;
   border-color: brown;
   background: #2c2c2c;
-  /* display: flex;
-  flex-direction: column; */
 }
