@@ -25,9 +25,9 @@ return ()=> {clearInterval(intervel)}
             <div className={styles.BackendStatus}>
                 
 
-                <label> Running Simulation </label>
-                <label>Number of Images = { cntImg} </label>
-                <label>In Progress</label>
+                <label> language.RUNNING </label>
+                <label>language.NUMBER_OF_IMAGE = { cntImg} </label>
+                <label className={styles.prog}>language.IN_PROGRESS</label>
  
  
     <div className={styles.battery}>
