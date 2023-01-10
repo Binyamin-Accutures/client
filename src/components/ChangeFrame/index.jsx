@@ -20,8 +20,8 @@ export default function ChangeFrame({ className }) {
 
     return (<>
         <div className={`${styles.allFrame} ${className}`}>
-            <span className={styles.frame}><RangeSlider min={1} max={files.length} func={(target) => setChooseMinRange(target.value)} text='Start Frame' /></span>
-            < span className={styles.frame}><RangeSlider min={chooseMinRange} max={files.length} func={(target) => setChooseMaxRange(target.value)} text='End Frame' /></span>
+            <span ><RangeSlider className={styles.frame} min={1} max={files.length} func={(target) => setChooseMinRange(target.value)} text='Start Frame' /></span>
+            <span ><RangeSlider className={styles.frame} min={chooseMinRange} max={files.length} func={(target) => setChooseMaxRange(target.value)} text='End Frame' /></span>
         </div>
     </>
     );
