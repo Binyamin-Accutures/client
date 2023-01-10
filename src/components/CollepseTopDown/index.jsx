@@ -5,7 +5,13 @@ import { useState } from "react";
 
 
 const CollepseTopDown = (props) => {
+
  const [openCollepseTopDown,setOpenCollepseTopDown] = useState(null)
+
+ let openClasses = `${styles.oneOptions}`;
+
+ {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
+ : openClasses = `${styles.oneOptions}`}
 
  const onClickLine = (titel)=>{
    if(openCollepseTopDown===titel){
@@ -20,7 +26,7 @@ const CollepseTopDown = (props) => {
       {props.menuList.map((v, inx) => {
         return (
          <>
-         <div className={styles.oneOptions} id={inx} onClick={()=>onClickLine(v.titel)}>
+         <div className={openClasses} id={inx} onClick={()=>onClickLine(v.titel)}>
             <p>{v.titel}</p>
             {openCollepseTopDown===v.titel ?<FiChevronUp/>:<FiChevronDown />}
           </div>
