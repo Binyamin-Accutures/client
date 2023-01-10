@@ -87,7 +87,7 @@ console.log(arrImages);
        <ModalPopUp show={show} setShow={setShow} fonc={funDelete} delname={delname}/>
       
        <div className={styles.images}>
-{arrImages? arrImages.map(v => <HistoryImage src={v.url} date={v.date} imgName={v.name} funcDel={handleDelete} /> ): null} 
+{arrImages? arrImages.map(v => <HistoryImage src={v.url} date={new Date(v.date).toLocaleDateString()} time={new Date(v.date).toLocaleTimeString()} imgName={v.name} funcDel={handleDelete} /> ): null} 
        </div>
     </div>
     </>
