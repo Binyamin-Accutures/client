@@ -12,7 +12,7 @@ function LogOut({ setIsShow }) {
 
     const logOutClicked = () => {
         localStorage.clear();
-        setUser('');
+        setUser();
         setIsLogged(false);
     }
     return (
