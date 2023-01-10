@@ -1,6 +1,21 @@
 .allFrame {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0;
+    width: 736.6px;
+    justify-content: space-evenly;
+    align-items: left;
+    padding-right: 25px;
+    padding-left: 20px;
+}
+
+.frame{
+    width: 260px;
+}
+
+.frame input[type=number]{
+    width: 30px;
+    height: 20px;
+}
+
+.frame > text{
+    width: 100px;
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Carousel from "../Carousel";
 import RangeSlider from "../RangeSlider";
 import ChangeFrame from "../ChangeFrame";
+import Button from "../Button";
 
 
 
@@ -28,11 +29,9 @@ export default function MainBar({ imgArray }) {
           <Carousel imgUrl={images[selectedImage - 1].url} imgOn={true} />
         </div>
         <div className={styles.controlBar}>
-          <div className={styles.crop}>crop</div>
+          <div className={styles.cropBtn}><Button width={73} children={"crop"}/></div>
           <div className={styles.CarouselSlider}>
             <RangeSlider className={styles.editRange} min='1' max={images.length} func={handleChange} text='Frame #' textPosLeft={true} />
-            {/* </div> */}
-            {/* <div className={styles.ChangeFrame}> */}
             <ChangeFrame className={styles.ChangeFrame} />
           </div>
         </div>
