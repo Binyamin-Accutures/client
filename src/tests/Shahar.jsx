@@ -8,7 +8,8 @@ function Shahar(props) {
             min={1}
             max={10}
             text={'Frame#'}
-            textPosLeft={false} 
+            textPosLeft={false}
+            name={"shahar"} 
         />
     );
 }

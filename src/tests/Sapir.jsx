@@ -1,15 +1,21 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import HistoryImage from "../components/HistoryImage";
 import InputSelect from "../components/InputSelect";
+import { setToken } from "../functions/apiRequest";
+import LoginPage from "../pages/LoginPage";
 
 export default function Sapir() {
-    const [arr,setArr] = useState(["a","b","c"])
-    return(
-       
-    <div>
-    <InputSelect  options={arr} width="20" />
+    return (
+        <div>
+            <HistoryImage  />
+        </div>
+    )
+}
 
-        vsdvd
-    </div>
-    
-
-    )}
+    // const logOut = () =>{
+        //     localStorage.clear();
+        //     setToken();
+        //     setUser()
+        // }
