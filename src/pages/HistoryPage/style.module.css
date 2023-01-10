@@ -1,70 +1,74 @@
 .header {
     position: fixed;
-    top:0;
+    top: 0;
     z-index: 5;
 }
 
 .historyPageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 550px;
-  overflow-y: scroll;
-  overflow-x: none;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: none;
+    margin-top: 40px;
+    position: relative;
 }
-
 
 .historyPageHeader {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 .HistoryPageSort {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-start;
-  justify-content: center;
-  align-items: center;
-  padding-left: 4vw;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4vw;
 }
 
 .historySearch,
 .historySort {
-  background-color: var(--bg-secondary-color);
-  color: aliceblue;
-  border-radius: 4px;
-  margin-left: 10px;
-  padding: 3px;
-  border: none;
+    background-color: var(--bg-secondary-color);
+    color: aliceblue;
+    border-radius: 4px;
+    margin-left: 10px;
+    padding: 3px;
+    border: none;
 }
+
 .historySearch {
-  width: 300px;
+    width: 300px;
 }
+
 .historyPageSearch {
-  position: relative;
+    position: relative;
 }
 
-.HistoryPageSort > label {
-  margin-top:-4px!important;
-  color: #fff;
+.HistoryPageSort>label {
+    margin-top: -4px!important;
+    color: #fff;
 }
-
 
 .historySort {
-  width: 215px;
-  /* align-self: flex-start; */
+    width: 215px;
+    /* align-self: flex-start; */
 }
 
 .images {
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  height: 80vh;
-  width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 20px;
+    gap: 20px;
+    height: 80%;
+    width: 80%;
 }
-.images > img {
-  object-fit: cover;
+
+.images>img {
+    height: 200px;
+    object-fit: contain;
 }

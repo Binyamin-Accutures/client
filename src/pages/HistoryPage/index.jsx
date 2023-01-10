@@ -3,6 +3,7 @@ import { useState } from 'react'
 import styles from "./style.module.css"
 import { FiSearch } from "react-icons/fi";
 import Header from "../../components/Header"
+import ModalPopUp from '../../components/ModalPopup';
 
 export default function HistoryPage() {
   const ContextImages= [{name: 'ibmage1', url:'https://carwow-uk-wp-2.imgix.net/RR_VELAR_EDITION_23MY_027_GLHD_140422_01-scaled-e1659537496312.jpg?auto=format&cs=tinysrgb&fit=crop&h=800&ixlib=rb-1.1.0&q=60&w=1600', date: ()=> { return new Date('2019-06-01')}},
@@ -14,7 +15,9 @@ export default function HistoryPage() {
                 {name: 'iemage7', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Mp6yLzHupZxKhu35ssIhDYJs2COlxl5jeg&usqp=CAU', date: ()=> {return new Date('2016-09-09')}},
               ]
    const [images, setImages] = useState(ContextImages)         
-   const [arrImages, setArrImages] = useState(images.sort((image1,image2)=> image2.date() - image1.date()))           
+   const [arrImages, setArrImages] = useState(images.sort((image1,image2)=> image2.date() - image1.date()))       
+   const [show,setShow] = useState(false) 
+   const [delname,setDelname] = useState("")   
 
 const funSearch=(e)=>{
   const arr =[]
@@ -36,13 +39,18 @@ const sort=(e)=>{
  }
 }
 
+const handleDelete =(name) =>{
+  setDelname(name)
+  setShow(true)
 
+} 
 
 
 const funDelete = (name)=>{
   const arr = images.filter(v=> v.name !== name)
   setImages(arr)
   setArrImages(arr)
+  setShow(false)
 }
 console.log(images);
 console.log(arrImages);
@@ -50,9 +58,11 @@ console.log(arrImages);
   
   return (
     <>
+   
+    <Header/>
     
-    <div className={styles.header}><Header/></div>
     <div className={styles.historyPageContainer}>
+    
       <div className={styles.historyPageHeader}>
         <div className={styles.historyPageSearch}>
        <input className={styles.historySearch} type="text" placeholder='search' onInput={(e)=> funSearch(e)}/>
@@ -61,7 +71,7 @@ console.log(arrImages);
        </div>
        <br />
 
-
+  
 
        <div className={styles.HistoryPageSort}>
        <label htmlFor="historySort">Sort by</label>
@@ -71,13 +81,13 @@ console.log(arrImages);
        <option value="byName">Sort by name</option>
        </select>
        </div>
-
-      
+     
+       <ModalPopUp show={show} setShow={setShow} fonc={funDelete} delname={delname}/>
       
        <div className={styles.images}>
 {arrImages? arrImages.map(v => <div >
                         {v.name}
-                        <span onClick={()=>funDelete(v.name)}>delete</span>
+                        <span onClick={()=>handleDelete(v.name)}>delete</span>
                         <br />
                         <img src={v.url} alt="image" width={'100%'}/>
                         <br />
