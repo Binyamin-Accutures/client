@@ -45,7 +45,7 @@ function Sharping(props) {
         <RangeSlider func={handle} text='Radius' name='radius' min={radiusData} max={100} textPosLeft={false} numInput={false} contextValue={value.beforeISP.sharpening.radius}/>
         <RangeSlider  func={handle} text='EPS' name='ESP' min={espData} max={1} step={0.001} textPosLeft={false} numInput={false} contextValue={value.beforeISP.sharpening.ESP}/>
         <RangeSlider func={handle} text='Trehold' name='trehold' min={treholdData} max={10} step={0.1} textPosLeft={false} numInput={false} contextValue={value.beforeISP.sharpening.trehold}/>
-        <div>
+        {/* <div>
           <br /><br /><br />
           {`${value.beforeISP.sharpening.radius}`}
           <br />
@@ -55,7 +55,7 @@ function Sharping(props) {
           <br />
 <input type="range" onChange={(e)=>console.log(e.target.value)} />
 
-        </div>
+        </div> */}
     </div>
   )
 }
