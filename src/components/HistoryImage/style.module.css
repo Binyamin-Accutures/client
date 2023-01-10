@@ -10,12 +10,12 @@
 
 .img {
     align-self: center;
-    height: 150px;
+    height: 170px;
     width: 95%;
     background-color: #00000033;
     border-radius: 2px;
     object-fit: cover;
-    aspect-ratio: 6/9;
+    aspect-ratio: 4/3;
 }
 
 .icon {
