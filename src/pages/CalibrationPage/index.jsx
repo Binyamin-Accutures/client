@@ -6,10 +6,6 @@ import SideBar from "../../components/SideBar"
 export default function CalibrationPage() {
   const [isAfterISP, setIsAfterISP] = useState(false)
   return (
-    <div className={styles.layout}>
-        <header className={styles.header}>
-            <Header/>
-        </header>
         <div className={styles.main}>
             <div className={styles.leftBar}>
               <SideBar/>
@@ -20,7 +16,6 @@ export default function CalibrationPage() {
             <div className={styles.rightBar}>rightBar</div>
 
         </div>
-    </div>
   )
 }
 
