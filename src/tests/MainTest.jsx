@@ -9,7 +9,6 @@ import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
 import Pavel from './Pavel'
 
-import Roye from "./Roye";
 import Anat from "./Anat";
 import Adel from "./Adel";
 import Moran from "./Moran";
@@ -34,6 +33,7 @@ import Chananel from './Chananel';
 export const MainTest = () => {
   return (
     <Routes>
+      <Route path="/dael" element={<Dael />} />
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
       <Route path="/anat" element={<Anat />} />
