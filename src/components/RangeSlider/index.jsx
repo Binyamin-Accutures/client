@@ -4,6 +4,7 @@ import style from './style.module.css'
 function RangeSlider({func, name='', className='', text, min, max, step=1 , textPosLeft=true, numInput=true, contextValue , ...props}) {
     const [value, setValue] = useState(isNaN(contextValue) ? min : contextValue)
 
+
     useEffect(() => {
         if(!isNaN(contextValue) && contextValue != value) {
             setValue(() => contextValue)
@@ -16,12 +17,21 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
         }
     },[value])
 
+
     const handleChange = ({ target }) => {
+
         if(target.value > max ) setValue(() => max)
         else if(target.value < min ) setValue(() => min)
         else setValue(() => Number(target.value))
         if(func) func(target)
+
     }
+
+  
+    
+
+       
+    
 
     return (
         <div className={className? className : 'container'}>
@@ -36,5 +46,6 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
         </div>
     );
 }
+
 
 export default RangeSlider;
