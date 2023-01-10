@@ -20,60 +20,48 @@ export default function HistoryPage() {
    const [show,setShow] = useState(false) 
    const [delname,setDelname] = useState("")   
 
-const funSearch=(e)=>{
-  const arr =[]
-  images.forEach(v=> v.name.includes(e.target.value)? arr.push(v):v)
-  setArrImages(arr)
-}
+  const funSearch = (e) => {
+    const arr = []
+    images.forEach(v => v.name.includes(e.target.value) ? arr.push(v) : v)
+    setArrImages(arr)
+  }
 
 
 
-const sort=(e)=>{
-  if(e.target.value==='byName'){
-  setArrImages((arr) =>[...arr.sort((image1,image2)=> image1.name.localeCompare(image2.name))])
- }
- else if(e.target.value==='byDateDesc'){
-  setArrImages((arr) =>[...arr.sort((image1,image2)=> image1.date() - image2.date())])
- }
- else{
-  setArrImages((arr) =>[...arr.sort((image1,image2)=> image2.date() - image1.date())])
- }
-}
+  const sort = (e) => {
+    if (e.target.value === 'byName') {
+      setArrImages((arr) => [...arr.sort((image1, image2) => image1.name.localeCompare(image2.name))])
+    }
+    else if (e.target.value === 'byDateDesc') {
+      setArrImages((arr) => [...arr.sort((image1, image2) => image1.date() - image2.date())])
+    }
+    else {
+      setArrImages((arr) => [...arr.sort((image1, image2) => image2.date() - image1.date())])
+    }
+  }
 
-const handleDelete =(name) =>{
-  setDelname(name)
-  setShow(true)
+  const handleDelete = (name) => {
+    setDelname(name)
+    setShow(true)
 
-} 
+  }
 
 
-const funDelete = (name)=>{
-  const arr = images.filter(v=> v.name !== name)
-  setImages(arr)
-  setArrImages(arr)
-  setShow(false)
-}
-console.log(images);
-console.log(arrImages);
+  const funDelete = (name) => {
+    const arr = images.filter(v => v.name !== name)
+    setImages(arr)
+    setArrImages(arr)
+    setShow(false)
+  }
+  console.log(images);
+  console.log(arrImages);
 
-  
+
   return (
 
     <>
-   
 
-    
-    <div className={styles.historyPageContainer}>
-    
-      <div className={styles.historyPageHeader}>
-        <div className={styles.historyPageSearch}>
-       <input className={styles.historySearch} type="text" placeholder='search' onInput={(e)=> funSearch(e)}/>
-       <FiSearch style={{color:'green', position:'absolute', right:'2px' ,top: '4px'}}/>
-       </div>
-       </div>
-       <br />
 
-  
 
        <div className={styles.HistoryPageSort}>
        <label htmlFor="historySort">Sort by</label>
@@ -89,7 +77,7 @@ console.log(arrImages);
        <div className={styles.images}>
 {arrImages? arrImages.map(v => <HistoryImage src={v.url} date={v.date} imgName={v.name} funcDel={handleDelete} /> ): null} 
        </div>
-    </div>
+   
     </>
 
   )
