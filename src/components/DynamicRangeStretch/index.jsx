@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import ImageContext from "../../context/ImageContext"
+import Checkbox from "../Checkbox"
 import InputSelect from "../InputSelect"
 import RangeSlider from "../RangeSlider"
 import styles from "./style.module.css"
@@ -10,47 +11,65 @@ import styles from "./style.module.css"
 // 
 
 const data1 = { 
-   enable : true,
+   enable : true ,
    method : {
        histogram : '',
        BDP : 0,
        DDP : 0
    }
 }
+
+const data2 = { 
+   enable : true,
+   method : {
+       enable : true,
+       method : "dynamic_range_stretch",
+       cutoffs: {
+           method: "percent",
+           bitdepth: 16,
+           low: 0,
+           high: 100,
+           high_value: 100
+         }
+   }
+}
+
 const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = "" ,classNameOption="", classNameDropTitle="" , ...props }) => {
+   
    const value = useContext(ImageContext)
+
    const handle = (e)=>{
       let name = e.name
-      let valueToChange = e.value
+      let valueToChange = e.checked
       value.setBeforeISP(preve=>{
       const newobj =  {...preve}
-         newobj.demosaic[name]=valueToChange
+         newobj.DRS[name]=valueToChange
          return newobj
       })
       
           }
 
    return (
-      <div className={`${styles.tempWidth} ${styles.classNameTitle} ${className}`} style={style} {...props} id={""} >
-         <div className={classNameOption}>
-            <input type="checkbox" onChange={()=>console.log("onChange-checkbox")}/>
-            Enable
+      <div className={`styles.${classNameTitle} ${className}`} style={style} {...props} id={""} >
+         <div className={`styles.${classNameOption}`}>
+            <Checkbox label="enable" name="enable" onChange={handle}/>
          </div>
-         {/* ${styles.classNameOption}  */}
-         <div className={`${styles.classNameDropTitle}`}  >
-            method
-            <InputSelect label="method" options={["Historgram"]} width="265" setSelectInput={()=>console.log("onChange-option")} handle={ handle}/>
+         <div className={`styles.${classNameDropTitle} ${classNameOption}`}  >
+            <InputSelect label="method" options={["Historgram"]} width="265" setSelectInput={()=>console.log("onChange-option")} handle={handle}/>
             <RangeSlider func={()=>console.log("onChange-range")} text="Bright Discards Percentile" min={0} max={100} step={1} textPosLeft={false}/>
          </div>
-         <div className={classNameOption}>
+         <div className={`styles.${classNameOption}`}>
             <RangeSlider func={()=>console.log("onChange-range")} text="Dark Discard Percentile" min={0} max={100} step={1} textPosLeft={false}/>
          </div>
       
+         <div>{`${value.beforeISP.DRS.enable}`}</div>
+
       </div>
+      
    )
 }
 
 export default DynamicRangeStretch
 
 
-// 
+//className={`styles.${label}`} 

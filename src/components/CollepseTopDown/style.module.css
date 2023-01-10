@@ -1,11 +1,12 @@
 .CollepseTopDown {
   background: #383838;
   width: 352px;
-  height: 337px;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 12px 0px;
+  /* overflow: scroll; */
 }
 
 .oneOptions {
@@ -14,14 +15,21 @@
   align-items: center;
   width: 352px;
   height: 50px;
-
-  background: #383838;
 }
 
-.oneOptions svg {
+.oneOptions p {
+  color: var(--text-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size-label);
+}
+
+svg {
+  color: #56c493;
+}
+
+.oneOptions {
   color: #56c493;
   font-size: 28px;
-  background: #383838;
 }
 
 .openPropertis {
@@ -29,10 +37,10 @@
 }
 .openPropertis {
   max-height: 300px;
-
   width: 100%;
   background: #1e1e1e;
   border-radius: 4px;
+  text-align: center;
 }
 
 .title {

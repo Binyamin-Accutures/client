@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import styles from "./style.module.css"
 import { FiSearch } from "react-icons/fi";
-import Header from "../../components/Header"
 import ModalPopUp from '../../components/ModalPopup';
+
 
 export default function HistoryPage() {
   const ContextImages= [{name: 'ibmage1', url:'https://carwow-uk-wp-2.imgix.net/RR_VELAR_EDITION_23MY_027_GLHD_140422_01-scaled-e1659537496312.jpg?auto=format&cs=tinysrgb&fit=crop&h=800&ixlib=rb-1.1.0&q=60&w=1600', date: ()=> { return new Date('2019-06-01')}},
@@ -57,9 +57,10 @@ console.log(arrImages);
 
   
   return (
+
     <>
    
-    <Header/>
+
     
     <div className={styles.historyPageContainer}>
     
@@ -97,6 +98,7 @@ console.log(arrImages);
        </div>
     </div>
     </>
+
   )
 }
 
