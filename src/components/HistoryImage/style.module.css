@@ -18,7 +18,7 @@
     border-radius: 1.1425355672836304px;
     /* margin: 5px 0 5px 0; */
     object-fit: cover;
-    aspect-ratio: ;
+    aspect-ratio: 6/9;
 }
 
 .icon {
@@ -74,9 +74,9 @@
     align-items: center;
 }
 
-span {
+.downloadIcon>span {
     font-family: 'open sens', sans-serif;
-    font-size: 6px;
+    font-size: 8px;
     font-weight: 100;
     line-height: 12px;
     letter-spacing: 0em;
