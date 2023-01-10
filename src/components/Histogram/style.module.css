@@ -1,3 +1,9 @@
-.histogram{
+.histogramAll{
+    display:flex;
+    justify-content:space-between;
+}
 
+.show{
+   display:inline-flex;
+  
 }

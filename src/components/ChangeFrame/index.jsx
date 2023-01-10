@@ -12,11 +12,8 @@ import styles from "./style.module.css"
 export default function ChangeFrame() {
 
     const [chooseMinRange, setChooseMinRange] = useState(1)
-    const [chooseMaxRange, setChooseMaxRange] = useState(1)
+    const [chooseMaxRange, setChooseMaxRange] = useState(1)  
     const files= new Array(35)
-
-
-
 
 
 
@@ -24,9 +21,13 @@ export default function ChangeFrame() {
 
     return (<>
         <div className={styles.allFrame}>
+
+
             <span className={styles.frame}><RangeSlider min={1} max={files.length} func={(target)=>setChooseMinRange(target.value)} text='Start Frame'/></span>
            < span className={styles.frame}><RangeSlider min={chooseMinRange} max={files.length } func={(target)=>setChooseMaxRange(target.value)} text='End Frame'/></span>
+           
         </div>
     </>
     );
 }
+
