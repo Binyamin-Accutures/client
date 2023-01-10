@@ -9,7 +9,12 @@ import { MainTest } from "./tests/MainTest";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
-  const [user, setUser] = useState(true);
+
+
+
+  const [user, setUser] = useState(true)
+
+
   useEffect(() => {
     const startApp = async () => {
       const userFromServer = await apiCalls(
@@ -23,6 +28,7 @@ function App() {
 
     if (!user && localStorage.token) startApp();
   }, []);
+
 
   return (
     <div>
