@@ -11,9 +11,9 @@ import { TbFileDownload } from 'react-icons/tb'
 
 
 
-function HistoryImage({ src, time, date, imgName }) {
+function HistoryImage({ src, time, date, imgName, funcDel }) {
     return (
-        <div>HistoryImage
+        <div>
             <div className={styles.img_container}>
                 <div className={styles.downloadAndDelete}>
                     <div className={styles.downloadIcon}>
@@ -27,7 +27,7 @@ function HistoryImage({ src, time, date, imgName }) {
                     </div>
 
                     <div className={styles.downloadIcon}>
-                        <span><FaTrashAlt className={styles.icon} /></span>
+                        <span><FaTrashAlt className={styles.icon} onClick={()=>funcDel(imgName)}/></span>
                         <span>delete</span>
                     </div>
                 </div>

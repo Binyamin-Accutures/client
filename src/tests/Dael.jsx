@@ -124,9 +124,14 @@ function Dael() {
   }, [AoLPOvealay_HSFactor, AoLPOvealay_minS0Value, AoLPOvealay_maxS0Value]); 
 
   useEffect(() => {
+    
+    const canvas = canvasRef.current;
 
     HSVchange(0, HSFactor, 0, DoLPSatur, 0, 1);
-    // todo AoLPBright
+    window.Caman(canvas, img, function () {
+      this.brightness(AoLPBright);
+    })
+
   }, [HSFactor, DoLPSatur, AoLPBright]); 
 
 
