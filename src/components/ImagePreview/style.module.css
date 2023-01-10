@@ -27,7 +27,7 @@
     top: 10px;
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 14px;
 }
@@ -38,11 +38,13 @@
     flex-direction: column;
     position: relative;
     top: -30px;
+    
 }
 .RangeSlider{
     width: 736.6px;
     height: 3px;
     padding:  50px 0px ;
+    
 }
 .images{
     width: 1113px;
