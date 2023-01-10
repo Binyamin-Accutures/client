@@ -10,22 +10,16 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
         if(!isNaN(contextValue) && contextValue != value) {
             if(contextValue > max ) setValue(() => max)
             else if(contextValue < min ) setValue(() => min)
-            else {
-                console.log(afterISP.displaySet.RGB.maxDoLPVal);
-                setValue(contextValue)
-            }
-            
+            else setValue(contextValue)
         }
-    },[afterISP, value, contextValue])
+    },[afterISP, contextValue])
 
 
     const handleChange = ({ target }) => {
-
         if(target.value > max ) setValue(() => max)
         else if(target.value < min ) setValue(() => min)
         else setValue(() => Number(target.value))
         if(func) func(target)
-
     }
 
   
