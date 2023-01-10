@@ -52,10 +52,11 @@ body {
 }
 
 .logoutBtn {
-
     left: 0px;
     top: 50px;
     width: 160px;
+    height: 40px;
+    border-radius: 50%;
     border-radius: 4%;
     border: 1px;
     padding: 1rem;
@@ -69,4 +70,7 @@ body {
     color: #D9D9D9;
     text-align: center;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

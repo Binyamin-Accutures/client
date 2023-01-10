@@ -1,44 +1,94 @@
+
+
+
+
+
+import ChangeFrame from '../components/ChangeFrame';
+import HistoryPage from '../pages/HistoryPage';
+
+
+
+
+
+
+
+
+
+// import LoginPage from '../pages/LoginPage'
+// import Sapir from './Sapir'
 import { Route, Routes } from 'react-router-dom'
+
+
+
+
+
+
+import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
+import Pavel from './Pavel'
 
-
-import Sapir from './Sapir'
 import Roye from "./Roye";
-import Anat from './Anat';
-import Kobi from './Kobi'
+
+
+import Moran from './Moran'
+import Sapir from './Sapir'
+
+// import Anat from "./Anat";
+
+import Anat from "./Anat";
+
+import Adel from "./Adel";
+// import Moran from "./Moran";
+// import Sapir from "./Sapir";
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
 import Elisha from "./Elisha";
 import David from "./David";
 import Shahar from "./Shahar";
-import Hadar from "./Hadar";
+// import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
 import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
+import Yair from './Yair';
+import Gil from './Gil';
+import Chananel from './Chananel';
+import Dael from './Dael';
+
+
 
 export const MainTest = () => {
-    return (
-        <Routes>
+  return (
+    <Routes>
+      <Route path="/dael" element={<Dael />} />
+      <Route path="/aviad" element={<Aviad />} />
+      <Route path="/noam" element={<Noam />} />
+      <Route path="/anat" element={<Anat />} />
+      <Route path="/matanel/*" element={<Matanel />} />
+      <Route path="/elisha" element={<HistoryPage />} />
+      <Route path="/roye" element={<Roye />} />
+      <Route path="/david" element={<David />} />
+      <Route path="/shahar" element={<Shahar />} />
+      {/* <Route path="/hadar" element={<Hadar />} /> */}
+      <Route path="/noa" element={<NoaTest />} />
+      <Route path="/aviadElya" element={<AviadElya />} />
 
-            <Route path='/sapir' element={<LoginPage />} />
-            <Route path="/aviad" element={<Aviad />} />
-            <Route path="/noam" element={<Noam />} />
-            <Route path='/anat' element={<Anat />} />
-            <Route path="/matanel/*" element={<Matanel />} />
-            <Route path="/elisha" element={<Elisha />} />
-            <Route path="/roye" element={<Roye />} />
-            <Route path='/aviad' element={<Aviad />} />
-            <Route path='/david' element={<David />} />
-            <Route path='/shahar' element={<Shahar />} />
-            <Route path='/hadar' element={<Hadar />} />
-            <Route path='/matanel/*' element={<Matanel />} />
-            <Route path='/elisha' element={<Elisha />} />
-            <Route path='/noa' element={<NoaTest />} />
-            <Route path='/aviadElya' element={<AviadElya />} />
-            <Route path='/kobi' element={<Kobi/>} />
-            <Route path='/Yisrael' element={<YisraelTest />} />
-        </Routes>
-    )
+      {/* <Route path='/adel' element={<Adel />} /> */}
+
+
+      <Route path='/adel' element={<Adel />} />
+      <Route path='/pavel' element={<Pavel />} />
+      <Route path='/sapir' element={<Sapir />} />
+      <Route path='/moran' element={<Moran />} />
+      <Route path='/Yisrael' element={<YisraelTest />} />
+      <Route path='/dudu' element={<Dudu />} />
+      <Route path='/yair' element={<Yair />} />
+
+
+      <Route path='/gil' element={<Gil />} />
+      <Route path='/Chananel' element={<Chananel />} />
+
+    </Routes>
+  );
 };
