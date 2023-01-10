@@ -1,0 +1,69 @@
+.main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 95%;
+    background-color: #1e1e1e;
+}
+
+.mainBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 66%;
+}
+
+.controlBar {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: start;
+    width: 100%;
+    height: 33%;
+    padding-top: 0px;
+    border: solid 1px #ffff;
+}
+
+.mainbar .CarouselSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    height: 10%;
+    padding-top: 30px;
+    border: solid 1px #ffff;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+
+.editRange {
+    border: 3px solid red;
+    width: 736.6px;
+    padding-bottom: 20px;
+    display: flex;
+    padding-left: 0;
+}
+
+
+.ChangeFrame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    padding-right: 0;
+
+}
+
+.ChangeFrame input {
+    width: 200px;
+}
+
+

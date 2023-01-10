@@ -1,15 +1,3 @@
-.layout{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.header{
-    width: 100%;
-    height: 50px;
-    border: solid 1px #ffff;
-}
-
 .main{
     margin-top: 5px;
     padding: 0 5px 0 0;
@@ -19,26 +7,26 @@
     height: 90%;
     border: solid 1px #ffff;
 }
-
 .leftBar{
-    flex-grow: 2;
-    width: 400px;
-    height: 100%;
-    border: solid 1px #ffff;    
+    /* flex-grow: 2; */
+    /* width: 400px; */
+    height: 100%;   
     margin-right: 5px;
 }
 
 .mainBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
     width: 100%;
-    height: 100%;
-    border: solid 1px #ffff; 
+    height: 100%; 
 }
 
 .rightBar{
-    flex-grow: 2;
+    /* flex-grow: 2; */
     margin-left: 5px;
     width: 400px;
     height: 100%;
-    border: solid 1px #ffff; 
+
 }

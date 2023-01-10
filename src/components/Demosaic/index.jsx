@@ -6,24 +6,30 @@ import onChangeSideBar from '../../functions/onChangeSideBar'
 import ImageContext from '../../context/ImageContext';
 
 function Demosaic(props) {
-    const value = useContext(ImageContext)
+    const value = useContext(ImageContext);
+    // ! gets the values of demosaic method inside of beforeISP
+    const methodOption = value.beforeISP.demosaic.method;
+    // ! gets the values of demosaic method inside of beforeISP
+    const orderPixelOption = value.beforeISP.demosaic.pixelOrder;
     const methodData = props.data.demosaic.method;
     const pixelOrderData = props.data.demosaic.pixelOrder;
    
     const showData = (e) => {
-        console.log(selectPixelOrder);
-        console.log(selectMethod);
-        console.log(isEnabled);
+        console.log(methodOption);
+        console.log(orderPixelOption);
+        // console.log(selectMethod);
+        // console.log(isEnabled);
     }
 
     const handle = (e)=>{
-let name = e.name
-let valueToChange = e.value
-value.setBeforeISP(preve=>{
-const newobj =  {...preve}
-   newobj.demosaic[name]=valueToChange
-   return newobj
-})
+        let name = e.name
+        let valueToChange = e.value
+
+        value.setBeforeISP(preve=>{
+            const newobj =  {...preve}
+            newobj.demosaic[name]=valueToChange
+            return newobj
+        })
 
     }
 
@@ -41,8 +47,9 @@ const newobj =  {...preve}
             {/* <input type="checkbox" id="enabled" name="enabled" value="1" onChange={(e) => hendel(e)}/>
             <label for="enabled">enabled</label> */}
         </div>
-        <InputSelect label="method" options={methodData} width="265" setSelectInput={setSelectMethod} handle={ handle}/>
-        <InputSelect label="pixelOrder" options={pixelOrderData} width="265" setSelectInput={setSelectPixelOrder} handle={ handle}/>
+        <button onClick={(e) => showData(e)}>Click Me!</button>
+        <InputSelect label="method" options={methodData} width="265" setSelectInput={setSelectMethod} handle={handle}/>
+        <InputSelect label="pixelOrder" options={pixelOrderData} width="265" setSelectInput={setSelectPixelOrder} handle={handle}/>
    
         <div>{value.beforeISP.demosaic.method}</div>
         <div>{value.beforeISP.demosaic.pixelOrder}</div>

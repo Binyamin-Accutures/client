@@ -6,26 +6,35 @@ const afterISPTemp = {
     imagePath : '',
     displaySet :{
         s0 :{
+            enable : true,
             minS0Value : 0,
-            maxS0Value : 0
+            maxS0Value : 1
         },
         DoLP :{
-            DoLPSatut : 0
+            enable : true,
+            DoLPMin : 0,
+            DoLPMax : 1
+        },
+        AoLPOvealayed : {
+            enable : true,
+            HSFactor : 1,
+            minS0Value : 0,
+            maxS0Value : 1
         },
         AoLPDoLP : {
-            HSFactor : 0,
-            DoLPSatut : 0,
+            enable : true,
+            HSFactor : 1,
+            DoLPSatur : 1,
             AoLPBright : 0,
-            minS0Value : 0,
-            maxS0Value : 0
         },
         RGB : {
-            AoLPCenter :  0,
-            AoLPPov : 0,
+            enable : true, 
+            AoLPCenter :  127,
+            AoLPPov : 255,
             minDoLPVal : 0,
-            maxDoLPVal : 0,
+            maxDoLPVal : 255,
             minS0Value : 0,
-            maxS0Value : 0
+            maxS0Value : 255
         }
     }
 }
@@ -43,7 +52,6 @@ const beforeISPTemp ={
     DRS : { 
         enable : true,
         method : {
-            enable : true,
             method : "dynamic_range_stretch",
             cutoffs: {
                 method: "percent",
