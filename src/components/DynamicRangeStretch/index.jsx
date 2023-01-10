@@ -38,7 +38,7 @@ const DynamicRangeStretch = ({data ,style = {},className="", classNameTitle = ""
             <Checkbox label="enable" name="enable" onChange={handleHightLevel} checked={value.beforeISP.DRS.enable}/>
          </div>
          <div className={`styles.${classNameDropTitle} ${classNameOption}`}  >
-            <InputSelect label="method" options={["bla","percent"]} width="265"handle={handle} dataDefault={value.beforeISP.DRS.method.cutoffs.method}/>
+            <InputSelect label="method" options={["percent"]} width="265"handle={handle} dataDefault={value.beforeISP.DRS.method.cutoffs.method}/>
             <RangeSlider func={handle} text="Bright Discards Percentile" name="low" min={0} max={100} step={1} textPosLeft={false} numInput={false} contextValue={value.beforeISP.DRS.method.cutoffs.low}/>
          </div>
          <div className={`styles.${classNameOption}`}>
