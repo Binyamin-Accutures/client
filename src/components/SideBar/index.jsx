@@ -13,7 +13,6 @@ import Sharping from "../Sharping";
 // creator: Liat
 
 const SideBar = () => {
-
   const data = {
     demosaic: {
       enable: "true",
@@ -52,8 +51,6 @@ const SideBar = () => {
   ];
   const value = useContext(ImageContext);
   const [IsOpen, setIsOpen] = useState(true);
-  const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
-  console.log("value.beforeISP -", value.beforeISP.images);
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
@@ -63,14 +60,14 @@ const SideBar = () => {
         close
       </button>
       {IsOpen && (
-        <form className={styles.form}>
+        <div className={styles.form}>
           <div className={styles.collapse}>
             <InputLoadImage width="328px" />
-            <Image value={value} />
+            <Image value={value} index={0}/>
             <CollepseTopDown menuList={menuList} />
             <BtnRunISP />
           </div>
-        </form>
+        </div >
       )}
     </>
   );
