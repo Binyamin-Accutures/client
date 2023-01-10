@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from "react";
+import { useState, useContext } from "react";
 import Button from "../Button";
 import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
@@ -7,16 +7,6 @@ import ImageContext from "../../context/ImageContext";
 function DisplaySetting( {buttonFunc, text}){
     const { afterISP, setAfterISP } = useContext(ImageContext)
     const { s0, DoLP, AoLPDoLP, RGB } = afterISP.displaySet
-    const { 
-        minS0Ref, 
-        maxS0Ref, 
-        minS0DolpAlopRef, 
-        maxS0DolpAlopRef,
-        minDoLPRgbRef,
-        maxDoLPRgbRef,
-        minS0RgbRef,
-        maxS0RgbRef
-    } = useRef()
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
