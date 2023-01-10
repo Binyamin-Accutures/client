@@ -21,7 +21,7 @@ const afterISPTemp = {
         AoLPDoLP : {
             HSFactor : 1,
             DoLPSatur : 1,
-            AoLPBright : 0,
+            AoLPBright : 0.5,
         },
         RGB : {
             AoLPCenter :  127,
