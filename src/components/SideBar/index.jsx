@@ -6,18 +6,48 @@ import InputLoadImage from "../InputLoadImage";
 import Image from "../Image";
 import Nuc from "../Nuc";
 import BtnRunISP from "../BtnRunISP";
+import DynamicRangeStretch from "../DynamicRangeStretch";
+import Demosaic from "../Demosaic";
+import Denoise from "../Denoise";
+import Sharping from "../Sharping";
 // creator: Liat
 
 const SideBar = () => {
-  const menuList = [
-    {
-      titel: "NUC",
-      component: <Nuc />,
+  const data = {
+    demosaic: {
+      enable: "true",
+      method: ["Newton", "Tesla", "Edison"],
+      pixelOrder: ["1", "2", "3"],
     },
-    { titel: "Dynamic Range Stretch", component: <div>roey</div> },
-    { titel: "Demosaic", component: <div>roey</div> },
-    { titel: "Denoise", component: <div>roey</div> },
-    { titel: "Sharpening", component: <div>roey</div> },
+  };
+
+  const sharpingData = {
+    sharpening: {
+      enable: true,
+      method: ["1", "2", "3"],
+      radius: 0,
+      ESP: 0,
+      trehold: 0,
+    },
+  };
+  const menuList = [
+    { titel: "NUC", component: <Nuc /> },
+    {
+      titel: "Dynamic Range Stretch",
+      component: (
+        <DynamicRangeStretch
+          classNameTitle="title"
+          classNameOption="option"
+          classNameSecdTitle="dropTitle"
+        />
+      ),
+    },
+    {
+      titel: "Demosaic",
+      component: <Demosaic data={data} className={styles.pedin} />,
+    },
+    { titel: "Denoise", component: <Denoise /> },
+    { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
   ];
   const value = useContext(ImageContext);
   const [IsOpen, setIsOpen] = useState(true);

@@ -23,6 +23,7 @@ import YisraelTest from "./YisraelTest";
 
 import Liat from "./Liat";
 import Yair from "./Yair";
+import Gil from "./Gil";
 
 import Chananel from "./Chananel";
 
@@ -40,7 +41,6 @@ export const MainTest = () => {
       <Route path="/hadar" element={<Hadar />} />
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
-
       <Route path="/adel" element={<Adel />} />
       <Route path="/pavel" element={<Pavel />} />
       <Route path="/sapir" element={<LoginPage />} />
@@ -48,6 +48,7 @@ export const MainTest = () => {
       <Route path="/Yisrael" element={<YisraelTest />} />
       <Route path="/dudu" element={<Dudu />} />
       <Route path="/yair" element={<Yair />} />
+      <Route path="/gil" element={<Gil />} />
       <Route path="/Chananel" element={<Chananel />} />
     </Routes>
   );
