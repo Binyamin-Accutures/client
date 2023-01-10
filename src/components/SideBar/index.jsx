@@ -14,7 +14,7 @@ import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
 // creator: Liat
 
 const SideBar = () => {
-  const [isClicked, setIsClicked] = useState();
+  
   const data = {
     demosaic: {
       enable: "true",
@@ -69,7 +69,7 @@ const SideBar = () => {
             <div className={styles.collapse}>
               <InputLoadImage width="328px" className={styles.loadBtn}/>
               <Image value={value} index={0}/>
-              <CollepseTopDown menuList={menuList} isClicked={isClicked} setIsClicked={setIsClicked} className={styles.blackBack} />
+              <CollepseTopDown menuList={menuList} className={styles.blackBack} />
               <BtnRunISP className={styles.btn} />
           </div>
           </div>
