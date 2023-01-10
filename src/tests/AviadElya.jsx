@@ -1,13 +1,16 @@
 import React from 'react'
 // import  Input from '../components/Input'
-import BackendStatus from '../components/BackendStatus'
+// import BackendStatus from '../components/BackendStatus'
+import LayoutLogin from '../LayoutLogin'
 
 
 function AviadElya() {
 
     return (
         <div>
-            <BackendStatus/>
+            {/* <BackendStatus/> */}
+            <LayoutLogin/>
+
         </div>
         
     )
