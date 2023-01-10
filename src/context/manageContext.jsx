@@ -6,18 +6,24 @@ const afterISPTemp = {
     imagePath : '',
     displaySet :{
         s0 :{
+            grayLevel : 127,
+            linearStreching : 0,
             minS0Value : 0,
             maxS0Value : 0
         },
         DoLP :{
-            DoLPSatut : 0
+            DoLPMin : 0,
+            DoLPMax : 0
+        },
+        AoLPOvealay : {
+            HSFactor : 0,
+            minS0Value : 0,
+            maxS0Value : 0
         },
         AoLPDoLP : {
             HSFactor : 0,
             DoLPSatut : 0,
             AoLPBright : 0,
-            minS0Value : 0,
-            maxS0Value : 0
         },
         RGB : {
             AoLPCenter :  0,
@@ -33,37 +39,40 @@ const afterISPTemp = {
 const beforeISPTemp ={
     images : [],
     NUC : {
-        enable : true,
+        enable : false,
         method : {
             pt1 : true,
-            pt2 : true, 
-            badPixelCorrect : true,
-            sensor : ''
+            pt2 : false, 
+            nuc_file : null
         }
     },
     DRS : { 
         enable : true,
         method : {
-            histogram : '',
-            BDP : 0,
-            DDP : 0
+            method : "dynamic_range_stretch",
+            cutoffs: {
+                method: "percent",
+                bitdepth: 16,
+                low: 0,
+                high: 100,
+                high_value: 100
+              }
         }
     },
     demosaic : {
-        enable : true,
-        method : '',
-        pixelOrder : ''
+        method : 'newton',
+        pixelOrder : 'hrfv'
     },
-    denois : {
-        method : '',
+    denoise : {
+        method : 'bm3d',
         radius : 0,
-        ESP : 0
+        ESP : 0.005
     },
     sharpening : {
         enable : true,
-        method : '',
-        radius : 0,
-        ESP : 0,
+        method : 'usm',
+        radius : 1.5,
+        ESP : 0.8,
         trehold : 0
     }
 }

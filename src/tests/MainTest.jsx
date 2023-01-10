@@ -1,7 +1,19 @@
+
 import Roye from "./Roye";
 
+
 import { Route, Routes } from "react-router-dom";
-import ChangeFrame from "../components/ChangeFrame";
+
+
+import SectionBorder from '../components/SectionBorder'
+import LoginPage from '../pages/LoginPage'
+import Pavel from './Pavel'
+
+import Roye from "./Roye";
+import Anat from "./Anat";
+import Adel from "./Adel";
+import Moran from "./Moran";
+import Sapir from "./Sapir";
 import Aviad from "./Aviad";
 import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
@@ -12,7 +24,11 @@ import Shahar from "./Shahar";
 import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
 import Noam from "./Noam";
+import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
+import Yair from './Yair';
+import Gil from './Gil';
+import Chananel from './Chananel';
 
 
 export const MainTest = () => {
@@ -20,7 +36,7 @@ export const MainTest = () => {
     <Routes>
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
-      <Route path='/dael' element={<Dael />} />
+      <Route path="/anat" element={<Anat />} />
       <Route path="/matanel/*" element={<Matanel />} />
       <Route path="/elisha" element={<Elisha />} />
       <Route path="/roye" element={<Roye />} />
@@ -29,7 +45,17 @@ export const MainTest = () => {
       <Route path="/hadar" element={<Hadar />} />
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
-      <Route path="/Yisrael" element={<YisraelTest />} />
+
+      <Route path='/adel' element={<Adel />} />
+      <Route path='/pavel' element={<Pavel />} />
+      <Route path='/sapir' element={<LoginPage />} />
+      <Route path='/moran' element={<Moran />} />
+      <Route path='/Yisrael' element={<YisraelTest />} />
+      <Route path='/dudu' element={<Dudu />} />
+      <Route path='/yair' element={<Yair />} />
+      <Route path='/gil' element={<Gil />} />
+      <Route path='/Chananel' element={<Chananel />} />
+
     </Routes>
   );
 };

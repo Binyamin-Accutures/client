@@ -3,17 +3,20 @@ import styles from "./style.module.css";
 
 // creator: "Noam"
 
-function Image(props) {
+function Image({ value, index, ...props }) {
+  let url = value.beforeISP.images[index]?.url || "";
+  let name = value.beforeISP.images[index]?.name || "<empty>";
   return (
     <>
-      <div className="imgContainer">
+      <div className={styles.imgContainer}>
         <img
-          key={"img"}
+          {...props}
+          key={name}
           className={styles.img}
-          src={props.url}
-          title="Uploded Image"
+          src={url}
+          alt="Uploded Image"
         />
-        <div className={styles.label}>Uploaded Image: {props.name}</div>
+        <div className={styles.label}>Uploaded Image: {name}</div>
       </div>
     </>
   );
