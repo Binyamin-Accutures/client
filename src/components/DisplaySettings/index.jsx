@@ -4,9 +4,9 @@ import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
 import ImageContext from "../../context/ImageContext";
 import style from './style.module.css';
-import saveResults from "../../functions/saveResults";
+import CheckBox from '../Checkbox'
 
-function DisplaySetting( {buttonFunc, text}){
+function DisplaySetting() {
     const { afterISP, setAfterISP } = useContext(ImageContext)
 
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
@@ -17,6 +17,7 @@ function DisplaySetting( {buttonFunc, text}){
     const [aolpOverlayVal ,setAolpOverlayVal ] = useState(AoLPOvealayed)
     const [aolpDolpVal, setAolpDolpVal] = useState(AoLPDoLP);
     const [rgbVal, setRgbVal] = useState(RGB);
+    const [checkAllVal, setCheckAllVal] = useState(true)
     
     const handleS0 = (target) => {
         setS0Val((prev) => ({...prev, [target.name]: target.value}))
@@ -80,21 +81,30 @@ function DisplaySetting( {buttonFunc, text}){
         console.log(afterISP.displaySet);
     }
 
+    const handleCheckAll = (e) => {
+        e.preventDefault()
+        if(!checkAllVal) setCheckAllVal(true)
+    }
+
+    const handleCheck = () => {
+
+    }
+
     const handleClick = () => {
-        saveResults(afterISP.displaySet)
+        
     }
 
 
     const menuList = [
-        {titel:"S0", component:<div>    
+        {titel:"S0", component:<div>
+        <CheckBox label={'Enable'} onChange={handleCheckAll}/>    
         <RangeSlider textPosLeft={false} className={style.Hug} func={handleS0} text={'Minimun S0 value'} name="minS0Value" contextValue={s0.minS0Value} min={0} max={1} step={0.01}/> 
         <RangeSlider textPosLeft={false} className="Hug"  func={handleS0} text={'Maximum S0 value'}  name="maxS0Value" contextValue={s0.maxS0Value} min={0} max={1} step={0.01}/>
 
         </div> },
 
         {titel:'Dolp', component:<div>
-        <RangeSlider textPosLeft={false} className="Hug" func={handleDoLP} text={`DoLP minimun`} name="DoLPMin" contextValue={DoLP.DoLPMin} min={0} max={1} step={0.01}/> 
-        <RangeSlider textPosLeft={false} className="Hug" func={handleDoLP} text={`DoLP maximum`} name="DoLPMax" contextValue={DoLP.DoLPMax} min={0} max={1} step={0.01}/>
+        <RangeSlider textPosLeft={false} className="Hug" func={handleDoLP} text={`DoLP Satutation `} name="DoLPSatut" contextValue={DoLP.DoLPSatut} min={0} max={1} step={0.01}/> 
         </div>},
 
         {titel:'AoLP Overlayed', component:<div>
@@ -106,7 +116,7 @@ function DisplaySetting( {buttonFunc, text}){
         {titel:'AoLP+DoLP',component:<div>
           <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP}  text={`Hue Scale Factor`} name="HSFactor" contextValue={AoLPDoLP.HSFactor} min={0} max={1} step={0.01}/>
          <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={`DoLP Satutation`} name="DoLPSatut" contextValue={AoLPDoLP.DoLPSatut} min={0} max={1} step={0.01}/>
-         <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={`AoLP brighntess control`} name="AoLPBright" contextValue={AoLPDoLP.AoLPBright} min={0} max={1} step={0.01}/> 
+         <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={`AoLP brighntess control`} name="AoLPBright" contextValue={AoLPDoLP.AoLPBright} min={-1} max={1} step={0.01}/> 
          </div> },
 
         {titel:'RGB',component:<div> 
@@ -124,6 +134,7 @@ function DisplaySetting( {buttonFunc, text}){
         <h1>
             Display settings
         </h1>
+        <CheckBox label={'Enable All'} />
         <div>
         <CollepseTopDown menuList={menuList} />
         </div>
