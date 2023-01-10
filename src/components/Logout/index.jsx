@@ -5,11 +5,11 @@ import { BiLogOutCircle } from 'react-icons/bi'
 
 // creator:moran and adel
 // data : logout button, apeare when the user icon is pressed
-function logOut({ setIsShow }) {
+function LogOut({ setIsShow }) {
     return (
         <>
             <div className={styles.logoutComp} >
-                <BiLogOutCircle className={styles.logoutIcon} /><br />
+                <BiLogOutCircle className={styles.logoutIcon} /><br /><br />
 
                 <button className={styles.logoutBtn}>logOut</button>
             </div>
@@ -19,4 +19,4 @@ function logOut({ setIsShow }) {
     )
 }
 
-export default logOut
+export default LogOut
