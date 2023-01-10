@@ -1,15 +1,17 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
 
+
 export default function RegisterPage() {
   const userEmailInput = useRef();
-
+  const nav = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(userEmailInput.current.value);
+    nav("/renew", { state: { email: userEmailInput.current.value } });
   }
 
   return (
@@ -21,6 +23,7 @@ export default function RegisterPage() {
       <Input
         type="email"
         name="input"
+        required={true}
         placeholder="email"
         inputRef={userEmailInput}
       />

@@ -6,32 +6,30 @@ const afterISPTemp = {
     imagePath : '',
     displaySet :{
         s0 :{
-            grayLevel : 127,
-            linearStreching : 0,
             minS0Value : 0,
-            maxS0Value : 0
+            maxS0Value : 1
         },
         DoLP :{
             DoLPMin : 0,
-            DoLPMax : 0
+            DoLPMax : 1
         },
-        AoLPOvealay : {
-            HSFactor : 0,
+        AoLPOvealayed : {
+            HSFactor : 1,
             minS0Value : 0,
-            maxS0Value : 0
+            maxS0Value : 1
         },
         AoLPDoLP : {
-            HSFactor : 0,
-            DoLPSatut : 0,
-            AoLPBright : 0,
+            HSFactor : 1,
+            DoLPSatur : 1,
+            AoLPBright : 0.5,
         },
         RGB : {
-            AoLPCenter :  0,
-            AoLPPov : 0,
+            AoLPCenter :  127,
+            AoLPPov : 255,
             minDoLPVal : 0,
-            maxDoLPVal : 0,
+            maxDoLPVal : 255,
             minS0Value : 0,
-            maxS0Value : 0
+            maxS0Value : 255
         }
     }
 }

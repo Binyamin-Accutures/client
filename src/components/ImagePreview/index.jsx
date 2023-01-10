@@ -11,7 +11,6 @@ function ImagePreview() {
 
     return (
         <>
-            <Header />
             <div className={styles.imgprevContainner}>
             <div className={styles.ImagePreview}>
                 <InputLoadImage  width={'133px'} > Load Image </InputLoadImage>
