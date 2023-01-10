@@ -68,7 +68,7 @@ console.log(arrImages);
       <div className={styles.historyPageHeader}>
         <div className={styles.historyPageSearch}>
        <input className={styles.historySearch} type="text" placeholder='search' onInput={(e)=> funSearch(e)}/>
-       <FiSearch style={{color:'green', position:'absolute', right:'2px' ,top: '4px'}}/>
+       <FiSearch style={{color:'green', position:'absolute', right:'5px' ,top: '8px'}}/>
        </div>
        </div>
        <br />

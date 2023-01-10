@@ -17,18 +17,18 @@ function HistoryImage({ src, time, date, imgName, funcDel }) {
             <div className={styles.img_container}>
                 <div className={styles.downloadAndDelete}>
                     <div className={styles.downloadIcon}>
-                        <span><VscFilePdf className={styles.icon} /></span>
-                        <span>view PDF</span>
+                        <span className={styles.upperIcons}><VscFilePdf className={styles.icon} /></span>
+                        <span className={styles.upperText}>view PDF</span>
                     </div>
 
                     <div className={styles.downloadIcon}>
-                        <span><TbFileDownload className={styles.icon} /></span>
-                        <span>download</span>
+                        <span className={styles.upperIcons}><TbFileDownload className={styles.icon} /></span>
+                        <span className={styles.upperText}>download</span>
                     </div>
 
                     <div className={styles.downloadIcon}>
-                        <span><FaTrashAlt className={styles.icon} onClick={()=>funcDel(imgName)}/></span>
-                        <span>delete</span>
+                        <span className={styles.upperIcons}><FaTrashAlt className={styles.icon} onClick={()=>funcDel(imgName)}/></span>
+                        <span className={styles.upperText}>delete</span>
                     </div>
                 </div>
                 <img className={styles.img} src={src} alt="" />
