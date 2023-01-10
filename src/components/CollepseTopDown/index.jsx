@@ -5,19 +5,28 @@ import { useState } from "react";
 
 
 const CollepseTopDown = (props) => {
-
+  
  const [openCollepseTopDown,setOpenCollepseTopDown] = useState(null)
 
  let openClasses = `${styles.oneOptions}`;
+
+ if(openCollepseTopDown) {
+
+ }
 
  {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
  : openClasses = `${styles.oneOptions}`}
 
  const onClickLine = (titel)=>{
+  alert(titel);
    if(openCollepseTopDown===titel){
        setOpenCollepseTopDown(null)
+       openClasses = `${styles.oneOptions}`
    }
-   else{setOpenCollepseTopDown(titel)}
+   else{
+    setOpenCollepseTopDown(titel)
+    openClasses = `${styles.oneOptions} ${props.className}`
+  }
  }
 
 
