@@ -1,10 +1,13 @@
 import React from 'react'
 import Button from '../components/Button'
+import ImagePreview  from '../components/ImagePreview'
+
 
 function YisraelTest() {
   return (
-    <div>YisraelTest
-        <Button width={'328px'} children={'Test'} />
+    <div>
+      <ImagePreview/>
+      <Button width={328}>Long Button</Button>
     </div>
   )
 }

@@ -3,19 +3,22 @@ import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import apiCalls, { setToken } from "../../functions/apiRequest";
 import Button from "../../components/Button";
-import Header from "../../components/Header";
 import Input from "../../components/Input";
+import logo from "../../components/Header/logo.svg";
+
 
 // creator: david hakak
 // color: _______________
 // icon: ________________
 
 function LoginPage() {
-  const UserEmailInput = useRef(null);
-  const UserPasswordInput = useRef(null);
+ 
+  const userEmailInput = useRef();
+  const userPasswordInput = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(userEmailInput.current.value, userPasswordInput.current.value);
 
 
     apiCalls("get", "https://restcountries.com/v3.1/all")
@@ -27,18 +30,37 @@ function LoginPage() {
     // localStorage.token = "444444" -->    // localStorage.token = res.token 
   }
 
+
   return (
     <>
-    <Header/>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <img src={logo} alt="logo" /> Accutures
+        </div>
+      </header>
+
+
       <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <h1>Sign in</h1>
+        <p className={styles.paragraphTitle}>Sign In</p>
 
+        <Input
+          type="email"
+          name="input"
+          placeholder="email"
+          required={true}
+          inputRef={userEmailInput}
+        />
+        <Input
+          type="password"
+          name="input"
+          placeholder="password"
+          required={true}
+          inputRef={userPasswordInput}
+        />
 
-      <Input type={"text"} name='input'  placeholder={"email"} ref={UserEmailInput}/>
-      <Input type={"text"} name='input' placeholder={"password"} ref={UserPasswordInput}/>
-    
-
-        <Button type={"submit"} width={"328px"} children={'Sign In'}/>
+        <Button type={"submit"} width={"328px"}>
+          Sign In
+        </Button>
 
         <div className={styles.formOptions}>
           <p>forgot password</p>
@@ -46,7 +68,7 @@ function LoginPage() {
         </div>
       </form>
     </>
-  );
+  )
 }
 
 export default LoginPage;
