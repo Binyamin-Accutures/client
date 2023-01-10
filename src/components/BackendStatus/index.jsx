@@ -15,7 +15,7 @@ useEffect(()=>{
                )
                return newArray
         })
-    },300);
+    },200);
      
 return ()=> {clearInterval(intervel)}
 },[])
