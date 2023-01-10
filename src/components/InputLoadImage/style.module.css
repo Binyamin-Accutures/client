@@ -1,17 +1,5 @@
-.input {
-background: #56C493;
-border-radius: 4%;
-border: 0;
-font-family: 'Open Sans';
-color: #FFFFFF;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px 20px;
-gap: 10px;
-}
-.input svg {
-    display: none
-}
 
+
+.pseudoInput {
+  display: none;
+}
