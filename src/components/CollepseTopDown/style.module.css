@@ -1,11 +1,12 @@
 .CollepseTopDown {
+
   background: #383838;
   /* width: 352px; */
   max-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:4px;
+  /* padding:4px; Dael */
   /* overflow: scroll; */
 }
 
@@ -15,22 +16,20 @@
   align-items: center;
   width: 100%;
   height: 50px;
+  padding: 0px 12px;
 }
 
 .oneOptions p {
-  color: var(--text-color);
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-size-label);
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--font-size-label);
 }
 
-svg {
-  color: #56c493;
-}
 
 .oneOptions {
-  color: #56c493;
-  font-size: 28px;
- 
+  color: var(--primary-color);
+  font-size: 28px !important;
+  transition: all 0.4s;
 }
 
 .openPropertis {
@@ -41,28 +40,42 @@ svg {
   padding:12px;
   /* max-height: 300px; */
   width: 100%;
-  background: var(--bg-color);
-  border-bottom-left-radius: var(--border-radius) ;
-  border-bottom-right-radius: var(--border-radius) ;
-    
+  height: 0px;
+  opacity: 0;
+  background: #1e1e1e;
+  border-radius: 0px 0px 4px 4px;
+  padding-left: 12px;
+  overflow: hidden;
+  transition: all 0.4s;
 }
 
+.openPropertis.active {
+  height: auto;
+  opacity: 1;
+}
+svg {
+    color: #56c493;
+}
+
+
 .title {
-  padding: 12px;
+    padding: 12px;
+    cursor: pointer;
 }
 
 .option {
-  padding: 12px;
+    padding: 12px;
 }
 
 .dropTitle {
-  color: var(--text-secondary-color);
-  padding-left: 10px;
+    color: var(--text-secondary-color);
+    padding-left: 10px;
 }
+
 
 /* 
 אפשרויות הערות כותרת */
 
 .bold {
-  font-weight: 700;
+    font-weight: 700;
 }
