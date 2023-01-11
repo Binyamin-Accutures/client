@@ -25,10 +25,9 @@ const Carousel = ({imgUrl,imgOn=true}) => {
       <>
       <div className={styles.carouselContainer}>
 
-      <div className={styles.carouselImage} >
-       {imgOn ? (imgUrl ? <img src={imgUrl} alt="Selected image"/> : "Please load images") : <ImageManipulation imgUrl={imgUrl}/> }
-      </div>
-
+         <div className={styles.carouselImage} >
+            {imgOn ? (imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images") : <p>todo: to add canvas component</p> }
+         </div>
       {/* <div className={styles.carouselSliderContainer}>
       <RangeSlider min='1' max={images.length} func={handleChange} text='Selected Image' textPosLeft={true}/>
       </div> */}
