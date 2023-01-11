@@ -56,10 +56,11 @@ svg {
   color: var(--text-secondary-color);
   padding-left: 10px;
 }
+
 /* 
 אפשרויות הערות כותרת */
 
-.bold{
+.bold {
   font-weight: 700;
-  
+
 }
