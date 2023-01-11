@@ -1,3 +1,34 @@
+
+
+
+
+
+
+import ChangeFrame from '../components/ChangeFrame';
+import HistoryPage from '../pages/HistoryPage';
+import Itamar from "./Itamar";
+
+
+
+
+
+
+
+
+
+// import LoginPage from '../pages/LoginPage'
+// import Sapir from './Sapir'
+import { Route, Routes } from 'react-router-dom'
+
+
+
+
+
+
+import SectionBorder from '../components/SectionBorder'
+import LoginPage from '../pages/LoginPage'
+import Pavel from './Pavel'
+
 import Roye from "./Roye";
 
 import SectionBorder from "../components/SectionBorder";
@@ -43,6 +74,7 @@ export const MainTest = () => {
       {/* <Route path="/hadar" element={<Hadar />} /> */}
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
+      <Route path="/Itamar" element={<Itamar />} />
 
       {/* <Route path='/adel' element={<Adel />} /> */}
 
