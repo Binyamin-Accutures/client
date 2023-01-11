@@ -87,6 +87,8 @@ const languages = [
             PASSPORD:"Passpord",
             CHENGE:"Cheng",
             CREATE:"Create",
+            SO:"S0",
+            BACK_END_STATUS:"Backend Status",
 
         }
     }

@@ -27,13 +27,13 @@ function BackendStatus({ cntImg = 4 }) {
 
     return (
         <div className={styles.BackendStatusMain}>
-            <h1>Backend Status</h1>
+            <h1>{language.BACK_END_STATUS}</h1>
             <div className={styles.BackendStatus}>
 
 
                 <label> {language.RUNNING} </label>
-                <label>Number of Images = {cntImg} </label>
-                <label>In Progress</label>
+                <label>{language.NUMBER_OF_IMAGE} = {cntImg} </label>
+                <label>{language.IN_PROGRESS}</label>
 
 
                 <div className={styles.battery}>
