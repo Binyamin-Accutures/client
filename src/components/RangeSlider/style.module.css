@@ -49,6 +49,8 @@
 }
 
 .container .descrption {
+    display: flex;
+    justify-content: end;
     min-width: 60px;
     margin-right: 10px;
     color: var(--text-secondary-color);
@@ -74,6 +76,8 @@
 }
 
 .containerSmall .descrption {
+    display: flex;
+    justify-content: end;
     width: 100%;
     color: var(--text-color);
     display: block;

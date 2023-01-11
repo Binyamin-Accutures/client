@@ -42,6 +42,6 @@
 
 .blackBack {
   border-radius: 5px;
-  background-color: var(--bg-color);
+  background-color: var(-);
   text-align: center;
 }

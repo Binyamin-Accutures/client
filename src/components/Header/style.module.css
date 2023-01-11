@@ -93,11 +93,11 @@
     align-items: center;
     font-weight: lighter;
     background: #1E1E1E;
-    /* width: 50px; */
+    width: 100p;
     height: 48px;
     margin-left: auto;
 
-    padding-right: 5px;
+    /* padding-right: 5px; */
     position: relative;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .space {
-    width: 200px;
+    width: 300px;
 }
 
 .backNext {
@@ -140,6 +140,7 @@
 
 .backNextOff {
     color: #B6B6B6;
+
 }
 
 
