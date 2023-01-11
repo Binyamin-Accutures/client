@@ -1,7 +1,7 @@
-import BtnRunISP from "../components/BtnRunISP";
+import Pdf from "../components/Pdf";
 
 export default function Hadar() {
     return (
-        <BtnRunISP />
+        <Pdf />
     )
 }

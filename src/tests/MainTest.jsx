@@ -55,6 +55,7 @@ import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
 import Gil from './Gil';
 import Chananel from './Chananel';
+import Hadar from './Hadar';
 
 
 
@@ -88,6 +89,7 @@ export const MainTest = () => {
 
       <Route path='/gil' element={<Gil />} />
       <Route path='/Chananel' element={<Chananel />} />
+      <Route path="/hadar" element={<Hadar />} />
 
     </Routes>
   );
