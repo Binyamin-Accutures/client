@@ -3,14 +3,18 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
 import language from "../../functions/language";
+import { useNavigate } from "react-router-dom";
+import apiCalls from "../../functions/apiRequest";
 
 export default function ForgotPassPage() {
   const userEmailInput = useRef();
-  const userPasswordInput = useRef();
+  const nav = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(userEmailInput.current.value, userPasswordInput.current.value);
+    apiCalls("get", `http://localhost:5001/api/user/forgot/?email=${userEmailInput.current.value}`);
+    console.log(userEmailInput.current.value);
+    //nav("/renew/:");
   }
 
   return (

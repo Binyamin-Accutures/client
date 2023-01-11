@@ -1,4 +1,3 @@
-import styles from "./style.module.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RegisterPage from "../pages/RegisterPage";
@@ -18,7 +17,7 @@ export default function LayoutLogin({ setUser }) {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot" element={<ForgotPassPage />} />
         <Route path="/renew" element={<RenewPassPage setUser={setUser} />} />
-        <Route path="/renew/:token" element={<RenewPassPage />} />
+        <Route path="/:id/renew/:token" element={<RenewPassPage />} />
         <Route path="/*" element={<LoginPage setUser={setUser} />} />
       </Routes>
     </>

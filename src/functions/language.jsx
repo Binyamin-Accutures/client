@@ -54,7 +54,7 @@ const languages = [
             FORGOT_PASSWORD: "forgot password",
             TITLE_NEW_ACCOUNT: "New Account",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you would like to register with us",
-            MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you registered width us",
+            MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you registered with us",
             TITLE_FORGOT_PASSWORD: "Forgot Password?",
             CHOOSE_PASSWORD: "please choose a new password",
             PASSPORD:"Passpord",
