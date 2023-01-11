@@ -9,6 +9,7 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
     console.log(parameters.RGB);
     console.log(parameters);
     console.log("------------------");
+    const AllImages = []
     const ImageAoLPOvealayed = []
     const ImageAoLPDoLP = []
     const ImageDoLP = []
@@ -26,8 +27,6 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
             ImageAoLPDoLP.push(convertAoLPDoLP(img, parameters.displaySet.AoLPDoLP))
         }
         if (parameters.displaySet.AoLPOvealayed.isActive) {
-            
-          
 
             ImageAoLPOvealayed.push(convertAoLPOvealayed(img, parameters.displaySet.AoLPOvealayed))
         }
@@ -46,6 +45,24 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
 
 
     }
+    
+    if (ImageAoLPOvealayed != [])(
+        AllImages.push({"AoLPOvealayed" : NADAV(ImageAoLPOvealayed)})
+    )
+    if (ImageAoLPDoLP != [])(
+        AllImages.push(NADAV(ImageAoLPDoLP))
+    )
+    if (ImageDoLP != [])(
+        AllImages.push(NADAV(ImageDoLP))
+    )
+    if (ImageRGB != [])(
+        AllImages.push(NADAV(ImageRGB))
+    )
+    if (ImageS0 != [])(
+        AllImages.push(NADAV(ImageS0))
+    )
+
+
     console.log(ImageAoLPOvealayed);
 }
 
