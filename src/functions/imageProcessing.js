@@ -32,7 +32,8 @@
   }
 
 
-  function convertRGB(src, minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov) {
+  function convertRGB(src, processParamters) {
+   const {minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov}= processParamters
     const canvas = document.createElement('canvas');
     img.src = src;
     window.Caman(canvas, img, function () {
@@ -47,8 +48,8 @@
     return canvas;
   }
   
-  function convertS0(src,minS0Value, maxS0Value) {
-   
+  function convertS0(src,processParamters) {
+    const {minS0Value, maxS0Value}=processParamters
     img.src = src;
     window.Caman(canvas, img, function () {
       this.process("posterize", function (rgba) {
@@ -61,7 +62,8 @@
   }
   
   
-  function convertDoLP(src, DoLPMin, DoLPMax) {
+  function convertDoLP(src,processParamters ) {
+   const {DoLPMin, DoLPMax}=processParamters
     const canvas = document.createElement('canvas');
     img.src = src;
     window.Caman(canvas, img, function () {
@@ -75,7 +77,8 @@
   }
   
   
-  function convertAoLPOvealayed(src, AoLPOvealay_HSFactor, AoLPOvealay_minS0Value, AoLPOvealay_maxS0Value) {
+  function convertAoLPOvealayed(src,processParamters) {
+    const { AoLPOvealay_HSFactor, AoLPOvealay_minS0Value, AoLPOvealay_maxS0Value} = processParamters
     const canvas = document.createElement('canvas');
     img.src = src;
     window.Caman(canvas, img, function () {
@@ -89,7 +92,8 @@
   }
   
   
-  function convertAoLPDoLP(src, minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov) {
+  function convertAoLPDoLP(src,processParamters ) {
+    const { minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov} = processParamters
     const canvas = document.createElement('canvas');
     img.src = src;
     window.Caman(canvas, img, function () {
