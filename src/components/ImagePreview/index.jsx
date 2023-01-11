@@ -19,9 +19,9 @@ function ImagePreview() {
     const [selectedImage, setSelectedImage] = useState(0) // 1 is the default
     console.log(value)
 
-   const handleChange = (target) => {
-      setSelectedImage(target.value)
-   }
+    const handleChange = (target) => {
+        setSelectedImage(target.value)
+    }
 
     return (
         <>

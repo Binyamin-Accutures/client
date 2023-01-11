@@ -5,29 +5,29 @@ import  ImageConversion  from "../functions/ImageConversion";
 const afterISPTemp = {
     displaySet :{
         s0 :{
-            isActiv : true,
+            isActive : true,
             minS0Value : 0,
             maxS0Value : 1
         },
         DoLP :{
-            isActiv : true,
+            isActive : true,
             DoLPMin : 0,
             DoLPMax : 1
         },
         AoLPOvealayed : {
-            isActiv : true,
+            isActive : true,
             HSFactor : 1,
             minS0Value : 0,
             maxS0Value : 1
         },
         AoLPDoLP : {
-            isActiv : true,
+            isActive : true,
             HSFactor : 1,
             DoLPSatur : 1,
             AoLPBright : 0,
         },
         RGB : {
-            isActiv : true, 
+            isActive : true, 
             AoLPCenter :  127,
             AoLPPov : 255,
             minDoLPVal : 0,
