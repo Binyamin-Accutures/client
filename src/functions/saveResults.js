@@ -3,7 +3,7 @@ const saveResults = (obj) => {
     console.log(obj);
     let data = ImageConversion(obj.imagePath, obj);
 
-     apiCalls("post", "http://localhost:6700/api/createZIP").then((response) => {
+    apiCalls("post", "http://localhost:6700/api/createZIP", data).then((response) => {
         // create file link in browser's memory
         const href = URL.createObjectURL(new Blob ([response.data.data]));
     

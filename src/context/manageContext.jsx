@@ -84,6 +84,7 @@ export const ContextProvider = ({ user,setUser, children }) => {
    
     const [isLogged, setIsLogged] = useState(false);
 
+    projectPath = '';
     
     const [afterISP, setAfterISP] = useState(afterISPTemp);
     const [beforeISP, setBeforeISP] = useState(beforeISPTemp);
