@@ -76,8 +76,11 @@ const languages = [
             MAXIMUM_DOLP_VALUE: "Maximum DoLP value",
             DISPLAY_SETTING: "Display settings",
             SAVE_RESULTS: "Save Results",
-
-
+            HISTORY_EDIT_IMAGE: "Edit",
+            HISTORY_POPUP_H1: "Are you sure you want to delete?",
+            HISTORY_POPUP_H2: "This operation<b>cannot</b> be undone!",
+            HISTORY_POPUP_YES: "Yes, delete this image",
+            HISTORY_POPUP_NO: "Cancel, keep this image",
         }
     }
 ]
