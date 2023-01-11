@@ -20,42 +20,45 @@ function DisplaySetting( {buttonFunc, text}){
     
     const handleS0 = (target) => {
         setS0Val((prev) => ({...prev, [target.name]: target.value}))
-        if(target.name == 'min0SValue' && s0Val.min0SValue > s0Val.maxS0Value) {
-            setS0Val(prev => ({...prev, maxS0Value: prev.min0SValue + 1 }))
+        if(target.name == 'min0SValue' && Number(s0Val.min0SValue) > Number(s0Val.maxS0Value)) {
+            setS0Val(prev => ({...prev, maxS0Value: Number(prev.min0SValue) + 0.01 }))
         }
-        if(target.name ==  'max0SValue' && s0Val.maxS0Value < s0Val.min0SValue) {
-            setS0Val(prev => ({...prev, minS0Value: prev.max0SValue - 1 }))
+        if(target.name ==  'max0SValue' && Number(s0Val.maxS0Value) < Number(s0Val.min0SValue)) {
+            setS0Val(prev => ({...prev, minS0Value: Number(prev.max0SValue ) - 0.01 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, s0: s0Val})}))
-        console.log(afterISP);
+        console.log(afterISP.displaySet);
     }
 
     const handleDoLP = (target) => {
         setDolpVal((prev) => ({...prev, [target.name]: target.value}))
-        if(target.name == 'DoLPMin' && dolpVal.DoLPMin > dolpVal.DoLPMax) {
-            setDolpVal(prev => ({...prev, DoLPMax: prev.DoLPMin + 1 }))
+        if(target.name == 'DoLPMin' && Number(dolpVal.DoLPMin) > Number(dolpVal.DoLPMax)) {
+            setDolpVal(prev => ({...prev, DoLPMax: Number(prev.DoLPMin) + 0.01 }))
         }
-        if(target.name ==  'DoLPMax' && dolpVal.DoLPMax < dolpVal.DoLPMin) {
-            setDolpVal(prev => ({...prev, DoLPMin: prev.DoLPMax - 1 }))
+        if(target.name ==  'DoLPMax' && Number(dolpVal.DoLPMax) < Number(dolpVal.DoLPMin)) {
+            setDolpVal(prev => ({...prev, DoLPMin: Number(prev.DoLPMax) - 0.01 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, DoLP: dolpVal})}))
+        console.log(afterISP.displaySet);
     }
 
     const handleAoLPOvealay = (target) => {
         setAolpOverlayVal((prev) => ({...prev, [target.name]: target.value}))
         if(target.name == 'min0SValue' && aolpOverlayVal.min0SValue > aolpOverlayVal.maxS0Value) {
-            setAolpOverlayVal(prev => ({...prev, maxS0Value: prev.min0SValue + 1 }))
+            setAolpOverlayVal(prev => ({...prev, maxS0Value: Number(prev.min0SValue) + 0.01 }))
         }
         if(target.name ==  'max0SValue' && aolpOverlayVal.maxS0Value < aolpOverlayVal.min0SValue) {
-            setAolpOverlayVal(prev => ({...prev, minS0Value: prev.max0SValue - 1 }))
+            setAolpOverlayVal(prev => ({...prev, minS0Value: Number(prev.max0SValue ) - 0.01 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, AoLPOvealayed: aolpOverlayVal})}))
+        console.log(afterISP.displaySet);
     }
     
     const handleAoLPDoLP = (target) => {
         setAolpDolpVal((prev) => ({...prev, [target.name]: target.value}))
        
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, AoLPDoLP: aolpDolpVal })}))
+        console.log(afterISP.displaySet);
     }
 
     const handleRGB = (target) => {
@@ -74,6 +77,7 @@ function DisplaySetting( {buttonFunc, text}){
             setS0Val(prev => ({...prev, min0SValue: prev.maxS0Value - 1 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, RGB: rgbVal})}))
+        console.log(afterISP.displaySet);
     }
 
     const handleClick = () => {

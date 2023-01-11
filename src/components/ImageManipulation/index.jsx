@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef } from 'react'
 import ImageContext from "../../context/ImageContext";
 
 
-
 function ImageManipulation({ imgUrl }) {
     
     const {
