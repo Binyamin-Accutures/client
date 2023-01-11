@@ -1,11 +1,13 @@
 import React from 'react'
-import ImagePreview  from '../components/ImagePreview'
+import Crop from '../components/Crop'
+// import ImagePreview  from '../components/ImagePreview'
 
 
 function YisraelTest() {
   return (
     <div>
-      <ImagePreview/>
+      {/* <ImagePreview/> */}
+      <Crop/>
     </div>
   )
 }
