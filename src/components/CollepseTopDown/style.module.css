@@ -32,15 +32,19 @@ svg {
   font-size: 28px;
 }
 
-.openPropertis {
+/* .openPropertis {
   max-height: 300px;
-}
+} */
+
 .openPropertis {
-  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* max-height: 300px; */
   width: 100%;
   background: #1e1e1e;
   border-radius: 4px;
-  text-align: center;
 }
 
 .title {

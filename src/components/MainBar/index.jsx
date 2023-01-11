@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react'
 import Carousel from "../Carousel";
 import RangeSlider from "../RangeSlider";
 import ChangeFrame from "../ChangeFrame";
+import Histogram from "../Histogram";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 
@@ -51,8 +52,10 @@ const value = useContext(ImageContext)
             <ChangeFrame className={styles.ChangeFrame} />
           </div>
         </div>
+            <Histogram/>
       </div>
-    </>
+  
+  </>
   )
 }
 
