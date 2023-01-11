@@ -2,7 +2,44 @@ import React, { useEffect, useState } from "react";
 import { convertAoLPDoLP,convertAoLPOvealayed,convertDoLP,convertRGB,convertS0 } from "./imageProcessing";
 
 
-export default function ImageConversion(ImajesUrl, parameters)  {
+export default function ImageConversion(ImajesUrl=[],
+     parameters={
+        imagePath : '',
+        displaySet :{
+            s0 :{
+                isActive : true,
+                minS0Value : 0,
+                maxS0Value : 1
+            },
+            DoLP :{
+                isActive : true,
+                DoLPMin : 0,
+                DoLPMax : 1
+            },
+            AoLPOvealayed : {
+                isActive : true,
+                HSFactor : 1,
+                minS0Value : 0,
+                maxS0Value : 1
+            },
+            AoLPDoLP : {
+                isActive : true,
+                HSFactor : 1,
+                DoLPSatur : 1,
+                AoLPBright : 0,
+            },
+            RGB : {
+                isActive : true, 
+                AoLPCenter :  127,
+                AoLPPov : 255,
+                minDoLPVal : 0,
+                maxDoLPVal : 255,
+                minS0Value : 0,
+                maxS0Value : 255
+            }
+        }
+    }
+     )  {
     // const { AoLPDoLP } = parameters
     console.log("------------------");
     console.log(parameters.displaySet.DoLP);
@@ -15,30 +52,33 @@ export default function ImageConversion(ImajesUrl, parameters)  {
     const ImageRGB = []
     const ImageS0 = []
 
+
     for (const key in ImajesUrl) {
         const img = ImajesUrl[key];
         
         console.log(img);
 
-        if (parameters.displaySet.AoLPDoLP.enable) {
-            const {AoLPDoLP} = parameters
-            ImageAoLPDoLP.push(convertAoLPDoLP(img, AoLPDoLP))
+        if (parameters?.displaySet?.AoLPDoLP?.isActive) {
+            
+            ImageAoLPDoLP.push(convertAoLPDoLP(img, parameters.displaySet.AoLPDoLP))
         }
-        if (parameters.displaySet.AoLPOvealayed.enable) {
-            const {AoLPOvealayed} = parameters
-            ImageAoLPOvealayed.push(convertAoLPOvealayed(img, AoLPOvealayed))
+        if (parameters.displaySet.AoLPOvealayed.isActive) {
+            
+          
+
+            ImageAoLPOvealayed.push(convertAoLPOvealayed(img, parameters.displaySet.AoLPOvealayed))
         }
-        if (parameters.displaySet.DoLP.enable) {
-            const {DoLP} = parameters
-            ImageDoLP.push(convertDoLP(img, DoLP))
+        if (parameters.displaySet.DoLP.isActive) {
+           
+            ImageDoLP.push(convertDoLP(img, parameters.displaySet.DoLP))
         }
-        if (parameters.displaySet.RGB.enable) {
-            const {RGB} = parameters
-            ImageRGB.push(convertRGB(img, RGB))
+        if (parameters.displaySet.RGB.isActive) {
+          
+            ImageRGB.push(convertRGB(img, parameters.displaySet.RGB))
         }
-        if (parameters.displaySet.s0.enable) {
-            const {s0} = parameters
-            ImageS0.push(convertS0(img, s0))
+        if (parameters.displaySet.s0.isActive) {
+            
+            ImageS0.push(convertS0(img, parameters.displaySet.s0))
         }
 
 
