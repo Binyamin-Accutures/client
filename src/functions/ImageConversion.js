@@ -22,23 +22,23 @@ export default function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  
     for (const key in ImajesUrl) {
         const img = ImajesUrl[key];
         
-        if (parameters?.displaySet?.AoLPDoLP?.isActive) {
+        if (parameters?.displaySet?.AoLPDoLP?.enable) {
             
             ImageAoLPDoLP.push(convertAoLPDoLP(img, parameters.displaySet.AoLPDoLP))
         }
-        if (parameters?.displaySet?.AoLPOvealayed?.isActive) {
+        if (parameters?.displaySet?.AoLPOvealayed?.enable) {
 
             ImageAoLPOvealayed.push(convertAoLPOvealayed(img, parameters.displaySet.AoLPOvealayed))
         }
-        if (parameters?.displaySet?.DoLP?.isActive) {
+        if (parameters?.displaySet?.DoLP?.enable) {
            
             ImageDoLP.push(convertDoLP(img, parameters.displaySet.DoLP))
         }
-        if (parameters.displaySet.RGB.isActive) {
+        if (parameters.displaySet.RGB.enable) {
           
             ImageRGB.push(convertRGB(img, parameters.displaySet.RGB))
         }
-        if (parameters?.displaySet?.s0?.isActive) {
+        if (parameters?.displaySet?.s0?.enable) {
             
             ImageS0.push(convertS0(img, parameters.displaySet.s0))
         }

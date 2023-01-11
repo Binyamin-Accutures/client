@@ -2,6 +2,21 @@
 // and returns them all in FormData 
 
 
+// export default function convertCanvasToFormDataAVIAD(canvasObj) {
+//     let counter = 1;
+//     const formData = new FormData();
+//     Object.entries(canvasObj).forEach(([k,v]) => {
+
+//         for(let canvas of field){
+//             console.log("canvas: ", canvas);
+//             let index = counter < 10 ? "_0" + counter : "_" + counter++;
+//             console.log("counter: ", counter);
+//             let dataURL = canvas.toDataURL();
+//             formData.append(field + "", dataURL, field + index + ".png");
+//     }
+//     })
+//     return formData;
+// }
 export default function convertCanvasToFormData(canvasObj) {
     let counter = 1;
     const formData = new FormData();
