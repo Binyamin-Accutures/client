@@ -6,6 +6,7 @@ import styles from "./style.module.css";
 function Image({ value, index, ...props }) {
   let url = value.beforeISP.images[index]?.url || "";
   let name = value.beforeISP.images[index]?.name || "<empty>";
+  console.log(url);
   return (
     <>
       <div className={styles.imgContainer}>
