@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react'
 import ImageContext from "../../context/ImageContext";
 
 
+
 function ImageManipulation({ imgUrl }) {
     
     const {
@@ -67,7 +68,7 @@ function ImageManipulation({ imgUrl }) {
 
             return rgba;
         }).render();
-        this.reset();
+        this.revert(false);
         })
     }
 
@@ -83,7 +84,7 @@ function ImageManipulation({ imgUrl }) {
         canvas.removeAttribute("data-caman-id");
         }
 
-    }, [])
+    }, [imgUrl])
 
 
     useEffect(() => {
@@ -99,7 +100,7 @@ function ImageManipulation({ imgUrl }) {
 
             return rgba;
         }).render();
-        this.reset();
+        this.revert(false);
         })
 
     }, [minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov]); 
