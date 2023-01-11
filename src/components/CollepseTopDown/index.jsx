@@ -1,7 +1,6 @@
 import styles from "./style.module.css";
 import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { useRef } from 'react';
 
 // creator: roye peleg
 
@@ -20,7 +19,7 @@ useEffect(()=>{
 },[props.isClose])
 
 useEffect(()=> {
-  if(openCollepseTopDown){
+  if(openCollepseTopDown && props.isClose){
     props.setIsClose(() => false)
   }
 },[openCollepseTopDown])

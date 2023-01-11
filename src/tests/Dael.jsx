@@ -137,9 +137,10 @@ function Dael() {
 
 
   return (
-    <canvas ref={canvasRef} />
+    <canvas willReadFrequently={true} ref={canvasRef} />
   );
 
+  
 
 };
 

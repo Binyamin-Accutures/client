@@ -8,7 +8,6 @@ function Gil() {
     <>
     <div>
       <DisplaySetting />
-      <Dael />
     </div>
     </>
   )
