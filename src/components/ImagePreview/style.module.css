@@ -2,9 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 50px);
 }
-.ImagePreview {
+
+.loadImagePage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,4 +17,49 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
+}
+
+.ImagePreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 974px;
+    position: relative;
+    top: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: -30px;
+    
+}
+
+.controls input {
+    width: 100%;
+}
+
+.ChangeFrame {
+    width: 736.6px;
+
+}
+
+.RangeSlider {
+    width: 736.6px;
+    height: 3px;
+    padding: 50px 0px;
+}
+
+.images {
+    width: 1113px;
+    height: 672px;
 }

@@ -6,31 +6,30 @@
     width: 100%;
     background-color: #2C2C2C;
     padding: 10px;
-    /* justify-content: center;
-    align-items: center; */
 }
 
 .img {
     align-self: center;
-    height: 150px;
-    width: calc(100% + 20px);
+    height: 170px;
+    width: 95%;
     background-color: #00000033;
-    border-radius: 1.1425355672836304px;
-    /* margin: 5px 0 5px 0; */
+    border-radius: 2px;
     object-fit: cover;
-    aspect-ratio: ;
+    aspect-ratio: 4/3;
 }
 
 .icon {
     height: 16px;
     width: 16px;
     border-radius: 0px;
+    margin: 0 2px 0 12px;
     color: gray;
 }
 
 .icon:hover {
     color: white;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .icon:active {
@@ -38,49 +37,31 @@
 }
 
 .downloadAndDelete {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    grid-template-rows: 40px 30px;
     justify-content: flex-end;
-    height: 38px;
-    width: 100%;
-    top: 1px;
-    border-radius: 0px;
-}
-
-.deleteIcon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5px;
-}
-
-.deleteIcon>span {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 42px;
 }
 
 .downloadIcon {
     margin-left: 4px;
 }
 
-.downloadIcon>span {
+.upperIcons {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* padding-top: 2px; */
-    /* padding-bottom: 2px; */
     align-items: center;
+    justify-content: space-between;
 }
 
-span {
+.upperText {
+    padding-top: 2px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     font-family: 'open sens', sans-serif;
-    font-size: 6px;
-    font-weight: 100;
-    line-height: 12px;
-    letter-spacing: 0em;
-    text-align: center;
+    font-size: 8px;
+    color: #C7C7C7;
 }
 
 .imgName {
@@ -88,13 +69,14 @@ span {
     justify-content: flex-start;
     font-size: small;
     width: 100%;
+    padding: 5px 0;
 }
 
 .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: smaller;
+    font-size: 10px;
     width: 100%;
     padding-right: 20%;
 }
@@ -102,4 +84,5 @@ span {
 .bottom>span {
     display: flex;
     align-items: center;
+    color: #C7C7C7;
 }

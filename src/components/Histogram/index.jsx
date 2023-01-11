@@ -7,7 +7,7 @@ import styles from './style.module.css'
 function Histogram() {
     return (
         
-            <SectionBorder  height="224px" width="1080">
+            <SectionBorder  height="224px" width="100%">
                 <div className={styles.histogramAll}>
                 <label className={styles.histogram}> language.HISTOGRAM</label>
                 <label className={styles.show}>language.SHOW

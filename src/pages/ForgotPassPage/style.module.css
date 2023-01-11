@@ -1,3 +1,11 @@
+.formLoginContainer {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 .formLogin {
     margin: 30vh;
     display: flex;
