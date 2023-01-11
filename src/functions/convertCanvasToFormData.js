@@ -1,3 +1,6 @@
+//This module-function gets an array of canvases 
+// and returns them in FormData 
+
 // //Test-Example Arrrrrrrrrrrrrrrrrrrrrrrrrrrrrr 
 // var canvasArr = [];
 // for (var i = 0; i < 13; i++) {
