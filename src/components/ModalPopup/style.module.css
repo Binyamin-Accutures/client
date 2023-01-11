@@ -10,8 +10,9 @@
     border: 1px solid #888;
     width: 34%;
     height: 22%;
-    position: absolute;
-    top: 10%;
+    position: fixed;
+    top: 40%;
+    left: 30%;
     border: 2px solid #BA1616;
 }
 

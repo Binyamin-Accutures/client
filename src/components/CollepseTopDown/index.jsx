@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from 'react';
 
 // creator: roye peleg
@@ -12,6 +12,19 @@ const CollepseTopDown = (props) => {
 
  let openClasses = `${styles.oneOptions} ${props.className}` 
 
+
+useEffect(()=>{
+  if(props.isClose) {
+    setOpenCollepseTopDown(() => null)
+  }
+},[props.isClose])
+
+useEffect(()=> {
+  if(openCollepseTopDown && props.isClose){
+    props.setIsClose(() => false)
+  }
+},[openCollepseTopDown])
+
 //  if(openCollepseTopDown) {
 
 //  }
@@ -20,27 +33,22 @@ const CollepseTopDown = (props) => {
 //  : openClasses = `${styles.oneOptions}`}
 
  const onClickLine = (titel, ref)=>{
-  // console.log(ref);
+ 
    if(openCollepseTopDown===titel){
        setOpenCollepseTopDown(null)
-      //  ref.current.classList.add('new-class');
-      //  className={openClasses}
-      //  openClasses = `${styles.oneOptions}`
+
    }
    else{
     setOpenCollepseTopDown(titel)
-    // className = `${styles.oneOptions}`
   }
  }
-
-
    return (
     <div className={styles.CollepseTopDown}>
       {props.menuList.map((v, inx) => {
         return (
          <>
          <div className={v.titel == openCollepseTopDown ? openClasses : styles.oneOptions} id={inx} onClick={()=>onClickLine(v.titel)}>
-            <p>{v.titel}</p>
+            <p className={openCollepseTopDown===v.titel ? styles.bold : ""}>{v.titel}</p>
             {openCollepseTopDown===v.titel ?<FiChevronUp/>:<FiChevronDown />}
           </div>
            {openCollepseTopDown===v.titel && <div className={styles.openPropertis}>{v.component}</div>} 

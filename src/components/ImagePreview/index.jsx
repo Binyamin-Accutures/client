@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import styles from './style.module.css'
 import InputLoadImage from '../InputLoadImage'
-import Header from '../Header'
 import ChangeFrame from '../ChangeFrame'
 import RangeSlider from '../RangeSlider'
 import Button from '../Button'
@@ -20,27 +19,26 @@ function ImagePreview() {
     const [selectedImage, setSelectedImage] = useState(0) // 1 is the default
     console.log(value)
 
-   const handleChange = (target) => {
-      setSelectedImage(target.value)
-   }
+    const handleChange = (target) => {
+        setSelectedImage(target.value)
+    }
 
     return (
         <>
-            <Header />
-            <div className={styles.imgprevContainner}>     
-                   {!load && <div className={styles.loadImagePage} > < InputLoadImage width={'133px'} setLoad={setLoad} >
-                      Load Image </InputLoadImage><p>or drag and drop image here </p></div>}                
-                {load && 
-                <form >
-                    <div className={styles.ImagePreview}>
-                        <img className={styles.images} src={new Object(value.beforeISP.images[selectedImage]).url}/>
-                        <div className={styles.controls}>
-                        <RangeSlider className={styles.RangeSlider} func={handleChange} min={0} max={value.beforeISP.images.length-1}/>
-                        <ChangeFrame className={styles.ChangeFrame} func={handleChange} min={selectedImage.value} max={value}/>
-                        <Button width={328} type='submit' >Next</Button>
+            <div className={styles.imgprevContainner}>
+                {!load && <div className={styles.loadImagePage} > < InputLoadImage width={'133px'} setLoad={setLoad} >
+                    Load Image </InputLoadImage><p>or drag and drop image here </p></div>}
+                {load &&
+                    <form >
+                        <div className={styles.ImagePreview}>
+                            <img className={styles.images} src={new Object(value.beforeISP.images[selectedImage]).url} />
+                            <div className={styles.controls}>
+                                <RangeSlider className={styles.RangeSlider} func={handleChange} min={0} max={value.beforeISP.images.length - 1} />
+                                <ChangeFrame images={value?.beforeISP?.images || []} className={styles.ChangeFrame} func={handleChange} min={selectedImage.value} max={value} />
+                                <Button width={328} type='submit' >Next</Button>
+                            </div>
                         </div>
-                    </div>
-                </form>}
+                    </form>}
             </div>
         </>
     )
