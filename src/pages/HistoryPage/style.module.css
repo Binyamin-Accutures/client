@@ -53,6 +53,7 @@
 }
 
 .historySearch {
+    margin-top: 14%;
     width: 400px;
 }
 
@@ -74,7 +75,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 300px;
-    padding-top: 20px;
+    padding: 20px 0;
+    margin: 20px 0;
     gap: 30px;
     height: 85%;
     width: 85%;
