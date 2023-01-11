@@ -5,6 +5,7 @@ align-items: center;
 flex-direction: column;
 height: 100%;
 
+
 }
 
 h1{
@@ -19,5 +20,6 @@ h1{
     border-top-left-radius: var(--border-radius) ;
     border-top-right-radius: var(--border-radius) ;
 }
+
 
 
