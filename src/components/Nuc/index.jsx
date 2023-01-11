@@ -51,19 +51,20 @@ export default function Nuc(props) {
 
       <div>
         <label>Method</label>
-        <br />
-        <Checkbox
-          label={"1pt"}
-          name="pt1"
-          onChange={handlePt}
-          checked={value.beforeISP.NUC.method.pt1}
-        />
-        <Checkbox
-          label={"2pt"}
-          name="pt2"
-          onChange={handlePt}
-          checked={value.beforeISP.NUC.method.pt2}
-        />
+        <div>
+          <Checkbox
+            label={"1pt"}
+            name="pt1"
+            onChange={handlePt}
+            checked={value.beforeISP.NUC.method.pt1}
+          />
+          <Checkbox
+            label={"2pt"}
+            name="pt2"
+            onChange={handlePt}
+            checked={value.beforeISP.NUC.method.pt2}
+          />
+        </div>
       </div>
 
       <label>Sensor Characteristics File</label>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./style.module.css";
-import { AiOutlineCheck } from 'react-icons/ai'
+import { AiOutlineCheck } from 'react-icons/ai';
 
 
 // creator: Yisrael Olonoff
