@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
-
+import language from "../../functions/language";
 
 export default function RegisterPage() {
   const userEmailInput = useRef();
@@ -17,9 +17,9 @@ export default function RegisterPage() {
   return (
     <div className={styles.formLoginContainer}>
     <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <p className={styles.paragraphTitle}>New Account</p>
+      <p className={styles.paragraphTitle}>{language.NEW_ACCOUNT}</p>
       <p className={styles.paragraph}>
-        Just tell us the email address you would like to register with us
+       {language.MSG_GIVE_EMAIL_REGISTER}
       </p>
       <Input
         type="email"
@@ -29,7 +29,7 @@ export default function RegisterPage() {
         inputRef={userEmailInput}
       />
       <Button type={"submit"} width={"328px"}>
-        Send
+        {language.SEND}
       </Button>
     </form>
     </div>

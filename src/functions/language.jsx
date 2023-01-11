@@ -50,12 +50,11 @@ const languages = [
             NEW_ACCOUNT: "New Account",
             SIGN_IN: "Sign In",
             NEW_ACCOUNT: "new account",
-            TITLE_FORGOT_PASSWORD: "Forgot Password ?",
+            TITLE_FORGOT_PASSWORD: "Forgot Password?",
             FORGOT_PASSWORD: "forgot password",
             TITLE_NEW_ACCOUNT: "New Account",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you would like to register with us",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you registered width us",
-            TITLE_FORGOT_PASSWORD: "Forgot Password ?",
             PASSPORD: "Passpord",
             CHENG: "Cheng",
             CREATE: "Create",
@@ -83,6 +82,11 @@ const languages = [
             HISTORY_POPUP_NO: "Cancel, keep this image",
             UPLOADED_IMAGE: "Uploaded Image",
             NEXT: "Next",
+            TITLE_FORGOT_PASSWORD: "Forgot Password?",
+            CHOOSE_PASSWORD: "please choose a new password",
+            PASSPORD:"Passpord",
+            CHENGE:"Cheng",
+            CREATE:"Create",
 
         }
     }
