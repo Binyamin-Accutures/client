@@ -12,28 +12,16 @@ const CollepseTopDown = (props) => {
 
  let openClasses = `${styles.oneOptions} ${props.className}` 
 
-//  if(openCollepseTopDown) {
-
-//  }
-
-//  {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
-//  : openClasses = `${styles.oneOptions}`}
-
  const onClickLine = (titel, ref)=>{
-  // console.log(ref);
+ 
    if(openCollepseTopDown===titel){
        setOpenCollepseTopDown(null)
-      //  ref.current.classList.add('new-class');
-      //  className={openClasses}
-      //  openClasses = `${styles.oneOptions}`
+
    }
    else{
     setOpenCollepseTopDown(titel)
-    // className = `${styles.oneOptions}`
   }
  }
-
-
    return (
     <div className={styles.CollepseTopDown}>
       {props.menuList.map((v, inx) => {
