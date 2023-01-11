@@ -1,9 +1,10 @@
-import React, { useEffect,  useState } from 'react';
+import React, { useContext, useEffect,  useState } from 'react';
 import style from './style.module.css'
+import ImageContext from '../../context/ImageContext';
 
 function RangeSlider({func, name='', className='', text, min, max, step=1 , textPosLeft=true, numInput=true, contextValue , ...props}) {
     const [value, setValue] = useState(isNaN(contextValue) ? min : contextValue)
-
+    const { afterISP, setAfterISP } = useContext(ImageContext)
 
     useEffect(() => {
         if(!isNaN(contextValue) && contextValue != value) {

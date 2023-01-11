@@ -6,7 +6,7 @@ import ImageContext from "../../context/ImageContext";
 // creator: "Noam"
 // Use the component by implementing the *children*, *width* and *props* keys
 
-function InputLoadImage({ width, props }) {
+function InputLoadImage({ width, props , setLoad}) {
   const value = useContext(ImageContext);
   const inputElement = useRef();
   const onclick = () => {
@@ -25,6 +25,8 @@ function InputLoadImage({ width, props }) {
         }));
       };
     }
+  setLoad(true);
+   
   }
 
   return (

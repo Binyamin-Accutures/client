@@ -35,7 +35,6 @@ export default function Nuc() {
    }
    const handlePt = (e) => {
       let valueToChange = e.checked;
-      console.log(valueToChange)
       value.setBeforeISP(preve => {
          const newobj = { ...preve }
          e.name == "pt1" ? newobj.NUC.method.pt1 = valueToChange : newobj.NUC.method.pt2 = valueToChange

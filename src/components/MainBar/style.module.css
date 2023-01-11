@@ -19,67 +19,60 @@
     height: 66%;
 }
 
-.mainBar>img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    border: 1px solid #ffffff;
-    object-fit: cover;
-}
-
 .controlBar {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: left;
     justify-content: start;
     width: 100%;
     height: 33%;
-    padding-top: 30px;
+    padding-top: 0px;
     border: solid 1px #ffff;
+    padding-right: 25px;
 }
 
-.CarouselSlider {
+.mainbar .CarouselSlider {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
-    justify-content: end;
+    justify-content: start;
     width: 100%;
     height: 10%;
     padding-top: 30px;
-    padding-right: 5px;
     border: solid 1px #ffff;
     justify-content: flex-end;
     align-items: center;
     padding: 0;
 }
 
+.CarouselSlider {
+    flex: 1;
+}
+
 .editRange {
-    /* border: 3px solid #red; */
+    flex: 1;
+    border: 3px solid red;
     width: 100%;
+    /* width: 736.6px; */
     padding-bottom: 20px;
     display: flex;
-    justify-content: end;
+    padding-left: 0;
 }
 
 .editRange input {
     width: 100%;
 }
 
+
 .ChangeFrame {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: right;
+    justify-content: space-between;
     width: 100%;
     padding-right: 0;
-
 }
 
 .ChangeFrame input {
-    width: 265px;
-}
-
-.crop {
-    background-color: yellow;
-    width: 30%;
+    width: 100%;
+    /* width: 200px; */
 }
