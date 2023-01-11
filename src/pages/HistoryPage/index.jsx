@@ -4,7 +4,7 @@ import styles from "./style.module.css"
 import { FiSearch } from "react-icons/fi";
 import ModalPopUp from '../../components/ModalPopup';
 import HistoryImage from '../../components/HistoryImage';
-import {languages} from '../../functions/language';
+import languages from '../../functions/language';
 
 
 
@@ -92,11 +92,11 @@ console.log(arrImages);
   
 
        <div className={styles.HistoryPageSort}>
-       <label htmlFor="historySort">Sort By</label>
+       <label htmlFor="historySort">{languages.HISTORY_SORT}</label>
        <select className={styles.historySort} id='sort' onChange={(e)=>sort(e)}>
-       <option value="byDateAsc">Sort by date ASC</option>
-       <option value="byDateDesc">Sort by date DESC</option>
-       <option value="byName">Sort by name</option>
+       <option value="byDateAsc">{languages.HISTORY_SORT_ASC}</option>
+       <option value="byDateDesc">{languages.HISTORY_SORT_DESC}</option>
+       <option value="byName">{languages.HISTORY_SORT_NAME}</option>
        </select>
        </div>
      
