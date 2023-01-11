@@ -2,13 +2,13 @@
 // and returns them in FormData 
 
 // //Test-Example Arrrrrrrrrrrrrrrrrrrrrrrrrrrrrr 
-// var canvasArr = [];
-// for (var i = 0; i < 13; i++) {
-//     var canvas = document.createElement("canvas");
-//     canvas.width = 10*i;
-//     canvas.height = 150+i;
-//     canvasArr.push(canvas);
-// }
+var canvasArr = [];
+for (var i = 0; i < 13; i++) {
+    var canvas = document.createElement("canvas");
+    canvas.width = 10*i;
+    canvas.height = 150+i;
+    canvasArr.push(canvas);
+}
 
 export function convertCanvasToFormData(canvasArr = []) {
     let counter = 1;

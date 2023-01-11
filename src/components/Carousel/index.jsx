@@ -2,6 +2,7 @@ import { useState,useContext } from "react";
 import styles from "./style.module.css";
 import RangeSlider from "../RangeSlider";
 import ImageManipulation from "../ImageManipulation";
+import Dael from "../../tests/Dael";
  
 // creator: Elisha & dudu
 // carousel : this component change the image preview from rangeslider based on the images context length
@@ -10,7 +11,7 @@ import ImageManipulation from "../ImageManipulation";
 // imgOn - imageOn is a flag state for passing the kind of input  - enter "true" for images(jpg) or false for canvas
 
 
-const Carousel = ({imgUrl,imgOn=true}) => {
+const Carousel = ({imgUrl,imgOn=false}) => {
    
 
    // const [images,setImages] = useState(imgArray) // 
@@ -26,7 +27,8 @@ const Carousel = ({imgUrl,imgOn=true}) => {
       <div className={styles.carouselContainer}>
 
          <div className={styles.carouselImage} >
-            {imgOn ? (imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images") : <p>todo: to add canvas component</p> }
+            {/* {imgOn ? (imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images") :  */}
+            <p><Dael/></p>
          </div>
       {/* <div className={styles.carouselSliderContainer}>
       <RangeSlider min='1' max={images.length} func={handleChange} text='Selected Image' textPosLeft={true}/>
