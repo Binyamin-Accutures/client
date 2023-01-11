@@ -30,7 +30,7 @@ function BackendStatus({ cntImg = 4 }) {
     return (
 
         <div className={styles.BackendStatusMain}>
-            <h1>Backend Status</h1>
+            <label className={styles.title}>Backend Status</label>
             <div className={styles.BackendStatus}>
 
 
