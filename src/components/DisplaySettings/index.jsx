@@ -113,6 +113,7 @@ function DisplaySetting() {
 
 
     const menuList = [
+        {titel:"S0", component:<div>    
         {titel:"S0", component:<div>   
         <RangeSlider textPosLeft={false} className={style.Hug} func={handleS0} text={'Minimun S0 value'} name="minS0Value" contextValue={s0.minS0Value} min={0} max={1} step={0.01}/> 
         <RangeSlider textPosLeft={false} className="Hug"  func={handleS0} text={'Maximum S0 value'}  name="maxS0Value" contextValue={s0.maxS0Value} min={0} max={1} step={0.01}/>
