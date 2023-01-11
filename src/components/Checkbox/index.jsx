@@ -8,7 +8,7 @@ function Checkbox({ label, className = "", name, onChange, ...props }) {
   return (
 
     <div>
-      <label>
+      <label className={styles.pointer}>
         <input type="checkbox" className={styles.checkbox} name={name} checked={props.prev} onChange={(e) => onChange(e.target)}   {...props} />
         <span> {label} </span>
       </label>

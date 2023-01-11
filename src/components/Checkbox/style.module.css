@@ -7,10 +7,6 @@
     border-radius: 4px;
 }
 
-.checkbox:hover {
-    cursor: pointer;
-}
-
 .checkbox {
     appearance: none;
 }
@@ -39,6 +35,16 @@
     visibility: hidden;
 
 } 
+
+.checkbox {
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+} 
+
+
 
 
 
