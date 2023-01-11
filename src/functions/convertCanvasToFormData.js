@@ -6,7 +6,7 @@ export default function convertCanvasToFormData(canvasObj) {
     let counter = 1;
     const formData = new FormData();
     Object.entries(canvasObj).forEach((field) => {
-        for(canvas of field){
+        for(let canvas of field){
             console.log("canvas: ", canvas);
             let index = counter < 10 ? "_0" + counter : "_" + counter++;
             console.log("counter: ", counter);

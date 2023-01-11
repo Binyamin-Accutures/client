@@ -1,4 +1,5 @@
 .CollepseTopDown {
+
   background: #383838;
   /* width: 352px; */
   max-height: fit-content;
@@ -19,10 +20,11 @@
 }
 
 .oneOptions p {
-  color: var(--text-color);
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-size-label);
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--font-size-label);
 }
+
 
 .oneOptions {
   color: var(--primary-color);
@@ -50,24 +52,30 @@
 .openPropertis.active {
   height: auto;
   opacity: 1;
+
+svg {
+    color: #56c493;
 }
 
+
 .title {
-  padding: 12px;
+    padding: 12px;
+    cursor: pointer;
 }
 
 .option {
-  padding: 12px;
+    padding: 12px;
 }
 
 .dropTitle {
-  color: var(--text-secondary-color);
-  padding-left: 10px;
+    color: var(--text-secondary-color);
+    padding-left: 10px;
 }
+
 
 /* 
 אפשרויות הערות כותרת */
 
 .bold {
-  font-weight: 700;
+    font-weight: 700;
 }
