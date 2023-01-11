@@ -6,6 +6,9 @@ import ImageContext from "../../context/ImageContext";
 import style from './style.module.css';
 import CheckBox from '../Checkbox'
 import saveResult from '../../functions/saveResults';
+import language from "../../functions/language";
+
+
 
 function DisplaySetting() {
     const { afterISP, setAfterISP } = useContext(ImageContext)
@@ -111,35 +114,35 @@ function DisplaySetting() {
 
 
     const menuList = [
-        {titel:"S0", component:<div>   
-        <RangeSlider textPosLeft={false} className={style.Hug} func={handleS0} text={'Minimun S0 value'} name="minS0Value" contextValue={s0.minS0Value} min={0} max={1} step={0.01}/> 
-        <RangeSlider textPosLeft={false} className="Hug"  func={handleS0} text={'Maximum S0 value'}  name="maxS0Value" contextValue={s0.maxS0Value} min={0} max={1} step={0.01}/>
+        {titel:language.SO, component:<div>   
+        <RangeSlider textPosLeft={false} className={style.Hug} func={handleS0} text={language.MINIMUM_SO_VALUE} name="minS0Value" contextValue={s0.minS0Value} min={0} max={1} step={0.01}/> 
+        <RangeSlider textPosLeft={false} className="Hug"  func={handleS0} text={language.MAXIMUM_SO_VALUE}  name="maxS0Value" contextValue={s0.maxS0Value} min={0} max={1} step={0.01}/>
 
         </div> },
 
-        {titel:'Dolp', component:<div>
-        <RangeSlider textPosLeft={false} className="Hug" func={handleDoLP} text={`DoLP Satutation `} name="DoLPSatut" contextValue={DoLP.DoLPSatut} min={0} max={1} step={0.01}/> 
+        {titel:language.DOLP, component:<div>
+        <RangeSlider textPosLeft={false} className="Hug" func={handleDoLP} text={language.DOLP_SSTUTATION} name="DoLPSatut" contextValue={DoLP.DoLPSatut} min={0} max={1} step={0.01}/> 
         </div>},
 
-        {titel:'AoLP Overlayed', component:<div>
-         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Hue Scale Factor`} name="HSFactor" contextValue={AoLPOvealayed.HSFactor}  min={0} max={1} step={0.01}/>
-         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Minimum S0 value`} name="minS0Value" contextValue={AoLPOvealayed.minS0Value} min={0} max={1} step={0.01}/>
-         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={`Maximum S0 value`} name="maxS0Value" contextValue={AoLPOvealayed.maxS0Value} min={0} max={1} step={0.01}/> 
+        {titel:language.ALOP_OVERLAYED, component:<div>
+         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={language.HUE_SCALE_FACTOR} name="HSFactor" contextValue={AoLPOvealayed.HSFactor}  min={0} max={1} step={0.01}/>
+         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={language.MINIMUM_SO_VALUE} name="minS0Value" contextValue={AoLPOvealayed.minS0Value} min={0} max={1} step={0.01}/>
+         <RangeSlider textPosLeft={false} className="Hug"  func={handleAoLPOvealay} text={language.MAXIMUM_SO_VALUE} name="maxS0Value" contextValue={AoLPOvealayed.maxS0Value} min={0} max={1} step={0.01}/> 
         </div>},
 
-        {titel:'AoLP+DoLP',component:<div>
-          <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP}  text={`Hue Scale Factor`} name="HSFactor" contextValue={AoLPDoLP.HSFactor} min={0} max={1} step={0.01}/>
-         <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={`DoLP Satutation`} name="DoLPSatut" contextValue={AoLPDoLP.DoLPSatut} min={0} max={1} step={0.01}/>
-         <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={`AoLP brighntess control`} name="AoLPBright" contextValue={AoLPDoLP.AoLPBright} min={-1} max={1} step={0.01}/> 
+        {titel:language.AOLPDOLP , component:<div>
+          <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP}  text={language.HUE_SCALE_FACTOR} name="HSFactor" contextValue={AoLPDoLP.HSFactor} min={0} max={1} step={0.01}/>
+         <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={language.DOLP_SSTUTATION} name="DoLPSatut" contextValue={AoLPDoLP.DoLPSatut} min={0} max={1} step={0.01}/>
+         <RangeSlider textPosLeft={false} className="Hug" func={handleAoLPDoLP} text={language.ALOPֹ_BRIGHNTESS_CONTROL} name="AoLPBright" contextValue={AoLPDoLP.AoLPBright} min={-1} max={1} step={0.01}/> 
          </div> },
 
-        {titel:'RGB',component:<div> 
-        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={`AoLP Center`} name="AoLPCenter" contextValue={ RGB.AoLPCenter} min={0} max={255} />
-        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={`AoLP FOV `} name="AoLPPOV" contextValue={RGB.AoLPPOV} min={0} max={255} />
-        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={`Minimum DoLP value`} name="MinDoLPVal" contextValue={RGB.MinDoLPVal} min={0} max={255}/>
-        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={`Maximum DoLP value`} name="MaxDoLPval" contextValue={RGB.MaxDoLPval} min={0} max={255}/>
-        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={`Minimum S0 value`} name="MinS0Val" contextValue={RGB.MinS0Val} min={0} max={255}/>
-        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={`Maximum S0 value `} name="MaxS0Val" contextValue={RGB.MaxS0Val} min={0} max={255}/>
+        {titel:language.RGB,component:<div> 
+        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={language.ALOP_CENTER} name="AoLPCenter" contextValue={ RGB.AoLPCenter} min={0} max={255} />
+        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={language.AoLPPOV} name="AoLPPOV" contextValue={RGB.AoLPPOV} min={0} max={255} />
+        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={language.MINIMUM_DOLP_VALUE} name="MinDoLPVal" contextValue={RGB.MinDoLPVal} min={0} max={255}/>
+        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={language.MAXIMUM_DOLP_VALUE} name="MaxDoLPval" contextValue={RGB.MaxDoLPval} min={0} max={255}/>
+        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={language.MINIMUM_SO_VALUE} name="MinS0Val" contextValue={RGB.MinS0Val} min={0} max={255}/>
+        <RangeSlider textPosLeft={false} className="Hug" func={handleRGB} text={language.MAXIMUM_SO_VALUE} name="MaxS0Val" contextValue={RGB.MaxS0Val} min={0} max={255}/>
         </div>},
     ]
 

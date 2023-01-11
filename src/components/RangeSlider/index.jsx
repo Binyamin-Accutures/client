@@ -1,6 +1,8 @@
 import React, { useContext, useEffect,  useState } from 'react';
 import style from './style.module.css'
 import ImageContext from '../../context/ImageContext';
+import ProgressBar from "@ramonak/react-progress-bar";
+
 
 function RangeSlider({func, name='', className='', text, min, max, step=1 , textPosLeft=true, numInput=true, contextValue , ...props}) {
     const [value, setValue] = useState(isNaN(contextValue) ? min : contextValue)
