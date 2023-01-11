@@ -1,6 +1,7 @@
 import React from 'react'
 // import  Input from '../components/Input'
-import BackendStatus from '../components/BackendStatus'
+ import BackendStatus from '../components/BackendStatus'
+import App from '../App'
 
 
 function AviadElya() {
@@ -8,8 +9,10 @@ function AviadElya() {
     return (
         <div>
             <BackendStatus/>
+
+
         </div>
-        
+
     )
 }
 
