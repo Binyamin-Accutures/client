@@ -5,8 +5,7 @@ import Header from '../Header'
 import ChangeFrame from '../ChangeFrame'
 import RangeSlider from '../RangeSlider'
 import Button from '../Button'
-import Carousel from '../Carousel'
-import ImageContext from "../../context/ImageContext";
+import ImageContext from "../../context/ImageContext"
 
 
 // Creator: Yisrael Olonoff
@@ -30,7 +29,7 @@ function ImagePreview() {
             <Header />
             <div className={styles.imgprevContainner}>     
                    {!load && <div className={styles.loadImagePage} > < InputLoadImage width={'133px'} setLoad={setLoad} >
-                        Load Image </InputLoadImage><p>or drag and drop image here </p></div>}                
+                      Load Image </InputLoadImage><p>or drag and drop image here </p></div>}                
                 {load && 
                 <form >
                     <div className={styles.ImagePreview}>

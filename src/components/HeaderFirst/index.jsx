@@ -11,7 +11,7 @@ function HeaderFirst() {
   return (
     <>
       <header className={styles.headerContainer}>
-        <div className={styles.logo}><img src={logo} alt='logo' />  Accutures </div>
+        <div className={styles.logo}> <img src={logo} alt='logo' /><div> Accutures</div></div>
       </header>
     </>
   )

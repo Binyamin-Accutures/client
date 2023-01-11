@@ -29,7 +29,7 @@
     top: 10px;
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 14px;
 }
@@ -41,6 +41,7 @@
     flex-direction: column;
     position: relative;
     top: -30px;
+    
 }
 
 .controls input {
