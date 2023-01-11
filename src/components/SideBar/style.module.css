@@ -6,6 +6,7 @@
   margin-left: -20px;
   display: flex;
 }
+
 /* liat-sidebar */
 #form {
   width: 360px;
@@ -37,6 +38,7 @@
   margin-bottom: 10px;
   margin-right: 10px;
 }
+
 .collapse {
   padding-left: 5px;
   padding-right: 5px;
@@ -47,12 +49,14 @@
   background-color: var(--bg-color);
   font-size: 6px;
 }
+
 .D {
   margin-top: 5px;
   padding-inline-end: 10px;
 }
+
 .D div {
   padding: 5px;
-  
+
   padding-left: 5px;
 }

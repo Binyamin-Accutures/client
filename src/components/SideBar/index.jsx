@@ -34,18 +34,18 @@ const SideBar = () => {
     },
   };
   const menuList = [
-    { titel: "NUC", component: <Nuc design={styles.D} /> },
+    { titel: `${language.NUC}`, component: <Nuc design={styles.D} /> },
     {
-      titel: "Dynamic Range Stretch",
+      titel: `${language.DYNAMIC_RANGE_STRECH}`,
       component: <DynamicRangeStretch design={styles.D} />,
     },
     {
-      titel: "Demosaic",
+      titel: `${language.DEMOSIC}`,
       component: <Demosaic data={data} design={styles.D} />,
     },
-    { titel: "Denoise", component: <Denoise design={styles.D} /> },
+    { titel: `${language.DEMOSIC}`, component: <Denoise design={styles.D} /> },
     {
-      titel: "Sharpening",
+      titel: `${language.SHARPING}`,
       component: <Sharping data={sharpingData} design={styles.D} />,
     },
   ];

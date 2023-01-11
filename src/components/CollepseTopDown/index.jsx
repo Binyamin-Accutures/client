@@ -1,35 +1,38 @@
 import styles from "./style.module.css";
 import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from 'react';
-
-// creator: roye peleg
-
 
 const CollepseTopDown = (props) => {
 
   const [openCollepseTopDown, setOpenCollepseTopDown] = useState(null)
 
+
   let openClasses = `${styles.oneOptions} ${props.className}`
 
-  //  if(openCollepseTopDown) {
+useEffect(()=>{
+  if(props.isClose) {
+    setOpenCollepseTopDown(() => null)
+  }
+},[props.isClose])
 
-  //  }
+useEffect(()=> {
+  if(openCollepseTopDown && props.isClose){
+    props.setIsClose(() => false)
+  }
+},[openCollepseTopDown])
 
-  //  {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
-  //  : openClasses = `${styles.oneOptions}`}
+ const onClickLine = (titel, ref)=>{
+
+   if(openCollepseTopDown===titel){
+       setOpenCollepseTopDown(null)
 
   const onClickLine = (titel, ref) => {
-    // console.log(ref);
     if (openCollepseTopDown === titel) {
       setOpenCollepseTopDown(null)
-      //  ref.current.classList.add('new-class');
-      //  className={openClasses}
-      //  openClasses = `${styles.oneOptions}`
     }
     else {
       setOpenCollepseTopDown(titel)
-      // className = `${styles.oneOptions}`
     }
   }
 
