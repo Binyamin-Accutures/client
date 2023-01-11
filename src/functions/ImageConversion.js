@@ -2,44 +2,7 @@ import React, { useEffect, useState } from "react";
 import { convertAoLPDoLP,convertAoLPOvealayed,convertDoLP,convertRGB,convertS0 } from "./imageProcessing";
 
 
-export default function ImageConversion(ImajesUrl=[],
-     parameters={
-        imagePath : '',
-        displaySet :{
-            s0 :{
-                isActive : true,
-                minS0Value : 0,
-                maxS0Value : 1
-            },
-            DoLP :{
-                isActive : true,
-                DoLPMin : 0,
-                DoLPMax : 1
-            },
-            AoLPOvealayed : {
-                isActive : true,
-                HSFactor : 1,
-                minS0Value : 0,
-                maxS0Value : 1
-            },
-            AoLPDoLP : {
-                isActive : true,
-                HSFactor : 1,
-                DoLPSatur : 1,
-                AoLPBright : 0,
-            },
-            RGB : {
-                isActive : true, 
-                AoLPCenter :  127,
-                AoLPPov : 255,
-                minDoLPVal : 0,
-                maxDoLPVal : 255,
-                minS0Value : 0,
-                maxS0Value : 255
-            }
-        }
-    }
-     )  {
+export default function ImageConversion(ImajesUrl=[], parameters={} )  {
     // const { AoLPDoLP } = parameters
     console.log("------------------");
     console.log(parameters.displaySet.DoLP);
