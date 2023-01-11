@@ -8,6 +8,11 @@
 }
 
 .containerSmall {
+    width:  100%;
+    margin:20px;
+}
+.descrption{
+   margin: 10px 0;
     width: 100%;
     padding: 4px;
 }
@@ -49,10 +54,10 @@
 }
 
 .container .descrption {
+    margin-right: 1% 0;
     display: flex;
     justify-content: end;
     min-width: 60px;
-    margin-right: 10px;
     color: var(--text-secondary-color);
     font-size: 10px;
 
@@ -73,6 +78,10 @@
 
 .numberInput::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+.containerSmall{
+    margin: 0;
+    margin-top: 20px;
 }
 
 .containerSmall .descrption {
