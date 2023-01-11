@@ -6,7 +6,7 @@ const imagesAll = [
     "https://fileinfo.com/img/ss/md/jpg_44.png"
 ]
 
-export default function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  {
+export default async function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  {
     ImajesUrl = imagesAll
     const AllImages = {}
     const ImageAoLPOvealayed = []
@@ -36,7 +36,7 @@ export default function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  
         }
         if (parameters.displaySet.RGB.enable) {
           
-            ImageRGB.push(convertRGB(img, parameters.displaySet.RGB))
+            ImageRGB.push(await convertRGB(img, parameters.displaySet.RGB))
         }
         if (parameters?.displaySet?.s0?.enable) {
             

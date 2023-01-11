@@ -2,11 +2,38 @@
 // and returns them all in FormData 
 
 
-// export default function convertCanvasToFormDataAVIAD(canvasObj) {
+export default function convertCanvasToFormData(canvasObj) {
+    let counter = 1;
+    const formData = new FormData();
+    Object.entries(canvasObj).forEach(async ([k,v]) => {
+        v.forEach(async (c,i)=>{
+            await new Promise(resolve => c.toBlob(resolve, 'image/png')).then(res=>{
+
+                formData.append(k, res, `${k}_image_${Number(i)+1}.png`);
+                let newLink = document.createElement("a");
+                newLink.download = `${k}_image_${Number(i)+1}.png`;
+
+        
+                newLink.href = window.webkitURL.createObjectURL(res);
+                newLink.click(); 
+            });
+        })
+        //     for(let canvas of field){
+            //         console.log("canvas: ", canvas);
+            //         let index = counter < 10 ? "_0" + counter : "_" + counter++;
+            //         console.log("counter: ", counter);
+            //         let dataURL = canvas.toDataURL();
+            //         formData.append(field + "", dataURL, field + index + ".png");
+            // }
+        })
+        console.log(formData);
+
+    return formData;
+}
+// export default function convertCanvasToFormData(canvasObj) {
 //     let counter = 1;
 //     const formData = new FormData();
-//     Object.entries(canvasObj).forEach(([k,v]) => {
-
+//     Object.entries(canvasObj).forEach((field) => {
 //         for(let canvas of field){
 //             console.log("canvas: ", canvas);
 //             let index = counter < 10 ? "_0" + counter : "_" + counter++;
@@ -17,20 +44,6 @@
 //     })
 //     return formData;
 // }
-export default function convertCanvasToFormData(canvasObj) {
-    let counter = 1;
-    const formData = new FormData();
-    Object.entries(canvasObj).forEach((field) => {
-        for(let canvas of field){
-            console.log("canvas: ", canvas);
-            let index = counter < 10 ? "_0" + counter : "_" + counter++;
-            console.log("counter: ", counter);
-            let dataURL = canvas.toDataURL();
-            formData.append(field + "", dataURL, field + index + ".png");
-    }
-    })
-    return formData;
-}
 
 // export function convertCanvasToFormData0(canvasArr = [],categoryName = "") {
 //     let counter = 1;

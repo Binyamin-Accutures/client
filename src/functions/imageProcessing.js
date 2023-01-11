@@ -33,12 +33,19 @@
   }
 
 
-  function convertRGB(src, processParamters) {
+  async function convertRGB(src, processParamters) {
    const {minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov}= processParamters
     const canvas = document.createElement('canvas');
-    img.src = src;
-    window.Caman(canvas, img, function () {
-      this.process("posterize", function (rgba) {
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+    img.src = "http://localhost:3000/images/dog1.png";
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      context.drawImage(img, 0, 0);
+      canvas.removeAttribute("data-caman-id");
+      }
+    await window.Caman(canvas, img.src, function () {
+     this.process("posterize", function (rgba) {
         rgba.r = Math.floor(clip((rgba.r - (AoLPCenter - AoLPPov / 2)) / (AoLPPov), 0, 255))
         rgba.g = Math.floor(clip((rgba.g - minDoLPVal) / (maxDoLPVal - minDoLPVal), 0, 255))
         rgba.b = Math.floor(clip((rgba.b - RGB_minS0Value) / (RGB_maxS0Value - RGB_minS0Value), 0, 255))
