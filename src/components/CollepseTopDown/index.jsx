@@ -33,7 +33,6 @@ const CollepseTopDown = (props) => {
     <div className={styles.CollepseTopDown}>
       {props.menuList.map((v, inx) => {
         return (
-<<<<<<< HEAD
          <>
          <div className={v.titel == openCollepseTopDown ? openClasses : styles.oneOptions} id={inx} onClick={()=>onClickLine(v.titel)}>
             <p className={openCollepseTopDown===v.titel ? styles.bold : ""}>{v.titel}</p>
@@ -42,16 +41,6 @@ const CollepseTopDown = (props) => {
            <div className={openCollepseTopDown===v.titel ? `${styles.openPropertis} ${styles.active}` : styles.openPropertis}>{v.component}</div>
        
            </>
-=======
-          <>
-            <div className={v.titel == openCollepseTopDown ? openClasses : styles.oneOptions} id={inx} onClick={() => onClickLine(v.titel)}>
-              <p className={`${styles.title} ${openCollepseTopDown === v.titel ? styles.bold : ""}`}>{v.titel}</p>
-              {openCollepseTopDown === v.titel ? <FiChevronUp /> : <FiChevronDown />}
-            </div>
-            {openCollepseTopDown === v.titel && <div className={styles.openPropertis}>{v.component}</div>}
-
-          </>
->>>>>>> 46dcccd12800e0382dc55bf0157df9db246bb36e
         )
       })}
 
