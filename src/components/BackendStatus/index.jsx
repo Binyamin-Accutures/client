@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
 import language from '../../functions/language'
 
-
 function BackendStatus({ cntImg = 4 }) {
 
     const [battery, setBattery] = useState([false, false, false, false, false, false, false, false, false, false, false])
@@ -28,15 +27,14 @@ function BackendStatus({ cntImg = 4 }) {
     }, [])
 
     return (
-
         <div className={styles.BackendStatusMain}>
-            <label className={styles.title}>Backend Status</label>
+            <h1>{language.BACK_END_STATUS}</h1>
             <div className={styles.BackendStatus}>
 
 
                 <label> {language.RUNNING} </label>
-                <label>Number of Images = {cntImg} </label>
-                <label>In Progress</label>
+                <label>{language.NUMBER_OF_IMAGE} = {cntImg} </label>
+                <label>{language.IN_PROGRESS}</label>
 
 
                 <div className={styles.battery}>
@@ -49,7 +47,6 @@ function BackendStatus({ cntImg = 4 }) {
             </div>
 
         </div>
-
 
     )
 }
