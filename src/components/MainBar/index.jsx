@@ -43,12 +43,15 @@ const value = useContext(ImageContext)
 
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={selectedImage} imgOn={true} />
+          <Carousel imgUrl={images[selectedImage-1].url} imgOn={true} />
         </div>
         <div className={styles.controlBar}>
           <div className={styles.cropBtn}><Button width={73} children={"crop"}/></div>
           <div className={styles.CarouselSlider}>
-            <RangeSlider className={styles.editRange} min='1' max={images.length} func={handleChange} text='Frame #' textPosLeft={true} />
+            <RangeSlider className={styles.editRange} 
+            min='1' max={images.length} 
+            func={handleChange} text='Frame #' 
+            textPosLeft={true} />
             <ChangeFrame className={styles.ChangeFrame} />
           </div>
         </div>
