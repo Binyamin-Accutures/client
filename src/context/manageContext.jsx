@@ -3,27 +3,33 @@ import ImageContext from "./ImageContext";
 import UserContext from "./UserContext";
 
 const afterISPTemp = {
+    images : [],
     imagePath : '',
     displaySet :{
         s0 :{
+            enable : true,
             minS0Value : 0,
             maxS0Value : 1
         },
         DoLP :{
+            enable : true,
             DoLPMin : 0,
             DoLPMax : 1
         },
         AoLPOvealayed : {
+            enable : true,
             HSFactor : 1,
             minS0Value : 0,
             maxS0Value : 1
         },
         AoLPDoLP : {
+            enable : true,
             HSFactor : 1,
             DoLPSatur : 1,
-            AoLPBright : 0.5,
+            AoLPBright : 0,
         },
         RGB : {
+            enable : true, 
             AoLPCenter :  127,
             AoLPPov : 255,
             minDoLPVal : 0,

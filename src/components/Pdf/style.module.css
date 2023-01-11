@@ -1,0 +1,23 @@
+.D {
+  margin-top: 5px;
+  padding-inline-end: 10px;
+  font-size: 5px;
+}
+.D div {
+  padding: 5px;
+  
+  padding-left: 5px;
+}
+
+.setting{
+display: grid;
+grid-template-columns: 133px 133px 226px ;
+grid-template-rows: 146px 146px 306px;
+}
+.left_bar{
+    border: 1px solid white;
+}
+.sharpening{
+     border: 1px solid white; 
+}
+

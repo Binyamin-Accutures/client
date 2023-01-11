@@ -2,11 +2,11 @@ import styles from "./style.module.css";
 import React, { useRef, useContext, useEffect } from "react";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
-
+import language from "../../functions/language";
 // creator: "Noam"
 // Use the component by implementing the *children*, *width* and *props* keys
 
-function InputLoadImage({ width, props }) {
+function InputLoadImage({ width, props, setLoad, className }) {
   const value = useContext(ImageContext);
   const inputElement = useRef();
   const onclick = () => {
@@ -25,17 +25,13 @@ function InputLoadImage({ width, props }) {
         }));
       };
     }
+    setLoad(true);
   }
 
   return (
-    <>
-      <Button
-        width={width}
-        {...props}
-        type="file"
-        func={onclick}
-      >
-        Load Image
+    <div className={className}>
+      <Button width={width} {...props} type="file" func={onclick}>
+        {language.lOAD_IMAGE}
       </Button>
       <input
         ref={inputElement}
@@ -46,7 +42,7 @@ function InputLoadImage({ width, props }) {
         webkitdirectory=""
         multiple
       />
-    </>
+    </div>
   );
 }
 

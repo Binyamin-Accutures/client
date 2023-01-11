@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px 0px;
+  padding: 12px;
   /* overflow: scroll; */
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 352px;
+  width: 100%;
   height: 50px;
 }
 
@@ -33,14 +33,15 @@ svg {
 }
 
 .openPropertis {
-  max-height: 300px;
-}
-.openPropertis {
-  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  /* max-height: 300px; */
   width: 100%;
   background: #1e1e1e;
   border-radius: 4px;
-  text-align: center;
+  padding-left: 0px;
 }
 
 .title {
@@ -53,6 +54,12 @@ svg {
 
 .dropTitle {
   color: var(--text-secondary-color);
+  padding-left: 10px;
 }
 /* 
 אפשרויות הערות כותרת */
+
+.bold{
+  font-weight: 700;
+  
+}
