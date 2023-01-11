@@ -1,5 +1,5 @@
 import styles from "./style.module.css";
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Carousel from "../Carousel";
 import RangeSlider from "../RangeSlider";
 import ChangeFrame from "../ChangeFrame";
@@ -20,12 +20,25 @@ export default function MainBar({ imgArray }) {
     { name: "image3", url: "https://www.w3schools.com/w3css/img_vernazza.jpg" },
     { name: "image4", url: "https://www.w3schools.com/w3css/img_manarola.jpg" },
     { name: "image4", url: "https://www.w3schools.com/w3css/img_riomaggiore.jpg" },
+    { name: "image4", url: "https://www.w3schools.com/w3css/img_corniglia.jpg" },
+    { name: "image4", url: "https://www.w3schools.com/w3css/img_riomaggiore.jpg" },
     { name: "image4", url: "https://www.w3schools.com/w3css/img_corniglia.jpg" }
   ])
 
   //use context(imgArray)
-const value = useContext(ImageContext)
+// const value = useContext(ImageContext)
+  const [displayArr, setDispalyArr] = useState(images)
   const [selectedImage, setSelectedImage] = useState(1)
+  const [chooseMinRange, setChooseMinRange] = useState(1)
+  const [chooseMaxRange, setChooseMaxRange] = useState(images.length)
+
+useEffect(() => {
+  setDispalyArr(images.slice(chooseMinRange, chooseMaxRange))
+},[chooseMinRange, chooseMaxRange])
+
+
+
+
 
 
   const handleChange = (target) => {
@@ -40,10 +53,9 @@ const value = useContext(ImageContext)
 
   return (
     <>
-
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={images[selectedImage-1].url} imgOn={true} />
+          <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={true} />
         </div>
         <div className={styles.controlBar}>
           <div className={styles.cropBtn}><Button width={73} children={"crop"}/></div>
@@ -52,7 +64,8 @@ const value = useContext(ImageContext)
             min='1' max={images.length} 
             func={handleChange} text='Frame #' 
             textPosLeft={true} />
-            <ChangeFrame className={styles.ChangeFrame} />
+            <ChangeFrame className={styles.ChangeFrame} images={images} 
+            setChooseMinRange={setChooseMinRange} setChooseMaxRange={setChooseMaxRange} chooseMinRange={chooseMinRange} />
           </div>
         </div>
             <Histogram/>
