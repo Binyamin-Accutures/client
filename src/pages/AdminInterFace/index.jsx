@@ -1,37 +1,14 @@
 import React from 'react'
-import styles from './style.module.css'
+import Styles from './style.module.css'
+
+//create by: Aviad elya
 
 function AdminInterFace() {
-    const arrayUser = [
-        {
-            userName: "ddd",
-            password: "fff",
-            status:"fffg",
-            isActiv: "ggg"
-        },
-        {
-            userName: "ddd",
-            password: "fff",
-            status:"fffg",
-            isActiv: "ggg"
-        },
-        {
-            userName: "ddd",
-            password: "fff",
-            status:"fffg",
-            isActiv: "ggg"
-        },
-        {
-            userName: "ddd",
-            password: "fff",
-            status:"fffg",
-            isActiv: "ggg"
-        }
-    ]
+    const arrayUser = [];
 
     return (
-        <div>
-            <table className={styles.table}>
+        <div className={Styles.generalDiv}>
+            <table>
                 <tr>
                     <th>useName</th>
                     <th>password</th>
@@ -46,7 +23,7 @@ function AdminInterFace() {
                         <td>{v.isActiv}</td>
                     </tr>
                 ))}
-                
+
 
             </table>
 
