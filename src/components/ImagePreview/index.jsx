@@ -17,7 +17,7 @@ function ImagePreview() {
     const [load, setLoad] = useState(false);//[true, empty]
     const value = useContext(ImageContext);
     const [selectedImage, setSelectedImage] = useState(0) // 1 is the default
-    console.log(value)
+    // console.log(value)
 
     const handleChange = (target) => {
         setSelectedImage(target.value)

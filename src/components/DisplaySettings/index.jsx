@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Button from "../Button";
 import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
@@ -19,7 +19,11 @@ function DisplaySetting() {
     const [aolpDolpVal, setAolpDolpVal] = useState(AoLPDoLP);
     const [rgbVal, setRgbVal] = useState(RGB);
     const [isCheckMenuOpen, setIsCheckMenuOpen] = useState(false)
-    
+
+
+    useEffect(()=>{
+        setAfterISP(prev => ({...prev, displaySet: {s0: s0Val, DoLP: dolpVal, AoLPOvealayed: aolpOverlayVal, AoLPDoLP: aolpDolpVal, RGB: rgbVal}}))
+    },[s0Val, dolpVal, aolpOverlayVal, aolpDolpVal, rgbVal])
     
     const handleS0 = (target) => {
         setS0Val((prev) => ({...prev, [target.name]: target.value}))
@@ -62,21 +66,25 @@ function DisplaySetting() {
     }
 
     const handleRGB = (target) => {
+        console.log(`Before`);
         setRgbVal((prev) => ({ ...prev, [target.name]: target.value }))
         if (target.name == 'minDoLPVal' && rgbVal.minDoLPVal > rgbVal.maxDoLPVal) {
+            console.log(afterISP.displaySet.RGB);
             setRgbVal(prev => ({ ...prev, maxDoLPVal: Number(prev.minDoLPVal) + 1 }))
         }
         if (target.name == 'maxDoLPVal' && rgbVal.maxDoLPVal < rgbVal.minDoLPVal) {
+            console.log(afterISP.displaySet.RGB);
             setRgbVal(prev => ({ ...prev, minDoLPVal: Number(prev.maxDoLPVal) - 1 }))
         }
 
         if (target.name == 'minS0Value' && rgbVal.minS0Value > rgbVal.maxS0Value) {
-            setRgbVal(prev => ({ ...prev, maxS0Value: Number(prev.minS0Value) + 1 }))
+            setRgbVal(prev => ({ ...prev, maxS0Value: Number(prev.minS0Value) + 1}))
         }
         if (target.name == 'maxS0Value' && rgbVal.maxS0Value < rgbVal.minS0Value) {
             setRgbVal(prev => ({ ...prev, minS0Value: Number(prev.maxS0Value) - 1 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, RGB: rgbVal})}))
+        console.log(`After`);
     }
 
     const handleSave = () => {
@@ -92,7 +100,6 @@ function DisplaySetting() {
             titel: "S0", component: <div>
                 <RangeSlider textPosLeft={false} className={style.Hug} func={handleS0} text={'Minimun S0 value'} name="minS0Value" contextValue={s0.minS0Value} min={0} max={1} step={0.01} />
                 <RangeSlider textPosLeft={false} className="Hug" func={handleS0} text={'Maximum S0 value'} name="maxS0Value" contextValue={s0.maxS0Value} min={0} max={1} step={0.01} />
-
             </div>
         },
 
@@ -139,7 +146,7 @@ function DisplaySetting() {
         <div className="dudu">
             <CollepseTopDown menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
             {isCheckMenuOpen && <CheckList />}
-            <Button func={handleSave} width={"315px"}>Save Results</Button>  
+            <Button func={handleSave} width={"315px"}>{!isCheckMenuOpen? 'Save Results' : 'Save'}</Button>  
         </div> 
         
       </div>
