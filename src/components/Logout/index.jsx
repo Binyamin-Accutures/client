@@ -8,20 +8,20 @@ import UserContext from '../../context/UserContext';
 // data : logout button, apeare when the user icon is pressed
 
 function LogOut({ setIsShow }) {
-    const {setIsLogged, setUser } = useContext(UserContext)
+    const { setIsLogged, setUser } = useContext(UserContext)
 
     const logOutClicked = () => {
         localStorage.clear();
-        setUser('');
+        setUser();
         setIsLogged(false);
     }
     return (
         <>
             <div className={styles.logoutComp} >
-                <BiLogOutCircle className={styles.logoutIcon} /><br />
+                <BiLogOutCircle className={styles.logoutIcon} /><br /><br />
 
                 <button onClick={logOutClicked} className={styles.logoutBtn}>logOut</button>
-                
+
             </div>
             <div className={styles.closeBtn} onClick={() => setIsShow(false)}></div>
         </>

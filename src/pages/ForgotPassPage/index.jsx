@@ -13,6 +13,8 @@ export default function ForgotPassPage() {
   }
 
   return (
+    <div className={styles.formLoginContainer}>
+
     <form className={styles.formLogin} onSubmit={handleSubmit}>
       <p className={styles.paragraphTitle}>Forgot Password?</p>
       <p className={styles.paragraph}>
@@ -24,11 +26,12 @@ export default function ForgotPassPage() {
         placeholder="email"
         required={true}
         inputRef={userEmailInput}
-      />
+        />
 
       <Button type={"submit"} width={"328px"}>
         Send
       </Button>
     </form>
+        </div>
   );
 }

@@ -37,6 +37,8 @@ export default function ChangeAndCreatePassPass({ setUser }) {
   };
 
   return (
+    <div className={styles.formLoginContainer}>
+
     <form className={styles.formLogin} onSubmit={handleSubmit}>
       <p className={styles.paragraphTitle}>
         {token.token ? "Change" : "Create"} Password
@@ -48,18 +50,19 @@ export default function ChangeAndCreatePassPass({ setUser }) {
         placeholder="new password"
         required={true}
         inputRef={userFirstPassword}
-      />
+        />
       <Input
         type="password"
         name="input"
         placeholder="confirm new password"
         required={true}
         inputRef={userSecondPassword}
-      />
+        />
 
       <Button type={"submit"} width={"328px"}>
         Send
       </Button>
     </form>
+        </div>
   );
 }
