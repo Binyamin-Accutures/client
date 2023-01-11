@@ -3,26 +3,31 @@ import Layout from "./layout";
 import { ContextProvider } from "./context/manageContext";
 import { useEffect, useState } from "react";
 import LayoutLogin from "./LayoutLogin";
-import apiCalls from "./functions/apiRequest";
-
+import apiCalls, { setToken } from "./functions/apiRequest";
 import { MainTest } from "./tests/MainTest";
-import LoginPage from "./pages/LoginPage";
+import { useNavigate } from "react-router-dom";
 
 function App() {
-  const [user, setUser] = useState(true);
+
+  const nav = useNavigate();
+  const [user, setUser] = useState(true)
+
   useEffect(() => {
     const startApp = async () => {
-      const userFromServer = await apiCalls(
-        "get",
-        "https://localhost:5000/api/user"
-      );
-      if (userFromServer) {
-        setUser(userFromServer);
-      }
+     await setToken(localStorage.token)
+      apiCalls("get", "http://localhost:9898/api/user/")
+      .then((res) => {
+       console.log(res);
+        if (res.status === 200) {
+          setUser(res.data);
+          nav("/loadimage")
+        }
+      });
     };
 
     if (!user && localStorage.token) startApp();
   }, []);
+
 
   return (
     <div>

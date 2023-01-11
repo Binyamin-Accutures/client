@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
 import language from '../../functions/language'
 
+
 function BackendStatus({ cntImg = 4 }) {
 
     const [battery, setBattery] = useState([false, false, false, false, false, false, false, false, false, false, false])
 
     useEffect(() => {
+<<<<<<< HEAD
         const intervel =
             setInterval(() => {
                 setBattery((prev) => {
@@ -22,11 +24,26 @@ function BackendStatus({ cntImg = 4 }) {
                     return newArray
                 })
             }, 10000);
+=======
+        const intervel = setInterval(() => {
+            setBattery(prev => {
+                let count = prev.filter(v => v).length
+                // console.log(count)
+                let newArray = prev.map((v, i) => {
+                    //    console.log( i<=9)
+                    return i <= count && count <= 10 ? true : false
+                }
+                )
+                return newArray
+            })
+        }, 200);
+>>>>>>> a118b8d243b557b7d524534f8b777f6fdfb45b9b
 
         return () => { clearInterval(intervel) }
     }, [])
 
     return (
+
         <div className={styles.BackendStatusMain}>
             <h1>Backend Status</h1>
             <div className={styles.BackendStatus}>
@@ -47,6 +64,7 @@ function BackendStatus({ cntImg = 4 }) {
             </div>
 
         </div>
+
 
     )
 }

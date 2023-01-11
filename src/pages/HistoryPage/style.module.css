@@ -1,0 +1,65 @@
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.historyPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: none;
+    position: relative;
+    padding: 0 10%;
+}
+
+.HistoryPageSort {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4vw;
+}
+
+.historySearch,
+.historySort {
+    background-color: var(--bg-secondary-color);
+    color: aliceblue;
+    border-radius: 4px;
+    margin-left: 10px;
+    padding: 8px;
+    border: none;
+}
+
+.historySearch {
+    width: 400px;
+}
+
+.historyPageSearch {
+    position: relative;
+}
+
+.HistoryPageSort>label {
+    margin-top: -4px!important;
+    color: #fff;
+}
+
+.historySort {
+    width: 215px;
+    /* align-self: flex-start; */
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding-top: 20px;
+    gap: 30px;
+    height: 70%;
+    width: 85%;
+}

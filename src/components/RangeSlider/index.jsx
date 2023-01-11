@@ -1,20 +1,19 @@
-import React, { useEffect,  useState } from 'react';
+import React, { useContext, useEffect,  useState } from 'react';
 import style from './style.module.css'
+import ImageContext from '../../context/ImageContext';
 
 function RangeSlider({func, name='', className='', text, min, max, step=1 , textPosLeft=true, numInput=true, contextValue , ...props}) {
     const [value, setValue] = useState(isNaN(contextValue) ? min : contextValue)
+    const { afterISP } = useContext(ImageContext)
 
     useEffect(() => {
         if(!isNaN(contextValue) && contextValue != value) {
-            setValue(() => contextValue)
+            if(contextValue > max ) setValue(() => max)
+            else if(contextValue < min ) setValue(() => min)
+            else setValue(contextValue)
         }
-    },[])
+    },[afterISP, contextValue])
 
-    useEffect(() => {
-        if(!isNaN(contextValue) && contextValue != value) {
-            setValue(() => contextValue)
-        }
-    },[value])
 
     const handleChange = ({ target }) => {
         if(target.value > max ) setValue(() => max)
@@ -22,6 +21,12 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
         else setValue(() => Number(target.value))
         if(func) func(target)
     }
+
+  
+    
+
+       
+    
 
     return (
         <div className={className? className : 'container'}>
@@ -36,5 +41,6 @@ function RangeSlider({func, name='', className='', text, min, max, step=1 , text
         </div>
     );
 }
+
 
 export default RangeSlider;

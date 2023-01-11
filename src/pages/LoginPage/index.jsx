@@ -24,18 +24,18 @@ function LoginPage({ setUser }) {
       email: userEmailInput.current.value,
     };
 
-    apiCalls("post", "http://localhost:9898/api/user/", data).then((res) => {
+    apiCalls("post", "http://localhost:9898/api/user/login", data).then((res) => {
       if (res.status === 200) {
-        setToken(res.data.token);
+        setToken(res.data);
         setUser(true);
-        localStorage.token = res.data.token;
+        localStorage.token = res.data;
         nav("/loadimage");
       }
     });
   }
 
   return (
-    <>
+    <div className={styles.formLoginContainer}>
       <form className={styles.formLogin} onSubmit={handleSubmit}>
         <p className={styles.paragraphTitle}>Sign In</p>
 
@@ -59,11 +59,11 @@ function LoginPage({ setUser }) {
         </Button>
 
         <div className={styles.formOptions}>
-          <p>forgot password</p>
-          <p>new account</p>
+          <p className={styles.paragraph} onClick={()=>{nav("/forgot")}}>forgot password</p>
+          <p className={styles.paragraph} onClick={()=>{nav("/register")}} >new account</p>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 
