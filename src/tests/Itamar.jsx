@@ -5,29 +5,29 @@ import  ImageConversion  from "../functions/ImageConversion";
 const afterISPTemp = {
     displaySet :{
         s0 :{
-            enable : true,
+            isActiv : true,
             minS0Value : 0,
             maxS0Value : 1
         },
         DoLP :{
-            enable : true,
+            isActiv : true,
             DoLPMin : 0,
             DoLPMax : 1
         },
         AoLPOvealayed : {
-            enable : true,
+            isActiv : true,
             HSFactor : 1,
             minS0Value : 0,
             maxS0Value : 1
         },
         AoLPDoLP : {
-            enable : true,
+            isActiv : true,
             HSFactor : 1,
             DoLPSatur : 1,
             AoLPBright : 0,
         },
         RGB : {
-            enable : true, 
+            isActiv : true, 
             AoLPCenter :  127,
             AoLPPov : 255,
             minDoLPVal : 0,
@@ -46,6 +46,7 @@ const afterISPTemp = {
 export default function Itamar() {
     ImageConversion(imagesAll, afterISPTemp)
   return (
+    
     <div>
       <a>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
     </div>
