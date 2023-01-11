@@ -1,58 +1,68 @@
 .CollepseTopDown {
-  background: #383838;
-  width: 352px;
-  max-height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px 0px;
-  /* overflow: scroll; */
+    background: #383838;
+    /* width: 352px; */
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    /* overflow: scroll; */
 }
 
 .oneOptions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 352px;
-  height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
 }
 
 .oneOptions p {
-  color: var(--text-color);
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-size-label);
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--font-size-label);
 }
 
 svg {
-  color: #56c493;
+    color: #56c493;
 }
 
 .oneOptions {
-  color: #56c493;
-  font-size: 28px;
+    color: #56c493;
+    font-size: 28px;
 }
 
 .openPropertis {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* max-height: 300px; */
-  width: 100%;
-  background: #1e1e1e;
-  border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 12px;
+    /* max-height: 300px; */
+    width: 100%;
+    background: var(--bg-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .title {
-  padding: 12px;
+    padding: 12px;
+    cursor: pointer;
 }
 
 .option {
-  padding: 12px;
+    padding: 12px;
 }
 
 .dropTitle {
-  color: var(--text-secondary-color);
+    color: var(--text-secondary-color);
+    padding-left: 10px;
 }
+
+
 /* 
 אפשרויות הערות כותרת */
+
+.bold {
+    font-weight: 700;
+}

@@ -1,13 +1,13 @@
 import React from 'react'
-// import  Input from '../components/Input'
-import BackendStatus from '../components/BackendStatus'
+import AdminInterFace from '../pages/AdminInterFace'
+
 
 
 function AviadElya() {
 
     return (
         <div>
-            <BackendStatus/>
+            <AdminInterFace/>
         </div>
         
     )
