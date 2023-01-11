@@ -1,28 +1,29 @@
 
 import styles from "./style.module.css"
 import InputSelect from "../InputSelect"
-import { useState } from "react"
+import { useContext} from "react"
 import RangeSlider from "../RangeSlider"
-
-
-function func() {
-    console.log(".")
-}
+import ImageContext from '../../context/ImageContext';
 
 export default function Denoise() {
 
-    const [selectInput, setSelectInput] = useState()
+    const value = useContext(ImageContext)
+
+    const handle = (e) => {
+        let name = e.name
+        let valueToChange = e.value
+        value.setBeforeISP(preve => {
+            const newobj = { ...preve }
+            newobj.denoise[name] = valueToChange
+            return newobj
+        })
+    }
 
     return (
         <div className={styles.denoise}>
-            <input type="checkbox" name="Enable" />
-            <label for="Enable">Enable</label>
-            <InputSelect label={"Method"} options={[]} width={265} setSelectInput={setSelectInput} />
-            <RangeSlider func={func} text={"Radius"} min={0} max={5} textPosLeft={false} />
-            <RangeSlider func={func} text={"EPS"} min={0} max={0.005} step={0.001} textPosLeft={false} />
-
-
-
+            <InputSelect label={"method"} name="method" options={["bm3d"]} width={265} dataDefault={value.beforeISP.denoise.method} handle={handle} />
+            <RangeSlider func={handle} name="radius" text={"Radius"} min={0} max={5} step={1} textPosLeft={false} numInput={false} contextValue={value.beforeISP.denoise.radius} />
+            <RangeSlider func={handle} name="ESP" text={"EPS"} min={0} max={0.005} step={0.001} textPosLeft={false} numInput={false} contextValue={value.beforeISP.denoise.ESP} />
         </div >)
 
 }

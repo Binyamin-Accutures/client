@@ -5,9 +5,8 @@ import ImageContext from "../../context/ImageContext";
 
 // creator: "Noam"
 
-function InputLoadImage({ width, props }) {
+function InputLoadImage({ width, props , setLoad}) {
   const value = useContext(ImageContext);
-
   const inputElement = useRef();
   const onclick = () => {
     inputElement.current.click();

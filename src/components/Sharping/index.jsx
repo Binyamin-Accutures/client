@@ -1,31 +1,31 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import InputSelect from '../InputSelect';
-import styles from "./style.module.css";
-import onChangeSideBar from '../../functions/onChangeSideBar'
 import RangeSlider from "../RangeSlider"
-import Input from "../Input"
+import ImageContext from '../../context/ImageContext';
+import Checkbox from '../Checkbox';
 
-function Sharping(props) {
-    const radiusData = props.data.sharpening.radius;
-    const espData = props.data.sharpening.ESP;
-    const treholdData = props.data.sharpening.trehold;
-    const methodData = props.data.sharpening.method;
+function Sharping() {
 
-    const [selectMethod, setSelectMethod] = useState('');
-    const [selectPixelOrder, setSelectPixelOrder] = useState('');
-    const [isEnabled, setIsEnabled] = useState(true);
+    const value = useContext(ImageContext)
 
-    function stam (){
-        console.log('hello');
-    }
+    const handle = (e) => {
+      let name = e.name;
+      let valueToChange;
+      e.type == "checkbox" ? valueToChange = e.checked : valueToChange = e.value;
+      value.setBeforeISP(preve => {
+         const newobj = { ...preve }
+         newobj.sharpening[name] = valueToChange;
+         return newobj
+      })
+   }    
 
   return (
     <div>
-        <InputSelect label="Method" options={methodData} width="265" setSelectInput={setSelectMethod}/>
-        <RangeSlider func={stam} text='Radius' min={radiusData} max={100} textPosLeft={false} />
-        <RangeSlider  func={stam} text='EPS' min={espData} max={1} step={0.001} textPosLeft={false} />
-        <RangeSlider func={stam} text='Trehold' min={treholdData} max={10} step={0.1} textPosLeft={false}/>
+        <Checkbox label="enable" name="enable" onChange={handle} checked={value.beforeISP.sharpening.enable}/>
+        <InputSelect label="method" options={["usm"]} width="265" handle={handle} dataDefault={value.beforeISP.sharpening.method}/>
+        <RangeSlider func={handle} text='Radius' name='radius' min={0} max={100} step={0.1} textPosLeft={false} numInput={false} contextValue={value.beforeISP.sharpening.radius}/>
+        <RangeSlider  func={handle} text='EPS' name='ESP' min={0} max={1} step={0.001} textPosLeft={false} numInput={false} contextValue={value.beforeISP.sharpening.ESP}/>
+        <RangeSlider func={handle} text='Trehold' name='trehold' min={0} max={10} step={0.1} textPosLeft={false} numInput={false} contextValue={value.beforeISP.sharpening.trehold}/>
     </div>
   )
 }

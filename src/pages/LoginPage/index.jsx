@@ -4,42 +4,38 @@ import { useRef } from "react";
 import apiCalls, { setToken } from "../../functions/apiRequest";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import logo from "../../components/Header/logo.svg";
-
+import { useNavigate } from "react-router-dom";
 
 // creator: david hakak
 // color: _______________
 // icon: ________________
 
-function LoginPage() {
- 
+function LoginPage({ setUser }) {
   const userEmailInput = useRef();
   const userPasswordInput = useRef();
+  const nav = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(userEmailInput.current.value, userPasswordInput.current.value);
 
+    const data = {
+      password: userPasswordInput.current.value,
+      email: userEmailInput.current.value,
+    };
 
-    apiCalls("get", "https://restcountries.com/v3.1/all")
-      .then((res) => {     
-        setToken("123")  // setToken(res.token)
-      })
-
-    // setUser(UserEmailInput.current.value) 
-    // localStorage.token = "444444" -->    // localStorage.token = res.token 
+    apiCalls("post", "http://localhost:9898/api/user/login", data).then((res) => {
+      if (res.status === 200) {
+        setToken(res.data);
+        setUser(true);
+        localStorage.token = res.data;
+        nav("/loadimage");
+      }
+    });
   }
 
-
   return (
-    <>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logo} alt="logo" /> Accutures
-        </div>
-      </header>
-
-
+    <div className={styles.formLoginContainer}>
       <form className={styles.formLogin} onSubmit={handleSubmit}>
         <p className={styles.paragraphTitle}>Sign In</p>
 
@@ -63,12 +59,12 @@ function LoginPage() {
         </Button>
 
         <div className={styles.formOptions}>
-          <p>forgot password</p>
-          <p>new account</p>
+          <p className={styles.paragraph} onClick={()=>{nav("/forgot")}}>forgot password</p>
+          <p className={styles.paragraph} onClick={()=>{nav("/register")}} >new account</p>
         </div>
       </form>
-    </>
-  )
+    </div>
+  );
 }
 
 export default LoginPage;

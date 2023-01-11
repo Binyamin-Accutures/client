@@ -1,34 +1,26 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import { useContext } from 'react'
 import InputSelect from '../InputSelect';
-import styles from "./style.module.css";
-import onChangeSideBar from '../../functions/onChangeSideBar'
+import ImageContext from '../../context/ImageContext';
 
-function Demosaic(props) {
-    const methodData = props.data.demosaic.method;
-    const pixelOrderData = props.data.demosaic.pixelOrder;
-    const showData = (e) => {
-        console.log(selectPixelOrder);
-        console.log(selectMethod);
-        console.log(isEnabled);
-    }
+function Demosaic() {
+ 
+    const value = useContext(ImageContext)
 
-    const changeCheckbox  = (e) => {
-        setIsEnabled(!isEnabled)
-    }
-
-      const [selectMethod, setSelectMethod] = useState('');
-      const [selectPixelOrder, setSelectPixelOrder] = useState('');
-      const [isEnabled, setIsEnabled] = useState(true);
+    const handle = (e) => {
+      let name = e.name;
+      let valueToChange;
+      e.type == "checkbox" ? valueToChange = e.checked : valueToChange = e.value;
+      value.setBeforeISP(preve => {
+         const newobj = { ...preve }
+         newobj.demosaic[name] = valueToChange;
+         return newobj
+      })
+   }   
 
   return (
     <div>
-        <div>
-            <input type="checkbox" id="enabled" name="enabled" value="1" onChange={(e) => changeCheckbox(e)}/>
-            <label for="enabled">enabled</label>
-        </div>
-        <InputSelect label="Method" options={methodData} width="265" setSelectInput={setSelectMethod}/>
-        <InputSelect label="Pixel Order" options={pixelOrderData} width="265" setSelectInput={setSelectPixelOrder}/>
+        <InputSelect label="method" options={['newton']} width="265" handle={handle} dataDefault={value.beforeISP.demosaic.method}/>
+        <InputSelect label="pixelOrder" options={['hrfv']} width="265" handle={handle} dataDefault={value.beforeISP.demosaic.pixelOrder}/>
     </div>
   )
 }

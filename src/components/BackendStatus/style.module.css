@@ -1,11 +1,15 @@
+
+
+
 .BackendStatusMain{
     border: solid 1px var(--input-color);
     border-radius:var(--border-radius);
     height: 294px;
-    width: 408px;
+    width: 100%;
     padding-left: 16px;
     padding-top: 13px;
     font-size: 16px;
+    margin-top: auto;
 }
 
 .BackendStatus{
@@ -13,31 +17,33 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
-    
-    
+    margin-top: 40px;
 }
+    .h1{
+        font-weight: 700;
+       
+    }  
+    
+
 label{
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
-.h1{
-    font-weight: 700;
-    
-
-   
+.prog{
+    margin-top: 16px;
 }
+
+
 .battery {
-    padding-top:8px;
+    
 display: flex;
 justify-content: center;
-margin-top: 15px;
+margin-top: 10px;
     width: 250px;
     position: relative;
   }
   
   .dark {
-    cursor: pointer;
     display: inline-block;
     width: 10px;
     border: var(--primary-color);
@@ -49,7 +55,6 @@ margin-top: 15px;
     border-radius:2px;
   } 
   .bar {
-    cursor: pointer;
     display: inline-block;
     width: 10px;
     border:var(--primary-color);
@@ -62,50 +67,4 @@ margin-top: 15px;
   }
   
   
-  /* .bar.active {
-    background: var(--primary-color);
-  }
-  .battery :nth-child(1){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(2){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(3){
-    background: var(--primary-color);
-
-  }
-
-  .battery :nth-child(4){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(5){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(6){
-    background: var(--primary-color);
-
-   } */
-/*    
-   .battery :nth-child(7){
-    background: var(--primary-color);
-
-  }
-
-  .battery :nth-child(8){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(9){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(10){
-    background: var(--primary-color);
-
-  }
-    */
+  

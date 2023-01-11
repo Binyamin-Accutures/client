@@ -5,7 +5,7 @@ import ImagePreview  from '../components/ImagePreview'
 function YisraelTest() {
   return (
     <div>
-      <ImagePreview />
+      <ImagePreview/>
     </div>
   )
 }
