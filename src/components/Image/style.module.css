@@ -1,17 +1,19 @@
 .imgContainer {
-    width: 328px;
+  width: 328px;
 }
 
 .img {
-    width: 100%;
-    height: 208px;
-    border-radius: 4px;
+  width: 100%;
+  height: 208px;
+  border-radius: 4px;
+  margin-left: 5px;
+  margin-right: 5px;
+  justify-content: space-evenly;
 }
-
 .label {
-    width: 100%;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-size: 14px;
-    color: #B6B6B6;
+  width: 100%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-size: 14px;
+  color: #b6b6b6;
 }

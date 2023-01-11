@@ -11,6 +11,8 @@ import Demosaic from "../Demosaic";
 import Denoise from "../Denoise";
 import Sharping from "../Sharping";
 import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
+import language from "../../functions/language";
+
 // creator: Liat
 
 const SideBar = () => {
@@ -32,23 +34,20 @@ const SideBar = () => {
     },
   };
   const menuList = [
-    { titel: "NUC", component: <Nuc /> },
+    { titel: "NUC", component: <Nuc design={styles.D} /> },
     {
       titel: "Dynamic Range Stretch",
-      component: (
-        <DynamicRangeStretch
-          classNameTitle="title"
-          classNameOption="option"
-          classNameSecdTitle="dropTitle"
-        />
-      ),
+      component: <DynamicRangeStretch design={styles.D} />,
     },
     {
       titel: "Demosaic",
-      component: <Demosaic data={data} className={styles.pedin} />,
+      component: <Demosaic data={data} design={styles.D} />,
     },
-    { titel: "Denoise", component: <Denoise /> },
-    { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
+    { titel: "Denoise", component: <Denoise design={styles.D} /> },
+    {
+      titel: "Sharpening",
+      component: <Sharping data={sharpingData} design={styles.D} />,
+    },
   ];
   const value = useContext(ImageContext);
   const [IsOpen, setIsOpen] = useState(true);
@@ -76,10 +75,7 @@ const SideBar = () => {
             <div className={styles.collapse}>
               <InputLoadImage width="328px" className={styles.loadBtn} />
               <Image value={value} index={0} />
-              <CollepseTopDown
-                menuList={menuList}
-                className={styles.blackBack}
-              />
+              <CollepseTopDown menuList={menuList} />
               <BtnRunISP className={styles.btn} />
             </div>
           </div>
