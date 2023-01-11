@@ -101,9 +101,10 @@
     window.Caman(canvas, img, function () {
       this.process("posterize", function (rgba) {
         HSVchange(0, HSFactor, 0, DoLPSatur, 0, 1);
-    
-      this.brightness(AoLPBright);
-        return rgba;
+        window.Caman(canvas, img, function () {
+            this.brightness(AoLPBright);
+        })
+            return rgba;
       }).render();
     });
 

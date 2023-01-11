@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./style.module.css";
-import { AiOutlineCheck } from 'react-icons/ai'
+import { AiOutlineCheck } from 'react-icons/ai';
 
 
 // creator: Yisrael Olonoff
@@ -12,13 +12,13 @@ import { AiOutlineCheck } from 'react-icons/ai'
 // <Button type={'submit'} width={133} > Your text </Button>
 
 
-function Button({ children ,type, width, func, ...props }) {
+function Button({ children, type, width, func, ...props }) {
     return (
         <>
             <button
                 type={type} style={{ width: width }}
-                onClick={ func } className={styles.button} {...props}>
-                {children} <AiOutlineCheck size={20}/>
+                onClick={func} className={styles.button} {...props}>
+                {children} <AiOutlineCheck size={20} />
             </button>
         </>
     )
