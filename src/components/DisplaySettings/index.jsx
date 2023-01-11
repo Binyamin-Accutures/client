@@ -113,8 +113,7 @@ function DisplaySetting() {
 
 
     const menuList = [
-        {titel:"S0", component:<div>
-        <CheckBox label={'Enable'} onChange={handleCheck} name={'s0'} prev={afterISP.displaySet.s0.enable} />    
+        {titel:"S0", component:<div>   
         <RangeSlider textPosLeft={false} className={style.Hug} func={handleS0} text={'Minimun S0 value'} name="minS0Value" contextValue={s0.minS0Value} min={0} max={1} step={0.01}/> 
         <RangeSlider textPosLeft={false} className="Hug"  func={handleS0} text={'Maximum S0 value'}  name="maxS0Value" contextValue={s0.maxS0Value} min={0} max={1} step={0.01}/>
 
@@ -152,9 +151,16 @@ function DisplaySetting() {
         <h1>
             Display settings
         </h1>
-        <CheckBox label={'Enable All'} onChange={handleCheckAll} prev={checkAllVal} />
         <div>
-        <CollepseTopDown menuList={menuList} />
+            <CollepseTopDown menuList={menuList} />
+            {firstClicked && <div>
+                <CheckBox label={'Save all sections results'} onChange={handleCheckAll} prev={checkAllVal} /> <br/> <br/>
+                <CheckBox label={'S0'} onChange={handleCheck} name={'s0'} prev={afterISP.displaySet.s0.enable} /> 
+                <CheckBox label={'DoLP'} onChange={handleCheck} name={'DoLP'} prev={afterISP.displaySet.s0.enable} /> 
+                <CheckBox label={'AoLP Overlayed'} onChange={handleCheck} name={'AoLPOvealayed'} prev={afterISP.displaySet.s0.enable} /> 
+                <CheckBox label={'AoLP + DoLP'} onChange={handleCheck} name={'AoLPDoLP'} prev={afterISP.displaySet.s0.enable} /> 
+                <CheckBox label={'RGB'} onChange={handleCheck} name={'RGB'} prev={afterISP.displaySet.s0.enable} /> 
+                </div>}
         </div>
        {firstClicked ?
         <Button func={setFirstClicked(true)} width={"315px"}>Save Results</Button> : 
