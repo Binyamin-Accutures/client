@@ -3,16 +3,19 @@
     /* width: 736.6px; */
     justify-content: space-evenly;
     align-items: left;
+    padding: 0;
 }
 
 .frame {
     /* max-width: 260px; */
-    width: 100%;
+    width: 45%;
 }
 
-.frame input[type=number] {
-    width: 30px;
-    height: 20px;
+.frame>input[type=number] {
+    width: 65px;
+    height: 26px;
+    /* width: 30px;
+    height: 20px; */
 }
 
 .frame>text {

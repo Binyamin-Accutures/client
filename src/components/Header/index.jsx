@@ -3,7 +3,10 @@ import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 import styles from './style.module.css'
 import { BiUser } from 'react-icons/bi'
-import Logout from '../Logout'
+import Logout from '../Logout';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+
+
 
 // creator:moran and adel
 // data : header after login
@@ -37,12 +40,20 @@ function Header() {
                     </NavLink>
                     <NavLink className={splitLocation[1] === "history" ? styles.active : styles.navitem} to='/history'>History</NavLink>
                 </div>
+                <div className={styles.space} />
+                <div className={styles.backNext}>
+                    <div className={styles.backNextOff}>  <IoIosArrowBack className={styles.backNextOff} />   Back</div>
+                    <div className={styles.backNextOff}>Next    <IoIosArrowForward className={styles.backNextOff} /></div>
+                </div>
                 <div className={styles.userBar}>
-                    <div className={styles.userName}>
-                        <BiUser className={styles.userIcon} onClick={() => setIsShow(!isShow)} >
-                        </BiUser></div>UserName@mail.co.il
+
+                    <BiUser className={styles.userIcon} onClick={() => setIsShow(!isShow)} >
+                    </BiUser>
+
                     {isShow && < Logout setIsShow={setIsShow} />}
                 </div>
+
+
 
 
 
