@@ -10,12 +10,12 @@
 
 .img {
     align-self: center;
-    height: 150px;
+    height: 170px;
     width: 95%;
     background-color: #00000033;
     border-radius: 2px;
     object-fit: cover;
-    aspect-ratio: 6/9;
+    aspect-ratio: 4/3;
 }
 
 .icon {
@@ -29,6 +29,7 @@
 .icon:hover {
     color: white;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .icon:active {
@@ -37,9 +38,8 @@
 
 .downloadAndDelete {
     display: grid;
-    grid-template-columns: repeat(3, 40px);
+    grid-template-columns: repeat(4, 40px);
     grid-template-rows: 40px 30px;
-    gap: 2px;
     justify-content: flex-end;
     height: 42px;
 }
