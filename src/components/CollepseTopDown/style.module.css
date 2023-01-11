@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
+  padding:4px;
   /* overflow: scroll; */
 }
 
@@ -30,6 +30,7 @@ svg {
 .oneOptions {
   color: #56c493;
   font-size: 28px;
+ 
 }
 
 /* .openPropertis {
@@ -39,12 +40,15 @@ svg {
 .openPropertis {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
+  padding:12px;
   /* max-height: 300px; */
   width: 100%;
-  background: #1e1e1e;
-  border-radius: 4px;
+  background: var(--bg-color);
+  border-bottom-left-radius: var(--border-radius) ;
+  border-bottom-right-radius: var(--border-radius) ;
+    
 }
 
 .title {
@@ -63,5 +67,6 @@ svg {
 
 .bold{
   font-weight: 700;
+ 
   
 }

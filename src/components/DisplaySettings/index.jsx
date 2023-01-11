@@ -162,7 +162,7 @@ function DisplaySetting() {
                 Display settings
             </h1>
             <div>
-                <CollepseTopDown menuList={menuList} />
+                <CollepseTopDown className={style.isClicked}  menuList={menuList} />
                 {firstClicked && <div>
                     <CheckBox label={'Save all sections results'} onChange={handleCheckAll} prev={checkAllVal} /> <br /> <br />
                     <CheckBox label={'S0'} onChange={handleCheck} name={'s0'} prev={afterISP.displaySet.s0.enable} />

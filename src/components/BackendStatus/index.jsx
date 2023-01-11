@@ -22,7 +22,7 @@ function BackendStatus({ cntImg = 4 }) {
                     )
                     return newArray
                 })
-            }, 10000);
+            }, 200);
 
         return () => { clearInterval(intervel) }
     }, [])
