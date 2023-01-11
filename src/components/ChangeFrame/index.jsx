@@ -9,27 +9,17 @@ import styles from "./style.module.css";
 //               And the minimum and maximum should also come in the context or props  
 
 
-export default function ChangeFrame({ className, images, setChooseMaxRange, setChooseMinRange, ChooseMinRange}) {
-    // const [chooseMinRange, setChooseMinRange] = useState(1)
-    // const [chooseMaxRange, setChooseMaxRange] = useState(images.length)
-    // const [newArray, setNewArray] = useState() 
-
-    // setImages(images.slice(chooseMinRange, chooseMaxRange)) 
-   
+export default function ChangeFrame({ className, images, setChooseMaxRange, setChooseMinRange, chooseMinRange}) {
+ 
     
-
-
-
-
-
     return (<>
         <div className={`${styles.allFrame} ${className}`}>
             <RangeSlider className={styles.frame} 
-            min={ChooseMinRange} max={images.length} 
+            min={1} max={images.length} 
             func={(target) => setChooseMinRange(target.value)} 
             text='Start Frame' />
             <RangeSlider className={styles.frame} 
-            min={ChooseMinRange} max={images.length} 
+            min={chooseMinRange} max={images.length} 
             func={(target) => setChooseMaxRange(target.value)} 
             text='End Frame' />
         </div>

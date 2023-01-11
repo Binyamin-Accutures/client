@@ -30,10 +30,12 @@ export default function MainBar({ imgArray }) {
   const [displayArr, setDispalyArr] = useState(images)
   const [selectedImage, setSelectedImage] = useState(1)
   const [chooseMinRange, setChooseMinRange] = useState(1)
-  const [chooseMaxRange, setChooseMaxRange] = useState(images.length)
+  const [chooseMaxRange, setChooseMaxRange] = useState(1)
 
 useEffect(() => {
-  setDispalyArr(images.slice(chooseMinRange, chooseMaxRange))
+  setDispalyArr(images.slice(chooseMinRange-1, (chooseMaxRange<chooseMinRange? chooseMinRange:chooseMaxRange)))
+  console.log(images.slice(chooseMinRange-1, (chooseMaxRange<chooseMinRange? chooseMinRange:chooseMaxRange)));
+  console.log(chooseMinRange, chooseMaxRange);
 },[chooseMinRange, chooseMaxRange])
 
 
@@ -61,7 +63,7 @@ useEffect(() => {
           <div className={styles.cropBtn}><Button width={73} children={"crop"}/></div>
           <div className={styles.CarouselSlider}>
             <RangeSlider className={styles.editRange} 
-            min='1' max={images.length} 
+            min='1' max={displayArr.length} 
             func={handleChange} text='Frame #' 
             textPosLeft={true} />
             <ChangeFrame className={styles.ChangeFrame} images={images} 
