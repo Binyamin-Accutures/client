@@ -19,8 +19,15 @@ function Demosaic() {
 
   return (
     <div>
-        <InputSelect label="method" options={['newton']} width="265" handle={handle} dataDefault={value.beforeISP.demosaic.method}/>
-        <InputSelect label="pixelOrder" options={['hrfv']} width="265" handle={handle} dataDefault={value.beforeISP.demosaic.pixelOrder}/>
+        <div>
+            {/* <input type="checkbox" id="enabled" name="enabled" value="1" onChange={(e) => hendel(e)}/>
+            <label for="enabled">enabled</label> */}
+        </div>
+        {/* <InputSelect label="method" options={methodData} width="265" setSelectInput={setSelectMethod} handle={ handle} />
+        <InputSelect label="pixelOrder" options={pixelOrderData} width="265" setSelectInput={setSelectPixelOrder} handle={ handle}/>
+    */}
+        {/* <div>{value.beforeISP.demosaic.method}</div>
+        <div>{value.beforeISP.demosaic.pixelOrder}</div> */}
     </div>
   )
 }

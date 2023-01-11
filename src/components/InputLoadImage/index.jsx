@@ -11,6 +11,7 @@ function InputLoadImage({ width, props , setLoad}) {
   const inputElement = useRef();
   const onclick = () => {
     inputElement.current.click();
+    ;
   };
 
   function getDir(e) {
@@ -23,6 +24,7 @@ function InputLoadImage({ width, props , setLoad}) {
           ...prev,
           images: [...prev.images, file],
         }));
+        console.log(fr)
       };
     }
   setLoad(true);

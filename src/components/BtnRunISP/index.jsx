@@ -4,11 +4,14 @@ import parentsStyles from "../SideBar/style.module.css"
 
 // creator: Hadar Naiman
 
-export default function BtnRunISP(props) {
+
+export default function BtnRunISP({sendSettingsToServer},props) {
+
+
     // const btnCss = props.className;
     const btnClasses = `${props.className} ${styles.run_isp}`;
     return (
-        <button className={btnClasses}>Run ISP</button>
+        <button className={styles.run_isp} onClick={()=>sendSettingsToServer}>Run ISP</button>
 
     );
 }

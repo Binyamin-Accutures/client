@@ -11,11 +11,61 @@
 /* liat-sidebar */
 .form {
   width: 360px;
-  height: 90vh;
-  padding-left: 0px;
+  height: 100%;
+ padding: 5px;
   border: 2px;
-  border-color: brown;
-  /* background: #2c2c2; */
+
+  background: #2c2c2c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+.slideBar{
+position: absolute;
+  z-index:2;
+}
+
+.titel_colaps_top_down{
+
+font-size: 25px;
+font-weight: 800;
+}
+
+.labal_colaps_top_down{
+
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.subtitle{
+font-size: 18px;
+font-weight: 100;
+
+}
+
+
+.category{
+background-color: antiquewhite;
+padding: 10px;
+margin: 10px;
+
+}
+
+.run_isp{
+  /* background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+ width: 328px;
+height: 40px;
+font-weight:700;
+border-radius: 4px;
+border: 0ch;
+cursor: pointer;
+; */
 }
 .btnToggle {
   width: 35px;
@@ -38,9 +88,8 @@
   margin-left: 15px;
   margin-bottom: 45px;
 }
+.run_isp:hover{
 
-.blackBack {
-  border-radius: 5px;
-  background-color: var(--bg-color);
-  text-align: center;
+
+background-color:#47b584;
 }

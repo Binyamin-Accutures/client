@@ -10,6 +10,7 @@ import DynamicRangeStretch from "../DynamicRangeStretch";
 import Demosaic from "../Demosaic";
 import Denoise from "../Denoise";
 import Sharping from "../Sharping";
+import apiCalls from "../../functions/apiRequest";
 import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
 // creator: Liat
 
@@ -33,7 +34,19 @@ const SideBar = () => {
     },
   };
   const menuList = [
-    { titel: "NUC", component: <Nuc /> },
+    {
+      titel: "NUC",
+      component: (
+        <Nuc
+          classCollaps={[
+            "category",
+            "subtitle",
+            "labal_colaps_top_down",
+            "titel_colaps_top_down",
+          ]}
+        />
+      ),
+    },
     {
       titel: "Dynamic Range Stretch",
       component: (
@@ -46,7 +59,7 @@ const SideBar = () => {
     },
     {
       titel: "Demosaic",
-      component: <Demosaic data={data} className={styles.pedin} />,
+      component: <Demosaic data={data} className={styles.category} />,
     },
     { titel: "Denoise", component: <Denoise /> },
     { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
@@ -56,26 +69,50 @@ const SideBar = () => {
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
+
+  const handle = (e) => {
+    e.preventDefault();
+    console.log(value.beforeISP.images);
+    // console.log(e.target[1]);
+    const fileArray = value.beforeISP.images;
+    const file = new FormData();
+    fileArray.forEach((v) => {
+      // console.log(v["url"]);
+      file.append("url", v["url"]);
+      file.
+      console.log(v["url"]);
+    });
+
+  };
+  const sendSettingsToServer = () => {
+    console.log();
+    apiCalls("post", "/files", value.beforeISP);
+  };
   return (
     <>   
     <div className={styles.sideBar}>
-    {/* <FiChevronLeft className={styles.btnToggle} onClick={(e) => slideBar(e)}/> */}
+    {/* <FiChevronLeft
+        className={styles.slideBar}
+        className={styles.btnToggle}
+        onClick={(e) => slideBar(e)}/
+      > */}
       {IsOpen ?
       <FiChevronLeft className={styles.btnToggle} onClick={(e) => slideBar(e)}/>:
       <FiChevronRight className={styles.btnToggle} onClick={(e) => slideBar(e)}/>}
       {IsOpen && (
         <div className={styles.form}>
           <div className={styles.all}>
-            <div className={styles.collapse}>
+            <form onSubmit={handle}>
               <InputLoadImage width="328px" className={styles.loadBtn}/>
-              <Image value={value} index={0}/>
+              <Image value={value} index={0} />
               <CollepseTopDown menuList={menuList} className={styles.blackBack} />
-              <BtnRunISP className={styles.btn} />
+              <BtnRunISP className={styles.btn} sendSettingsToServer={sendSettingsToServer} />
+            <input type="submit" className={styles.run_isp} value="Run ISP" />
+          </form>
           </div>
-          </div>
-        </div >
+        </div>
       )}
-    </div>
+      </div>
     </>
   );
 };
