@@ -1,31 +1,23 @@
 import styles from "./style.module.css";
-import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { useRef } from 'react';
 
 const CollepseTopDown = (props) => {
-
   const [openCollepseTopDown, setOpenCollepseTopDown] = useState(null)
-
 
   let openClasses = `${styles.oneOptions} ${props.className}`
 
-useEffect(()=>{
-  if(props.isClose) {
-    setOpenCollepseTopDown(() => null)
-  }
-},[props.isClose])
+  useEffect(() => {
+    if (props.isClose) {
+      setOpenCollepseTopDown(() => null)
+    }
+  }, [props.isClose])
 
-useEffect(()=> {
-  if(openCollepseTopDown && props.isClose){
-    props.setIsClose(() => false)
-  }
-},[openCollepseTopDown])
-
- const onClickLine = (titel, ref)=>{
-
-   if(openCollepseTopDown===titel){
-       setOpenCollepseTopDown(null)
+  useEffect(() => {
+    if (openCollepseTopDown && props.isClose) {
+      props.setIsClose(() => false)
+    }
+  }, [openCollepseTopDown])
 
   const onClickLine = (titel, ref) => {
     if (openCollepseTopDown === titel) {
