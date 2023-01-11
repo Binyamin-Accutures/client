@@ -95,14 +95,14 @@
   
   
   function convertAoLPDoLP(src,processParamters ) {
-    const { minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov} = processParamters
+    const { HSFactor, DoLPSatur, AoLPBright} = processParamters
     const canvas = document.createElement('canvas');
     img.src = src;
     window.Caman(canvas, img, function () {
       this.process("posterize", function (rgba) {
-        rgba.r = Math.floor(clip((rgba.r - (AoLPCenter - AoLPPov / 2)) / (AoLPPov), 0, 255))
-        rgba.g = Math.floor(clip((rgba.g - minDoLPVal) / (maxDoLPVal - minDoLPVal), 0, 255))
-        rgba.b = Math.floor(clip((rgba.b - RGB_minS0Value) / (RGB_maxS0Value - RGB_minS0Value), 0, 255))
+        HSVchange(0, HSFactor, 0, DoLPSatur, 0, 1);
+    
+      this.brightness(AoLPBright);
         return rgba;
       }).render();
     });
