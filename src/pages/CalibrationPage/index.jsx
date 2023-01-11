@@ -15,8 +15,10 @@ export default function CalibrationPage() {
             <div className={styles.mainBar}>
               <MainBar/>
             </div>
-            <div className={styles.rightBar}><DisplaySettings/>
-            <BackendStatus/>
+            <div className={styles.rightBar}>
+              <DisplaySettings/>
+               <BackendStatus/>
+            
             </div>
 
         </div>

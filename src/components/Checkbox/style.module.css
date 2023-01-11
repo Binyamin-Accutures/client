@@ -1,20 +1,23 @@
 .checkbox {
     width: 20px;
     height: 20px;
-    background-color: white;
     position: relative;
-    border: 3px solid var(--primary-color);
+
+    border: 2px solid var(--primary-color);
     border-radius: 4px;
 }
 
+.checkbox:hover {
+    cursor: pointer;
+}
 
 .checkbox {
     appearance: none;
 }
 
 .checkbox:checked::before {
-    
-    position: absolute;
+
+    position:absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -24,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: scale(1.1);
 
     color: var(--text-color);
     background-color: var(--primary-color);
@@ -31,14 +35,12 @@
 }
 
 .checkbox::before {
-    background-color: white;
+
     visibility: hidden;
 
-}
+} 
 
-.checkbox:hover {
-    cursor: pointer;
-}
+
 
 
 
