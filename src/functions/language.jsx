@@ -56,6 +56,9 @@ const languages = [
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you would like to register with us",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you registered width us",
             TITLE_FORGOT_PASSWORD: "Forgot Password ?",
+            PASSPORD:"Passpord",
+            CHENG:"Cheng",
+            CREATE:"Create",
 
         }
     }
