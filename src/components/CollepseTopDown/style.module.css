@@ -1,6 +1,6 @@
 .CollepseTopDown {
   background: #383838;
-  width: 352px;
+  /* width: 352px; */
   max-height: fit-content;
   display: flex;
   flex-direction: column;
@@ -32,19 +32,16 @@ svg {
   font-size: 28px;
 }
 
-/* .openPropertis {
-  max-height: 300px;
-} */
-
 .openPropertis {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   /* max-height: 300px; */
   width: 100%;
   background: #1e1e1e;
   border-radius: 4px;
+  padding-left: 0px;
 }
 
 .title {
@@ -57,11 +54,13 @@ svg {
 
 .dropTitle {
   color: var(--text-secondary-color);
+  padding-left: 10px;
 }
+
 /* 
 אפשרויות הערות כותרת */
 
-.bold{
+.bold {
   font-weight: 700;
-  
+
 }
