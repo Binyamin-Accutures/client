@@ -15,7 +15,7 @@ function Noam() {
       <div>
         <InputLoadImage width={"328px"} />
         <Image value={value} index={index || 0} />
-        {/* <Button func={uplaodToServer()}>Next</Button> */}
+        <Button func={uplaodToServer()}>Next</Button>
       </div>
     </>
   );
@@ -25,7 +25,8 @@ export default Noam;
 
 
 // // first update server
-// const uplaodToServer = (start, end, condition, files) => {
-//   // 
-//   apiCalls("post", "api/files", files)
-// };
+const uplaodToServer = (start, end, condition, files) => {
+
+  // 
+  apiCalls("post", "api/files", files)
+};

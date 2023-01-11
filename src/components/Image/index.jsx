@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
+import language from "../../functions/language"
 
 // creator: "Noam"
 
@@ -26,7 +27,7 @@ function Image({ value, index, ...props }) {
           src={url}
           alt="Uploded Image"
         />
-        <div className={styles.label}>Uploaded Image: {name}</div>
+        <div className={styles.label}>{language.UPLOADED_IMAGE}{name}</div>
       </div>
     </>
   );
