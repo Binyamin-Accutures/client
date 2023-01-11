@@ -5,6 +5,7 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
 import apiCalls, { setToken } from "../../functions/apiRequest";
+import language from "../../functions/language";
 
 export default function ChangeAndCreatePassPass({ setUser }) {
   const userFirstPassword = useRef();
@@ -60,7 +61,7 @@ export default function ChangeAndCreatePassPass({ setUser }) {
         />
 
       <Button type={"submit"} width={"328px"}>
-        Send
+        {language.SEND}
       </Button>
     </form>
         </div>
