@@ -13,8 +13,8 @@ const CollepseTopDown = (props) => {
  let openClasses = `${styles.oneOptions} ${props.className}` 
 
 //  if(openCollepseTopDown) {
-
-//  }
+  //  }
+ 
 
 //  {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
 //  : openClasses = `${styles.oneOptions}`}

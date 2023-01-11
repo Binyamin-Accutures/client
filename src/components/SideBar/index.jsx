@@ -16,6 +16,10 @@ import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
 
 const SideBar = () => {
   
+  const value = useContext(ImageContext);
+  const [IsOpen, setIsOpen] = useState(true);
+  
+  
   const data = {
     demosaic: {
       enable: "true",
@@ -64,8 +68,6 @@ const SideBar = () => {
     { titel: "Denoise", component: <Denoise /> },
     { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
   ];
-  const value = useContext(ImageContext);
-  const [IsOpen, setIsOpen] = useState(true);
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
@@ -83,10 +85,7 @@ const SideBar = () => {
       console.log(v["url"]);
     });
 
-  };
-  const sendSettingsToServer = () => {
-    console.log();
-    apiCalls("post", "/files", value.beforeISP);
+
   };
   return (
     <>   
