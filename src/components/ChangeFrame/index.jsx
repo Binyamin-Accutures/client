@@ -14,6 +14,10 @@ export default function ChangeFrame({ className }) {
     const [chooseMaxRange, setChooseMaxRange] = useState(1)
     const files = new Array(35)
 
+
+
+
+
     return (<>
         <div className={`${styles.allFrame} ${className}`}>
             <span ><RangeSlider className={styles.frame} min={1} max={files.length} func={(target) => setChooseMinRange(target.value)} text='Start Frame' /></span>
