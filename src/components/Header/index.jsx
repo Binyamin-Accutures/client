@@ -51,14 +51,13 @@ function Header() {
             <header className={styles.headerContainer}>
                 <div className={styles.logo}><img src={logo} alt='logo' />  Accutures </div>
                 <div className={styles.navContainer}>
-
-                    <NavLink className={splitLocation[1] === "loadimage" ? styles.active : styles.navitem} to='/loadimage'>
+                    <NavLink className={splitLocation[1] === "loadimage" ? styles.active : styles.navitem} onClick={() => { setIsBack(false); setIsNext(true) }} to='/loadimage'>
                         Load Image
                     </NavLink>
-                    <NavLink className={splitLocation[1] === "calibration" ? styles.active : styles.navitem} to='/calibration'>
+                    <NavLink className={splitLocation[1] === "calibration" ? styles.active : styles.navitem} onClick={() => { setIsBack(true); setIsNext(false) }} to='/calibration'>
                         Calibration
                     </NavLink>
-                    <NavLink className={splitLocation[1] === "history" ? styles.active : styles.navitem} to='/history'>History</NavLink>
+                    <NavLink className={splitLocation[1] === "history" ? styles.active : styles.navitem} to='/history' >History</NavLink>
                 </div>
                 <div className={styles.space} />
                 {splitLocation[1] !== "history" && <div className={styles.backNext}>
