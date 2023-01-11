@@ -9,10 +9,9 @@ function BackendStatus({ cntImg = 4 }) {
     useEffect(() => {
         const intervel =
             setInterval(() => {
-                setBattery((prev) => {
-                    // console.log("prev ",prev);
-                    // console.log("battery ",battery);
-                    let count = prev.filter(v => v).length//begin from 0
+                setBattery(prev => {
+                    // console.log(prev);
+                    let count = prev.filter(v => v).length//begin from
                     // console.log(count)
                     let newArray = prev.map((v, i) => {
                         //    console.log( i<=9)
@@ -21,7 +20,7 @@ function BackendStatus({ cntImg = 4 }) {
                     )
                     return newArray
                 })
-            }, 10000);
+            }, 300);
 
         return () => { clearInterval(intervel) }
     }, [])
