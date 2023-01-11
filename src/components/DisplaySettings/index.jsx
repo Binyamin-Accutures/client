@@ -9,9 +9,7 @@ import saveResult from '../../functions/saveResults';
 
 function DisplaySetting() {
     const { afterISP, setAfterISP } = useContext(ImageContext)
-
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
-
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
@@ -107,7 +105,6 @@ function DisplaySetting() {
     }
 
     const handleClick = () => {
-
     }
 
 
@@ -175,7 +172,8 @@ function DisplaySetting() {
             {firstClicked ?
                 <Button func={setFirstClicked(true)} width={"315px"}>Save Results</Button> :
                 <Button func={saveResult(afterISP)} width={"315px"}>Save</Button>}
-        </div>
+       <Button func={handleClick}  width={"315px"} disabled={afterISP.images.length?false:true} >Save Results</Button>
+      </div>
     );
 }
 

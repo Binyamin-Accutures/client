@@ -33,10 +33,6 @@ svg {
  
 }
 
-/* .openPropertis {
-  max-height: 300px;
-} */
-
 .openPropertis {
   display: flex;
   justify-content: center;
@@ -61,6 +57,7 @@ svg {
 
 .dropTitle {
   color: var(--text-secondary-color);
+  padding-left: 10px;
 }
 /* 
 אפשרויות הערות כותרת */
