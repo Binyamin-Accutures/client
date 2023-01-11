@@ -53,11 +53,13 @@ import AviadElya from "./AviadElya";
 import Noam from "./Noam";
 import Dudu from "./Dudu";
 import YisraelTest from "./YisraelTest";
-import Yair from "./Yair";
-import Gil from "./Gil";
-import Chananel from "./Chananel";
-import { Route, Routes } from "react-router-dom";
+
 import HistoryPage from "../pages/HistoryPage";
+import Yair from './Yair';
+import Gil from './Gil';
+import Chananel from './Chananel';
+import Dael from './Dael';
+import Nadav from './Nadav';
 
 export const MainTest = () => {
   return (
@@ -86,8 +88,9 @@ export const MainTest = () => {
       <Route path="/dudu" element={<Dudu />} />
       <Route path="/yair" element={<Yair />} />
 
-      <Route path="/gil" element={<Gil />} />
-      <Route path="/Chananel" element={<Chananel />} />
+
+      <Route path='/gil' element={<Gil />} />
+      <Route path='/Chananel' element={<Chananel />} />
     </Routes>
   );
 };
