@@ -10,7 +10,9 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
     console.log(parameters);
     console.log("------------------");
     
-    const AllImages = []
+
+    
+    const AllImages = {}
     const ImageAoLPOvealayed = []
     const ImageAoLPDoLP = []
     const ImageDoLP = []
@@ -23,10 +25,10 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
         
         console.log(img);
 
-        if (parameters?.displaySet?.AoLPDoLP?.isActive) {
+        // if (parameters?.displaySet?.AoLPDoLP?.isActive) {
             
-            ImageAoLPDoLP.push(convertAoLPDoLP(img, parameters.displaySet.AoLPDoLP))
-        }
+        //     ImageAoLPDoLP.push(convertAoLPDoLP(img, parameters.displaySet.AoLPDoLP))
+        // }
         if (parameters?.displaySet?.AoLPOvealayed?.isActive) {
 
             ImageAoLPOvealayed.push(convertAoLPOvealayed(img, parameters.displaySet.AoLPOvealayed))
@@ -35,7 +37,7 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
            
             ImageDoLP.push(convertDoLP(img, parameters.displaySet.DoLP))
         }
-        if (parameters?.displaySet?.RGB?.isActive) {
+        if (parameters.displaySet.RGB.isActive) {
           
             ImageRGB.push(convertRGB(img, parameters.displaySet.RGB))
         }
@@ -47,23 +49,30 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
 
     }
     
-    if (ImageAoLPOvealayed !== [])(
-        AllImages.push({"AoLPOvealayed" : (ImageAoLPOvealayed)})
-    )
-    if (ImageAoLPDoLP !== [])(
-        AllImages.push({"AoLPDoLP" : (ImageAoLPDoLP)})
-    )
-    if (ImageDoLP !== [])(
-        AllImages.push({"DoLP" : (ImageDoLP)})
-    )
-    if (ImageRGB !== [])(
-        AllImages.push({"RGB" : (ImageRGB)})
-    )
-    if (ImageS0 !== [])(
-        AllImages.push({"S0" : (ImageS0)})
-    )
+    if (ImageRGB !== []){
+        AllImages.RGB = ImageRGB
+        // AllImages.push({"RGB" : ImageRGB})
+    }
+    console.log("=======7777777777777======");
+    console.log(ImageRGB);
+    console.log(AllImages);
+    console.log("=======7777777777777======");
+    if (ImageS0 !== []){
+        AllImages.S0 = ImageS0
+    }
+    if (ImageAoLPOvealayed !== []){
+        AllImages.AoLPOvealayed = ImageAoLPOvealayed
+    }
+    if (ImageAoLPDoLP !== []){
+        AllImages.AoLPDoLP = ImageAoLPDoLP
+    }
+    if (ImageDoLP !== []){
+        AllImages.DoLP = ImageDoLP
+    }
 
 
+    console.log("=============");
+    console.log(ImageRGB);
     console.log("=============");
     console.log(AllImages);
     console.log("=============");
