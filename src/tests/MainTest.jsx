@@ -45,7 +45,6 @@ import Matanel from "./Matanel";
 import NoaTest from "./NoaTest";
 import Elisha from "./Elisha";
 import David from "./David";
-import Dael from './Dael'
 import Shahar from "./Shahar";
 // import Hadar from "./Hadar";
 import AviadElya from "./AviadElya";
@@ -55,6 +54,8 @@ import YisraelTest from "./YisraelTest";
 import Yair from './Yair';
 import Gil from './Gil';
 import Chananel from './Chananel';
+import Dael from './Dael';
+
 
 
 
@@ -84,6 +85,7 @@ export const MainTest = () => {
       <Route path='/Yisrael' element={<YisraelTest />} />
       <Route path='/dudu' element={<Dudu />} />
       <Route path='/yair' element={<Yair />} />
+   
 
 
       <Route path='/gil' element={<Gil />} />
