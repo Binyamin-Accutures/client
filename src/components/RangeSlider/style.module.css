@@ -3,8 +3,8 @@
     width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
+    /* border: 2px solid red; */
 }
 
 .containerSmall {
@@ -14,7 +14,7 @@
 
 .slider {
     webkit-appearance: none;
-    width: 70%;
+    width: 100%;
     outline: none;
     border-radius: 3px;
     height: 5px;
@@ -51,18 +51,19 @@
 .container .descrption {
     display: flex;
     justify-content: end;
-    min-width: 60px;
+    min-width: 95px;
     margin-right: 10px;
     color: var(--text-secondary-color);
-    font-size: 10px;
 
 }
 
+
+
 .container .numberInput {
-    /* margin-top: 3px;
-    margin-left: 1.5%; */
-    margin-left: 12px;
-    max-width: 47px;
+    /* margin-top: 3px;*/
+    margin-left: 5px;
+    /* margin: 12px; */
+    width: 47px;
     height: 26px;
     background-color: var(--input-color);
     color: var(--text-color);
@@ -76,12 +77,17 @@
 }
 
 .containerSmall .descrption {
+
+
     display: flex;
-    justify-content: end;
-    width: 100%;
+    justify-content: space-evenly;
+    min-width: 60px;
     color: var(--text-color);
     display: block;
     font-size: 12px;
+    border: 2px solid orange;
+
+
 }
 
 .containerSmall .numberInput {
