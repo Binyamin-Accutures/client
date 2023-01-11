@@ -19,7 +19,7 @@ function HistoryImage({ src, time, date, imgName, funcDel, imgLink }) {
                 <div className={styles.downloadAndDelete}>
                 <div className={styles.downloadIcon}>
                         <span className={styles.upperIcons}><RiPencilFill className={styles.icon}/></span>
-                        <span className={styles.upperText}>edit</span>
+                        <span className={styles.upperText}>{languages.HISTORY_EDIT_IMAGE}</span>
                     </div>
                     <div className={styles.downloadIcon}>
                         <span className={styles.upperIcons}><VscFilePdf className={styles.icon} /></span>
