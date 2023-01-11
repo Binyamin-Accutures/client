@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from 'react';
 
 // creator: roye peleg
@@ -12,6 +12,18 @@ const CollepseTopDown = (props) => {
 
  let openClasses = `${styles.oneOptions} ${props.className}` 
 
+
+useEffect(()=>{
+  if(props.isClose) {
+    setOpenCollepseTopDown(() => null)
+  }
+},[props.isClose])
+
+useEffect(()=> {
+  if(openCollepseTopDown){
+    props.setIsClose(() => false)
+  }
+},[openCollepseTopDown])
 //  if(openCollepseTopDown) {
 
 //  }

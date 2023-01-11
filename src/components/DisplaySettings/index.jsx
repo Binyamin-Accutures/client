@@ -4,27 +4,24 @@ import CollepseTopDown from '../CollepseTopDown'
 import RangeSlider from "../RangeSlider";
 import ImageContext from "../../context/ImageContext";
 import style from './style.module.css';
-import CheckBox from '../Checkbox'
 import saveResult from '../../functions/saveResults';
+import CheckList from "../CheckList";
 
 function DisplaySetting() {
     const { afterISP, setAfterISP } = useContext(ImageContext)
 
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
 
-
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
     const [aolpOverlayVal ,setAolpOverlayVal ] = useState(AoLPOvealayed)
     const [aolpDolpVal, setAolpDolpVal] = useState(AoLPDoLP);
     const [rgbVal, setRgbVal] = useState(RGB);
-    const [checkAllVal, setCheckAllVal] = useState(true)
-    const [firstClicked, setFirstClicked] = useState(false)
+    const [isCheckMenuOpen, setIsCheckMenuOpen] = useState(false)
+    
     
     const handleS0 = (target) => {
         setS0Val((prev) => ({...prev, [target.name]: target.value}))
-        console.log(Number(s0Val.minS0Value))
-        console.log(Number(s0Val.maxS0Value));
 
         if(target.name == 'minS0Value' && Number(s0Val.minS0Value) > Number(s0Val.maxS0Value)) {
             setS0Val(prev => ({...prev, maxS0Value: Number(prev.minS0Value) + 0.01 }))
@@ -44,7 +41,6 @@ function DisplaySetting() {
             setDolpVal(prev => ({...prev, DoLPMin: Number(prev.DoLPMax) - 0.01 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, DoLP: dolpVal})}))
-        console.log(afterISP.displaySet);
     }
 
     const handleAoLPOvealay = (target) => {
@@ -56,14 +52,12 @@ function DisplaySetting() {
             setAolpOverlayVal(prev => ({...prev, minS0Value: Number(prev.maxS0Value ) - 0.01 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, AoLPOvealayed: aolpOverlayVal})}))
-        console.log(afterISP.displaySet);
     }
     
     const handleAoLPDoLP = (target) => {
         setAolpDolpVal((prev) => ({...prev, [target.name]: target.value}))
        
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, AoLPDoLP: aolpDolpVal })}))
-        console.log(afterISP.displaySet);
     }
 
     const handleRGB = (target) => {
@@ -82,35 +76,15 @@ function DisplaySetting() {
             setRgbVal(prev => ({...prev, minS0Value: Number(prev.maxS0Value) - 1 }))
         }
         setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, RGB: rgbVal})}))
-        console.log(afterISP.displaySet.RGB.maxDoLPVal);
     }
 
-    const handleCheckAll = () => {
-        if(!checkAllVal) {
-            Object.keys(afterISP.displaySet)
-            .forEach(section => setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, [section]: true})})))
-            setCheckAllVal(true)
-        }
-    }
-
-    const handleCheck = (target) => {
-        console.log(target.checked);
-        if(afterISP.displaySet[target.name]) {
-            setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, [target.name]: false})}))
-            setCheckAllVal(false)
+    const handleSave = () => {
+        if(isCheckMenuOpen){
+            saveResult(afterISP)
         } else {
-            setAfterISP(prev => ({...prev, displaySet: ({...prev.displaySet, [target.name]: true})}))
-            if(!(Object.keys(afterISP.displaySet)
-            .find(section => afterISP.displaySet[section].enable === false))) setCheckAllVal(true)
+            setIsCheckMenuOpen(() => true)
         }
-        console.log(target.checked)
     }
-
-    const handleClick = () => {
-        
-    }
-
-
 
     const menuList = [
         {titel:"S0", component:<div>   
@@ -151,20 +125,12 @@ function DisplaySetting() {
         <h1>
             Display settings
         </h1>
-        <div>
-            <CollepseTopDown menuList={menuList} />
-            {firstClicked && <div>
-                <CheckBox label={'Save all sections results'} onChange={handleCheckAll} prev={checkAllVal} /> <br/> <br/>
-                <CheckBox label={'S0'} onChange={handleCheck} name={'s0'} prev={afterISP.displaySet.s0.enable} /> 
-                <CheckBox label={'DoLP'} onChange={handleCheck} name={'DoLP'} prev={afterISP.displaySet.s0.enable} /> 
-                <CheckBox label={'AoLP Overlayed'} onChange={handleCheck} name={'AoLPOvealayed'} prev={afterISP.displaySet.s0.enable} /> 
-                <CheckBox label={'AoLP + DoLP'} onChange={handleCheck} name={'AoLPDoLP'} prev={afterISP.displaySet.s0.enable} /> 
-                <CheckBox label={'RGB'} onChange={handleCheck} name={'RGB'} prev={afterISP.displaySet.s0.enable} /> 
-                </div>}
-        </div>
-       {firstClicked ?
-        <Button func={setFirstClicked(true)} width={"315px"}>Save Results</Button> : 
-        <Button func={saveResult(afterISP)} width={"315px"}>Save</Button>}
+        <div className="dudu">
+            <CollepseTopDown menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
+            {isCheckMenuOpen && <CheckList />}
+            <Button func={handleSave} width={"315px"}>Save Results</Button>  
+        </div> 
+        
       </div>
     );
   }
