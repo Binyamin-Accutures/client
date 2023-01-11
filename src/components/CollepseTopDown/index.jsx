@@ -13,17 +13,17 @@ const CollepseTopDown = (props) => {
  let openClasses = `${styles.oneOptions} ${props.className}` 
 
 
-useEffect(()=>{
-  if(props.isClose) {
-    setOpenCollepseTopDown(() => null)
-  }
-},[props.isClose])
+// useEffect(()=>{
+//   if(props.isClose) {
+//     setOpenCollepseTopDown(() => null)
+//   }
+// },[props.isClose])
 
-useEffect(()=> {
-  if(openCollepseTopDown){
-    props.setIsClose(() => false)
-  }
-},[openCollepseTopDown])
+// useEffect(()=> {
+//   if(openCollepseTopDown){
+//     props.setIsClose(() => false)
+//   }
+// },[openCollepseTopDown])
 //  if(openCollepseTopDown) {
 
 //  }
