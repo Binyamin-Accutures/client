@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./style.module.css";
-import { AiOutlineCheck } from 'react-icons/ai'
+import { AiOutlineCheck } from 'react-icons/ai';
 
 
 // creator: Yisrael Olonoff
@@ -18,7 +18,7 @@ function Button({ children ,type, width, func, ...props }) {
             <button
                 type={type} style={{ width: width }}
                 onClick={ func } className={styles.button} {...props}>
-                {children} <AiOutlineCheck size={20}/>
+                {children} <AiOutlineCheck width={20}/>
             </button>
         </>
     )
