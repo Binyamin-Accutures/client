@@ -1,15 +1,21 @@
 import { convertAoLPDoLP,convertAoLPOvealayed,convertDoLP,convertRGB,convertS0 } from "./imageProcessing";
-import  {convertCanvasToFormData}  from "./convertCanvasToFormData";
+import  convertCanvasToFormData  from "./convertCanvasToFormData";
 
-export default function ImageConversion(ImajesUrl=[], parameters={} )  {
+const imagesAll = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxtDqUFpzPyhFGFHMRBKKpVI6bUHF6PyZ-AQ&usqp=CAU",
+    "https://fileinfo.com/img/ss/md/jpg_44.png"
+]
+
+export default function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  {
+    ImajesUrl = imagesAll
     const AllImages = {}
     const ImageAoLPOvealayed = []
     const ImageAoLPDoLP = []
     const ImageDoLP = []
     const ImageRGB = []
     const ImageS0 = []
-    console.log("AAAAAAAAAAAAAAAAAAAAAAA")
-    console.dir(ImajesUrl)
+    console.log("test")
+    console.dir(parameters)
     console.log("ImajeesUrl: " + ImajesUrl)
     console.log("parameters: " + parameters)
 
