@@ -81,6 +81,9 @@ const languages = [
             HISTORY_POPUP_H2: "This operation<b>cannot</b> be undone!",
             HISTORY_POPUP_YES: "Yes, delete this image",
             HISTORY_POPUP_NO: "Cancel, keep this image",
+            UPLOADED_IMAGE: "Uploaded Image",
+            NEXT: "Next",
+
         }
     }
 ]
