@@ -60,7 +60,7 @@ useEffect(() => {
           <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={false} images={images}/>
         </div>
         <div className={styles.controlBar}>
-          <div className={styles.cropBtn}><Button width={73} children={"crop"}/></div>
+          <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
           <div className={styles.CarouselSlider}>
             <RangeSlider className={styles.editRange} 
             min='1' max={displayArr.length} 
@@ -70,10 +70,10 @@ useEffect(() => {
             setChooseMinRange={setChooseMinRange} setChooseMaxRange={setChooseMaxRange} chooseMinRange={chooseMinRange} />
           </div>
         </div>
-            <Histogram/>
+        <Histogram />
       </div>
-  
-  </>
+
+    </>
   )
 }
 
