@@ -15,6 +15,7 @@
   align-items: center;
   width: 352px;
   height: 50px;
+  padding-left: 10px;
 }
 
 .oneOptions p {
@@ -32,19 +33,16 @@ svg {
   font-size: 28px;
 }
 
-/* .openPropertis {
-  max-height: 300px;
-} */
-
 .openPropertis {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   /* max-height: 300px; */
   width: 100%;
   background: #1e1e1e;
   border-radius: 4px;
+  padding-left: 20px;
 }
 
 .title {
@@ -57,6 +55,7 @@ svg {
 
 .dropTitle {
   color: var(--text-secondary-color);
+  padding-left: 10px;
 }
 /* 
 אפשרויות הערות כותרת */
