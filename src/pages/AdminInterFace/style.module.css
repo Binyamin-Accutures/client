@@ -1,13 +1,4 @@
-table, th, td {
-    border: 1px solid black;
-    background-color:white;
-  }
-
-  body{
-    color: black;
-  }
-
-  .generalDiv{
+.generalDiv{
    width: 100%;
    margin: 0 auto;
    display: flex;
