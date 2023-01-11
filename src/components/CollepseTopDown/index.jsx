@@ -31,7 +31,7 @@ const CollepseTopDown = (props) => {
             <p className={openCollepseTopDown===v.titel ? styles.bold : ""}>{v.titel}</p>
             {openCollepseTopDown===v.titel ?<FiChevronUp/>:<FiChevronDown />}
           </div>
-           {openCollepseTopDown===v.titel && <div className={styles.openPropertis}>{v.component}</div>} 
+           <div className={openCollepseTopDown===v.titel ? `${styles.openPropertis} ${styles.active}` : styles.openPropertis}>{v.component}</div>
        
            </>
         )
