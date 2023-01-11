@@ -1,5 +1,5 @@
-  const canvas = document.createElement('canvas');
-  const img = new Image;
+  
+  const img = new Image();
 
   const clip = (currentValue, startRange, endRange) => {
     const newValue = endRange * currentValue;
@@ -11,6 +11,7 @@
 
   const HSVchange = (src, minHue, maxHue, minSaturation, maxSaturation, minValue, maxValue) => {
     const canvas = document.createElement('canvas');
+    
     img.src = src;
     window.Caman(canvas, img, function () {
         
@@ -49,7 +50,8 @@
   }
   
   function convertS0(src,processParamters) {
-    const {minS0Value, maxS0Value}=processParamters
+      const {minS0Value, maxS0Value}=processParamters
+      const canvas = document.createElement('canvas');
     img.src = src;
     window.Caman(canvas, img, function () {
       this.process("posterize", function (rgba) {

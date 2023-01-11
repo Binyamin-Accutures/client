@@ -59,6 +59,7 @@ import Dael from './Dael';
 
 
 
+
 export const MainTest = () => {
   return (
     <Routes>
@@ -85,7 +86,7 @@ export const MainTest = () => {
       <Route path='/Yisrael' element={<YisraelTest />} />
       <Route path='/dudu' element={<Dudu />} />
       <Route path='/yair' element={<Yair />} />
-      {/* <Route path='/kobi' element={<Kobi />} /> */}
+   
 
 
       <Route path='/gil' element={<Gil />} />
