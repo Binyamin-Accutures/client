@@ -1,9 +1,16 @@
 import styles from "./style.module.css";
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Carousel from "../Carousel";
 import RangeSlider from "../RangeSlider";
 import ChangeFrame from "../ChangeFrame";
+import Histogram from "../Histogram";
+import Button from "../Button";
+import ImageContext from "../../context/ImageContext";
 
+
+
+// creator: moran hagbi & adel vaknin
+// Instructions:   
 
 
 export default function MainBar({ imgArray }) {
@@ -15,29 +22,40 @@ export default function MainBar({ imgArray }) {
     { name: "image4", url: "https://www.w3schools.com/w3css/img_riomaggiore.jpg" },
     { name: "image4", url: "https://www.w3schools.com/w3css/img_corniglia.jpg" }
   ])
+
+  //use context(imgArray)
+const value = useContext(ImageContext)
   const [selectedImage, setSelectedImage] = useState(1)
+
 
   const handleChange = (target) => {
     setSelectedImage(target.value)
   }
+
+    // let fr = new FileReader();
+    // fr.readAsDataURL(selectedImage);
+    // setSelectedImage(fr.result);
+
+  
+
   return (
     <>
 
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={images[selectedImage - 1].url} imgOn={true} />
+          <Carousel imgUrl={selectedImage} imgOn={true} />
         </div>
         <div className={styles.controlBar}>
-          <div className={styles.crop}>crop</div>
+          <div className={styles.cropBtn}><Button width={73} children={"crop"}/></div>
           <div className={styles.CarouselSlider}>
             <RangeSlider className={styles.editRange} min='1' max={images.length} func={handleChange} text='Frame #' textPosLeft={true} />
-            {/* </div> */}
-            {/* <div className={styles.ChangeFrame}> */}
             <ChangeFrame className={styles.ChangeFrame} />
           </div>
         </div>
+            <Histogram/>
       </div>
-    </>
+  
+  </>
   )
 }
 
