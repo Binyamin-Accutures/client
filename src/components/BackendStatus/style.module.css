@@ -26,6 +26,10 @@
 
 label{
     margin-top: 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
 }
 
 .prog{
