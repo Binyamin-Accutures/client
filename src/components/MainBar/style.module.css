@@ -28,6 +28,7 @@
     height: 33%;
     padding-top: 0px;
     border: solid 1px #ffff;
+    padding-right: 25px;
 }
 
 .mainbar .CarouselSlider {
@@ -43,12 +44,20 @@
     padding: 0;
 }
 
+.CarouselSlider{
+    flex:1;
+}
+
 .editRange {
-    border: 3px solid red;
-    width: 736.6px;
+    flex: 1;
+    width: 100%;
     padding-bottom: 20px;
     display: flex;
     padding-left: 0;
+}
+
+.editRange input {
+    width: 100%;
 }
 
 
@@ -56,7 +65,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     padding-right: 0;
 
