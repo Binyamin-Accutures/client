@@ -7,10 +7,11 @@ import style from './style.module.css';
 import saveResult from '../../functions/saveResults';
 import CheckList from "../CheckList";
 
-function DisplaySetting() {
+function DisplaySetting(props) {
     const { afterISP, setAfterISP } = useContext(ImageContext)
 
-    const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
+    const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet;
+    let openClasses = `${style.oneOptions} ${props.className}`
 
 
     const [s0Val, setS0Val] = useState(s0);
@@ -136,10 +137,10 @@ function DisplaySetting() {
         <h1>
             Display settings
         </h1>
-        <div className="dudu">
+        <div className={style.dudu}>
             <CollepseTopDown menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
             {isCheckMenuOpen && <CheckList />}
-            <Button func={handleSave} width={"315px"}>Save Results</Button>  
+            <Button func={handleSave} width={"270px"} margin-top={"20px"}>Save Results</Button>  
         </div> 
         
       </div>

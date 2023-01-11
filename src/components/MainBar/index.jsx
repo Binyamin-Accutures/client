@@ -7,7 +7,7 @@ import Histogram from "../Histogram";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 
-
+const twoClasses = `${styles.CarouselSlider} ${styles.editRange}}`
 
 // creator: moran hagbi & adel vaknin
 // Instructions:   
@@ -60,12 +60,14 @@ useEffect(() => {
           <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={false} images={images}/>
         </div>
         <div className={styles.controlBar}>
-          <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
-          <div className={styles.CarouselSlider}>
-            <RangeSlider className={styles.editRange} 
+          <div className={styles.topBar}>
+            <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
+            <RangeSlider className={twoClasses} 
             min='1' max={displayArr.length} 
             func={handleChange} text='Frame #' 
             textPosLeft={true} />
+          </div>
+          <div className={styles.CarouselSlider}>
             <ChangeFrame className={styles.ChangeFrame} images={images} 
             setChooseMinRange={setChooseMinRange} setChooseMaxRange={setChooseMaxRange} chooseMinRange={chooseMinRange} />
           </div>
