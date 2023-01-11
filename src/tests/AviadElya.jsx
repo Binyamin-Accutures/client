@@ -1,18 +1,15 @@
 import React from 'react'
 // import  Input from '../components/Input'
-// import BackendStatus from '../components/BackendStatus'
-import App from '../App'
+import BackendStatus from '../components/BackendStatus'
 
 
 function AviadElya() {
 
     return (
         <div>
-            {/* <BackendStatus/> */}
-            <App />
-
+            <BackendStatus/>
         </div>
-
+        
     )
 }
 
