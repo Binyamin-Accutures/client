@@ -5,10 +5,11 @@ import { convertAoLPDoLP,convertAoLPOvealayed,convertDoLP,convertRGB,convertS0 }
 export default function ImageConversion(ImajesUrl=[], parameters={} )  {
     // const { AoLPDoLP } = parameters
     console.log("------------------");
-    console.log(parameters.displaySet.DoLP);
-    console.log(parameters.RGB);
+    console.log(parameters.displaySet.AoLPDoLP);
+    console.log(parameters.displaySet.AoLPOvealayed.isActive);
     console.log(parameters);
     console.log("------------------");
+    
     const AllImages = []
     const ImageAoLPOvealayed = []
     const ImageAoLPDoLP = []
@@ -26,19 +27,19 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
             
             ImageAoLPDoLP.push(convertAoLPDoLP(img, parameters.displaySet.AoLPDoLP))
         }
-        if (parameters.displaySet.AoLPOvealayed.isActive) {
+        if (parameters?.displaySet?.AoLPOvealayed?.isActive) {
 
             ImageAoLPOvealayed.push(convertAoLPOvealayed(img, parameters.displaySet.AoLPOvealayed))
         }
-        if (parameters.displaySet.DoLP.isActive) {
+        if (parameters?.displaySet?.DoLP?.isActive) {
            
             ImageDoLP.push(convertDoLP(img, parameters.displaySet.DoLP))
         }
-        if (parameters.displaySet.RGB.isActive) {
+        if (parameters?.displaySet?.RGB?.isActive) {
           
             ImageRGB.push(convertRGB(img, parameters.displaySet.RGB))
         }
-        if (parameters.displaySet.s0.isActive) {
+        if (parameters?.displaySet?.s0?.isActive) {
             
             ImageS0.push(convertS0(img, parameters.displaySet.s0))
         }
@@ -46,24 +47,26 @@ export default function ImageConversion(ImajesUrl=[], parameters={} )  {
 
     }
     
-    if (ImageAoLPOvealayed != [])(
-        AllImages.push({"AoLPOvealayed" : NADAV(ImageAoLPOvealayed)})
+    if (ImageAoLPOvealayed !== [])(
+        AllImages.push({"AoLPOvealayed" : (ImageAoLPOvealayed)})
     )
-    if (ImageAoLPDoLP != [])(
-        AllImages.push(NADAV(ImageAoLPDoLP))
+    if (ImageAoLPDoLP !== [])(
+        AllImages.push({"AoLPDoLP" : (ImageAoLPDoLP)})
     )
-    if (ImageDoLP != [])(
-        AllImages.push(NADAV(ImageDoLP))
+    if (ImageDoLP !== [])(
+        AllImages.push({"DoLP" : (ImageDoLP)})
     )
-    if (ImageRGB != [])(
-        AllImages.push(NADAV(ImageRGB))
+    if (ImageRGB !== [])(
+        AllImages.push({"RGB" : (ImageRGB)})
     )
-    if (ImageS0 != [])(
-        AllImages.push(NADAV(ImageS0))
+    if (ImageS0 !== [])(
+        AllImages.push({"S0" : (ImageS0)})
     )
 
 
-    console.log(ImageAoLPOvealayed);
+    console.log("=============");
+    console.log(AllImages);
+    console.log("=============");
 }
 
 
