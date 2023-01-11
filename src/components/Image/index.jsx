@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
 // creator: "Noam"
 
 function Image({ value, index, ...props }) {
-  let url = value.beforeISP.images[index]?.url || "";
-  let name = value.beforeISP.images[index]?.name || "<empty>";
+  const [url, setUrl] = useState("");
+  const file = value.beforeISP.images[index];
+  const name = value.beforeISP.images[index]?.name || "<empty>";
+
+  useEffect(() => {
+    if (!file) return;
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      setUrl(fileReader.result);
+    };
+  }, [name]);
   return (
     <>
       <div className={styles.imgContainer}>
