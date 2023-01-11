@@ -5,6 +5,7 @@
 
 import ChangeFrame from '../components/ChangeFrame';
 import HistoryPage from '../pages/HistoryPage';
+import Itamar from "./Itamar";
 
 
 
@@ -75,6 +76,7 @@ export const MainTest = () => {
       {/* <Route path="/hadar" element={<Hadar />} /> */}
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
+      <Route path="/Itamar" element={<Itamar />} />
 
       {/* <Route path='/adel' element={<Adel />} /> */}
 
