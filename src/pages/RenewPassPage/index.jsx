@@ -42,9 +42,9 @@ export default function ChangeAndCreatePassPass({ setUser }) {
 
     <form className={styles.formLogin} onSubmit={handleSubmit}>
       <p className={styles.paragraphTitle}>
-        {token.token ? "Change" : "Create"} Password
+        {token.token ? language.CHENG : language.CREATE} Password
       </p>
-      <p className={styles.paragraph}>please choose a new password</p>
+      <p className={styles.paragraph}>{language.CHOOSE_PASSWORD}</p>
       <Input
         type="password"
         name="input"
