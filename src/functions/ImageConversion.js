@@ -1,44 +1,49 @@
 import React, { useEffect, useState } from "react";
+import { convertAoLPDoLP,convertAoLPOvealayed,convertDoLP,convertRGB,convertS0 } from "./imageProcessing";
 
-const imagesAll = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxtDqUFpzPyhFGFHMRBKKpVI6bUHF6PyZ-AQ&usqp=CAU",
-    "https://fileinfo.com/img/ss/md/jpg_44.png"
-]
+
 export default function ImageConversion(ImajesUrl, parameters)  {
+    // const { AoLPDoLP } = parameters
+    console.log("------------------");
+    console.log(parameters.displaySet.DoLP);
+    console.log(parameters.RGB);
+    console.log(parameters);
+    console.log("------------------");
     const ImageAoLPOvealayed = []
     const ImageAoLPDoLP = []
     const ImageDoLP = []
     const ImageRGB = []
     const ImageS0 = []
 
-    for (const key in imagesAll) {
-        const img = imagesAll[key];
+    for (const key in ImajesUrl) {
+        const img = ImajesUrl[key];
         
         console.log(img);
 
-        if (parameters.AoLPDoLP.enable) {
-            const {AoLPBright} = parameters
-            ImageAoLPDoLP.push(ConvertAoLPDoLP(img, AoLPDoLP))
+        if (parameters.displaySet.AoLPDoLP.enable) {
+            const {AoLPDoLP} = parameters
+            ImageAoLPDoLP.push(convertAoLPDoLP(img, AoLPDoLP))
         }
-        if (parameters.AoLPOvealayed.enable) {
+        if (parameters.displaySet.AoLPOvealayed.enable) {
             const {AoLPOvealayed} = parameters
-            ImageAoLPOvealayed.push(ConvertAoLPOvealayed(img, AoLPOvealayed))
+            ImageAoLPOvealayed.push(convertAoLPOvealayed(img, AoLPOvealayed))
         }
-        if (parameters.DoLP.enable) {
+        if (parameters.displaySet.DoLP.enable) {
             const {DoLP} = parameters
-            ImageDoLP.push(ConvertDoLP(img, DoLP))
+            ImageDoLP.push(convertDoLP(img, DoLP))
         }
-        if (parameters.RGB.enable) {
+        if (parameters.displaySet.RGB.enable) {
             const {RGB} = parameters
-            ImageRGB.push(ConvertRGB(img, RGB))
+            ImageRGB.push(convertRGB(img, RGB))
         }
-        if (parameters.s0.enable) {
+        if (parameters.displaySet.s0.enable) {
             const {s0} = parameters
-            ImageS0.push(ConvertS0(img, s0))
+            ImageS0.push(convertS0(img, s0))
         }
 
 
     }
+    console.log(ImageAoLPOvealayed);
 }
 
 
