@@ -15,6 +15,7 @@ export default function RegisterPage() {
   }
 
   return (
+    <div className={styles.formLoginContainer}>
     <form className={styles.formLogin} onSubmit={handleSubmit}>
       <p className={styles.paragraphTitle}>New Account</p>
       <p className={styles.paragraph}>
@@ -31,5 +32,6 @@ export default function RegisterPage() {
         Send
       </Button>
     </form>
+    </div>
   );
 }
