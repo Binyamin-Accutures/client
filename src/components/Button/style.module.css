@@ -31,9 +31,9 @@
     height: 14px;
 }
 
-.button:disabled{
+/* .button:disabled{
     background-color: gray ;
     color:rgb(180, 175, 175);
     pointer-events: none;
 
-}
+} */
