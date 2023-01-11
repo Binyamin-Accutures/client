@@ -4,7 +4,9 @@ import language from '../../functions/language'
 
 
 function BackendStatus({ cntImg = 4 }) {
+
     const [battery, setBattery] = useState([false, false, false, false, false, false, false, false, false, false, false])
+
     useEffect(() => {
         const intervel = setInterval(() => {
             setBattery(prev => {
