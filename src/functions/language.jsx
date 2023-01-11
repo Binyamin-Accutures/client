@@ -50,11 +50,16 @@ const languages = [
             NEW_ACCOUNT: "New Account",
             SIGN_IN: "Sign In",
             NEW_ACCOUNT: "new account",
-            TITLE_FORGOT_PASSWORD: "Forgot Password ?",
+            TITLE_FORGOT_PASSWORD: "Forgot Password?",
             FORGOT_PASSWORD: "forgot password",
             TITLE_NEW_ACCOUNT: "New Account",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you would like to register with us",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you registered width us",
+            TITLE_FORGOT_PASSWORD: "Forgot Password?",
+            CHOOSE_PASSWORD: "please choose a new password",
+            PASSPORD:"Passpord",
+            CHENG:"Cheng",
+            CREATE:"Create",
             TITLE_FORGOT_PASSWORD: "Forgot Password ?",
             PASSPORD: "Passpord",
             CHENG: "Cheng",
@@ -76,8 +81,6 @@ const languages = [
             MAXIMUM_DOLP_VALUE: "Maximum DoLP value",
             DISPLAY_SETTING: "Display settings",
             SAVE_RESULTS: "Save Results",
-
-
         }
     }
 ]
