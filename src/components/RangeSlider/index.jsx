@@ -4,28 +4,22 @@ import ImageContext from '../../context/ImageContext';
 
 function RangeSlider({func, name='', className='', text, min, max, step=1 , textPosLeft=true, numInput=true, contextValue , ...props}) {
     const [value, setValue] = useState(isNaN(contextValue) ? min : contextValue)
-    const { afterISP, setAfterISP } = useContext(ImageContext)
+    const { afterISP } = useContext(ImageContext)
 
     useEffect(() => {
         if(!isNaN(contextValue) && contextValue != value) {
-            setValue(() => contextValue)
+            if(contextValue > max ) setValue(() => max)
+            else if(contextValue < min ) setValue(() => min)
+            else setValue(contextValue)
         }
-    },[])
-
-    useEffect(() => {
-        if(!isNaN(contextValue) && contextValue != value) {
-            setValue(() => contextValue)
-        }
-    },[value])
+    },[afterISP, contextValue])
 
 
     const handleChange = ({ target }) => {
-
         if(target.value > max ) setValue(() => max)
         else if(target.value < min ) setValue(() => min)
         else setValue(() => Number(target.value))
         if(func) func(target)
-
     }
 
   

@@ -32,12 +32,12 @@
     color: aliceblue;
     border-radius: 4px;
     margin-left: 10px;
-    padding: 3px;
+    padding: 8px;
     border: none;
 }
 
 .historySearch {
-    width: 300px;
+    width: 400px;
 }
 
 .historyPageSearch {
@@ -59,12 +59,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     padding-top: 20px;
-    gap: 4%;
+    gap: 30px;
     height: 70%;
-    width: 82%;
-}
-
-.images>img {
-    height: 200px;
-    object-fit: contain;
+    width: 85%;
 }
