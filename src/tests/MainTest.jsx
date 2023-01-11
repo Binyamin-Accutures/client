@@ -1,42 +1,15 @@
-
-
-
-
-
 import ChangeFrame from '../components/ChangeFrame';
 import HistoryPage from '../pages/HistoryPage';
-
-
-
-
-
-
-
-
-
-// import LoginPage from '../pages/LoginPage'
-// import Sapir from './Sapir'
 import { Route, Routes } from 'react-router-dom'
-
-
-
-
-
 
 import SectionBorder from '../components/SectionBorder'
 import LoginPage from '../pages/LoginPage'
 import Pavel from './Pavel'
-
 import Roye from "./Roye";
-
-
 import Moran from './Moran'
 import Sapir from './Sapir'
-
 // import Anat from "./Anat";
-
 import Anat from "./Anat";
-
 import Adel from "./Adel";
 // import Moran from "./Moran";
 // import Sapir from "./Sapir";
@@ -55,7 +28,7 @@ import Yair from './Yair';
 import Gil from './Gil';
 import Chananel from './Chananel';
 import Dael from './Dael';
-import Kobi from './Kobi';
+// import Kobi from './Kobi';
 
 
 

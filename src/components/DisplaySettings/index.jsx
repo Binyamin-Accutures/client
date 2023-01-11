@@ -8,9 +8,7 @@ import CheckBox from '../Checkbox'
 
 function DisplaySetting() {
     const { afterISP, setAfterISP } = useContext(ImageContext)
-
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
-
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
@@ -19,7 +17,7 @@ function DisplaySetting() {
     const [rgbVal, setRgbVal] = useState(RGB);
     const [checkAllVal, setCheckAllVal] = useState(true)
     
-    const handleS0 = (target) => {
+        const handleS0 = (target) => {
         setS0Val((prev) => ({...prev, [target.name]: target.value}))
         console.log(Number(s0Val.minS0Value))
         console.log(Number(s0Val.maxS0Value));
@@ -93,7 +91,7 @@ function DisplaySetting() {
     }
 
     const handleClick = () => {
-        
+    console.log("ascc");
     }
 
 
@@ -141,7 +139,7 @@ function DisplaySetting() {
         <div>
         <CollepseTopDown menuList={menuList} />
         </div>
-       <Button func={handleClick} width={"315px"}>Save Results</Button>
+       <Button func={handleClick}  width={"315px"} disabled={afterISP.images.length?false:true} >Save Results</Button>
       </div>
     );
   }
