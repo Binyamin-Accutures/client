@@ -52,7 +52,7 @@
     background-color: #1E1E1E;
     font-family: 'open sans';
     font-style: normal;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 26px;
     align-items: center;
@@ -93,10 +93,11 @@
     align-items: center;
     font-weight: lighter;
     background: #1E1E1E;
-    /* width: 949px; */
+    width: 100p;
     height: 48px;
     margin-left: auto;
-    padding-right: 5px;
+
+    /* padding-right: 5px; */
     position: relative;
 }
 
@@ -113,12 +114,36 @@
 .userIcon {
     background-color: #1E1E1E;
     font-size: 22px;
-    margin-top: 10px;
+    margin-right: 24px;
     z-index: 100;
+    color: #D9D9D9;
 
 }
 
 .userIcon:hover {
     color: #56C493;
 
+}
+
+.space {
+    width: 300px;
+}
+
+.backNext {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    font-size: 12px;
+}
+
+.backNextOff {
+    color: #B6B6B6;
+
+}
+
+
+.backNextOn {
+    color: #56C493;
 }
