@@ -44,6 +44,8 @@ export const MainTest = () => {
       <Route path="/noa" element={<NoaTest />} />
       <Route path="/aviadElya" element={<AviadElya />} />
 
+      {/* <Route path='/adel' element={<Adel />} /> */}
+
       <Route path="/adel" element={<Adel />} />
       <Route path="/pavel" element={<Pavel />} />
       <Route path="/sapir" element={<Sapir />} />
@@ -51,6 +53,7 @@ export const MainTest = () => {
       <Route path="/Yisrael" element={<YisraelTest />} />
       <Route path="/dudu" element={<Dudu />} />
       <Route path="/yair" element={<Yair />} />
+
       <Route path="/gil" element={<Gil />} />
       <Route path="/Chananel" element={<Chananel />} />
     </Routes>
