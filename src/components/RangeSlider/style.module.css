@@ -9,25 +9,31 @@
 
 .containerSmall {
   width: 100%;
-  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .descrption {
-  margin: 10px 0;
   width: 100%;
-  padding: 4px;
 }
 
 .slider {
   webkit-appearance: none;
-  width: 70%;
+  width: 80%;
   outline: none;
   border-radius: 3px;
-  height: 5px;
-  margin-top: 9px;
+  height: 1px;
   padding: 0;
   background-color: white;
   display: inline;
+}
+
+.inputRange {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .slider::-webkit-slider-thumb {
@@ -80,11 +86,6 @@
   -webkit-appearance: none;
 }
 
-.containerSmall {
-  margin: 0;
-  margin-top: 20px;
-}
-
 .containerSmall .descrption {
   display: flex;
   justify-content: end;
@@ -99,11 +100,10 @@
 } */
 
 .containerSmall .numberInput {
-  margin-top: 3px;
-  margin-left: 1.5%;
-  width: 47px;
-  height: 26px;
+  width: 27px;
+  height: 17px;
   /* max-width: 15%; */
+  font-size: 10px;
   display: inline;
   background-color: var(--bg-color);
   color: var(--text-secondary-color);
