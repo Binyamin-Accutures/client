@@ -8,7 +8,7 @@ import language from '../../functions/language'
 function Histogram() {
     return (
         
-            <SectionBorder  height="224px" width="100%">
+            <SectionBorder width="100%">
                 <div className={styles.histogramAll}>
                 <label className={styles.histogram}> {language.HISTOGRAM}</label>
                 <label className={styles.show}>{language.SHOW}
