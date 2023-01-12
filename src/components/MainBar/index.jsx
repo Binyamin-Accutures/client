@@ -60,21 +60,26 @@ useEffect(() => {
         <div className={styles.mainBar}>
           <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={false} images={images}/>
         </div>
+  
         <div className={styles.controlBar}>
           <div className={styles.topBar}>
-            <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
-            <RangeSlider className={threeClasses} 
+          <Button width={80} children={"crop"} />
+  
+          </div>
+          <div className={styles.innerSliders}>
+          <RangeSlider className={threeClasses} 
             min='1' max={displayArr.length} 
             func={handleChange} text='Frame #' 
             textPosLeft={true} />
-          </div>
-          <div className={styles.CarouselSlider}>
             <ChangeFrame className={styles.ChangeFrame} images={images} 
             setChooseMinRange={setChooseMinRange} setChooseMaxRange={setChooseMaxRange} chooseMinRange={chooseMinRange} />
           </div>
+
         </div>
+  
         <Histogram />
       </div>
+     
 
     </>
   )
