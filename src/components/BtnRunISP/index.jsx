@@ -39,7 +39,7 @@ const afterimage = await apiCalls(
 setting
 )
 console.log(afterimage);
-
+return afterimage
 
 
 }
@@ -51,18 +51,25 @@ console.log(afterimage);
 const runISP= async ()=>{
 
 const images = value.beforeISP.images
-console.log(images);
+
 const setting = value.beforeISP
-console.log(setting);
+
 const reqFiles = await uplaodImageToServer(images)
-reqFiles.data.src[1].root.isp=setting
-console.log( "req files ",reqFiles.data);
-value.setRootServer(reqFiles.data.src[1].root)  
+console.log(reqFiles);
+value.setRootServer(reqFiles.data.root)  
 
-const reqSetting = await uplaodSettingToServer(reqFiles.data.src[1].root)
-console.log("req setting" ,reqSetting);
+// reqFiles.data.src[1].root.isp=setting
+// console.log( "req files ",reqFiles.data.src[1].root);
+const settings = {
+    "root": reqFiles.data.root,
+     "runIspSettings": {setting},
+ }
 
-// value.setAfterISP(value.afterISP.images=reqSetting)
+
+const reqSetting = await uplaodSettingToServer(settings)
+console.log("req setting" ,reqSetting.data);
+console.log({...value.afterISP, images:reqSetting.data.src});
+value.setAfterISP({...value.afterISP, images:reqSetting.data.src})
 
 
 }
