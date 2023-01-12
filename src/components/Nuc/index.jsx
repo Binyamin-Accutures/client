@@ -29,15 +29,21 @@ export default function Nuc(props) {
       return newobj;
     });
   };
-  const handlePt = (e) => {
+  const handle2 = (e) => {
     let valueToChange = e.checked;
     value.setBeforeISP((preve) => {
       const newobj = { ...preve };
-      e.name == "pt1"
-        ? (newobj.NUC.method.pt1 = valueToChange)
-        : (newobj.NUC.method.pt2 = valueToChange);
+      if (e.name == "pt1"){
+        (newobj.NUC.method.pt1 = valueToChange)
+      }
+      else if (e.name == "pt2"){
+        (newobj.NUC.method.pt2 = valueToChange)
+      }
+      else if(e.name =="bad_pixel_correction"){
+        (newobj.NUC.method.bad_pixel_correction = valueToChange)
+      }
       return newobj;
-    });
+    })
   };
 
   return (
@@ -55,17 +61,24 @@ export default function Nuc(props) {
           <Checkbox
             label={"1pt"}
             name="pt1"
-            onChange={handlePt}
+            onChange={handle2}
             checked={value.beforeISP.NUC.method.pt1}
           />
           <Checkbox
             label={"2pt"}
             name="pt2"
-            onChange={handlePt}
+            onChange={handle2}
             checked={value.beforeISP.NUC.method.pt2}
           />
         </div>
       </div>
+
+      <Checkbox
+        label={"Bad Pixel Correction"}
+        name={"bad_pixel_correction"}
+        onChange={handle2}
+        checked={value.beforeISP.NUC.method.bad_pixel_correction}
+      />
 
       <label>Sensor Characteristics File</label>
       <button onClick={inputFunction}>

@@ -46,7 +46,8 @@ const beforeISPTemp ={
         enable : false,
         method : {
             pt1 : true,
-            pt2 : false, 
+            pt2 : false,
+            bad_pixel_correction : true, 
             nuc_file : null
         }
     },
