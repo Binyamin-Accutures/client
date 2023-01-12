@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Checkbox from '../Checkbox';
-import mangeContext from '../../context/ImageContext'
+import mangeContext from '../../context/ImageContext';
+import styles from "./style.module.css"
 
 function CheckList() {
     const { afterISP, setAfterISP } = useContext(mangeContext)
@@ -37,13 +38,17 @@ function CheckList() {
     }
 
     return (
-        <div>
-            <Checkbox label={'Save all sections results'} onChange={handleCheckAll} prev={isAllChecked} />
+         <div >
+            <div className={styles.bold} >
+           <Checkbox  label={'Save all sections results'} onChange={handleCheckAll} prev={isAllChecked} />
+            </div>
+            <div className={styles.list}>
             <Checkbox label={'S0'} onChange={handleCheck} name={'s0'} prev={context.s0.enable} /> 
             <Checkbox label={'DoLP'} onChange={handleCheck} name={'DoLP'} prev={context.DoLP.enable} /> 
             <Checkbox label={'AoLP Overlayed'} onChange={handleCheck} name={'AoLPOvealayed'} prev={context.AoLPOvealayed.enable} /> 
             <Checkbox label={'AoLP + DoLP'} onChange={handleCheck} name={'AoLPDoLP'} prev={context.AoLPDoLP.enable} /> 
             <Checkbox label={'RGB'} onChange={handleCheck} name={'RGB'} prev={context.RGB.enable} /> 
+            </div>
         </div>
     );
 }

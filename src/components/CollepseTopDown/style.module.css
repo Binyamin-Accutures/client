@@ -41,6 +41,7 @@
   padding: 0px 12px;
   overflow: hidden;
   transition: all 0.4s;
+  margin-bottom: 10px;
 }
 
 .openPropertis.active {
