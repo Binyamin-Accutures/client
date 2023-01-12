@@ -1,7 +1,7 @@
 import { useState,useContext } from "react";
 import styles from "./style.module.css";
 import RangeSlider from "../RangeSlider";
-import Dael from '../../tests/Dael'
+// import Dael from '../../tests/Dael'
 import ImageManipulation from "../ImageManipulation";
  
 // creator: Elisha & dudu

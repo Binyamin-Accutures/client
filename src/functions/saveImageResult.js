@@ -1,6 +1,6 @@
 import { convertAoLPDoLP, convertAoLPOvealayed, convertDoLP, convertRGB, convertS0 } from "./imageProcessing";
 
-export default async function saveImageResult( ImagesUrl, parameters )  {
+export default async function saveImageResult( ImagesUrl, parameters, root )  {
     const AllImages = {}
     const ImageAoLPOvealayed = []
     const ImageAoLPDoLP = []
@@ -28,11 +28,13 @@ export default async function saveImageResult( ImagesUrl, parameters )  {
     if (ImageAoLPDoLP !== []) AllImages.AoLPDoLP = ImageAoLPDoLP
     if (ImageDoLP !== []) AllImages.DoLP = ImageDoLP
 
-    const AllImagesFormData = convertImagesToFormData(AllImages)
+    const formData = convertImagesToFormData(AllImages)
+    formData.append('path',root)
+
     console.log("AllImages = " + AllImages);
-    console.log("AllImagesFormData = " + AllImagesFormData);
+    console.log("AllImagesFormData = " + formData);
     
-    return AllImagesFormData;
+    return formData;
 }
 
 function convertImagesToFormData(images) {
@@ -54,6 +56,6 @@ function convertImagesToFormData(images) {
 
     }
 
-    return { formData, src: images.RGB[0]  };
+    return formData;
     
 }

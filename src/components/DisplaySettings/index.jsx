@@ -9,7 +9,7 @@ import CheckList from "../CheckList";
 
 function DisplaySetting(props) {
     const { afterISP, setAfterISP } = useContext(ImageContext)
-
+    
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet;
 
 
