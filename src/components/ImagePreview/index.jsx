@@ -21,7 +21,7 @@ function ImagePreview() {
         setSelectedImage(target.value)
     }
 
-    usefffect(()=>{
+    useEffect(()=>{
         if (value.beforeISP.images[0]) {
             setLoad(true)
         }
