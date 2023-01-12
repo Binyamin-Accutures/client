@@ -25,7 +25,15 @@ export default function MainBar({ imgArray }) {
     { name: "image4", url: "/images/dog7.png" },
     { name: "image4", url: "/images/dog8.png" }
   ])
-
+const value = useContext(ImageContext)
+  useEffect(() => {
+    if (!value.beforeISP.images[0]) return;
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(value.beforeISP.images[1]);
+    fileReader.onload = () => {
+      setImages(fileReader.result);
+    };
+  }, [value.beforeISP]);
   //use context(imgArray)
   // const value = useContext(ImageContext)
   const [displayArr, setDispalyArr] = useState(images)
