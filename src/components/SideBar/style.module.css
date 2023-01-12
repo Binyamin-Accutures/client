@@ -36,13 +36,14 @@
 
 .btn {
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 23px;
   margin-right: 10px;
 }
 
 .collapse {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-top: 10px;
 }
 
 .blackBack {

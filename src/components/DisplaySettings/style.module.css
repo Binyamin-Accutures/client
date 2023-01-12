@@ -1,25 +1,37 @@
-.Display_settings{
-justify-content: center;
-display: flex;
-align-items: center;
-flex-direction: column;
-height: 100%;
-
-
+.Display_settings {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
 }
 
-h1{
-    font-size: 18;
-    font-weight: 700;
-    padding: 20px 20px 20px 0px;
-    
+.collapseBG {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
-.isClicked{
-    background-color: var(--bg-color);
-    border-top-left-radius: var(--border-radius) ;
-    border-top-right-radius: var(--border-radius) ;
+h1 {
+  font-size: 18;
+  font-weight: 700;
+  padding: 20px 20px 20px 0px;
 }
 
+.isClicked {
+  background-color: var(--bg-color);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
 
+.dudu {
+  background-color: var(--input-color);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
 
+.blackBG {
+  background-color: var(--bg-color);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
