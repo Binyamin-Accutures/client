@@ -90,7 +90,7 @@ const languages = [
             CREATE:"Create",
             SO:"S0",
             BACK_END_STATUS:"Backend Status",
-            OR_DROP_HERE: "or drag and drop image here"
+            OR_DRAG_N_DROP: "or drag and drop image here"
 
         }
     }

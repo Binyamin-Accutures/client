@@ -1,12 +1,12 @@
 import styles from "./style.module.css";
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 import language from "../../functions/language";
 
 // creator: "Noam"
 
-function InputLoadImage({ width, props, setLoad, className }) {
+function InputLoadImage({ width, props, className }) {
   const value = useContext(ImageContext);
   const inputElement = useRef();
   const onclick = () => {
