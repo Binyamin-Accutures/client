@@ -11,7 +11,7 @@ const languages = [
             IN_PROGRESS: "In Progress",
             HISTOGRAM: "Histogram",
             SHOW: "Show",
-            lOAD_IMAGE: "load image",
+            LOAD_IMAGE: "Load Image",
             NUC: "NUC",
             ENABLE: "Enable",
             METHOD: "Method",
@@ -27,6 +27,7 @@ const languages = [
             METHOD: "Newton",
             PIXEL_ORDER: "hrfv",
             DEMOSIC: "Demosic",
+            DENOISE: "Denoise",
             METHOD: "",
             RADIUS: "",
             ESP: "",
@@ -89,6 +90,7 @@ const languages = [
             CREATE:"Create",
             SO:"S0",
             BACK_END_STATUS:"Backend Status",
+            OR_DRAG_N_DROP: "or drag and drop image here"
 
         }
     }
