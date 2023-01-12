@@ -27,6 +27,7 @@ const languages = [
             METHOD: "Newton",
             PIXEL_ORDER: "hrfv",
             DEMOSIC: "Demosic",
+            DENOISE: "Denoise",
             METHOD: "",
             RADIUS: "",
             ESP: "",

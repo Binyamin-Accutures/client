@@ -6,6 +6,12 @@
   height: 100%;
 }
 
+.collapseBG {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
 h1 {
   font-size: 18;
   font-weight: 700;
@@ -22,4 +28,10 @@ h1 {
   background-color: var(--input-color);
   margin-bottom: 20px;
   padding-bottom: 20px;
+}
+
+.blackBG {
+  background-color: var(--bg-color);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }

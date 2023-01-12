@@ -134,6 +134,10 @@
   font-size: 12px;
 }
 
+.backNext:hover {
+  cursor: pointer;
+}
+
 .backNextOff {
   color: #b6b6b6;
 }
