@@ -1,8 +1,8 @@
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import styles from "./style.module.css";
 import RangeSlider from "../RangeSlider";
 import ImageManipulation from "../ImageManipulation";
- 
+
 // creator: Elisha & dudu
 // carousel : this component change the image preview from rangeslider based on the images context length
 //------props to pass------
@@ -10,19 +10,19 @@ import ImageManipulation from "../ImageManipulation";
 // imgOn - imageOn is a flag state for passing the kind of input  - enter "true" for images(jpg) or false for canvas
 
 
-const Carousel = ({imgUrl,imgOn=true}, images) => {
-   
+const Carousel = ({ imgUrl, imgOn = true }, images) => {
+
 
    return (
-   <>
-      <div className={styles.carouselContainer}>
+      <>
+         <div className={styles.carouselContainer}>
 
-         <div className={styles.carouselImage} >
-            {/* {imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images"}   */}
-            <ImageManipulation imgUrl={imgUrl} />
+            <div className={styles.carouselImage} >
+               {/* {imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images"}   */}
+               <ImageManipulation imgUrl={imgUrl} />
+            </div>
          </div>
-      </div>
-   </>
+      </>
    )
 }
 

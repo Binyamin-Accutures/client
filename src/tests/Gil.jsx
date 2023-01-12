@@ -5,9 +5,9 @@ import DisplaySetting from '../components/DisplaySettings';
 function Gil() {
   return (
     <>
-    <div>
-      <DisplaySetting />
-    </div>
+      <div>
+        <DisplaySetting />
+      </div>
     </>
   )
 };
