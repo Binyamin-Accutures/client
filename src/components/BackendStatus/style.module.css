@@ -1,15 +1,13 @@
 
-
-
 .BackendStatusMain{
+
     border: solid 1px var(--input-color);
     border-radius:var(--border-radius);
     height: 294px;
     width: 100%;
     padding-left: 16px;
     padding-top: 13px;
-    font-size: 16px;
-    margin-top: auto;
+    margin-bottom: 25px;
 }
 
 .BackendStatus{
@@ -19,14 +17,19 @@
     flex-direction: column;
     margin-top: 40px;
 }
-    .h1{
+.title{
         font-weight: 700;
+        font-size: 18px;
        
     }  
     
 
 label{
     margin-top: 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
 }
 
 .prog{

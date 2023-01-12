@@ -81,7 +81,8 @@ console.log(arrImages);
     
     <div className={styles.historyPageContainer}>
     
-      <div className={styles.historyPageHeader}>
+      <div className={styles.historyPageHead}>
+        
         <div className={styles.historyPageSearch}>
        <input className={styles.historySearch} type="text" placeholder='search' onInput={(e)=> funSearch(e)}/>
        <FiSearch style={{color:'green', position:'absolute', right:'5px' ,top: '8px'}}/>
@@ -103,9 +104,11 @@ console.log(arrImages);
        <ModalPopUp show={show} setShow={setShow} fonc={funDelete} delname={delname}/>
       
        <div className={styles.images}>
-{arrImages? arrImages.map(v => <HistoryImage src={v.url} date={new Date(v.date).toLocaleDateString()} time={new Date(v.date).toLocaleTimeString()} imgName={v.name} funcDel={handleDelete} /> ): null} 
+      {arrImages? arrImages.map(v => <HistoryImage src={v.url} date={new Date(v.date).toLocaleDateString()} time={new Date(v.date).toLocaleTimeString()} imgName={v.name} funcDel={handleDelete} /> ): null} 
        </div>
-    </div>
+      
+       </div>
+   
     </>
 
   )

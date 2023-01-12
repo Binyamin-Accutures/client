@@ -4,5 +4,22 @@ display: flex;
 align-items: center;
 flex-direction: column;
 height: 100%;
+
+
 }
+
+h1{
+    font-size: 18;
+    font-weight: 700;
+    padding: 20px 20px 20px 0px;
+    
+}
+
+.isClicked{
+    background-color: var(--bg-color);
+    border-top-left-radius: var(--border-radius) ;
+    border-top-right-radius: var(--border-radius) ;
+}
+
+
 
