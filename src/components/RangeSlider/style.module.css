@@ -1,110 +1,115 @@
 .container {
-    padding-top: 15px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+  padding-top: 15px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .containerSmall {
-    width:  100%;
-    margin:20px;
+  width: 100%;
+  margin: 20px;
 }
-.descrption{
-   margin: 10px 0;
-    width: 100%;
-    padding: 4px;
+
+.descrption {
+  margin: 10px 0;
+  width: 100%;
+  padding: 4px;
 }
 
 .slider {
-    webkit-appearance: none;
-    width: 70%;
-    outline: none;
-    border-radius: 3px;
-    height: 5px;
-    margin-top: 9px;
-    padding: 0;
-    background-color: white;
-    display: inline;
+  webkit-appearance: none;
+  width: 70%;
+  outline: none;
+  border-radius: 3px;
+  height: 5px;
+  margin-top: 9px;
+  padding: 0;
+  background-color: white;
+  display: inline;
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background: white;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
-    margin-top: -6px;
+  -webkit-appearance: none;
+  background: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  margin-top: -6px;
 }
 
 .slider::-webkit-slider-runnable-track {
-    webkit-appearance: none;
-
-    background-color: white;
-    height: 4px;
-    border-radius: 2px;
-    background-color: var(--primary-color);
+  webkit-appearance: none;
+  background-color: white;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--primary-color);
 }
 
 .slider::-ms-fill-lower {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .container .descrption {
-    margin-right: 1% 0;
-    display: flex;
-    justify-content: end;
-    min-width: 60px;
-    color: var(--text-secondary-color);
-    font-size: 10px;
-
+  margin-right: 1% 0;
+  display: flex;
+  justify-content: end;
+  min-width: 60px;
+  color: var(--text-secondary-color);
+  font-size: 10px;
+  max-width: fit-content;
 }
 
 .container .numberInput {
-    /* margin-top: 3px;
+  /* margin-top: 3px;
     margin-left: 1.5%; */
-    margin-left: 12px;
-    max-width: 47px;
-    height: 26px;
-    background-color: var(--input-color);
-    color: var(--text-color);
-    border-radius: 2px;
-    border: 0;
-    text-align: center;
+  margin-left: 12px;
+  max-width: 47px;
+  height: 26px;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  border-radius: 2px;
+  border: 0;
+  text-align: center;
 }
 
 .numberInput::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
-.containerSmall{
-    margin: 0;
-    margin-top: 20px;
+
+.containerSmall {
+  margin: 0;
+  margin-top: 20px;
 }
 
 .containerSmall .descrption {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    color: var(--text-color);
-    display: block;
-    font-size: 12px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  color: var(--text-color);
+  display: block;
+  font-size: 16px;
 }
 
-.containerSmall .numberInput {
-    margin-top: 3px;
-    margin-left: 1.5%;
-    width: 47px;
-    height: 26px;
-    /* max-width: 15%; */
-    display: inline;
-    background-color: var(--bg-color);
-    color: var(--text-secondary-color);
-    border-radius: 2px;
-    border: 0;
-    text-align: center;
-    border: 1px solid var(--text-secondary-color);
+/* .descrption {
+  max-width: 70px;
+} */
 
+.containerSmall .numberInput {
+  margin-top: 3px;
+  margin-left: 1.5%;
+  width: 47px;
+  height: 26px;
+  /* max-width: 15%; */
+  display: inline;
+  background-color: var(--bg-color);
+  color: var(--text-secondary-color);
+  border-radius: 2px;
+  border: 0;
+  text-align: center;
+  border: 1px solid var(--text-secondary-color);
 }

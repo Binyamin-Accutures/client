@@ -5,8 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:4px;
-  /* overflow: scroll; */
 }
 
 .oneOptions {
@@ -15,6 +13,7 @@
   align-items: center;
   width: 100%;
   height: 50px;
+  padding: 0px 12px;
 }
 
 .oneOptions p {
@@ -23,14 +22,10 @@
   font-size: var(--font-size-label);
 }
 
-svg {
-  color: #56c493;
-}
-
 .oneOptions {
-  color: #56c493;
-  font-size: 28px;
- 
+  color: var(--primary-color);
+  font-size: 28px !important;
+  transition: all 0.4s;
 }
 
 .openPropertis {
@@ -38,17 +33,31 @@ svg {
   justify-content: center;
   /* align-items: center; */
   flex-direction: column;
-  padding:12px;
+  padding: 12px;
   /* max-height: 300px; */
   width: 100%;
-  background: var(--bg-color);
-  border-bottom-left-radius: var(--border-radius) ;
-  border-bottom-right-radius: var(--border-radius) ;
-    
+  height: 0px;
+  opacity: 0;
+  background: #1e1e1e;
+  border-radius: 0px 0px 4px 4px;
+  padding-left: 12px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.openPropertis.active {
+  height: auto;
+  opacity: 1;
+  padding-bottom: 40px;
+}
+
+svg {
+  color: #56c493;
 }
 
 .title {
   padding: 12px;
+  cursor: pointer;
 }
 
 .option {

@@ -1,32 +1,32 @@
 .modalcontent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 34%;
-    height: 22%;
-    position: fixed;
-    top: 40%;
-    left: 30%;
-    border: 2px solid #BA1616;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 34%;
+  height: 22%;
+  position: fixed;
+  top: 40%;
+  left: 30%;
+  border: 2px solid #ba1616;
 }
 
-.btns>button {
-    padding: 10px 10px!important;
-    margin: 0 4px;
+.btns > button {
+  padding: 10px 10px !important;
+  margin: 0 4px;
 }
 
 .btnDelete {
-    border: 2.5px solid #000;
-    background-color: #BA1616;
-    color: #fff;
+  border: 2.5px solid #000;
+  background-color: #ba1616;
+  color: #fff;
 }
 
 .btnCancel {
-    background-color: #fff;
+  background-color: #fff;
 }
