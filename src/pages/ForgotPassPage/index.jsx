@@ -1,16 +1,15 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
 import language from "../../functions/language";
+import apiCalls from "../../functions/apiRequest";
 
 export default function ForgotPassPage() {
   const userEmailInput = useRef();
-  const userPasswordInput = useRef();
-
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(userEmailInput.current.value, userPasswordInput.current.value);
+    apiCalls("get", `http://localhost:5001/api/user/forgot/?email=${userEmailInput.current.value}`);
   }
 
   return (
