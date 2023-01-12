@@ -14,6 +14,19 @@ input[type=range]{
    -webkit-appearance: none;
 }
 
+
+:root {
+   --bg-color: #1E1E1E;
+   --bg-secondary-color: #2C2C2C;
+   --text-color: #fff;
+   --text-secondary-color: #B6B6B6;
+   --primary-color: #56C493;
+   --input-color: #383838;
+   --font-size-label: 13px;
+   --font-size-text: 11px
+   --border-radius: 4px;
+   }
+   
 input[type=range]::-webkit-slider-runnable-track {
    height: 3px;
    border: none;
@@ -46,7 +59,15 @@ label {
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
+
+@media only screen and (min-width: 1200px) {
+   :root {
+      --font-size-label:16px ;
+      --font-size-text: 13px;
+   }
+ }
+
