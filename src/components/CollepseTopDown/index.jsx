@@ -26,7 +26,7 @@ const CollepseTopDown = (props) => {
     else {
       setOpenCollepseTopDown(titel)
     }
-  }}}
+  }
 
 
   return (

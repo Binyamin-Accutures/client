@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.module.css'
 import Button from '../Button'
+import language from '../../functions/language'
 
 // creators: Yisrael_Olonoff & Pavel 
 // the crop component is a button that crops images that
@@ -11,7 +12,7 @@ import Button from '../Button'
 function Crop() {
   return (
     <div>
-        <Button width={133} >Crop</Button>
+        <Button width={133} >{language.CROP}</Button>
     </div>
   )
 }

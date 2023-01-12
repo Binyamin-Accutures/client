@@ -4,6 +4,7 @@ import { useContext } from "react";
 import RangeSlider from "../RangeSlider";
 import ImageContext from "../../context/ImageContext";
 
+
 export default function Denoise(props) {
   const value = useContext(ImageContext);
 

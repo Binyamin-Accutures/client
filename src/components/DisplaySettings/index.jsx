@@ -6,6 +6,7 @@ import ImageContext from "../../context/ImageContext";
 import style from './style.module.css';
 import saveResult from '../../functions/saveResults';
 import CheckList from "../CheckList";
+import language from "../../functions/language";
 
 function DisplaySetting(props) {
     const { afterISP, setAfterISP } = useContext(ImageContext)
@@ -134,14 +135,14 @@ function DisplaySetting(props) {
     return (
         <div className="Display_settings">
         <h1>
-            Display settings
+            {language.DISPLAY_SETTING}
         </h1>
         <div className={style.dudu}>
         <div className={style.collapseBG}>
             <CollepseTopDown className={style.blackBG} menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
             </div>
             {isCheckMenuOpen && <CheckList />}
-            <Button func={handleSave} width={"270px"} margin-top={"20px"}>Save Results</Button>  
+            <Button func={handleSave} width={"270px"} margin-top={"20px"}>{language.SAVE_RESULTS}</Button>  
         </div> 
         
       </div>

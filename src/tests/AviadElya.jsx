@@ -1,6 +1,6 @@
 import React from 'react'
-// import AdminInterFace from '../pages/AdminInterFace'
-import ChangeFrame from '../components/ChangeFrame'
+import ImageManipulation from '../components/ImageManipulation'
+
 
 
 
@@ -8,7 +8,7 @@ function AviadElya() {
 
     return (
         <div>
-            <ChangeFrame/>
+            <ImageManipulation/>
         </div>
         
     )
