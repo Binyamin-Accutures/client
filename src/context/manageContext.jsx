@@ -3,6 +3,7 @@ import ImageContext from "./ImageContext";
 import UserContext from "./UserContext";
 
 const afterISPTemp = {
+    images : [],
     imagePath : '',
     displaySet :{
         s0 :{

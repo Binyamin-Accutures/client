@@ -12,14 +12,16 @@ import Denoise from "../Denoise";
 import Sharping from "../Sharping";
 import apiCalls from "../../functions/apiRequest";
 import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
+import language from "../../functions/language";
+
 // creator: Liat
 
 const SideBar = () => {
+  const value = useContext(ImageContext)
+  const [IsOpen, setIsOpen] = useState(true)
   
-  const value = useContext(ImageContext);
-  const [IsOpen, setIsOpen] = useState(true);
   
-  
+
   const data = {
     demosaic: {
       enable: "true",
@@ -38,81 +40,54 @@ const SideBar = () => {
     },
   };
   const menuList = [
+
+   { titel: `${language.NUC}`, component: <Nuc design={styles.D} /> },
+
     {
-      titel: "NUC",
-      component: (
-        <Nuc
-          classCollaps={[
-            "category",
-            "subtitle",
-            "labal_colaps_top_down",
-            "titel_colaps_top_down",
-          ]}
-        />
-      ),
+      titel: `${language.DYNAMIC_RANGE_STRECH}`,
+      component: <DynamicRangeStretch design={styles.D} />,
     },
     {
-      titel: "Dynamic Range Stretch",
-      component: (
-        <DynamicRangeStretch
-          classNameTitle="title"
-          classNameOption="option"
-          classNameSecdTitle="dropTitle"
-        />
-      ),
-    },
-    {
+
       titel: "Demosaic",
-      component: <Demosaic data={data} className={styles.category} />,
+    component: <Demosaic data={data} className={styles.category} />,
+
     },
-    { titel: "Denoise", component: <Denoise /> },
-    { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
   ];
+
+  //   const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
-
-  const handle = (e) => {
-    e.preventDefault();
-    console.log(value.beforeISP.images);
-    // console.log(e.target[1]);
-    const fileArray = value.beforeISP.images;
-    const file = new FormData();
-    fileArray.forEach((v) => {
-      // console.log(v["url"]);
-      file.append("url", v["url"]);
-      file.
-      console.log(v["url"]);
-    });
-
-
-  };
+  let index = 2;
   return (
-    <>   
     <div className={styles.sideBar}>
-    {/* <FiChevronLeft
-        className={styles.slideBar}
-        className={styles.btnToggle}
-        onClick={(e) => slideBar(e)}/
-      > */}
-      {IsOpen ?
-      <FiChevronLeft className={styles.btnToggle} onClick={(e) => slideBar(e)}/>:
-      <FiChevronRight className={styles.btnToggle} onClick={(e) => slideBar(e)}/>}
+
+    {IsOpen ? (
+        <FiChevronLeft
+          className={styles.btnToggle}
+          onClick={(e) => slideBar(e)}
+        />
+      ) : (
+        <FiChevronRight
+          className={styles.btnToggle}
+          onClick={(e) => slideBar(e)}
+        />
+      )}
       {IsOpen && (
         <div className={styles.form}>
           <div className={styles.all}>
-            <form onSubmit={handle}>
-              <InputLoadImage width="328px" className={styles.loadBtn}/>
+            <div className={styles.collapse}>
+              <InputLoadImage width="328px" className={styles.loadBtn} />
               <Image value={value} index={0} />
               <CollepseTopDown menuList={menuList} className={styles.blackBack} />
-              <BtnRunISP className={styles.btn}  />
-            <input type="submit" className={styles.run_isp} value="Run ISP" />
-          </form>
+              <BtnRunISP className={styles.btn} />
+            </div>
           </div>
         </div>
       )}
-      </div>
-    </>
+  </div>
+
   );
 };
 export default SideBar;
