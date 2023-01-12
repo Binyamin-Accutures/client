@@ -86,11 +86,11 @@ export const ContextProvider = ({ user,setUser, children }) => {
     
     const [afterISP, setAfterISP] = useState(afterISPTemp);
     const [beforeISP, setBeforeISP] = useState(beforeISPTemp);
-
+    const [currentImages , setCurrentImages]= useState()
 
     return (
         <UserContext.Provider value= {{user, setUser, isLogged, setIsLogged}}>
-            <ImageContext.Provider value={{afterISP, setAfterISP,beforeISP, setBeforeISP}}>
+            <ImageContext.Provider value={{afterISP, setAfterISP,beforeISP, setBeforeISP,currentImages , setCurrentImages}}>
                 {children}
             </ImageContext.Provider>
         </UserContext.Provider>
