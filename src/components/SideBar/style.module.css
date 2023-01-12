@@ -1,10 +1,11 @@
 .sideBar {
   position: relative;
+  /* width: 18vw; */
 }
 
 .loadBtn {
-  margin-left: -20px;
   display: flex;
+  margin-bottom: 11px;
 }
 
 /* liat-sidebar */
@@ -35,15 +36,13 @@
 }
 
 .btn {
-  margin-left: 10px;
+  /* margin-left: 10px;
   margin-bottom: 23px;
-  margin-right: 10px;
+  margin-right: 10px; */
 }
 
 .collapse {
-  padding-left: 15px;
-  padding-right: 10px;
-  margin-top: 10px;
+  padding: 17px 4.3%;
 }
 
 .blackBack {
@@ -54,10 +53,7 @@
   z-index: 5;
 }
 
-.D {
-  margin-top: 5px;
-  padding-inline-end: 10px;
-}
+.D {}
 
 .D div {
   padding: 5px 0px;

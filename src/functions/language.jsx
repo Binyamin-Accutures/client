@@ -11,7 +11,7 @@ const languages = [
             IN_PROGRESS: "In Progress",
             HISTOGRAM: "Histogram",
             SHOW: "Show",
-            lOAD_IMAGE: "load image",
+            LOAD_IMAGE: "Load Image",
             NUC: "NUC",
             ENABLE: "Enable",
             METHOD: "Method",
@@ -55,7 +55,7 @@ const languages = [
             FORGOT_PASSWORD: "forgot password",
             TITLE_NEW_ACCOUNT: "New Account",
             MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you would like to register with us",
-            MSG_GIVE_EMAIL_REGISTER: "Just tell us the email address you registered width us",
+            MSG_GIVE_EMAIL_REGISTER_2: "Just tell us the email address you registered with us",
             PASSPORD: "Passpord",
             CHANGE: "Change",
             CREATE: "Create",
@@ -100,6 +100,8 @@ const languages = [
             LOAD_IMAGE:"Load Image",
             ACCUTURES:"Accutures",
             
+            OR_DRAG_N_DROP: "or drag and drop image here"
+
         }
     }
 ]
