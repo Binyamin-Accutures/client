@@ -23,7 +23,7 @@ export default function ChangeAndCreatePassPass({ setUser }) {
         email: location.state.email,
       };
       
-      apiCalls("post", "http://localhost:9898/api/user/register", data).then(
+      apiCalls("post", "http://localhost:5000/api/user/register", data).then(
         (res) => {
           if (res.status === 200) {
             setToken(res.data);

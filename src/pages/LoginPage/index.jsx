@@ -24,7 +24,7 @@ function LoginPage({ setUser }) {
       email: userEmailInput.current.value,
     };
 
-    apiCalls("post", "http://localhost:9898/api/user/", data).then((res) => {
+    apiCalls("post", "http://localhost:5000/api/user/login", data).then((res) => {
       if (res.status === 200) {
         setToken(res.data.token);
         setUser(true);
