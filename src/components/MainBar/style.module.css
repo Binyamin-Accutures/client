@@ -7,8 +7,13 @@
   justify-content: center;
   align-items: center;
   width: 95%;
-  height: 95%;
+  height: 100%;
+  padding: 10px 0;
   background-color: #1e1e1e;
+}
+
+.main input[type=range] {
+  width: 100% !important;
 }
 
 .mainBar {
@@ -25,13 +30,9 @@
   align-items: left;
   justify-content: start;
   width: 100%;
-  height: 33%;
+  /* height: 33%; */
   padding-top: 0px;
   /* border: solid 1px #ffff; */
-}
-
-.CarouselSlider input[type=range] {
-  width: 100% !important;
 }
 
 /* .cropBtn {

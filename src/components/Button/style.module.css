@@ -13,21 +13,25 @@
   font-weight: bold;
   transition: 0.1s;
 }
+
 .button:hover:not(:focus) {
   border: 2.5px solid var(--text-color);
 }
+
 .button svg {
   display: none;
 }
+
 .button:focus {
   box-shadow: inset -4px -4px 12px rgba(21, 57, 42, 0.25),
     inset 4px 4px 12px rgba(21, 57, 42, 0.25);
 }
-.button:focus svg{
-    display: block;
-    background-color: var(--primary-color);
-    width: 16px;
-    height: 14px;
+
+.button:focus svg {
+  display: block;
+  background-color: var(--primary-color);
+  width: 16px;
+  height: 14px;
 }
 
 /* .button:disabled{
