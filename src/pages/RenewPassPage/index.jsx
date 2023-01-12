@@ -5,6 +5,7 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
 import apiCalls, { setToken } from "../../functions/apiRequest";
+import language from "../../functions/language";
 
 export default function ChangeAndCreatePassPass({ setUser }) {
   const userFirstPassword = useRef();
@@ -41,9 +42,9 @@ export default function ChangeAndCreatePassPass({ setUser }) {
 
     <form className={styles.formLogin} onSubmit={handleSubmit}>
       <p className={styles.paragraphTitle}>
-        {token.token ? "Change" : "Create"} Password
+        {token.token ? language.CHENG : language.CREATE} Password
       </p>
-      <p className={styles.paragraph}>please choose a new password</p>
+      <p className={styles.paragraph}>{language.CHOOSE_PASSWORD}</p>
       <Input
         type="password"
         name="input"
@@ -60,7 +61,7 @@ export default function ChangeAndCreatePassPass({ setUser }) {
         />
 
       <Button type={"submit"} width={"328px"}>
-        Send
+        {language.SEND}
       </Button>
     </form>
         </div>

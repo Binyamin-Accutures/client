@@ -5,7 +5,6 @@
     flex-direction: row;
     width: 100%;
     height: 90%;
-    border: solid 1px #ffff;
 }
 .leftBar{
     /* flex-grow: 2; */
@@ -25,8 +24,12 @@
 
 .rightBar{
     /* flex-grow: 2; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-left: 5px;
-    width: 400px;
+    width: 25%;
     height: 100%;
+    /* position: relative; */
 
 }
