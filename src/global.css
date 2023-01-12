@@ -8,7 +8,8 @@
    --text-secondary-color: #B6B6B6;
    --primary-color: #56C493;
    --input-color: #383838;
-   --font-size-label: 9.5px;
+   --font-size-label: 13px;
+   --font-size-text: 11px
    --border-radius: 4px;
 }
 
@@ -27,3 +28,10 @@ label {
    padding: 0;
    box-sizing: border-box;
 }
+
+@media only screen and (min-width: 1200px) {
+   :root {
+      --font-size-label:16px ;
+      --font-size-text: 13px;
+   }
+ }
