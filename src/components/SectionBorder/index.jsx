@@ -1,5 +1,5 @@
 import styles from "./style.module.css";
- 
+
 // creator: Elisha & dudu
 // the component take the children components and wrap them with border frame
 //examples: <SectionBorder border='solid' width='100px' height='100px'> <YourComponents/> </SectionBorder>
@@ -9,10 +9,10 @@ import styles from "./style.module.css";
 // width: width of the component wrapper
 // height: height of the component wrapper
 
-const SectionBorder = ({ children, border, height, width}) => {
+const SectionBorder = ({ children, border, height, width, className = '' }) => {
 
    return (
-      <div className={styles.sectionBorder} style={{height: height, width:width, borderStyle:border}}>
+      <div className={`${styles.sectionBorder} ${className}`} style={{ height: height, width: width, borderStyle: border }}>
          {children}
       </div>
    )
