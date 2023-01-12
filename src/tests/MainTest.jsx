@@ -29,14 +29,12 @@ import Gil from './Gil';
 import Chananel from './Chananel';
 
 
-import Dael from './Dael';
 import Nadav from './Nadav';
 
 
 export const MainTest = () => {
   return (
     <Routes>
-      {/* <Route path="/dael" element={<Dael />} /> */}
       <Route path="/aviad" element={<Aviad />} />
       <Route path="/noam" element={<Noam />} />
       <Route path="/anat" element={<Anat />} />
