@@ -43,7 +43,7 @@ const SideBar = () => {
       titel: `${language.DEMOSIC}`,
       component: <Demosaic data={data} design={styles.D} />,
     },
-    { titel: `${language.DEMOSIC}`, component: <Denoise design={styles.D} /> },
+    { titel: `${language.DENOISE}`, component: <Denoise design={styles.D} /> },
     {
       titel: `${language.SHARPING}`,
       component: <Sharping data={sharpingData} design={styles.D} />,
@@ -75,7 +75,7 @@ const SideBar = () => {
             <div className={styles.collapse}>
               <InputLoadImage width="328px" className={styles.loadBtn} />
               <Image value={value} index={0} />
-              <CollepseTopDown menuList={menuList} />
+              <CollepseTopDown menuList={menuList} className={styles.blackBack} />
               <BtnRunISP className={styles.btn} />
             </div>
           </div>

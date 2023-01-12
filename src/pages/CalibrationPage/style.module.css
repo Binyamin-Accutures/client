@@ -1,35 +1,35 @@
-.main{
-    margin-top: 5px;
-    padding: 0 5px 0 0;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 90%;
+.main {
+  margin-top: 5px;
+  padding: 0 5px 0 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60vw;
+  margin-bottom: 20px;
 }
-.leftBar{
-    /* flex-grow: 2; */
-    /* width: 400px; */
-    height: 100%;   
-    margin-right: 5px;
-}
-
-.mainBar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    width: 100%;
-    height: 100%; 
+.leftBar {
+  /* flex-grow: 2; */
+  /* width: 400px; */
+  height: 100%;
+  margin-right: 5px;
 }
 
-.rightBar{
-    /* flex-grow: 2; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 5px;
-    width: 25%;
-    height: 100%;
-    /* position: relative; */
+.mainBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
 
+.rightBar {
+  /* flex-grow: 2; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5px;
+  width: 25%;
+  height: 100%;
+  /* position: relative; */
 }
