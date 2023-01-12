@@ -1,6 +1,7 @@
 import { useState,useContext } from "react";
 import styles from "./style.module.css";
 import RangeSlider from "../RangeSlider";
+
 import ImageManipulation from "../ImageManipulation";
  
 // creator: Elisha & dudu

@@ -29,7 +29,7 @@ import Gil from './Gil';
 import Chananel from './Chananel';
 
 
-import Dael from './Dael';
+// import Dael from './Dael';
 import Nadav from './Nadav';
 
 
