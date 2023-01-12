@@ -9,7 +9,7 @@ export default function InputSelect({ label, options, dataDefault, width, handle
     return (<div >
 
         <label className={`styles.${label}`} forhtml="select">{label}</label><br />
-        <select id={styles.select} defaultValue={dataDefault} name={label} style={{ width: `${width}px` }} onChange={(e) => handle(e.target)}>
+        <select id={styles.select} defaultValue={dataDefault} name={label} style={{ width: `100%` }} onChange={(e) => handle(e.target)}>
             {options.map((v, i, arr) => <option key={i} className={styles.option} >{v}</option>)}
         </select>
     </div >
