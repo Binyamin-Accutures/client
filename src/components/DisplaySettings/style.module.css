@@ -7,9 +7,7 @@
 }
 
 .collapseBG {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+
 }
 
 h1 {
@@ -26,8 +24,7 @@ h1 {
 
 .dudu {
   background-color: var(--input-color);
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding: 17px 4.3%;
 }
 
 .blackBG {
