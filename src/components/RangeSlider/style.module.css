@@ -8,25 +8,32 @@
 }
 
 .containerSmall {
-    width: 100%;
-    padding: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.descrption {
+  width: 100%;
 }
 
 .slider {
-    webkit-appearance: none;
-    width: 70%;
-    outline: none;
-    border-radius: 3px;
-    height: 5px;
-    margin-top: 9px;
-    padding: 0;
-    background-color: white;
-    display: inline;
-
+  webkit-appearance: none;
+  width: 80%;
+  outline: none;
+  border-radius: 3px;
+  height: 1px;
+  padding: 0;
+  background-color: white;
+  display: inline;
 }
 
-slider:hover {
-    cursor: pointer;
+.inputRange {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .slider::-webkit-slider-thumb {
@@ -81,18 +88,13 @@ slider:hover {
     -webkit-appearance: none;
 }
 
-.containerSmall {
-    margin: 0;
-    margin-top: 20px;
-}
-
 .containerSmall .descrption {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    color: var(--text-color);
-    display: block;
-    font-size: 9.5px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  color: var(--text-color);
+  display: block;
+  font-size: var(--font-size-text);
 }
 
 /* .descrption {
@@ -100,16 +102,15 @@ slider:hover {
 } */
 
 .containerSmall .numberInput {
-    margin-top: 3px;
-    margin-left: 1.5%;
-    width: 47px;
-    height: 26px;
-    /* max-width: 15%; */
-    display: inline;
-    background-color: var(--bg-color);
-    color: var(--text-secondary-color);
-    border-radius: 2px;
-    border: 0;
-    text-align: center;
-    border: 1px solid var(--text-secondary-color);
+  width: 27px;
+  height: 17px;
+  /* max-width: 15%; */
+  font-size: 10px;
+  display: inline;
+  background-color: var(--bg-color);
+  color: var(--text-secondary-color);
+  border-radius: 2px;
+  border: 0;
+  text-align: center;
+  border: 1px solid var(--text-secondary-color);
 }

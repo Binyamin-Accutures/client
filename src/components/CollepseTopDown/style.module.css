@@ -46,6 +46,7 @@
 .openPropertis.active {
   height: auto;
   opacity: 1;
+  padding-bottom: 10px;
 }
 
 svg {
