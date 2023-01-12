@@ -122,11 +122,12 @@
 
 .userIcon:hover {
     color: #56C493;
+    cursor: pointer;
 
 }
 
 .space {
-    width: 300px;
+    width: 500px;
 }
 
 .backNext {
@@ -143,6 +144,9 @@
 
 }
 
+.backNext:hover {
+    cursor: pointer;
+}
 
 .backNextOn {
     color: #56C493;
