@@ -4,7 +4,10 @@
   border-radius: 4px;
   margin-right: 5px;
   justify-content: space-evenly;
+  /* object-fit: 4/3; */
+  /* aspect-ratio: cover; */
 }
+
 .label {
   width: 100%;
   font-family: "Open Sans";
