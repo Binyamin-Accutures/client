@@ -1,5 +1,6 @@
 .sideBar {
   position: relative;
+  /* width: 18vw; */
 }
 
 .loadBtn {
@@ -42,7 +43,7 @@
 }
 
 .collapse {
-  padding: 17px 4.3%; 
+  padding: 17px 4.3%;
 }
 
 
@@ -54,9 +55,7 @@
   z-index: 5;
 }
 
-.D {
-
-}
+.D {}
 
 .D div {
   padding: 5px 0px;
@@ -64,5 +63,9 @@
   align-items: center;
   text-align: center;
   gap: 10px; */
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> 2a6001c5213dbb2c508656639b5e2ec7a3b330bf
