@@ -20,6 +20,11 @@
     gap: 20px;
 }
 
+.loadImagePage button {
+    width: 180px !important;
+    height: 50px;
+}
+
 .ImagePreview {
     display: flex;
     justify-content: center;
@@ -41,7 +46,10 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: -30px;
+}
+
+.controls button {
+    margin-top: 20px;
 
 }
 
@@ -63,4 +71,11 @@
 .images {
     width: 1113px;
     height: 672px;
+}
+
+.ImagePreview img {
+    max-height: 500px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+
 }
