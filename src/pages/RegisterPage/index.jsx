@@ -11,6 +11,7 @@ export default function RegisterPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    
     nav("/renew", { state: { email: userEmailInput.current.value } });
   }
 
