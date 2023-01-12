@@ -26,7 +26,7 @@ function ImagePreview() {
     return (
         <>
             <div className={styles.imgprevContainner}>     
-                   {!load && <div className={styles.loadImagePage} > < InputLoadImage width={'133px'} setLoad={setLoad} >
+                   {!load && <div className={styles.loadImagePage} > < InputLoadImage width="100%" setLoad={setLoad} >
                       Load Image </InputLoadImage><p>or drag and drop image here </p></div>}                
                 {load &&         
                     <div className={styles.ImagePreview}>

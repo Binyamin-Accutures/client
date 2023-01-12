@@ -16,7 +16,7 @@ function Button({ children, type, width, func, ...props }) {
     return (
         <>
             <button
-                type={type} style={{ width: width }}
+                type={type} style={{ width: "100%" }}
                 onClick={func} className={styles.button} {...props}>
                 {children} <AiOutlineCheck size={20} />
             </button>
