@@ -29,11 +29,12 @@ const value = useContext(ImageContext)
   useEffect(() => {
     if (!value.beforeISP.images[0]) return;
     let fileReader = new FileReader();
-    fileReader.readAsDataURL(value.beforeISP.images[1]);
+    fileReader.readAsDataURL(value.beforeISP.images[0]);
     fileReader.onload = () => {
       setImages(fileReader.result);
-    };
+    }
   }, [value.beforeISP]);
+
   //use context(imgArray)
   // const value = useContext(ImageContext)
   const [displayArr, setDispalyArr] = useState(images)
@@ -66,7 +67,7 @@ const value = useContext(ImageContext)
     <>
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={displayArr[selectedImage - 1].url} imgOn={false} images={images} />
+          <Carousel imgUrl={images} imgOn={false} images={images} />
         </div>
         <div className={styles.controlBar}>
           <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
