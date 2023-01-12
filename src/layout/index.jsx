@@ -12,13 +12,13 @@ export default function Layout() {
   return (
     <div className={styles.layout}>
       <header className={styles.header}>
-            <Header/>
+        <Header />
       </header>
       <div>
         <Routes >
-            <Route path="/*" element={<LoadImagePage/>}/>
-            <Route path="/calibration" element={<CalibrationPage/>}/>
-            <Route path="/history" element={<HistoryPage/>}/>
+          <Route path="/*" element={<LoadImagePage />} />
+          <Route path="/calibration" element={<CalibrationPage />} />
+          <Route path="/history" element={<HistoryPage />} />
         </Routes>
       </div>
     </div>
