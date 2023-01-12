@@ -1,5 +1,6 @@
 import React from 'react'
-import AdminInterFace from '../pages/AdminInterFace'
+import ImageManipulation from '../components/ImageManipulation'
+
 
 
 
@@ -7,7 +8,7 @@ function AviadElya() {
 
     return (
         <div>
-            <AdminInterFace/>
+            <ImageManipulation/>
         </div>
         
     )

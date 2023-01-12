@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Checkbox from '../Checkbox';
 import mangeContext from '../../context/ImageContext'
+import language from '../../functions/language';
 
 function CheckList() {
     const { afterISP, setAfterISP } = useContext(mangeContext)
@@ -38,12 +39,12 @@ function CheckList() {
 
     return (
         <div>
-            <Checkbox label={'Save all sections results'} onChange={handleCheckAll} prev={isAllChecked} />
-            <Checkbox label={'S0'} onChange={handleCheck} name={'s0'} prev={context.s0.enable} /> 
-            <Checkbox label={'DoLP'} onChange={handleCheck} name={'DoLP'} prev={context.DoLP.enable} /> 
-            <Checkbox label={'AoLP Overlayed'} onChange={handleCheck} name={'AoLPOvealayed'} prev={context.AoLPOvealayed.enable} /> 
-            <Checkbox label={'AoLP + DoLP'} onChange={handleCheck} name={'AoLPDoLP'} prev={context.AoLPDoLP.enable} /> 
-            <Checkbox label={'RGB'} onChange={handleCheck} name={'RGB'} prev={context.RGB.enable} /> 
+            <Checkbox label={language.SAVE_ALL_SECTION} onChange={handleCheckAll} prev={isAllChecked} />
+            <Checkbox label={language.s0} onChange={handleCheck} name={'s0'} prev={context.s0.enable} /> 
+            <Checkbox label={language.DOLP} onChange={handleCheck} name={'DoLP'} prev={context.DoLP.enable} /> 
+            <Checkbox label={language.ALOP_OVERLAYED} onChange={handleCheck} name={'AoLPOvealayed'} prev={context.AoLPOvealayed.enable} /> 
+            <Checkbox label={language.AOLPDOLP} onChange={handleCheck} name={'AoLPDoLP'} prev={context.AoLPDoLP.enable} /> 
+            <Checkbox label={language.RGB} onChange={handleCheck} name={'RGB'} prev={context.RGB.enable} /> 
         </div>
     );
 }

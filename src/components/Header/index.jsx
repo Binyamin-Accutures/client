@@ -5,6 +5,7 @@ import styles from './style.module.css'
 import { BiUser } from 'react-icons/bi'
 import Logout from '../Logout';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import language from '../../functions/language';
 
 
 
@@ -52,17 +53,17 @@ function Header() {
                 <div className={styles.logo}><img src={logo} alt='logo' />  Accutures </div>
                 <div className={styles.navContainer}>
                     <NavLink className={splitLocation[1] === "loadimage" ? styles.active : styles.navitem} onClick={() => { setIsBack(false); setIsNext(true) }} to='/loadimage'>
-                        Load Image
+                       {language.LOAD_IMAGE}
                     </NavLink>
                     <NavLink className={splitLocation[1] === "calibration" ? styles.active : styles.navitem} onClick={() => { setIsBack(true); setIsNext(false) }} to='/calibration'>
-                        Calibration
+                        {language.CALIBRATION}
                     </NavLink>
-                    <NavLink className={splitLocation[1] === "history" ? styles.active : styles.navitem} to='/history' >History</NavLink>
+                    <NavLink className={splitLocation[1] === "history" ? styles.active : styles.navitem} to='/history' >{language.HISTORY}</NavLink>
                 </div>
                 <div className={styles.space} />
                 {splitLocation[1] !== "history" && <div className={styles.backNext}>
-                    <div className={isBack ? styles.backNextOn : styles.backNextOff} onClick={back}>  <IoIosArrowBack className={isBack ? styles.backNextOn : styles.backNextOff} />   Back</div>
-                    <div className={isNext ? styles.backNextOn : styles.backNextOff} onClick={next}>Next    <IoIosArrowForward className={isNext ? styles.backNextOn : styles.backNextOff} /></div>
+                    <div className={isBack ? styles.backNextOn : styles.backNextOff} onClick={back}>  <IoIosArrowBack className={isBack ? styles.backNextOn : styles.backNextOff} /> {language.BACK}</div>
+                    <div className={isNext ? styles.backNextOn : styles.backNextOff} onClick={next}>{language.NEXT}    <IoIosArrowForward className={isNext ? styles.backNextOn : styles.backNextOff} /></div>
                 </div>}
                 <div className={styles.userBar}>
 
