@@ -1,7 +1,7 @@
 .container {
     padding-top: 15px;
     width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     justify-content: center;
     /* border: 2px solid red; */
@@ -9,24 +9,32 @@
 
 .containerSmall {
     width: 100%;
-    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.descrption {
+    /* width: 100%; */
 }
 
 .slider {
     webkit-appearance: none;
-    width: 70%;
+    width: 80%;
     outline: none;
     border-radius: 3px;
-    height: 5px;
-    margin-top: 9px;
+    height: 1px;
     padding: 0;
     background-color: white;
     display: inline;
-
 }
 
-slider:hover {
-    cursor: pointer;
+.inputRange {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .slider::-webkit-slider-thumb {
@@ -81,18 +89,13 @@ slider:hover {
     -webkit-appearance: none;
 }
 
-.containerSmall {
-    margin: 0;
-    margin-top: 20px;
-}
-
 .containerSmall .descrption {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    color: var(--text-color);
-    display: block;
-    font-size: 9.5px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  color: var(--text-color);
+  display: block;
+  font-size: var(--font-size-text);
 }
 
 /* .descrption {
@@ -100,11 +103,10 @@ slider:hover {
 } */
 
 .containerSmall .numberInput {
-    margin-top: 3px;
-    margin-left: 1.5%;
-    width: 47px;
-    height: 26px;
+    width: 27px;
+    height: 17px;
     /* max-width: 15%; */
+    font-size: 10px;
     display: inline;
     background-color: var(--bg-color);
     color: var(--text-secondary-color);

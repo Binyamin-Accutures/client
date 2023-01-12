@@ -1,62 +1,66 @@
 .BackendStatusMain {
-  border: solid 1px var(--input-color);
-  border-radius: var(--border-radius);
-  height: 294px;
-  width: 100%;
-  padding-left: 16px;
-  padding-top: 5px;
+    border: solid 1px var(--input-color);
+    border-radius: var(--border-radius);
+    height: 270px;
+    height: fit-content;
+    width: 100%;
+    padding-left: 16px;
+    padding-top: 5px;
+    padding: 20px 16px;
 }
 
 .BackendStatus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 .title {
-  font-weight: 700;
-  font-size: 18px;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 label {
-  margin-top: 7px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
 }
 
 .prog {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 .battery {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  width: 250px;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 250px;
+    position: relative;
 }
 
 .dark {
-  display: inline-block;
-  width: 10px;
-  border: var(--primary-color);
-  padding: 4px;
-  height: 17px;
-  margin: 1px;
-  background: var(--input-color);
-  /* transition: background 1s; */
-  border-radius: 2px;
+    display: inline-block;
+    width: 10px;
+    border: var(--primary-color);
+    padding: 4px;
+    height: 17px;
+    margin: 1px;
+    background: var(--input-color);
+    /* transition: background 1s; */
+    border-radius: 2px;
 }
+
 .bar {
-  display: inline-block;
-  width: 10px;
-  border: var(--primary-color);
-  padding: 4px;
-  height: 17px;
-  margin: 1px;
-  background: var(--primary-color);
-  transition: background 1s;
-  border-radius: 2px;
+    display: inline-block;
+    width: 10px;
+    border: var(--primary-color);
+    padding: 4px;
+    height: 17px;
+    margin: 1px;
+    background: var(--primary-color);
+    transition: background 1s;
+    border-radius: 2px;
 }

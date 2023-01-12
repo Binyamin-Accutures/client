@@ -131,6 +131,7 @@
     display: flex;
     width: 140px;
     justify-content: space-between;
+    gap: 9px;
     align-items: center;
     margin: 20px;
     font-size: 12px;
@@ -142,6 +143,9 @@
 
 .backNextOff {
     color: #b6b6b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .backNext:hover {
@@ -150,4 +154,7 @@
 
 .backNextOn {
     color: #56c493;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
