@@ -1,28 +1,54 @@
-//This module-function gets an array of canvases 
-// and returns them in FormData 
+//This module-function gets an object of arrays of canvases 
+// and returns them all in FormData 
 
-// //Test-Example Arrrrrrrrrrrrrrrrrrrrrrrrrrrrrr 
-var canvasArr = [];
-for (var i = 0; i < 13; i++) {
-    var canvas = document.createElement("canvas");
-    canvas.width = 10*i;
-    canvas.height = 150+i;
-    canvasArr.push(canvas);
-}
 
-export function convertCanvasToFormData(canvasArr = []) {
+// export default function convertCanvasToFormDataAVIAD(canvasObj) {
+//     let counter = 1;
+//     const formData = new FormData();
+//     Object.entries(canvasObj).forEach(([k,v]) => {
+
+//         for(let canvas of field){
+//             console.log("canvas: ", canvas);
+//             let index = counter < 10 ? "_0" + counter : "_" + counter++;
+//             console.log("counter: ", counter);
+//             let dataURL = canvas.toDataURL();
+//             formData.append(field + "", dataURL, field + index + ".png");
+//     }
+//     })
+//     return formData;
+// }
+export default function convertCanvasToFormData(canvasObj) {
     let counter = 1;
     const formData = new FormData();
-    for(canvas of canvasArr){
-        let index = counter < 10 ? "_0" + counter : "_" + counter;
-        counter++;
-        var dataURL = canvas.toDataURL();
-        var blob = dataURItoBlob(dataURL);
-        formData.append("image" + index, blob, "image" + index + ".png");
-        console.log(formData.get("image" + index));
+    console.log(canvasObj);
+    Object.entries(canvasObj).forEach(([key,canvasArr]) => {
+        console.log("key: ", canvasArr);
+        console.log("canvasArr: ", canvasArr);
+        for(let canvas of canvasArr){
+            console.log("canvas: ", canvas);
+            let index = counter < 10 ? "_0" + counter : "_" + counter++;
+            console.log("counter: ", counter);
+            let dataURL = canvas.toDataURL();
+            var blob = dataURItoBlob(dataURL);
+            formData.append(key + "", blob, key + index + ".png");
     }
+    })
     return formData;
 }
+
+// export function convertCanvasToFormData0(canvasArr = [],categoryName = "") {
+//     let counter = 1;
+//     const formData = new FormData();
+//     for(canvas of canvasArr){
+//         let index = counter < 10 ? "_0" + counter : "_" + counter;
+//         counter++;
+//         var dataURL = canvas.toDataURL();
+//         var blob = dataURItoBlob(dataURL);
+//         formData.append(categoryName + index, blob, categoryName + index + ".png");
+//         console.log(formData.get(categoryName + index));
+//     }
+//     return formData;
+// }
 
 function dataURItoBlob(dataURI) {
     var byteString = atob(dataURI.split(',')[1]);

@@ -13,9 +13,11 @@ import language from "../../functions/language";
 import CheckList from "../CheckList";
 >>>>>>> c13863bc874be67cacfaa247a0ea4c1276122fd8
 
-function DisplaySetting() {
+function DisplaySetting(props) {
     const { afterISP, setAfterISP } = useContext(ImageContext)
-    const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet
+
+    const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet;
+
 
     const [s0Val, setS0Val] = useState(s0);
     const [dolpVal, setDolpVal] = useState(DoLP);
@@ -212,10 +214,12 @@ function DisplaySetting() {
         <h1>
             Display settings
         </h1>
-        <div className="dudu">
-            <CollepseTopDown menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
+        <div className={style.dudu}>
+        <div className={style.collapseBG}>
+            <CollepseTopDown className={style.blackBG} menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
+            </div>
             {isCheckMenuOpen && <CheckList />}
-            <Button func={handleSave} width={"315px"}>Save Results</Button>  
+            <Button func={handleSave} width={"270px"} margin-top={"20px"}>Save Results</Button>  
         </div> 
         
       </div>
