@@ -14,10 +14,6 @@ export default function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  
     const ImageDoLP = []
     const ImageRGB = []
     const ImageS0 = []
-    console.log("test")
-    console.dir(parameters)
-    console.log("ImajeesUrl: " + ImajesUrl)
-    console.log("parameters: " + parameters)
 
     for (const key in ImajesUrl) {
         const img = ImajesUrl[key];
@@ -60,8 +56,6 @@ export default function ImageConversion(ImajesUrl=[imagesAll], parameters={} )  
         AllImages.DoLP = ImageDoLP
     }
     const ReturnAllImages = convertCanvasToFormData(AllImages)
-    console.log("AllImages = " + AllImages);
-    console.log("ReturnAllImages = " + ReturnAllImages);
     return(ReturnAllImages)
 }
 

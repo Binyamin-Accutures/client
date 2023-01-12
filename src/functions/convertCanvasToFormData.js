@@ -20,14 +20,14 @@
 export default function convertCanvasToFormData(canvasObj) {
     let counter = 1;
     const formData = new FormData();
-    console.log(canvasObj);
+    //console.log(canvasObj);
     Object.entries(canvasObj).forEach(([key,canvasArr]) => {
-        console.log("key: ", canvasArr);
-        console.log("canvasArr: ", canvasArr);
+        // console.log("key: ", canvasArr);
+        // console.log("canvasArr: ", canvasArr);
         for(let canvas of canvasArr){
-            console.log("canvas: ", canvas);
+            // console.log("canvas: ", canvas);
             let index = counter < 10 ? "_0" + counter : "_" + counter++;
-            console.log("counter: ", counter);
+            // console.log("counter: ", counter);
             let dataURL = canvas.toDataURL();
             var blob = dataURItoBlob(dataURL);
             formData.append(key + "", blob, key + index + ".png");
