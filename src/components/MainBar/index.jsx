@@ -57,7 +57,7 @@ useEffect(() => {
     <>
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={false} images={images}/>
+          <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={true} images={images}/>
         </div>
         <div className={styles.controlBar}>
           <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
