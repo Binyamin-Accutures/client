@@ -3,16 +3,11 @@
     width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
+    /* border: 2px solid red; */
 }
 
 .containerSmall {
-    width:  100%;
-    margin:20px;
-}
-.descrption{
-   margin: 10px 0;
     width: 100%;
     padding: 4px;
 }
@@ -27,6 +22,11 @@
     padding: 0;
     background-color: white;
     display: inline;
+
+}
+
+slider:hover {
+    cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb {
@@ -54,20 +54,21 @@
 }
 
 .container .descrption {
-    margin-right: 1% 0;
     display: flex;
     justify-content: end;
-    min-width: 60px;
+    min-width: 95px;
+    margin-right: 10px;
     color: var(--text-secondary-color);
-    font-size: 10px;
 
 }
 
+
+
 .container .numberInput {
-    /* margin-top: 3px;
-    margin-left: 1.5%; */
-    margin-left: 12px;
-    max-width: 47px;
+    /* margin-top: 3px;*/
+    margin-left: 5px;
+    /* margin: 12px; */
+    width: 47px;
     height: 26px;
     background-color: var(--input-color);
     color: var(--text-color);
@@ -79,7 +80,8 @@
 .numberInput::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-.containerSmall{
+
+.containerSmall {
     margin: 0;
     margin-top: 20px;
 }
@@ -90,8 +92,12 @@
     width: 100%;
     color: var(--text-color);
     display: block;
-    font-size: 12px;
+    font-size: 9.5px;
 }
+
+/* .descrption {
+  max-width: 70px;
+} */
 
 .containerSmall .numberInput {
     margin-top: 3px;
@@ -106,5 +112,4 @@
     border: 0;
     text-align: center;
     border: 1px solid var(--text-secondary-color);
-
 }
