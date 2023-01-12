@@ -36,8 +36,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     width: 100%;
     height: 100vh;
+    max-height: 100vh;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden;s */
 }
 
 label {
