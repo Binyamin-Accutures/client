@@ -29,7 +29,6 @@ export default function HistoryPage() {
                 {name: 'icmage4', url:'https://new-car-lease.co.il/wp-content/uploads/2022/02/2008-2022_1.jpeg', date: 1673364645598},
                 {name: 'igmage5', url:'https://images1.calcalist.co.il/picserver3/crop_images/2021/09/19/rJWhoxlHmY/rJWhoxlHmY_0_263_2835_1596_0_x-large.jpg', date: 1673364645598},
                 {name: 'ifmage6', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlQ4TAW6pwKRqQbaTciJql3DzCDMuFYQLUzbXnCIAEF7GLM1QbcsSgFyJKCVlQ51fUew&usqp=CAU', date: 1672145598},
-                {name: 'iemage7', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Mp6yLzHupZxKhu35ssIhDYJs2COlxl5jeg&usqp=CAU', date: 1211164645598}
               ]
    const [images, setImages] = useState(ContextImages)         
    const [arrImages, setArrImages] = useState(images.sort((image1,image2)=> image2.date - image1.date))       
@@ -77,7 +76,6 @@ console.log(arrImages);
 
     <>
    
-
     
     <div className={styles.historyPageContainer}>
     
@@ -88,7 +86,7 @@ console.log(arrImages);
        <FiSearch style={{color:'green', position:'absolute', right:'5px' ,top: '8px'}}/>
        </div>
        </div>
-       <br />
+ 
 
   
 
@@ -106,9 +104,8 @@ console.log(arrImages);
        <div className={styles.images}>
       {arrImages? arrImages.map(v => <HistoryImage src={v.url} date={new Date(v.date).toLocaleDateString()} time={new Date(v.date).toLocaleTimeString()} imgName={v.name} funcDel={handleDelete} /> ): null} 
        </div>
-      
+
        </div>
-   
     </>
 
   )
