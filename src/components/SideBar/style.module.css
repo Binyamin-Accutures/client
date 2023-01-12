@@ -1,5 +1,6 @@
 .sideBar {
   position: relative;
+  /* width: 18vw; */
 }
 
 .loadBtn {
@@ -41,7 +42,7 @@
 }
 
 .collapse {
-  padding: 17px 4.3%; 
+  padding: 17px 4.3%;
 }
 
 .blackBack {
@@ -52,9 +53,7 @@
   z-index: 5;
 }
 
-.D {
-
-}
+.D {}
 
 .D div {
   padding: 2px 0px;
