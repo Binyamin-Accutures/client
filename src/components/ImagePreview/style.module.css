@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
 }
 
 .loadImagePage {
@@ -17,6 +17,12 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
+    gap: 20px;
+}
+
+.loadImagePage button {
+    width: 180px !important;
+    height: 50px;
 }
 
 .ImagePreview {
@@ -40,8 +46,11 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: -30px;
-    
+}
+
+.controls button {
+    margin-top: 20px;
+
 }
 
 .controls input {
@@ -62,4 +71,11 @@
 .images {
     width: 1113px;
     height: 672px;
+}
+
+.ImagePreview img {
+    max-height: 500px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+
 }
