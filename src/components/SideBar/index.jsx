@@ -11,10 +11,11 @@ import Demosaic from "../Demosaic";
 import Denoise from "../Denoise";
 import Sharping from "../Sharping";
 import { FiChevronRight, FiChevronLeft, IconName } from "react-icons/fi";
+import language from "../../functions/language";
+
 // creator: Liat
 
 const SideBar = () => {
-  
   const data = {
     demosaic: {
       enable: "true",
@@ -33,50 +34,54 @@ const SideBar = () => {
     },
   };
   const menuList = [
-    { titel: "NUC", component: <Nuc /> },
+    { titel: `${language.NUC}`, component: <Nuc design={styles.D} /> },
     {
-      titel: "Dynamic Range Stretch",
-      component: (
-        <DynamicRangeStretch
-          classNameTitle="title"
-          classNameOption="option"
-          classNameSecdTitle="dropTitle"
-        />
-      ),
+      titel: `${language.DYNAMIC_RANGE_STRECH}`,
+      component: <DynamicRangeStretch design={styles.D} />,
     },
     {
-      titel: "Demosaic",
-      component: <Demosaic data={data} className={styles.pedin} />,
+      titel: `${language.DEMOSIC}`,
+      component: <Demosaic data={data} design={styles.D} />,
     },
-    { titel: "Denoise", component: <Denoise /> },
-    { titel: "Sharpening", component: <Sharping data={sharpingData} /> },
+    { titel: `${language.DENOISE}`, component: <Denoise design={styles.D} /> },
+    {
+      titel: `${language.SHARPING}`,
+      component: <Sharping data={sharpingData} design={styles.D} />,
+    },
   ];
   const value = useContext(ImageContext);
   const [IsOpen, setIsOpen] = useState(true);
+  //   const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
+  let index = 2;
   return (
-    <>   
     <div className={styles.sideBar}>
-    {/* <FiChevronLeft className={styles.btnToggle} onClick={(e) => slideBar(e)}/> */}
-      {IsOpen ?
-      <FiChevronLeft className={styles.btnToggle} onClick={(e) => slideBar(e)}/>:
-      <FiChevronRight className={styles.btnToggle} onClick={(e) => slideBar(e)}/>}
+      {IsOpen ? (
+        <FiChevronLeft
+          className={styles.btnToggle}
+          onClick={(e) => slideBar(e)}
+        />
+      ) : (
+        <FiChevronRight
+          className={styles.btnToggle}
+          onClick={(e) => slideBar(e)}
+        />
+      )}
       {IsOpen && (
         <div className={styles.form}>
           <div className={styles.all}>
             <div className={styles.collapse}>
-              <InputLoadImage width="328px" className={styles.loadBtn}/>
-              <Image value={value} index={0}/>
+              <InputLoadImage width="328px" className={styles.loadBtn} />
+              <Image value={value} index={0} />
               <CollepseTopDown menuList={menuList} className={styles.blackBack} />
               <BtnRunISP className={styles.btn} />
+            </div>
           </div>
-          </div>
-        </div >
+        </div>
       )}
     </div>
-    </>
   );
 };
 export default SideBar;

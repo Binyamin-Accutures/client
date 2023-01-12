@@ -3,11 +3,11 @@ import HeaderFirst from "../components/HeaderFirst";
 import Logout from "../components/Logout";
 
 export default function Adel() {
-    return(
-       <div>
-      
-        <Header/>
+    return (
+        <div>
 
-       </div> 
+
+
+        </div>
     )
 }

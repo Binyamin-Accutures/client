@@ -1,34 +1,39 @@
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    height: 40px;
-    cursor: pointer;
-    background-color: var(--primary-color) ;
-    color: var(--text-color);
-    border-radius: var(--border-radius);
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    margin: 20px;
-    transition: 0.1s;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 40px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  margin: 20px;
+  transition: 0.1s;
 }
-.button:hover:not(:focus){
-    border: 2.5px solid var(--text-color)
+.button:hover:not(:focus) {
+  border: 2.5px solid var(--text-color);
 }
-.button svg{
-    display: none;
+.button svg {
+  display: none;
 }
-.button:focus{
-    box-shadow: inset -4px -4px 12px rgba(21, 57, 42, 0.25), 
-   inset 4px 4px 12px rgba(21, 57, 42, 0.25);
+.button:focus {
+  box-shadow: inset -4px -4px 12px rgba(21, 57, 42, 0.25),
+    inset 4px 4px 12px rgba(21, 57, 42, 0.25);
 }
 .button:focus svg{
     display: block;
     background-color: var(--primary-color);
     width: 16px;
     height: 14px;
-    
 }
 
+/* .button:disabled{
+    background-color: gray ;
+    color:rgb(180, 175, 175);
+    pointer-events: none;
+
+} */

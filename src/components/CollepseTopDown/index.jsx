@@ -1,40 +1,35 @@
 import styles from "./style.module.css";
-import { FiChevronDown, FiChevronUp, IconName } from "react-icons/fi";
-import { useState } from "react";
-import { useRef } from 'react';
-
-// creator: roye peleg
-
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 const CollepseTopDown = (props) => {
-  
- const [openCollepseTopDown,setOpenCollepseTopDown] = useState(null)
+  const [openCollepseTopDown, setOpenCollepseTopDown] = useState(null)
 
- let openClasses = `${styles.oneOptions} ${props.className}` 
+  let openClasses = `${styles.oneOptions} ${props.className}`
 
-//  if(openCollepseTopDown) {
+  useEffect(() => {
+    if (props.isClose) {
+      setOpenCollepseTopDown(() => null)
+    }
+  }, [props.isClose])
 
-//  }
+  useEffect(() => {
+    if (openCollepseTopDown && props.isClose) {
+      props.setIsClose(() => false)
+    }
+  }, [openCollepseTopDown])
 
-//  {openCollepseTopDown ? openClasses = `${styles.oneOptions} ${props.className}` 
-//  : openClasses = `${styles.oneOptions}`}
-
- const onClickLine = (titel, ref)=>{
-  // console.log(ref);
-   if(openCollepseTopDown===titel){
-       setOpenCollepseTopDown(null)
-      //  ref.current.classList.add('new-class');
-      //  className={openClasses}
-      //  openClasses = `${styles.oneOptions}`
-   }
-   else{
-    setOpenCollepseTopDown(titel)
-    // className = `${styles.oneOptions}`
+  const onClickLine = (titel, ref) => {
+    if (openCollepseTopDown === titel) {
+      setOpenCollepseTopDown(null)
+    }
+    else {
+      setOpenCollepseTopDown(titel)
+    }
   }
- }
 
 
-   return (
+  return (
     <div className={styles.CollepseTopDown}>
       {props.menuList.map((v, inx) => {
         return (
@@ -43,12 +38,12 @@ const CollepseTopDown = (props) => {
             <p className={openCollepseTopDown===v.titel ? styles.bold : ""}>{v.titel}</p>
             {openCollepseTopDown===v.titel ?<FiChevronUp/>:<FiChevronDown />}
           </div>
-           {openCollepseTopDown===v.titel && <div className={styles.openPropertis}>{v.component}</div>} 
+           <div className={openCollepseTopDown===v.titel ? `${styles.openPropertis} ${styles.active}` : styles.openPropertis}>{v.component}</div>
        
            </>
         )
       })}
-      
+
     </div>
   );
 };
