@@ -29,6 +29,7 @@ async function convertRGB(imgUrl, {minDoLPVal, maxDoLPVal, minS0Value, maxS0Valu
   });
     
   await camanjsPromise;
+  console.log("***********canvas: " , canvas);
   return canvas.toDataURL("image/png");
 }
     
