@@ -10,19 +10,19 @@ import { useNavigate } from "react-router-dom";
 function App() {
 
   const nav = useNavigate();
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(true)
 
   useEffect(() => {
     const startApp = async () => {
-     await setToken(localStorage.token)
+      await setToken(localStorage.token)
       apiCalls("get", "http://localhost:9898/api/user/")
-      .then((res) => {
-       console.log(res);
-        if (res.status === 200) {
-          setUser(res.data);
-          nav("/loadimage")
-        }
-      });
+        .then((res) => {
+          console.log(res);
+          if (res.status === 200) {
+            setUser(res.data);
+            nav("/loadimage")
+          }
+        });
     };
 
     if (!user && localStorage.token) startApp();
