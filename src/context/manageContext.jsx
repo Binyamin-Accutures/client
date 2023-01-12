@@ -84,7 +84,7 @@ export const ContextProvider = ({ user,setUser, children }) => {
    
     const [isLogged, setIsLogged] = useState(false);
 
-    projectPath = '';
+    let projectPath = '';
     
     const [afterISP, setAfterISP] = useState(afterISPTemp);
     const [beforeISP, setBeforeISP] = useState(beforeISPTemp);
@@ -92,7 +92,7 @@ export const ContextProvider = ({ user,setUser, children }) => {
 
     return (
         <UserContext.Provider value= {{user, setUser, isLogged, setIsLogged}}>
-            <ImageContext.Provider value={{afterISP, setAfterISP,beforeISP, setBeforeISP}}>
+            <ImageContext.Provider value={{afterISP, setAfterISP,beforeISP, setBeforeISP, projectPath}}>
                 {children}
             </ImageContext.Provider>
         </UserContext.Provider>

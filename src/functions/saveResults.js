@@ -1,7 +1,9 @@
+import apiCalls from "./apiRequest";
 import  ImageConversion  from "./ImageConversion";
 const saveResults = (obj) => {
     console.log(obj);
     let data = ImageConversion(obj.imagePath, obj);
+    console.log(data);
 
     apiCalls("post", "http://localhost:6700/api/createZIP", data).then((response) => {
         // create file link in browser's memory
