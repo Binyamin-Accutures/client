@@ -1,4 +1,4 @@
-/* .D {
+.D {
   margin-top: 5px;
   padding-inline-end: 10px;
   font-size: 5px;
@@ -20,8 +20,13 @@ grid-template-rows: 146px 146px 306px;
 .sharpening{
      border: 1px solid white; 
 }
- */
+
 .pdf{
-  width: 100px;
-  color: blueviolet;
+  width: 500px;
+  background-color: aliceblue;
+  color: black;
+  font-size: 13px;
+}
+.label{
+  font-size: 15px;
 }
