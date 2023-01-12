@@ -40,7 +40,7 @@ function App() {
         <>
           <ContextProvider user={user} setUser={setUser}>
             <MainTest />
-            <Layout />
+            {/* <Layout /> */}
           </ContextProvider>
         </>
       )}

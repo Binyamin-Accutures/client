@@ -1,7 +1,17 @@
-import BtnRunISP from "../components/BtnRunISP";
+
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import Pdf from "../components/Pdf";
+
+
 
 export default function Hadar() {
+
     return (
-        <BtnRunISP />
+        <div>
+
+            <Pdf />
+
+
+        </div>
     )
 }
