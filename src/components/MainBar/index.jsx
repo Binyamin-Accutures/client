@@ -27,17 +27,17 @@ export default function MainBar({ imgArray }) {
   ])
 
   //use context(imgArray)
-// const value = useContext(ImageContext)
+  // const value = useContext(ImageContext)
   const [displayArr, setDispalyArr] = useState(images)
   const [selectedImage, setSelectedImage] = useState(1)
   const [chooseMinRange, setChooseMinRange] = useState(1)
   const [chooseMaxRange, setChooseMaxRange] = useState(1)
-  
-useEffect(() => {
-  setDispalyArr(images.slice(chooseMinRange-1, (chooseMaxRange<chooseMinRange? chooseMinRange:chooseMaxRange)))
-  console.log(images.slice(chooseMinRange-1, (chooseMaxRange<chooseMinRange? chooseMinRange:chooseMaxRange)));
-  console.log(chooseMinRange, chooseMaxRange);
-},[chooseMinRange, chooseMaxRange, images])
+
+  useEffect(() => {
+    setDispalyArr(images.slice(chooseMinRange - 1, (chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange)))
+    console.log(images.slice(chooseMinRange - 1, (chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange)));
+    console.log(chooseMinRange, chooseMaxRange);
+  }, [chooseMinRange, chooseMaxRange, images])
 
 
 
@@ -48,17 +48,17 @@ useEffect(() => {
     setSelectedImage(target.value)
   }
 
-    // let fr = new FileReader();
-    // fr.readAsDataURL(selectedImage);
-    // setSelectedImage(fr.result);
+  // let fr = new FileReader();
+  // fr.readAsDataURL(selectedImage);
+  // setSelectedImage(fr.result);
 
-  
+
 
   return (
     <>
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={false} images={images}/>
+          <Carousel imgUrl={displayArr[selectedImage - 1].url} imgOn={false} images={images} />
         </div>
   
         <div className={styles.controlBar}>
