@@ -11,7 +11,6 @@ function DisplaySetting(props) {
     const { afterISP, setAfterISP } = useContext(ImageContext)
 
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet;
-    let openClasses = `${style.oneOptions} ${props.className}`
 
 
     const [s0Val, setS0Val] = useState(s0);
@@ -138,7 +137,9 @@ function DisplaySetting(props) {
             Display settings
         </h1>
         <div className={style.dudu}>
-            <CollepseTopDown menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
+        <div className={style.collapseBG}>
+            <CollepseTopDown className={style.blackBG} menuList={menuList} isClose={isCheckMenuOpen} setIsClose={setIsCheckMenuOpen}/>
+            </div>
             {isCheckMenuOpen && <CheckList />}
             <Button func={handleSave} width={"270px"} margin-top={"20px"}>Save Results</Button>  
         </div> 

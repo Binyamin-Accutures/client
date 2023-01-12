@@ -43,7 +43,7 @@ const SideBar = () => {
       titel: `${language.DEMOSIC}`,
       component: <Demosaic data={data} design={styles.D} />,
     },
-    { titel: `${language.DEMOSIC}`, component: <Denoise design={styles.D} /> },
+    { titel: `${language.DENOISE}`, component: <Denoise design={styles.D} /> },
     {
       titel: `${language.SHARPING}`,
       component: <Sharping data={sharpingData} design={styles.D} />,

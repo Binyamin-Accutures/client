@@ -7,7 +7,7 @@ import Histogram from "../Histogram";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 
-const twoClasses = `${styles.CarouselSlider} ${styles.editRange}}`
+const threeClasses = `${styles.CarouselSlider} ${styles.editRange} ${styles.rangeRover}`
 
 // creator: moran hagbi & adel vaknin
 // Instructions:   
@@ -62,7 +62,7 @@ useEffect(() => {
         <div className={styles.controlBar}>
           <div className={styles.topBar}>
             <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
-            <RangeSlider className={twoClasses} 
+            <RangeSlider className={threeClasses} 
             min='1' max={displayArr.length} 
             func={handleChange} text='Frame #' 
             textPosLeft={true} />
