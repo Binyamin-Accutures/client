@@ -24,7 +24,7 @@ export default function BtnRunISP({sendSettingsToServer},props) {
         console.log(files);
         const srcList = await apiCalls(
           "post",
-          "https://accutures-server.onrender.com/api/files",
+          "http://localhost:5000/api/files",
           prepareFilesToServer(files)
         );
         console.log(srcList.data);
@@ -35,7 +35,7 @@ const uplaodSettingToServer = async (setting)=>{
 
 const afterimage = await apiCalls(
 "put",
-"https://accutures-server.onrender.com/api/files/runisp",
+"http://localhost:5000/api/files/runisp",
 setting
 )
 console.log(afterimage);
@@ -50,16 +50,19 @@ console.log(afterimage);
 
 const runISP= async ()=>{
 
-const images = value.currentImages
+const images = value.beforeISP.images
 console.log(images);
 const setting = value.beforeISP
 console.log(setting);
 const reqFiles = await uplaodImageToServer(images)
 reqFiles.data.src[1].root.isp=setting
+console.log( "req files ",reqFiles.data);
+value.setRootServer(reqFiles.data.src[1].root)  
 
 const reqSetting = await uplaodSettingToServer(reqFiles.data.src[1].root)
 console.log("req setting" ,reqSetting);
-value.setAfterISP(value.afterISP.images=reqSetting)
+
+// value.setAfterISP(value.afterISP.images=reqSetting)
 
 
 }

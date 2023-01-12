@@ -17,8 +17,6 @@ function Image({ value, index, ...props }) {
       setUrl(fileReader.result);
     };
   }, [name]);
-
-
   return (
     <>
       <div className={styles.imgContainer}>

@@ -1,11 +1,12 @@
 import styles from "./style.module.css";
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 import language from "../../functions/language";
+
 // creator: "Noam"
 
-function InputLoadImage({ width, props, setLoad, className }) {
+function InputLoadImage({ width, props, className }) {
   const value = useContext(ImageContext);
   const inputElement = useRef();
   const onclick = () => {
@@ -14,17 +15,17 @@ function InputLoadImage({ width, props, setLoad, className }) {
   };
 
   function getDir(e) {
-      value.setBeforeISP((prev) => ({
-        ...prev,
-        images: e.target.files,
-      }));
-      console.log(value.beforeISP.images);
+    value.setBeforeISP((prev) => ({
+      ...prev,
+      images: e.target.files,
+    }));
+    console.log(value.beforeISP.images);
   }
 
   return (
-    <div className={className}>
+    <>
       <Button width={width} {...props} type="file" func={onclick}>
-        {language.lOAD_IMAGE}
+        {language.LOAD_IMAGE}
       </Button>
       <input
         ref={inputElement}
@@ -35,8 +36,7 @@ function InputLoadImage({ width, props, setLoad, className }) {
         webkitdirectory=""
         multiple
       />
-    </div>
+    </>
   );
 }
-
 export default InputLoadImage;
