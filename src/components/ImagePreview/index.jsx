@@ -14,7 +14,7 @@ import ImageContext from "../../context/ImageContext"
 
 function ImagePreview() {
 
-    const [load, setLoad] = useState(false);//[true, empty]
+    const [load, setLoad] = useState();//[true, empty]
     const value = useContext(ImageContext);
     const [selectedImage, setSelectedImage] = useState(0) // 1 is the default
     console.log(value)
