@@ -90,12 +90,12 @@
 }
 
 .containerSmall .descrption {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    color: var(--text-color);
-    display: block;
-    font-size: 9.5px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  color: var(--text-color);
+  display: block;
+  font-size: var(--font-size-text);
 }
 
 /* .descrption {
