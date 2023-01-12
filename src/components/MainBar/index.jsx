@@ -6,6 +6,7 @@ import ChangeFrame from "../ChangeFrame";
 import Histogram from "../Histogram";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
+import ImageManipulation from "../ImageManipulation";
 
 const threeClasses = `${styles.CarouselSlider} ${styles.editRange} ${styles.rangeRover}`
 

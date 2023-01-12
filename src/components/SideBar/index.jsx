@@ -73,7 +73,7 @@ const SideBar = () => {
         <div className={styles.form}>
           <div className={styles.all}>
             <div className={styles.collapse}>
-              <InputLoadImage width="328px" className={styles.loadBtn} />
+              <InputLoadImage width="100%" className={styles.loadBtn} />
               <Image value={value} index={0} />
               <CollepseTopDown menuList={menuList} className={styles.blackBack} />
               <BtnRunISP className={styles.btn} />
