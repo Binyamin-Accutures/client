@@ -6,8 +6,9 @@ import ChangeFrame from "../ChangeFrame";
 import Histogram from "../Histogram";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
+import ImageManipulation from "../ImageManipulation";
 
-
+const threeClasses = `${styles.CarouselSlider} ${styles.editRange} ${styles.rangeRover}`
 
 // creator: moran hagbi & adel vaknin
 // Instructions:   
@@ -60,12 +61,14 @@ useEffect(() => {
           <Carousel imgUrl={displayArr[selectedImage-1].url} imgOn={true} images={images}/>
         </div>
         <div className={styles.controlBar}>
-          <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
-          <div className={styles.CarouselSlider}>
-            <RangeSlider className={styles.editRange} 
+          <div className={styles.topBar}>
+            <div className={styles.cropBtn}><Button width={132} children={"crop"} /></div>
+            <RangeSlider className={threeClasses} 
             min='1' max={displayArr.length} 
             func={handleChange} text='Frame #' 
             textPosLeft={true} />
+          </div>
+          <div className={styles.CarouselSlider}>
             <ChangeFrame className={styles.ChangeFrame} images={images} 
             setChooseMinRange={setChooseMinRange} setChooseMaxRange={setChooseMaxRange} chooseMinRange={chooseMinRange} />
           </div>

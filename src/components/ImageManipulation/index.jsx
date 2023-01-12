@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useRef } from 'react'
 import ImageContext from "../../context/ImageContext";
 
 
-function ImageManipulation({ imgUrl }) {
 
+function ImageManipulation({ imgUrl }) {
+    
     const {
         afterISP: {
             imagePath,
@@ -67,7 +68,7 @@ function ImageManipulation({ imgUrl }) {
 
             return rgba;
         }).render();
-        this.reset();
+        this.revert(false);
         })
     }
 
@@ -83,7 +84,7 @@ function ImageManipulation({ imgUrl }) {
         canvas.removeAttribute("data-caman-id");
         }
 
-    }, [])
+    }, [imgUrl])
 
 
     useEffect(() => {
@@ -99,7 +100,7 @@ function ImageManipulation({ imgUrl }) {
 
             return rgba;
         }).render();
-        this.reset();
+        this.revert(false);
         })
 
     }, [minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov]); 
@@ -127,17 +128,17 @@ function ImageManipulation({ imgUrl }) {
         const canvas = canvasRef.current;
 
         HSVchange(0, HSFactor, 0, DoLPSatur, 0, 1);
-            window.Caman(canvas, img, function () {
-            this.brightness(AoLPBright);
+        window.Caman(canvas, img, function () {
+            this.brightness(AoLPBright * 100);
         })
 
-    }, [HSFactor, DoLPSatur, AoLPBright]); 
+    }, [HSFactor, DoLPSatur, AoLPBright]);
 
 
 
-  return (
-    <canvas ref={canvasRef} />
-  );
+    return (
+        <canvas ref={canvasRef} />
+    );
 
 
 };
