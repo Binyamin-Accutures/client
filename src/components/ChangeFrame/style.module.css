@@ -2,14 +2,14 @@
   display: flex;
   width: 100%;
   /* width: 736.6px; */
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: left;
+  gap: 3%;
   padding: 0;
-  margin-bottom: 24px;
 }
 
 .frame {
-  max-width: 260px;
+  width: 38%;
   /* width: 45%; */
 }
 
