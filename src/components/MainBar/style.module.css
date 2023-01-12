@@ -30,6 +30,10 @@
   /* border: solid 1px #ffff; */
 }
 
+.CarouselSlider input[type=range] {
+  width: 100% !important;
+}
+
 /* .cropBtn {
   margin-left: -20px;
 } */
