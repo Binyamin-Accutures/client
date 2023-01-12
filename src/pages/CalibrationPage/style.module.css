@@ -7,11 +7,12 @@
   height: 48vw;
   margin-bottom: 20px;
 }
+
 .leftBar {
   /* flex-grow: 2; */
   /* width: 400px; */
   height: 100%;
-  width: 18vw;
+  /* width: 18vw; */
   margin-right: 5px;
 }
 

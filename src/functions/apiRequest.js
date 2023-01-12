@@ -9,7 +9,7 @@ export const setToken = async (token) => {
 }
 
 const apiCalls = async (method, url, data) => {
-
+    axios.defaults.headers.common.Authorization = `Bearer ${localStorage.token}`
     console.log(" +++  \n api call - send ", method, url, data);
     try {
         console.log(axios.defaults);
