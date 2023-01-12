@@ -8,7 +8,7 @@ export default async function saveImageResult( ImagesUrl, parameters, root )  {
     const ImageRGB = []
     const ImageS0 = []
     console.log("parameters", parameters)
-    console.log("ImajeesUrl: " + ImagesUrl)
+    console.log("ImajeesUrl: " , ImagesUrl)
     console.log("root: " + root)
 
     for (const key in ImagesUrl) {

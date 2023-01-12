@@ -5,6 +5,8 @@ async function convertRGB(imgUrl, {minDoLPVal, maxDoLPVal, minS0Value, maxS0Valu
 
   const img = document.createElement('img');
   img.src = imgUrl;
+  img.crossOrigin = "Anonymous";
+  
   const canvas = document.createElement('canvas');
   const context = canvas.getContext("2d", { willReadFrequently: true });
 
@@ -92,6 +94,7 @@ async function convertAoLPDoLP(imgUrl, processParamters) {
 
   const img = document.createElement('img');
   img.src = imgUrl;
+  img.crossOrigin = "Anonymous";
   const canvas = document.createElement('canvas');
   const context = canvas.getContext("2d", { willReadFrequently: true });
 
@@ -131,6 +134,7 @@ async function HSVchange(imgUrl, {minHue, maxHue, minSaturation, maxSaturation, 
 
   const img = document.createElement('img');
   img.src = imgUrl;
+  img.crossOrigin = "Anonymous";
   const canvas = document.createElement('canvas');
   const context = canvas.getContext("2d", { willReadFrequently: true });
 
