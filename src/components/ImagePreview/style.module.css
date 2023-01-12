@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
 }
 
 .loadImagePage {
@@ -17,6 +17,7 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
+    gap: 20px;
 }
 
 .ImagePreview {
@@ -41,7 +42,7 @@
     flex-direction: column;
     position: relative;
     top: -30px;
-    
+
 }
 
 .controls input {
