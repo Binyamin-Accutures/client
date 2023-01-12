@@ -11,8 +11,9 @@ import Checkbox from "../Checkbox"
 // icon: ________________
 
 
+
 export default function Nuc({classCollaps}) {
-   const [inputFile, setInputFile] = useState()
+const [inputFile, setInputFile] = useState()
    const inputRef = useRef()
    const value = useContext(ImageContext)
    const inputFunction = () => {

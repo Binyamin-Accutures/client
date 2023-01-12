@@ -105,7 +105,7 @@ const SideBar = () => {
               <InputLoadImage width="328px" className={styles.loadBtn}/>
               <Image value={value} index={0} />
               <CollepseTopDown menuList={menuList} className={styles.blackBack} />
-              <BtnRunISP className={styles.btn} sendSettingsToServer={sendSettingsToServer} />
+              <BtnRunISP className={styles.btn}  />
             <input type="submit" className={styles.run_isp} value="Run ISP" />
           </form>
           </div>
