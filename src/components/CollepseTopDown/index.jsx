@@ -34,7 +34,7 @@ useEffect(()=> {
     else {
       setOpenCollepseTopDown(titel)
     }
-  }
+  }}}
 
 
   return (
