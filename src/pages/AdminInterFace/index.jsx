@@ -10,7 +10,7 @@ function AdminInterFace() {
         <div className={Styles.generalDiv}>
             <table>
                 <tr>
-                    <th>useName</th>
+                    <th>userName</th>
                     <th>password</th>
                     <th>Status</th>
                     <th colspan="2">isActiv</th>
