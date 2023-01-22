@@ -21,18 +21,18 @@ export default function ChangeAndCreatePassPass({ setUser }) {
     } else {
       apiCalls(
         "get",
-        `http://localhost:5001/api/user/checktoken/?token=${passToken}`
+        `http://localhost:9000/api/user/checktoken/?token=${passToken}`
       ).then((res) => {
         if (res.status === 200) {
           email = res.data.email;
-        }else{
+        } else {
           nav("/login");
         }
       });
     }
   }, []);
 
-  const ifStatusGood = (res) => {
+  const ifStatusIsGood = (res) => {
     setToken(res.data);
     setUser(true);
     localStorage.token = res.data;
@@ -49,22 +49,22 @@ export default function ChangeAndCreatePassPass({ setUser }) {
       };
 
       if (!passToken) {
-        apiCalls("post", "http://localhost:5001/api/user/register", data).then(
+        apiCalls("post", "http://localhost:9000/api/user/register", data).then(
           (res) => {
             if (res.status === 200) {
-              ifStatusGood(res);
+              ifStatusIsGood(res);
             }
           }
         );
       } else {
         apiCalls(
           "post",
-          "http://localhost:5001/api/user/changepassword",
+          "http://localhost:9000/api/user/changepassword",
           data
         ).then((res) => {
           if (res.status === 200) {
             console.log("response: " + res.data);
-            ifStatusGood(res);
+            ifStatusIsGood(res);
           }
         });
       }

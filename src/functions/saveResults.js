@@ -29,7 +29,7 @@
 //           AoLPBright : 0.5,
 //       },
 //       RGB : {
-//           enable : true, 
+//           enable : true,
 //           AoLPCenter :  40,
 //           AoLPPov : 40,
 //           minDoLPVal : 30,
@@ -45,7 +45,7 @@
 //         (async () => {
 //           // const { formData, src } = await saveImageResult(imagesAll, afterISPTemp);
 //           // setSrc(src);
-    
+
 //           // axios.post('http://localhost:5000/upload', formData, {
 //           //     headers: {
 //           //         'Content-Type': 'multipart/form-data',
@@ -59,7 +59,6 @@
 //           // console.dir(formData);
 //         })()
 //       }, []) // todo clean code
-    
 
 // }
 // export default saveResults;

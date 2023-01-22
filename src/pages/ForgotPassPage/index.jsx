@@ -9,29 +9,31 @@ export default function ForgotPassPage() {
   const userEmailInput = useRef();
   function handleSubmit(e) {
     e.preventDefault();
-    apiCalls("get", `http://localhost:5001/api/user/forgot/?email=${userEmailInput.current.value}`);
+    apiCalls(
+      "get",
+      `http://localhost:9000/api/user/forgot/?email=${userEmailInput.current.value}`
+    );
   }
 
   return (
     <div className={styles.formLoginContainer}>
-
-    <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <p className={styles.paragraphTitle}>{language.TITLE_FORGOT_PASSWORD}</p>
-      <p className={styles.paragraph}>
-        {language.MSG_GIVE_EMAIL_REGISTER}
-      </p>
-      <Input
-        type="text"
-        name="input"
-        placeholder="email"
-        required={true}
-        inputRef={userEmailInput}
+      <form className={styles.formLogin} onSubmit={handleSubmit}>
+        <p className={styles.paragraphTitle}>
+          {language.TITLE_FORGOT_PASSWORD}
+        </p>
+        <p className={styles.paragraph}>{language.MSG_GIVE_EMAIL_REGISTER}</p>
+        <Input
+          type="text"
+          name="input"
+          placeholder="email"
+          required={true}
+          inputRef={userEmailInput}
         />
 
-      <Button type={"submit"} width={"328px"}>
-        {language.SEND}
-      </Button>
-    </form>
-        </div>
+        <Button type={"submit"} width={"328px"}>
+          {language.SEND}
+        </Button>
+      </form>
+    </div>
   );
 }
