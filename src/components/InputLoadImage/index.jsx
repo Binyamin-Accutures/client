@@ -23,7 +23,7 @@ function InputLoadImage({ width, props, className }) {
 
   return (
     <>
-      <Button width={width} {...props} type="file" func={onclick}>
+      <Button width={width} {...props} type="file" func={onclick} >
         {language.LOAD_IMAGE}
       </Button>
       <input
