@@ -46,7 +46,8 @@ const beforeISPTemp ={
         enable : false,
         method : {
             pt1 : true,
-            pt2 : false, 
+            pt2 : false,
+            bad_pixel_correction : true,
             nuc_file : null
         }
     },
@@ -84,6 +85,7 @@ export const ContextProvider = ({ user,setUser, children }) => {
    
     const [isLogged, setIsLogged] = useState(false);
 
+    let projectPath = '';
     
     const [afterISP, setAfterISP] = useState(afterISPTemp);
     const [beforeISP, setBeforeISP] = useState(beforeISPTemp);
@@ -91,7 +93,7 @@ export const ContextProvider = ({ user,setUser, children }) => {
 
     return (
         <UserContext.Provider value= {{user, setUser, isLogged, setIsLogged}}>
-            <ImageContext.Provider value={{afterISP, setAfterISP,beforeISP, setBeforeISP,currentImages , setCurrentImages}}>
+            <ImageContext.Provider value={{afterISP, setAfterISP,beforeISP, setBeforeISP, projectPath}}>
                 {children}
             </ImageContext.Provider>
         </UserContext.Provider>
