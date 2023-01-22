@@ -25,14 +25,16 @@ function LoginPage({ setUser }) {
       email: userEmailInput.current.value,
     };
 
-    apiCalls("post", "http://localhost:5001/api/user/login", data).then((res) => {
-      if (res.status === 200) {
-        setToken(res.data);
-        setUser(true);
-        localStorage.token = res.data;
-        nav("/loadimage");
+    apiCalls("post", "http://localhost:9000/api/user/login", data).then(
+      (res) => {
+        if (res.status === 200) {
+          setToken(res.data);
+          setUser(true);
+          localStorage.token = res.data;
+          nav("/loadimage");
+        }
       }
-    });
+    );
   }
 
   return (
@@ -56,12 +58,26 @@ function LoginPage({ setUser }) {
         />
 
         <Button type={"submit"} width={"328px"}>
-        {language.SIGN_IN}
+          {language.SIGN_IN}
         </Button>
 
         <div className={styles.formOptions}>
-          <p className={styles.paragraph} onClick={()=>{nav("/forgot")}}>{language.FORGOT_PASSWORD}</p>
-          <p className={styles.paragraph} onClick={()=>{nav("/register")}} >{language.NEW_ACCOUNT}</p>
+          <p
+            className={styles.paragraph}
+            onClick={() => {
+              nav("/forgot");
+            }}
+          >
+            {language.FORGOT_PASSWORD}
+          </p>
+          <p
+            className={styles.paragraph}
+            onClick={() => {
+              nav("/register");
+            }}
+          >
+            {language.NEW_ACCOUNT}
+          </p>
         </div>
       </form>
     </div>
