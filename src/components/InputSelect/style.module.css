@@ -1,11 +1,12 @@
-
-#select{
+#select {
     background-color: var(--input-color);
     color: var(--text-color);
-    font-family:'Poppins', sans-serif; 
-     padding: 8px 16px;
-         cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 0;
 }
-.select{
+
+.select {
     cursor: pointer;
 }

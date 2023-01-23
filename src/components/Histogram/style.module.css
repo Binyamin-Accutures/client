@@ -1,10 +1,14 @@
-.histogramAll{
-    display:flex;
-    justify-content:space-between;
+.top {
+    margin: auto 0 0 0;
 }
 
-.show{
-   display:inline-flex;
-   cursor: pointer;
-  
+.histogramAll {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show {
+    display: inline-flex;
+    cursor: pointer;
+
 }
