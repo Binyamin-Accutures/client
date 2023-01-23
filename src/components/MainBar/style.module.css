@@ -1,33 +1,39 @@
 .main {
-    margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
     position: relative;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height:100%;
     background-color: #1e1e1e;
 }
 
 .mainBar {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 66%;
 }
 
-.controlBar {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    justify-content: start;
+.topBar {
+    padding: 10%;
+}
+
+.innerSliders {
     width: 100%;
-    height: 33%;
+}
+
+.controlBar {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    height: 25%;
     padding-top: 0px;
-    border: solid 1px #ffff;
+    /* border: solid 1px #ffff; */
 }
 
 .mainbar .CarouselSlider {
@@ -36,34 +42,41 @@
     justify-content: start;
     width: 100%;
     height: 10%;
-    padding-top: 30px;
+    padding-top: 0;
     border: solid 1px #ffff;
     justify-content: flex-end;
     align-items: center;
     padding: 0;
 }
 
+.CarouselSlider {
+    flex: 1;
+}
+
+.rangeRover {}
+
 .editRange {
-    border: 3px solid red;
-    width: 736.6px;
-    padding-bottom: 20px;
+    /* flex: 1; */
+    width: 100%;
     display: flex;
     padding-left: 0;
 }
 
 
+/* .editRange>input {
+    width: 80%;
+} */
+
 .ChangeFrame {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
+    /* align-items: flex-end; */
+    /* justify-content: space-between; */
     width: 100%;
     padding-right: 0;
-
 }
 
 .ChangeFrame input {
-    width: 200px;
+    width: 100%;
+    /* width: 200px; */
 }
-
-

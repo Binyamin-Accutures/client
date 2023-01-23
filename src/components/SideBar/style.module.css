@@ -1,22 +1,22 @@
 .sideBar {
   position: relative;
-  /* background-color: var(--bg-secondary-color); */
-  /* background-color: red; */
+  /* width: 18vw; */
 }
 
 .loadBtn {
-  margin: 50px;
+  display: flex;
+  margin-bottom: 11px;
 }
 
 /* liat-sidebar */
-.form {
+#form {
   width: 360px;
   height: 90vh;
   padding-left: 0px;
   border: 2px;
   border-color: brown;
-  /* background: #2c2c2; */
 }
+
 .btnToggle {
   width: 35px;
   height: 60px;
@@ -28,6 +28,7 @@
   position: absolute;
   top: 20px;
   right: -35px;
+  z-index: 2000;
 }
 
 .all {
@@ -35,12 +36,29 @@
 }
 
 .btn {
-  margin-left: 15px;
-  margin-bottom: 45px;
+  /* margin-left: 10px;
+  margin-bottom: 23px;
+  margin-right: 10px; */
+}
+
+.collapse {
+  padding: 17px 4.3%;
 }
 
 .blackBack {
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: var(--bg-color);
+  font-size: 6px;
+  z-index: 5;
+}
+
+.D {}
+
+.D div {
+  padding: 2px 0px;
+  /* display: flex;
+  align-items: center;
   text-align: center;
+  gap: 10px; */
 }

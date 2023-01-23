@@ -1,48 +1,45 @@
-.BackendStatusMain{
+.BackendStatusMain {
     border: solid 1px var(--input-color);
-    border-radius:var(--border-radius);
-    height: 294px;
-    width: 408px;
+    border-radius: var(--border-radius);
+    height: 270px;
+    width: 100%;
     padding-left: 16px;
-    padding-top: 13px;
-    font-size: 16px;
+    padding-top: 5px;
 }
 
-.BackendStatus{
+.BackendStatus {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 40px;
 }
-    .h1{
-        font-weight: 700;
-        
-    
-       
-    }  
-    
 
-label{
+.title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+label {
     margin-top: 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
 }
 
-.prog{
+.prog {
     margin-top: 16px;
 }
 
-
 .battery {
-    
-display: flex;
-justify-content: center;
-margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
     width: 250px;
     position: relative;
-  }
-  
-  .dark {
-    cursor: pointer;
+}
+
+.dark {
     display: inline-block;
     width: 10px;
     border: var(--primary-color);
@@ -51,66 +48,17 @@ margin-top: 10px;
     margin: 1px;
     background: var(--input-color);
     /* transition: background 1s; */
-    border-radius:2px;
-  } 
-  .bar {
-    cursor: pointer;
+    border-radius: 2px;
+}
+
+.bar {
     display: inline-block;
     width: 10px;
-    border:var(--primary-color);
+    border: var(--primary-color);
     padding: 4px;
     height: 17px;
     margin: 1px;
     background: var(--primary-color);
     transition: background 1s;
-    border-radius:2px;
-  }
-  
-  
-  /* .bar.active {
-    background: var(--primary-color);
-  }
-  .battery :nth-child(1){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(2){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(3){
-    background: var(--primary-color);
-
-  }
-
-  .battery :nth-child(4){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(5){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(6){
-    background: var(--primary-color);
-
-   } */
-/*    
-   .battery :nth-child(7){
-    background: var(--primary-color);
-
-  }
-
-  .battery :nth-child(8){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(9){
-    background: var(--primary-color);
-  }
-
-  .battery :nth-child(10){
-    background: var(--primary-color);
-
-  }
-    */
+    border-radius: 2px;
+}

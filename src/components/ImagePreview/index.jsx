@@ -1,47 +1,69 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 import styles from './style.module.css'
 import InputLoadImage from '../InputLoadImage'
-import Header from '../Header'
 import ChangeFrame from '../ChangeFrame'
 import RangeSlider from '../RangeSlider'
 import Button from '../Button'
-import Carousel from '../Carousel'
-import ImageContext from "../../context/ImageContext";
+import ImageContext from "../../context/ImageContext"
+import language from '../../functions/language'
 
 
-// Creator: Yisrael Olonoff
-// 
-
-
+// Creator: Yisrael Olonoff . 
+// updated on 12/1, 11:37 by Noam
 
 function ImagePreview() {
-
-    const [load, setLoad] = useState(false);//[true, empty]
+    
     const value = useContext(ImageContext);
+    const [load, setLoad] = useState(false);//[true, empty]
     const [selectedImage, setSelectedImage] = useState(0) // 1 is the default
-    console.log(value)
+    const [url, setUrl] = useState("");
+    const file = value.beforeISP.images[selectedImage];
+    const name = value.beforeISP.images[selectedImage]?.name || "<empty>";
+  
+    useEffect(() => {
+      if (!file) return;
+      let fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        setUrl(fileReader.result);
+      };
+    }, [name]);
 
-   const handleChange = (target) => {
-      setSelectedImage(target.value)
-   }
+    const handleChange = (target) => {
+        setSelectedImage(target.value)
+    }
+    
+
+    const navigate = useNavigate();
+    const navToCal = () => {
+        value.setCurrentImages(...value.beforeISP.images)
+        console.log(value.currentImages)
+        navigate("/calibration")
+    }
+    useEffect(()=>{
+        if (value.beforeISP.images[0]) {
+            setLoad(true)
+        }
+        },[value.beforeISP])
+
+        
 
     return (
         <>
-            <Header />
             <div className={styles.imgprevContainner}>     
-                   {!load && <div className={styles.loadImagePage} > < InputLoadImage width={'133px'} setLoad={setLoad} >
-                        Load Image </InputLoadImage><p>or drag and drop image here </p></div>}                
-                {load && 
-                <form >
+                   {!load && <div className={styles.loadImagePage} > < InputLoadImage width={'133px'} >
+                      </InputLoadImage><p>{language.OR_DRAG_N_DROP}</p></div>}                
+                {load &&         
                     <div className={styles.ImagePreview}>
-                        <img className={styles.images} src={new Object(value.beforeISP.images[selectedImage]).url}/>
+                        <img className={styles.images} src={url}/>
                         <div className={styles.controls}>
                         <RangeSlider className={styles.RangeSlider} func={handleChange} min={0} max={value.beforeISP.images.length-1}/>
-                        <ChangeFrame className={styles.ChangeFrame} func={handleChange} min={selectedImage.value} max={value}/>
-                        <Button width={328} type='submit' >Next</Button>
+                        <ChangeFrame className={styles.ChangeFrame} images={value.beforeISP.images.length} func={handleChange} min={selectedImage.value} max={value}/>
+                        <Button width={328} func={navToCal}>{language.NEXT}</Button>
                         </div>
                     </div>
-                </form>}
+                    }
             </div>
         </>
     )

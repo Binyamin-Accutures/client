@@ -1,21 +1,24 @@
 .allFrame {
     display: flex;
-    width: 736.6px;
-    justify-content: space-evenly;
+    width: 100%;
+    /* width: 736.6px; */
+    justify-content: space-between;
     align-items: left;
-    padding-right: 25px;
-    padding-left: 20px;
+    padding: 0;
 }
 
-.frame{
-    width: 260px;
+.frame {
+    /* max-width: 260px; */
+    width: 45%;
 }
 
-.frame input[type=number]{
-    width: 30px;
-    height: 20px;
+.frame>input[type=number] {
+    width: 65px;
+    height: 26px;
+    /* width: 30px;
+    height: 20px; */
 }
 
-.frame > text{
+.frame>text {
     width: 100px;
 }

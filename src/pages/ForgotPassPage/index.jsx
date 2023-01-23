@@ -1,22 +1,24 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./style.module.css";
+import language from "../../functions/language";
+import apiCalls from "../../functions/apiRequest";
 
 export default function ForgotPassPage() {
   const userEmailInput = useRef();
-  const userPasswordInput = useRef();
-
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(userEmailInput.current.value, userPasswordInput.current.value);
+    apiCalls("get", `http://localhost:5001/api/user/forgot/?email=${userEmailInput.current.value}`);
   }
 
   return (
+    <div className={styles.formLoginContainer}>
+
     <form className={styles.formLogin} onSubmit={handleSubmit}>
-      <p className={styles.paragraphTitle}>Forgot Password?</p>
+      <p className={styles.paragraphTitle}>{language.TITLE_FORGOT_PASSWORD}</p>
       <p className={styles.paragraph}>
-        Just tell us the email address you registered width us{" "}
+        {language.MSG_GIVE_EMAIL_REGISTER}
       </p>
       <Input
         type="text"
@@ -24,11 +26,12 @@ export default function ForgotPassPage() {
         placeholder="email"
         required={true}
         inputRef={userEmailInput}
-      />
+        />
 
       <Button type={"submit"} width={"328px"}>
-        Send
+        {language.SEND}
       </Button>
     </form>
+        </div>
   );
 }

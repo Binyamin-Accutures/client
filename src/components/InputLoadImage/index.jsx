@@ -1,12 +1,12 @@
 import styles from "./style.module.css";
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
+import language from "../../functions/language";
 
 // creator: "Noam"
-// Use the component by implementing the *children*, *width* and *props* keys
 
-function InputLoadImage({ width, props , setLoad}) {
+function InputLoadImage({ width, props, className }) {
   const value = useContext(ImageContext);
   const inputElement = useRef();
   const onclick = () => {
@@ -14,30 +14,17 @@ function InputLoadImage({ width, props , setLoad}) {
   };
 
   function getDir(e) {
-    for (let file of e.target.files) {
-      let fr = new FileReader();
-      fr.readAsDataURL(file);
-      fr.onload = () => {
-        file["url"] = fr.result;
-        value.setBeforeISP((prev) => ({
-          ...prev,
-          images: [...prev.images, file],
-        }));
-      };
-    }
-  setLoad(true);
-   
+    value.setBeforeISP((prev) => ({
+      ...prev,
+      images: e.target.files,
+    }));
+    console.log(value.beforeISP.images);
   }
 
   return (
     <>
-      <Button
-        width={width}
-        {...props}
-        type="file"
-        func={onclick}
-      >
-        Load Image
+      <Button width={width} {...props} type="file" func={onclick}>
+        {language.LOAD_IMAGE}
       </Button>
       <input
         ref={inputElement}
