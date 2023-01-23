@@ -19,11 +19,9 @@ export default async function saveImageResult(ImagesUrl, parameters, root) {
 
   for (const key in ImagesUrl) {
     const imgUrl = ImagesUrl[key];
-    console.log("-----here-----");
-    if (parameters?.displaySet?.AoLPDoLP?.enable)
-      ImageAoLPDoLP.push(
-        convertAoLPDoLP(imgUrl, parameters.displaySet.AoLPDoLP)
-      );
+
+    if (parameters?.displaySet?.AoLPDoLP?.enable) console.log("-----here-----");
+    ImageAoLPDoLP.push(convertAoLPDoLP(imgUrl, parameters.displaySet.AoLPDoLP));
     if (parameters?.displaySet?.AoLPOvealayed?.enable)
       ImageAoLPOvealayed.push(
         convertAoLPOvealayed(imgUrl, parameters.displaySet.AoLPOvealayed)
