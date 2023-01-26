@@ -3,10 +3,10 @@ import apiCalls from "./apiRequest";
 import axios from "axios";
 
 const saveResults = (obj) => {
-  console.log(obj);
-  let data = saveImageResult(obj.imagePath, obj);
-  console.log("shira:", data);
-  let path = "./upload";
+    console.log(obj);
+    let data = saveImageResult(obj.imagePath, obj);
+    console.log(data);
+    let path = './upload'
 
 
 const saveResults = async (afterISPTemp, rootServer) => {
