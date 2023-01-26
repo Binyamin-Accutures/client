@@ -9,34 +9,21 @@
     return newValue;
   }
 
-  const HSVchange = (src, minHue, maxHue, minSaturation, maxSaturation, minValue, maxValue) => {
-    const canvas = document.createElement('canvas');
-    
-    img.src = src;
-    window.Caman(canvas, img, function () {
-        
-      this.process("posterize", function (rgba) {
-          
-        const HSV = window.Caman.Convert.rgbToHSV(rgba.r, rgba.g, rgba.b);
-        const H = clip((HSV.h - minHue) / (maxHue - minHue), 0, 1);
-        const S = clip((HSV.s - minSaturation) / (maxSaturation - minSaturation), 0, 1);
-        const V = clip((HSV.v - minValue) / (maxValue - minValue), 0, 1);
+  const img = document.createElement('img');
+  img.src = imgUrl;
+  img.crossOrigin = "Anonymous";
+  
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext("2d", { willReadFrequently: true });
 
-        const { r , g , b } = window.Caman.Convert.hsvToRGB(H, S, V)
-        rgba.r = r;
-        rgba.g = g;
-        rgba.b = b;
+  await imameProccess(img);
+  
+  canvas.width = img.width;
+  canvas.height = img.height;
+  context.drawImage(img, 0, 0);
+  canvas.removeAttribute("data-caman-id");
 
-        return rgba;
-      }).render();
-       })
-  }
-
-
-  function convertRGB(src, processParamters) {
-   const {minDoLPVal, maxDoLPVal, RGB_minS0Value, RGB_maxS0Value, AoLPCenter, AoLPPov}= processParamters
-    const canvas = document.createElement('canvas');
-    img.src = src;
+  const camanjsPromise = new Promise((resolve, reject) => {
     window.Caman(canvas, img, function () {
       this.process("posterize", function (rgba) {
         rgba.r = Math.floor(clip((rgba.r - (AoLPCenter - AoLPPov / 2)) / (AoLPPov), 0, 255))
@@ -60,8 +47,54 @@
       }).render();
     });
 
-    return canvas;
-  }
+async function convertDoLP(imgUrl, processParamters) {
+  const {
+    DoLPMin,
+    DoLPMax
+  } = processParamters;
+
+  return await HSVchange(imgUrl, {
+    minHue: MIN_VALUE_HSV,
+    maxHue: MAX_VALUE_HSV,
+    minSaturation: DoLPMin,
+    maxSaturation: DoLPMax,
+    minValue: MIN_VALUE_HSV,
+    maxValue: MAX_VALUE_HSV
+  });
+}
+
+async function convertAoLPOvealayed(imgUrl, processParamters) {
+  const {
+    HSFactor,
+    minS0Value,
+    maxS0Value
+  } = processParamters;
+
+  return await HSVchange(imgUrl, {
+    minHue: MIN_VALUE_HSV,
+    maxHue: HSFactor,
+    minSaturation: MIN_VALUE_HSV,
+    maxSaturation: MAX_VALUE_HSV,
+    minValue: minS0Value,
+    maxValue: maxS0Value
+  });
+}
+
+async function convertAoLPDoLP(imgUrl, processParamters) {
+
+  const {
+    HSFactor,
+    DoLPSatur,
+    AoLPBright
+  } = processParamters;
+
+  const img = document.createElement('img');
+  img.src = imgUrl;
+  img.crossOrigin = "Anonymous";
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext("2d", { willReadFrequently: true });
+
+  await imameProccess(img);
   
   
   function convertDoLP(src,processParamters ) {
@@ -78,6 +111,15 @@
     return canvas;
   }
   
+async function HSVchange(imgUrl, {minHue, maxHue, minSaturation, maxSaturation, minValue, maxValue}) {
+
+  const img = document.createElement('img');
+  img.src = imgUrl;
+  img.crossOrigin = "Anonymous";
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext("2d", { willReadFrequently: true });
+
+  await imameProccess(img);
   
   function convertAoLPOvealayed(src,processParamters) {
     const { AoLPOvealay_HSFactor, AoLPOvealay_minS0Value, AoLPOvealay_maxS0Value} = processParamters
