@@ -21,7 +21,7 @@ export default function ChangeAndCreatePassPass({ setUser }) {
     } else {
       apiCalls(
         "get",
-        `http://localhost:5001/api/user/checktoken/?token=${passToken}`
+        `http://localhost:5000/api/user/checktoken/?token=${passToken}`
       ).then((res) => {
         if (res.status === 200) {
           email = res.data.email;
@@ -47,14 +47,9 @@ export default function ChangeAndCreatePassPass({ setUser }) {
         secondPassword: userSecondPassword.current.value,
         email: email,
       };
-<<<<<<< HEAD
-      
-      apiCalls("post", "http://localhost:5000/api/user/register", data).then(
-        (res) => {
-=======
 
       if (!passToken) {
-        apiCalls("post", "http://localhost:5001/api/user/register", data).then(
+        apiCalls("post", "http://localhost:5000/api/user/register", data).then(
           (res) => {
             if (res.status === 200) {
               ifStatusGood(res);
@@ -64,10 +59,9 @@ export default function ChangeAndCreatePassPass({ setUser }) {
       } else {
         apiCalls(
           "post",
-          "http://localhost:5001/api/user/changepassword",
+          "http://localhost:5000/api/user/changepassword",
           data
         ).then((res) => {
->>>>>>> de4b6189e8c4ce394285dcdd15a3925fa67679cb
           if (res.status === 200) {
             console.log("response: " + res.data);
             ifStatusGood(res);
