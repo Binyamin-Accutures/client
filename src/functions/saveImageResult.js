@@ -41,17 +41,17 @@ function convertImagesToFormData(images) {
 
     const formData = new FormData();
 
-    for (let foder in images) {
+    for (let folder in images) {
 
-        for (let i in images[foder]) {
+        for (let i in images[folder]) {
 
-            const base64 = images[foder][i];
+            const base64 = images[folder][i];
             const contentType = base64.split(";")[0].split(":")[1];
             const data = base64.split(",")[1];
             const blob = new Blob([data], { type: contentType });
 
-            console.log("i", images[foder][i]);
-            formData.append(foder, blob, foder + i + ".png");
+            console.log("i", images[folder][i]);
+            formData.append(folder, blob, folder + i + ".png");
         }
 
     }
