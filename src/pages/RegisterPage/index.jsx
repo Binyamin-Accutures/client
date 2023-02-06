@@ -16,10 +16,10 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className={style.formLoginContainer}>
-    <form className={style.formLogin} onSubmit={handleSubmit}>
-      <p className={style.paragraphTitle}>{language.NEW_ACCOUNT}</p>
-      <p className={style.paragraph}>
+    <div className={styles.formLoginContainer}>
+    <form className={styles.formLogin} onSubmit={handleSubmit}>
+      <p className={styles.paragraphTitle}>{language.NEW_ACCOUNT}</p>
+      <p className={styles.paragraph}>
        {language.MSG_GIVE_EMAIL_REGISTER}
       </p>
       <Input
