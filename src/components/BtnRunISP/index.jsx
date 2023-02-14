@@ -15,13 +15,11 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
     return formData;
   };
   const uplaodImageToServer = async (files) => {
-    console.log(files);
     const srcList = await apiCalls(
       "post",
       "http://localhost:5000/api/files",
       prepareFilesToServer(files)
     );
-    console.log(srcList.data);
     return srcList;
   };
   const uplaodSettingToServer = async (setting) => {
@@ -30,7 +28,6 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
       "http://localhost:5000/api/files/runisp",
       setting
     );
-    console.log(afterimage);
     return afterimage;
   };
   const getRunIspJson = (setting)=> { 
@@ -74,17 +71,13 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
     const images = value.beforeISP.images;
     const setting = value.beforeISP;
     const reqFiles = await uplaodImageToServer(images);
-    console.log(reqFiles);
     value.setRootServer(reqFiles.data.root);
     // reqFiles.data.src[1].root.isp=setting
-    // console.log( "req files ",reqFiles.data.src[1].root);
     const settings = {
       root: reqFiles.data.root,
       runIspSettings:getRunIspJson(setting),
     };
     const reqSetting = await uplaodSettingToServer(settings);
-    console.log("req setting", reqSetting.data);
-    console.log("AFTER : ", { ...value.afterISP, images: reqSetting.data.src });
     value.setAfterISP({ ...value.afterISP, images: reqSetting.data.src });
   };
   const btnClasses = `${props.className} ${styles.run_isp}`;

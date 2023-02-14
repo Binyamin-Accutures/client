@@ -7,9 +7,6 @@ export default async function saveImageResult( ImagesUrl, parameters, root )  {
     const ImageDoLP = []
     const ImageRGB = []
     const ImageS0 = []
-    console.log("parameters", parameters)
-    console.log("ImajeesUrl: " , ImagesUrl)
-    console.log("root: " + root)
 
     for (const key in ImagesUrl) {
         const imgUrl = ImagesUrl[key];
@@ -27,20 +24,15 @@ export default async function saveImageResult( ImagesUrl, parameters, root )  {
     if (ImageAoLPOvealayed !== []) AllImages.AoLPOvealayed = ImageAoLPOvealayed
     if (ImageAoLPDoLP !== []) AllImages.AoLPDoLP = ImageAoLPDoLP
     if (ImageDoLP !== []) AllImages.DoLP = ImageDoLP
-console.log("AllImages:",AllImages);
     const formData = convertImagesToFormData(AllImages)
     formData.append('path',root)
 
-    // console.log("AllImages = " + AllImages);
-    console.log("AllImagesFormData = " + formData);
     
     return formData;
 }
 
 function convertImagesToFormData(images) {
-
     const formData = new FormData();
-
     for (let folder in images) {
 
         for (let i in images[folder]) {
@@ -49,8 +41,6 @@ function convertImagesToFormData(images) {
             const contentType = base64.split(";")[0].split(":")[1];
             const data = base64.split(",")[1];
             const blob = new Blob([data], { type: contentType });
-
-            console.log("i", images[folder][i]);
             formData.append(folder, blob, folder + i + ".png");
         }
 

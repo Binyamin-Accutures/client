@@ -63,7 +63,6 @@ export default function ChangeAndCreatePassPass({ setUser }) {
           data
         ).then((res) => {
           if (res.status === 200) {
-            console.log("response: " + res.data);
             ifStatusGood(res);
           }
         });

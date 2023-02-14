@@ -10,11 +10,8 @@ function BackendStatus({ cntImg = 4 }) {
         const intervel =
             setInterval(() => {
                 setBattery(prev => {
-                    // console.log(prev);
                     let count = prev.filter(v => v).length//begin from
-                    // console.log(count)
                     let newArray = prev.map((v, i) => {
-                        //    console.log( i<=9)
                         return i <= count && count <= 10 ? true : false
                     }
                     )

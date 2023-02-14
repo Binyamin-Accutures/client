@@ -48,13 +48,11 @@ export default function MainBar({ imgArray }) {
         chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange
       )
     );
-    // console.log(
     //   images.slice(
     //     chooseMinRange - 1,
     //     chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange
     //   )
     // );
-    // console.log(chooseMinRange, chooseMaxRange);
   }, [chooseMinRange, chooseMaxRange, images]);
 
   const handleChange = (target) => {

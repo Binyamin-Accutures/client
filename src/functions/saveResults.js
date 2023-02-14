@@ -5,10 +5,9 @@ import axios from "axios";
 
 
 const saveResults = async (afterISPTemp, rootServer) => {
-  console.log(afterISPTemp);
   const formData = await saveImageResult(afterISPTemp.images, afterISPTemp.displaySet, rootServer);
 
-  axios.post('http://localhost:5000/api/barkuni/save', formData, {
+  axios.post('http://localhost:5000/api/files/save', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
       'Content-Disposition': 'attachment; filename=example.png'

@@ -38,7 +38,6 @@ function ImagePreview() {
     const navigate = useNavigate();
     const navToCal = () => {
         value.setCurrentImages(...value.beforeISP.images)
-        console.log(value.currentImages)
         navigate("/calibration")
     }
     useEffect(()=>{

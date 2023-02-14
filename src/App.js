@@ -17,7 +17,6 @@ function App() {
       await setToken(localStorage.token)
       apiCalls("get", "http://localhost:9898/api/user/")
         .then((res) => {
-          console.log(res);
           if (res.status === 200) {
             setUser(res.data);
             nav("/loadimage")

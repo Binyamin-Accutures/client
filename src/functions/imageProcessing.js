@@ -163,7 +163,6 @@ async function HSVchange(imgUrl, {minHue, maxHue, minSaturation, maxSaturation, 
       });
     })
   });
-    
   await camanjsPromise;
   return canvas.toDataURL("image/png");
 }
