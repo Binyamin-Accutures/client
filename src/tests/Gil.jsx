@@ -1,6 +1,5 @@
-import React from 'react'
-import DisplaySetting from '../components/DisplaySettings';
-
+import React from "react";
+import DisplaySetting from "../components/DisplaySettings";
 
 function Gil() {
   return (
@@ -9,7 +8,7 @@ function Gil() {
         <DisplaySetting />
       </div>
     </>
-  )
-};
+  );
+}
 
-export default Gil
+export default Gil;
