@@ -1,7 +1,7 @@
-  
-  const img = new Image();
 
-  const clip = (currentValue, startRange, endRange) => {
+const img = new Image();
+
+const clip = (currentValue, startRange, endRange) => {
     const newValue = endRange * currentValue;
 
     if (newValue > endRange) return endRange;
@@ -9,7 +9,7 @@
     return newValue;
   }
 
-  const img = document.createElement('img');
+  img = document.createElement('img');
   img.src = imgUrl;
   img.crossOrigin = "Anonymous";
   
@@ -36,7 +36,7 @@
     return canvas;
   }
   
-  function convertS0(src,processParamters) {
+  async function convertS0(src,processParamters) {
       const {minS0Value, maxS0Value}=processParamters
       const canvas = document.createElement('canvas');
     img.src = src;
@@ -46,7 +46,7 @@
         return rgba;
       }).render();
     });
-
+  }
 async function convertDoLP(imgUrl, processParamters) {
   const { DoLPMin, DoLPMax } = processParamters;
 
