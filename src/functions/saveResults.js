@@ -16,18 +16,18 @@ const saveResults = async (afterISPTemp, rootServer) => {
   })
     .then((response) => {
       // "http://localhost:5000/"+
-      const href = URL.createObjectURL(new Blob([response.data]));
+      console.log(response.data);
+      // const href = URL.createObjectURL(new Blob([response.data]));
 
       // create "a" HTML element with href to file & click
       const link = document.createElement('a');
-      link.href = href;
-      link.setAttribute('download', response.data.downloadName); //or any other extension
+      link.href = response.data;
       document.body.appendChild(link);
       link.click();
 
       // clean up "a" element & remove ObjectURL
       document.body.removeChild(link);
-      URL.revokeObjectURL(href);
+      // URL.revokeObjectURL(href);
     })
     .catch(err => console.log(err))
   console.dir(formData);
