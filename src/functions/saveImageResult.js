@@ -13,25 +13,27 @@ export default async function saveImageResult(ImagesUrl, parameters, root) {
   const ImageDoLP = [];
   const ImageRGB = [];
   const ImageS0 = [];
-  console.log("parameters", parameters);
-  console.log("ImajeesUrl: ", ImagesUrl);
-  console.log("root: " + root);
+  console.dir("parameters", parameters);
+  console.log("ImajeesUrl: " + ImagesUrl);
+  console.log("parameters: " + parameters);
 
   for (const key in ImagesUrl) {
     const imgUrl = ImagesUrl[key];
 
-    if (parameters?.AoLPDoLP?.enable)
-      ImageAoLPDoLP.push(await convertAoLPDoLP(imgUrl, parameters.AoLPDoLP));
-    if (parameters?.AoLPOvealayed?.enable)
-      ImageAoLPOvealayed.push(
-        await convertAoLPOvealayed(imgUrl, parameters.AoLPOvealayed)
+    if (parameters?.displaySet?.AoLPDoLP?.enable)
+      ImageAoLPDoLP.push(
+        await convertAoLPDoLP(imgUrl, parameters.displaySet.AoLPDoLP)
       );
-    if (parameters?.DoLP?.enable)
-      ImageDoLP.push(await convertDoLP(imgUrl, parameters.DoLP));
-    if (parameters?.RGB?.enable)
-      ImageRGB.push(await convertRGB(imgUrl, parameters.RGB));
-    if (parameters?.s0?.enable)
-      ImageS0.push(await convertS0(imgUrl, parameters.s0));
+    if (parameters?.displaySet?.AoLPOvealayed?.enable)
+      ImageAoLPOvealayed.push(
+        await convertAoLPOvealayed(imgUrl, parameters.displaySet.AoLPOvealayed)
+      );
+    if (parameters?.displaySet?.DoLP?.enable)
+      ImageDoLP.push(await convertDoLP(imgUrl, parameters.displaySet.DoLP));
+    if (parameters.displaySet.RGB.enable)
+      ImageRGB.push(await convertRGB(imgUrl, parameters.displaySet.RGB));
+    if (parameters?.displaySet?.s0?.enable)
+      ImageS0.push(await convertS0(imgUrl, parameters.displaySet.s0));
   }
 
   if (ImageRGB !== []) AllImages.RGB = ImageRGB;
