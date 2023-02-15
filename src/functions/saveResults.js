@@ -2,30 +2,28 @@ import saveImageResult from "./saveImageResult";
 import apiCalls from "./apiRequest";
 import axios from "axios";
 
-const saveResults = (obj) => {
-    console.log(obj);
-    let data = saveImageResult(obj.imagePath, obj);
-    console.log(data);
-    let path = './upload'
-
-
 const saveResults = async (afterISPTemp, rootServer) => {
-  const formData = await saveImageResult(afterISPTemp.images, afterISPTemp.displaySet, rootServer);
+  const formData = await saveImageResult(
+    afterISPTemp.images,
+    afterISPTemp.displaySet,
+    rootServer
+  );
 
-  axios.post('http://localhost:5000/api/files/save', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      'Content-Disposition': 'attachment; filename=example.png'
-    },
-    responseType: 'stream'
-  })
+  axios
+    .post("http://localhost:5000/api/files/save", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Content-Disposition": "attachment; filename=example.png",
+      },
+      responseType: "stream",
+    })
     .then((response) => {
       // "http://localhost:5000/"+
       console.log(response.data);
       // const href = URL.createObjectURL(new Blob([response.data]));
 
       // create "a" HTML element with href to file & click
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = response.data;
       document.body.appendChild(link);
       link.click();
@@ -34,8 +32,7 @@ const saveResults = async (afterISPTemp, rootServer) => {
       document.body.removeChild(link);
       // URL.revokeObjectURL(href);
     })
-    .catch(err => console.log(err))
+    .catch((err) => console.log(err));
   console.dir(formData);
-
-}
+};
 export default saveResults;
