@@ -19,7 +19,6 @@ function convertCanvasToFormData(canvasArr) {
         var dataURL = canvas.toDataURL();
         var blob = dataURItoBlob(dataURL);
         formData.append("image" + index, blob, "image" + index + ".png");
-        console.log(formData.get("image" + index));
     }
     return formData;
 }
@@ -41,7 +40,6 @@ const fd = convertCanvasToFormData(canvasArr);
 
 for (let file of fd.entries())
     {
-     console.log(file[0]+ ', '+ file[1]);  
     }
 
   return (

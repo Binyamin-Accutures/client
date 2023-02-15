@@ -1,16 +1,14 @@
-import React from 'react'
-import DisplaySetting from '../components/DisplaySettings';
-
+import React from "react";
+import DisplaySetting from "../components/DisplaySettings";
 
 function Gil() {
   return (
     <>
-    <div>
-      <DisplaySetting />
-
-    </div>
+      <div>
+        <DisplaySetting />
+      </div>
     </>
-  )
-};
+  );
+}
 
-export default Gil
+export default Gil;

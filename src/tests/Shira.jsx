@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 function Shira() {
     const [form , setForm] = useState(false);
     const handleChange = (e) => {
-        console.log(form);
         setForm({ ...form, [e.target.name]: e.target.value })
      }
     function submitForm(e) {
@@ -15,7 +14,6 @@ function Shira() {
         for(let i =0; i < files.files.length; i++) {
                 formData.append("files", files.files[i]);
         }
-        console.log(formData);
         fetch("http://localhost:5000/api/files/createZIP", {
             method: 'POST',
             body: formData,

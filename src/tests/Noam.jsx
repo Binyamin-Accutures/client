@@ -13,7 +13,6 @@ function Noam() {
   useEffect(() => {
     value.setCurrentImages(value.beforeISP.images);
   }, [value.beforeISP]);
-  console.log(value.currentImages);
 
   const prepareFilesToServer = (diff) => {
     let formData = new FormData();
@@ -24,20 +23,17 @@ function Noam() {
   };
 
   const uplaodToServer = async () => {
-    console.log(value.currentImages);
     const srcList = await apiCalls(
       "post",
       "https://accutures-server.onrender.com/api/files",
       prepareFilesToServer(value.currentImages)
     );
-    console.log(srcList.data);
 
     let fr = new FileReader();
     fr.readAsDataURL(
       `https://accutures-server.onrender.com/upload/jdoe2sddh@5gddmad434dddil.com/1673459626098/original/0.png`
     );
     let result = fr.result;
-    console.log(result)
   };
 
   return (

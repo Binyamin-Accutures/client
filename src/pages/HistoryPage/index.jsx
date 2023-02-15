@@ -69,8 +69,6 @@ const funDelete = (name)=>{
   setArrImages(arr)
   setShow(false)
 }
-console.log(images);
-console.log(arrImages);
 
   
   return (

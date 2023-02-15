@@ -8,7 +8,7 @@ import saveResult from '../../functions/saveResults';
 import CheckList from "../CheckList";
 
 function DisplaySetting(props) {
-    const { afterISP, setAfterISP } = useContext(ImageContext)
+    const { afterISP, setAfterISP ,rootServer} = useContext(ImageContext)
     
     const { s0, DoLP, AoLPOvealayed, AoLPDoLP, RGB } = afterISP.displaySet;
 
@@ -81,7 +81,7 @@ function DisplaySetting(props) {
 
     const handleSave = () => {
         if(isCheckMenuOpen){
-            saveResult(afterISP)
+            saveResult(afterISP,rootServer)
         } else {
             setIsCheckMenuOpen(() => true)
         }

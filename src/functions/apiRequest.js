@@ -10,20 +10,16 @@ export const setToken = async (token) => {
 
 const apiCalls = async (method, url, data) => {
     axios.defaults.headers.common.Authorization = `Bearer ${localStorage.token}`
-    console.log(" +++  \n api call - send ", method, url, data);
     try {
-        console.log(axios.defaults);
         const res = await axios({
             method: method,
             url: url,
             data:data
           });
 
-        console.log(" +++  \n api call - res", res);
         return res
     }
     catch (error) {
-        // console.log(" +++  \n api call - error", error);
         throw error
     }
 }
