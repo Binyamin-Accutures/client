@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./style.module.css";
+import Button from "../../components/Button";
 import parentsStyles from "../SideBar/style.module.css";
 import language from "../../functions/language";
 import ImageContext from "../../context/ImageContext";
@@ -30,7 +31,7 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
     );
     return afterimage;
   };
-  const getRunIspJson = (setting)=> { 
+  const getRunIspJson = (setting) => {
     return {
       enable: true,
       preprocessing: {
@@ -40,7 +41,11 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
       raw_denoising: {},
       nuc: {
         enable: setting.NUC.enable,
-        method: setting.NUC.method.pt1?"pt1":setting.NUC.method.pt2?"pt2":null,
+        method: setting.NUC.method.pt1
+          ? "pt1"
+          : setting.NUC.method.pt2
+          ? "pt2"
+          : null,
         nuc_file: setting.NUC.method.nuc_file,
       },
       dynamic_range: {
@@ -65,8 +70,8 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
           threshold: setting.sharpening.trehold,
         },
       },
-    }
-  }
+    };
+  };
   const runISP = async () => {
     const images = value.beforeISP.images;
     const setting = value.beforeISP;
@@ -75,15 +80,15 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
     // reqFiles.data.src[1].root.isp=setting
     const settings = {
       root: reqFiles.data.root,
-      runIspSettings:getRunIspJson(setting),
+      runIspSettings: getRunIspJson(setting),
     };
     const reqSetting = await uplaodSettingToServer(settings);
     value.setAfterISP({ ...value.afterISP, images: reqSetting.data.src });
   };
-  const btnClasses = `${props.className} ${styles.run_isp}`;
+
   return (
-    <button className={btnClasses} onClick={() => runISP()}>
+    <Button func={runISP} width={"270px"} margin-top={"20px"}>
       {language.RUNISP}
-    </button>
+    </Button>
   );
 }
