@@ -13,9 +13,6 @@ import {
     const ImageDoLP = [];
     const ImageRGB = [];
     const ImageS0 = [];
-    console.log("parameters", parameters);
-    console.log("ImajeesUrl: ", ImagesUrl);
-    console.log("root: " + root);
   
     for (const key in ImagesUrl) {
       const imgUrl = ImagesUrl[key];
@@ -39,38 +36,13 @@ import {
     if (ImageAoLPOvealayed !== []) AllImages.AoLPOvealayed = ImageAoLPOvealayed;
     if (ImageAoLPDoLP !== []) AllImages.AoLPDoLP = ImageAoLPDoLP;
     if (ImageDoLP !== []) AllImages.DoLP = ImageDoLP;
-    console.log("AllImages:", AllImages);
     const formData = convertImagesToFormData(AllImages);
     formData.append("path", root);
   
-    // console.log("AllImages = " + AllImages);
-    console.log("AllImagesFormData = " + formData);
   
     return formData;
   }
   
-  // function convertImagesToFormData(images) {
-  //
-  //     const formData = new FormData();
-  //
-  //     for (let folder in images) {
-  //
-  //         for (let i in images[folder]) {
-  //
-  //             const base64 = images[folder][i];
-  //             const contentType = base64.split(";")[0].split(":")[1];
-  //             const data = base64.split(",")[1];
-  //             const blob = new Blob([data], { type: contentType });
-  //
-  //             console.log("i", images[folder][i]);
-  //             formData.append(folder, blob, folder + i + ".png");
-  //         }
-  //
-  //     }
-  //
-  //     return formData;
-  //
-  // }
   function convertImagesToFormData(images) {
     const formData = new FormData();
   

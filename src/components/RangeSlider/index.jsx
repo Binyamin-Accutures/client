@@ -25,11 +25,7 @@ function RangeSlider({ func, name = '', className = '', text, min, max, step = 1
 
 
 
-
-
-
     return (
-        // <div className={className ? className : 'container'}>
         <div className={`${textPosLeft ? style.container : style.containerSmall} ${className}`}>
             <div className={style.descrption}>{text}</div>
             <div className={style.inputRange}>
@@ -40,7 +36,6 @@ function RangeSlider({ func, name = '', className = '', text, min, max, step = 1
                 }
             </div>
         </div>
-        // </div>
     );
 }
 

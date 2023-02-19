@@ -14,54 +14,43 @@ const threeClasses = `${styles.CarouselSlider} ${styles.editRange} ${styles.rang
 // Instructions:
 
 export default function MainBar({ imgArray }) {
-  const [images, setImages] = useState([
-    { name: "image1", url: "/images/dog1.png" },
-    { name: "image2", url: "/images/dog2.png" },
-    { name: "image3", url: "/images/dog3.png" },
-    { name: "image4", url: "/images/dog4.png" },
-    { name: "image4", url: "/images/dog5.png" },
-    { name: "image4", url: "/images/dog6.png" },
-    { name: "image4", url: "/images/dog7.png" },
-    { name: "image4", url: "/images/dog8.png" },
-  ]);
   const value = useContext(ImageContext);
-  useEffect(() => {
-    if (!value.beforeISP.images[0]) return;
-    let fileReader = new FileReader();
-    fileReader.readAsDataURL(value.beforeISP.images[0]);
-    fileReader.onload = () => {
-      setImages(fileReader.result);
-    };
-  }, [value.beforeISP]);
-
-  //use context(imgArray)
-  // const value = useContext(ImageContext)
-  const [displayArr, setDispalyArr] = useState(images);
+  const [images, setImages] = useState([]);
+  const [displayArr, setDispalyArr] = useState([]);
   const [selectedImage, setSelectedImage] = useState(1);
   const [chooseMinRange, setChooseMinRange] = useState(1);
   const [chooseMaxRange, setChooseMaxRange] = useState(1);
 
   useEffect(() => {
-    setDispalyArr(
-      images.slice(
-        chooseMinRange - 1,
-        chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange
-      )
-    );
-    //   images.slice(
-    //     chooseMinRange - 1,
-    //     chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange
-    //   )
-    // );
-  }, [chooseMinRange, chooseMaxRange, images]);
+    if(!value.afterISP.images[selectedImage-1]){
+    if (!value.beforeISP.images[selectedImage-1]) return;
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(value.beforeISP.images[selectedImage-1]);
+    fileReader.onload = () => {
+      setImages(prev=>fileReader.result);
+      setChooseMaxRange(prev=>value.beforeISP.images.length)
+      setDispalyArr(prev=>value.beforeISP.images)
+    };
+  }
+  else{
+    setImages(prev=>value.afterISP.images[selectedImage-1])
+    setDispalyArr(prev=>value.afterISP.images)
+    setChooseMaxRange(prev=>value.afterISP.images.length)
+  }
+  console.log(displayArr);
+  }, [value.beforeISP,value.afterISP,selectedImage]);
+
+  // useEffect(() => {
+  //     setDispalyArr(
+  //       images.slice(
+  //         chooseMinRange - 1,
+  //         chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange)
+  //     );
+  // }, [chooseMinRange, chooseMaxRange, images]);
 
   const handleChange = (target) => {
     setSelectedImage(target.value);
   };
-
-  // let fr = new FileReader();
-  // fr.readAsDataURL(selectedImage);
-  // setSelectedImage(fr.result);
 
   return (
     <>
@@ -76,15 +65,17 @@ export default function MainBar({ imgArray }) {
           <div className={styles.CarouselSlider}>
             <RangeSlider
               className={styles.editRange}
-              min="1"
-              max={displayArr.length}
+              min={1}
+              max={chooseMaxRange}
               func={handleChange}
               text="Frame #"
               textPosLeft={true}
             />
             <ChangeFrame
               className={styles.ChangeFrame}
-              images={images}
+              images={displayArr}
+              max={chooseMaxRange}
+              min={chooseMinRange}
               setChooseMinRange={setChooseMinRange}
               setChooseMaxRange={setChooseMaxRange}
               chooseMinRange={chooseMinRange}
