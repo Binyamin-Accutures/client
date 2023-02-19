@@ -8,25 +8,22 @@ import { MainTest } from "./tests/MainTest";
 import { useNavigate } from "react-router-dom";
 
 function App() {
-
   const nav = useNavigate();
-  const [user, setUser] = useState(true)
+  const [user, setUser] = useState(false);
 
   useEffect(() => {
     const startApp = async () => {
-      await setToken(localStorage.token)
-      apiCalls("get", "http://localhost:9898/api/user/")
-        .then((res) => {
-          if (res.status === 200) {
-            setUser(res.data);
-            nav("/loadimage")
-          }
-        });
+      await setToken(localStorage.token);
+      apiCalls("get", "http://localhost:9898/api/user/").then((res) => {
+        if (res.status === 200) {
+          setUser(res.data);
+          nav("/loadimage");
+        }
+      });
     };
 
     if (!user && localStorage.token) startApp();
   }, []);
-
 
   return (
     <div>
