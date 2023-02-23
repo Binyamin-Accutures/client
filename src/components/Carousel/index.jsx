@@ -14,7 +14,6 @@ const Carousel = ({ imgUrl, imgOn = true }, images) => {
     <>
       <div className={styles.carouselContainer}>
         <div className={styles.carouselImage}>
-          {/* {imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images"}   */}
           <ImageManipulation imgUrl={imgUrl} />
         </div>
       </div>
