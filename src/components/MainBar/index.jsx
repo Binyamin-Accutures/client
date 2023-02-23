@@ -21,9 +21,24 @@ export default function MainBar({ imgArray }) {
   const [chooseMinRange, setChooseMinRange] = useState(1);
   const [chooseMaxRange, setChooseMaxRange] = useState(1);
 
+
+  async function dataURItoBlob(dataURI) {
+    const response = await fetch(dataURI);
+    const blob = await response.blob()
+    let fileReader2 = new FileReader();
+    fileReader2.readAsDataURL(blob);
+    fileReader2.onload = () => {
+      setImages(prev=>fileReader2.result)
+      setDispalyArr(prev=>value.afterISP.images)
+      setChooseMaxRange(prev=>value.afterISP.images.length)
+    }
+    return blob;
+  }
+
   useEffect(() => {
     if(!value.afterISP.images[selectedImage-1]){
     if (!value.beforeISP.images[selectedImage-1]) return;
+    console.log(value.beforeISP.images[selectedImage-1]);
     let fileReader = new FileReader();
     fileReader.readAsDataURL(value.beforeISP.images[selectedImage-1]);
     fileReader.onload = () => {
@@ -33,11 +48,8 @@ export default function MainBar({ imgArray }) {
     };
   }
   else{
-    setImages(prev=>value.afterISP.images[selectedImage-1])
-    setDispalyArr(prev=>value.afterISP.images)
-    setChooseMaxRange(prev=>value.afterISP.images.length)
+    dataURItoBlob(value.afterISP.images[selectedImage-1])
   }
-  console.log(displayArr);
   }, [value.beforeISP,value.afterISP,selectedImage]);
 
   // useEffect(() => {
@@ -56,7 +68,7 @@ export default function MainBar({ imgArray }) {
     <>
       <div className={styles.main}>
         <div className={styles.mainBar}>
-          <Carousel imgUrl={images} imgOn={false} images={images} />
+          <Carousel imgUrl={images} imgOn={false} images={displayArr} />
         </div>
         <div className={styles.controlBar}>
           <div className={styles.cropBtn}>

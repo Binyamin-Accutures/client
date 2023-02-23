@@ -14,17 +14,18 @@ import language from "../../functions/language";
 function ImagePreview() {
   const value = useContext(ImageContext);
   const [load, setLoad] = useState(false); //[true, empty]
-  const [selectedImage, setSelectedImage] = useState(0); // 1 is the default
+  const [selectedImage, setSelectedImage] = useState(3); // 1 is the default
+  const [chooseMinRange, setChooseMinRange] = useState(1);
+  const [chooseMaxRange, setChooseMaxRange] = useState(1);
   const [url, setUrl] = useState("");
-  const file = value.beforeISP.images[selectedImage];
   const name = value.beforeISP.images[selectedImage]?.name || "<empty>";
 
   useEffect(() => {
-    if (!file) return;
+    if (!value.beforeISP.images[selectedImage]) return;
     let fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
+    fileReader.readAsDataURL(value.beforeISP.images[selectedImage]);
     fileReader.onload = () => {
-      setUrl(fileReader.result);
+      setUrl(prev=>fileReader.result);
     };
   }, [name]);
 
@@ -34,7 +35,16 @@ function ImagePreview() {
 
   const navigate = useNavigate();
   const navToCal = () => {
-    value.setCurrentImages(...value.beforeISP.images);
+    const newArray = [];
+    for(let i in value.beforeISP.images){
+      if(i<chooseMaxRange){
+        newArray.push(value.beforeISP.images[i]);
+      }
+      else{
+        break
+      }
+    }
+    value.beforeISP.images=newArray
     navigate("/calibration");
   };
   useEffect(() => {
@@ -61,12 +71,13 @@ function ImagePreview() {
                 className={styles.RangeSlider}
                 func={handleChange}
                 min={1}
-                max={value.beforeISP.images.length}
+                max={chooseMaxRange}
               />
               <ChangeFrame
                 className={styles.ChangeFrame}
                 images={value.beforeISP.images}
-                func={handleChange}
+                setChooseMaxRange={setChooseMaxRange}
+                setChooseMinRange={setChooseMinRange}
                 min={selectedImage.value}
                 max={value}
               />
