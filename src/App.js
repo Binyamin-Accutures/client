@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const startApp = async () => {
       await setToken(localStorage.token);
-      apiCalls("get", "http://localhost:9898/api/user/").then((res) => {
+      apiCalls("get", "http://localhost:5000/api/user/").then((res) => {
         if (res.status === 200) {
           setUser(res.data);
           nav("/loadimage");
