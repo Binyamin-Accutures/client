@@ -10,14 +10,14 @@ export default function CalibrationPage() {
   return (
         <div className={styles.main}>
             <div className={styles.leftBar}>
-              <SideBar/>
+              <SideBar setIsAfterISP={setIsAfterISP}/>
             </div>
             <div className={styles.mainBar}>
               <MainBar/>
             </div>
             <div className={styles.rightBar}>
               <DisplaySettings/>
-               <BackendStatus/>
+               {isAfterISP&&<BackendStatus/>}
             
             </div>
 

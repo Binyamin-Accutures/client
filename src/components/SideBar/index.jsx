@@ -15,7 +15,7 @@ import language from "../../functions/language";
 
 // creator: Liat
 
-const SideBar = () => {
+const SideBar = ({ setIsAfterISP }) => {
   const data = {
     demosaic: {
       enable: "true",
@@ -51,7 +51,6 @@ const SideBar = () => {
   ];
   const value = useContext(ImageContext);
   const [IsOpen, setIsOpen] = useState(true);
-  //   const [beforeISPTemp, setBeforeISPTemp] = useState(value.beforeISP);
   function slideBar(e) {
     setIsOpen(!IsOpen);
   }
@@ -80,7 +79,7 @@ const SideBar = () => {
                 menuList={menuList}
                 className={styles.blackBack}
               />
-              <BtnRunISP className={styles.btn} />
+              <BtnRunISP className={styles.btn} setIsAfterISP={setIsAfterISP} />
             </div>
           </div>
         </div>

@@ -6,7 +6,10 @@ import language from "../../functions/language";
 import ImageContext from "../../context/ImageContext";
 import apiCalls from "../../functions/apiRequest";
 // creator: Hadar Naiman
-export default function BtnRunISP({ sendSettingsToServer }, props) {
+export default function BtnRunISP(
+  { sendSettingsToServer, setIsAfterISP },
+  props
+) {
   const value = useContext(ImageContext);
   const prepareFilesToServer = (diff) => {
     let formData = new FormData();
@@ -83,7 +86,10 @@ export default function BtnRunISP({ sendSettingsToServer }, props) {
       runIspSettings: getRunIspJson(setting),
     };
     const reqSetting = await uplaodSettingToServer(settings);
-    value.setAfterISP({ ...value.afterISP, images: reqSetting.data.src });
+    setIsAfterISP(false);
+    value.setAfterISP((prev) => {
+      return { ...value.afterISP, images: reqSetting.data.src };
+    });
   };
 
   return (

@@ -10,17 +10,16 @@ import styles from "./style.module.css";
 
 
 export default function ChangeFrame({ className, images, setChooseMaxRange, setChooseMinRange, chooseMinRange}) {
- 
-    
+    console.log(images.length);
     return (<>
         <div className={`${styles.allFrame} ${className}`}>
             <RangeSlider className={styles.frame} 
             min={1} max={images.length} 
-            func={(target) => setChooseMinRange(target.value)} 
+            func={(target) => setChooseMinRange?setChooseMinRange(target.value):null} 
             text='Start Frame' />
             <RangeSlider className={styles.frame} 
             min={chooseMinRange} max={images.length} 
-            func={(target) => setChooseMaxRange(target.value)} 
+            func={(target) => setChooseMaxRange?setChooseMaxRange(target.value):null} 
             text='End Frame' />
         </div>
     </>

@@ -4,7 +4,6 @@ import styles from "./style.module.css";
 import InputLoadImage from "../InputLoadImage";
 import ChangeFrame from "../ChangeFrame";
 import RangeSlider from "../RangeSlider";
-import RangeKobi from "../RangeKobi";
 import Button from "../Button";
 import ImageContext from "../../context/ImageContext";
 import language from "../../functions/language";
@@ -58,15 +57,15 @@ function ImagePreview() {
           <div className={styles.ImagePreview}>
             <img className={styles.images} src={url} />
             <div className={styles.controls}>
-              <RangeKobi
+              <RangeSlider
                 className={styles.RangeSlider}
                 func={handleChange}
                 min={1}
-                max={value.beforeISP.images.length - 1}
+                max={value.beforeISP.images.length}
               />
               <ChangeFrame
                 className={styles.ChangeFrame}
-                images={value.beforeISP.images.length}
+                images={value.beforeISP.images}
                 func={handleChange}
                 min={selectedImage.value}
                 max={value}
