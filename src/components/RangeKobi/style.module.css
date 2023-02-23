@@ -1,0 +1,117 @@
+.container {
+    padding-top: 15px;
+    width: 100%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
+}
+
+.containerSmall {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.descrption {
+    /* width: 100%; */
+}
+
+.slider {
+    webkit-appearance: none;
+    width: 80%;
+    outline: none;
+    border-radius: 3px;
+    height: 1px;
+    padding: 0;
+    background-color: white;
+    display: inline;
+}
+
+.inputRange {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    margin-top: -6px;
+}
+
+.slider::-webkit-slider-runnable-track {
+    webkit-appearance: none;
+
+    background-color: white;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary-color);
+}
+
+.slider::-ms-fill-lower {
+    background-color: var(--primary-color);
+}
+
+.container .descrption {
+    display: flex;
+    justify-content: end;
+    min-width: 95px;
+    margin-right: 10px;
+    color: var(--text-secondary-color);
+
+}
+
+
+
+.container .numberInput {
+    /* margin-top: 3px;*/
+    margin-left: 5px;
+    /* margin: 12px; */
+    width: 47px;
+    height: 26px;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    border-radius: 2px;
+    border: 0;
+    text-align: center;
+}
+
+.numberInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.containerSmall .descrption {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  color: var(--text-color);
+  display: block;
+  font-size: var(--font-size-text);
+}
+
+/* .descrption {
+  max-width: 70px;
+} */
+
+.containerSmall .numberInput {
+    width: 27px;
+    height: 17px;
+    /* max-width: 15%; */
+    font-size: 10px;
+    display: inline;
+    background-color: var(--bg-color);
+    color: var(--text-secondary-color);
+    border-radius: 2px;
+    border: 0;
+    text-align: center;
+    border: 1px solid var(--text-secondary-color);
+}

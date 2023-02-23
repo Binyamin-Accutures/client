@@ -9,21 +9,17 @@ import ImageManipulation from "../ImageManipulation";
 // imgUrl = the url for displayed image
 // imgOn - imageOn is a flag state for passing the kind of input  - enter "true" for images(jpg) or false for canvas
 
-
 const Carousel = ({ imgUrl, imgOn = true }, images) => {
-
-
-   return (
-      <>
-         <div className={styles.carouselContainer}>
-
-            <div className={styles.carouselImage} >
-               {/* {imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images"}   */}
-               <ImageManipulation imgUrl={imgUrl} />
-            </div>
-         </div>
-      </>
-   )
-}
+  return (
+    <>
+      <div className={styles.carouselContainer}>
+        <div className={styles.carouselImage}>
+          {/* {imgUrl ? <img src={imgUrl} alt={imgUrl}/> : "Please load images"}   */}
+          <ImageManipulation imgUrl={imgUrl} />
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Carousel;

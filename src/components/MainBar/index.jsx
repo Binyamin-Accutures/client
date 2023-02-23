@@ -14,16 +14,7 @@ const threeClasses = `${styles.CarouselSlider} ${styles.editRange} ${styles.rang
 // Instructions:
 
 export default function MainBar({ imgArray }) {
-  const [images, setImages] = useState([
-    { name: "image1", url: "/images/dog1.png" },
-    { name: "image2", url: "/images/dog2.png" },
-    { name: "image3", url: "/images/dog3.png" },
-    { name: "image4", url: "/images/dog4.png" },
-    { name: "image4", url: "/images/dog5.png" },
-    { name: "image4", url: "/images/dog6.png" },
-    { name: "image4", url: "/images/dog7.png" },
-    { name: "image4", url: "/images/dog8.png" },
-  ]);
+  const [images, setImages] = useState([]);
   const value = useContext(ImageContext);
   useEffect(() => {
     if (!value.beforeISP.images[0]) return;
@@ -31,18 +22,21 @@ export default function MainBar({ imgArray }) {
     fileReader.readAsDataURL(value.beforeISP.images[0]);
     fileReader.onload = () => {
       setImages(fileReader.result);
+      console.log(images);
     };
   }, [value.beforeISP]);
 
   //use context(imgArray)
   // const value = useContext(ImageContext)
-  const [displayArr, setDispalyArr] = useState(images);
   const [selectedImage, setSelectedImage] = useState(1);
   const [chooseMinRange, setChooseMinRange] = useState(1);
   const [chooseMaxRange, setChooseMaxRange] = useState(1);
+  const [displayArr, setDisplayArr] = useState(
+    value.beforeISP.images[chooseMinRange]
+  );
 
   useEffect(() => {
-    setDispalyArr(
+    setDisplayArr(
       images.slice(
         chooseMinRange - 1,
         chooseMaxRange < chooseMinRange ? chooseMinRange : chooseMaxRange
@@ -70,9 +64,9 @@ export default function MainBar({ imgArray }) {
           <Carousel imgUrl={images} imgOn={false} images={images} />
         </div>
         <div className={styles.controlBar}>
-          <div className={styles.cropBtn}>
+          {/* <div className={styles.cropBtn}>
             <Button width={132} children={"crop"} />
-          </div>
+          </div> */}
           <div className={styles.CarouselSlider}>
             <RangeSlider
               className={styles.editRange}

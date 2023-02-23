@@ -58,7 +58,7 @@ const SideBar = () => {
   let index = 2;
   return (
     <div className={styles.sideBar}>
-      {IsOpen ? (
+      {/* {IsOpen ? (
         <FiChevronLeft
           className={styles.btnToggle}
           onClick={(e) => slideBar(e)}
@@ -68,15 +68,18 @@ const SideBar = () => {
           className={styles.btnToggle}
           onClick={(e) => slideBar(e)}
         />
-      )}
+      )} */}
       {IsOpen && (
         <div className={styles.form}>
           <div className={styles.all}>
             <div className={styles.collapse}>
               <InputLoadImage width="100%" className={styles.loadBtn} />
-              <div style={{ height: '10px' }} />
+              <div style={{ height: "10px" }} />
               <Image value={value} index={0} />
-              <CollepseTopDown menuList={menuList} className={styles.blackBack} />
+              <CollepseTopDown
+                menuList={menuList}
+                className={styles.blackBack}
+              />
               <BtnRunISP className={styles.btn} />
             </div>
           </div>
