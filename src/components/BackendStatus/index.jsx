@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
 import language from '../../functions/language'
+import { useContext } from 'react'
+import ImageContext from '../../context/ImageContext';
 
 function BackendStatus({ cntImg = 4 }) {
-
+    const value = useContext(ImageContext);
+    cntImg = value.beforeISP.images.length
     const [battery, setBattery] = useState([false, false, false, false, false, false, false, false, false, false, false])
 
     useEffect(() => {
