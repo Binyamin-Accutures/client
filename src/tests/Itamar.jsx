@@ -62,7 +62,6 @@ export default function Itamar() {
           responseType: 'stream'
       })
       .then(response => {
-        console.log(response.data);//.pipe(fs.createWriteStream('example.png'))
       });
       console.dir(formData);
     })()

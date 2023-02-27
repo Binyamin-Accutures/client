@@ -18,14 +18,13 @@ function LoginPage({ setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(userEmailInput.current.value, userPasswordInput.current.value);
 
     const data = {
       password: userPasswordInput.current.value,
       email: userEmailInput.current.value,
     };
 
-    apiCalls("post", "http://localhost:5001/api/user/login", data).then((res) => {
+    apiCalls("post", "http://localhost:5000/api/user/login", data).then((res) => {
       if (res.status === 200) {
         setToken(res.data);
         setUser(true);

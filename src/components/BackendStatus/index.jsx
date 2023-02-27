@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
 import language from '../../functions/language'
+import { useContext } from 'react'
+import ImageContext from '../../context/ImageContext';
 
 function BackendStatus({ cntImg = 4 }) {
-
+    const value = useContext(ImageContext);
+    cntImg = value.beforeISP.images.length
     const [battery, setBattery] = useState([false, false, false, false, false, false, false, false, false, false, false])
 
     useEffect(() => {
         const intervel =
             setInterval(() => {
                 setBattery(prev => {
-                    // console.log(prev);
                     let count = prev.filter(v => v).length//begin from
-                    // console.log(count)
                     let newArray = prev.map((v, i) => {
-                        //    console.log( i<=9)
                         return i <= count && count <= 10 ? true : false
                     }
                     )

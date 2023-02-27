@@ -7,7 +7,7 @@ function ImageManipulation({ imgUrl }) {
     
     const {
         afterISP: {
-            imagePath,
+            images,
             displaySet: {
                 s0 :{
                 minS0Value,
@@ -75,7 +75,6 @@ function ImageManipulation({ imgUrl }) {
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d", { willReadFrequently: true });
-        
         img.src = imgUrl;
         img.onload = () => {
         canvas.width = img.width;

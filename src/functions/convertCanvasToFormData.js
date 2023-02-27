@@ -8,9 +8,7 @@
 //     Object.entries(canvasObj).forEach(([k,v]) => {
 
 //         for(let canvas of field){
-//             console.log("canvas: ", canvas);
 //             let index = counter < 10 ? "_0" + counter : "_" + counter++;
-//             console.log("counter: ", counter);
 //             let dataURL = canvas.toDataURL();
 //             formData.append(field + "", dataURL, field + index + ".png");
 //     }
@@ -20,14 +18,9 @@
 export default function convertCanvasToFormData(canvasObj) {
     let counter = 1;
     const formData = new FormData();
-    console.log(canvasObj);
     Object.entries(canvasObj).forEach(([key,canvasArr]) => {
-        console.log("key: ", canvasArr);
-        console.log("canvasArr: ", canvasArr);
         for(let canvas of canvasArr){
-            console.log("canvas: ", canvas);
             let index = counter < 10 ? "_0" + counter : "_" + counter++;
-            console.log("counter: ", counter);
             let dataURL = canvas.toDataURL();
             var blob = dataURItoBlob(dataURL);
             formData.append(key + "", blob, key + index + ".png");
@@ -45,7 +38,6 @@ export default function convertCanvasToFormData(canvasObj) {
 //         var dataURL = canvas.toDataURL();
 //         var blob = dataURItoBlob(dataURL);
 //         formData.append(categoryName + index, blob, categoryName + index + ".png");
-//         console.log(formData.get(categoryName + index));
 //     }
 //     return formData;
 // }
@@ -67,5 +59,4 @@ function dataURItoBlob(dataURI) {
 
 // for (let file of fd.entries())
 //     {
-//      console.log(file[0]+ ', '+ file[1]);  
 //     }

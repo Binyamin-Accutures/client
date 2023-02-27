@@ -18,7 +18,6 @@ function InputLoadImage({ width, props, className }) {
       ...prev,
       images: e.target.files,
     }));
-    console.log(value.beforeISP.images);
   }
 
   return (
